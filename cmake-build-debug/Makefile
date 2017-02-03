@@ -123,6 +123,33 @@ FastLSH/fast:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/build
 .PHONY : FastLSH/fast
 
+src/LSH.o: src/LSH.cpp.o
+
+.PHONY : src/LSH.o
+
+# target to build an object file
+src/LSH.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.o
+.PHONY : src/LSH.cpp.o
+
+src/LSH.i: src/LSH.cpp.i
+
+.PHONY : src/LSH.i
+
+# target to preprocess a source file
+src/LSH.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.i
+.PHONY : src/LSH.cpp.i
+
+src/LSH.s: src/LSH.cpp.s
+
+.PHONY : src/LSH.s
+
+# target to generate assembly for a file
+src/LSH.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
+.PHONY : src/LSH.cpp.s
+
 tests/main.o: tests/main.cpp.o
 
 .PHONY : tests/main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... FastLSH"
+	@echo "... src/LSH.o"
+	@echo "... src/LSH.i"
+	@echo "... src/LSH.s"
 	@echo "... tests/main.o"
 	@echo "... tests/main.i"
 	@echo "... tests/main.s"

@@ -6,7 +6,27 @@
 
 #IncludeRegexTransform: 
 
+/home/peter/FYP/FastLSH/include/LSH.h
+vector
+-
+cstddef
+-
+string
+-
+
+/home/peter/FYP/FastLSH/src/LSH.cpp
+../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+fstream
+-
+iostream
+-
+
 /home/peter/FYP/FastLSH/tests/main.cpp
 iostream
 -
+vector
+-
+../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
 

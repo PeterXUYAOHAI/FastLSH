@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/tests/main.cpp.o"
+  "CMakeFiles/FastLSH.dir/src/LSH.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )
