@@ -43,7 +43,7 @@ install:
   - mkdir bin
 
 script:
-  - cd bin && cmake .. && make && echo "Executing compiled binaries:" && pwd && { ./Testing; }
+  - cd bin && cmake .. && make && echo "Executing compiled binaries:" && pwd && { ./FastLSH; }
 
 after_success:
   - echo "Yay! Your code compiled and runs fine."
