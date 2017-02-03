@@ -1,0 +1,52 @@
+language: cpp
+sudo: false
+
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.8
+            - george-edison55-precise-backports
+          packages:
+            - clang-3.8
+            - cmake-data
+            - cmake
+      env:
+        - MATRIX_EVAL="CC=clang-3.8 && CXX=clang++-3.8"
+
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+            - george-edison55-precise-backports
+          packages:
+            - g++-6
+            - cmake-data
+            - cmake
+      env:
+        - MATRIX_EVAL="CC=gcc-6 && CXX=g++-6"
+
+before_install:
+  # update envvar config
+  - eval $MATRIX_EVAL
+
+  # report versions
+  - cmake --version
+  - $CXX --version
+
+install:
+  # setup cmake
+  - mkdir bin
+
+script:
+  - cd bin && cmake .. && make && echo "Executing compiled binaries:" && pwd && { ./Testing; }
+
+after_success:
+  - echo "Yay! Your code compiled and runs fine."
+
+after_failure:
+  - echo "Uh-oh - something is wrong with your code!"
