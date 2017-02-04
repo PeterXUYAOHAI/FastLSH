@@ -15,17 +15,18 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q) {
     this->L = L;
     this->K = K;
     this->W = W;
-    randomLine = generateRandomLine(L,K,D);
-    randomVector = generateUniformRandomVector(L, W);
+    this->Q = Q;
+    randomLine = generateRandomLine();
+    randomVector = generateUniformRandomVector(K,W);
 }
 
 
 void LSH::loadSetN(std::string filePath){
-    setN = loadDataFromLinuxSystem(filePath, N, L);
+    setN = loadDataFromLinuxSystem(filePath, N, D);
 }
 
 void LSH::loadSetQ(std::string filePath){
-    setQ = loadDataFromLinuxSystem(filePath, Q, L);
+    setQ = loadDataFromLinuxSystem(filePath, Q, D);
 }
 
 vector2D LSH::loadDataFromLinuxSystem(std::string filePath, size_t row, size_t col) {
@@ -54,7 +55,7 @@ vector2D LSH::loadDataFromLinuxSystem(std::string filePath, size_t row, size_t c
 }
 
 
-vector3D LSH::generateRandomLine(size_t L, size_t K, size_t D){
+vector3D LSH::generateRandomLine(){
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -90,10 +91,10 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 }
 
 
-vector2D LSH::computeHash(vector2D dataset, size_t L, double W, size_t N, size_t D, size_t K){
+vector2D LSH::computeHash(vector2D dataset){
     vector2D hashMatrix;
-    vector3D randomLine = generateRandomLine(L,K,D);
-    vector1D randomVector = generateUniformRandomVector(K,W);
+//    vector3D randomLine = generateRandomLine(L,K,D);
+//    vector1D randomVector = generateUniformRandomVector(K,W);
 
     //loop through # of data point
     for (int n = 0; n < N; ++n) {
@@ -121,18 +122,43 @@ vector2D LSH::computeHash(vector2D dataset, size_t L, double W, size_t N, size_t
     return hashMatrix;
 }
 
-vector2D LSH::computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t L, size_t nN, size_t nQ){
+vector2D LSH::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
     vector2D collisionMatrix;
-    for (int q = 0; q <nQ ; ++q) {
-        vector1D singleLine(nN, 0);
-       for (int n = 0; n <nN ; ++n){
+    for (int q = 0; q <Q ; ++q) {
+        vector1D singleLine(N, 0);
+       for (int n = 0; n <N ; ++n){
             for (int hash_id = 0; hash_id < L; ++hash_id) {
-                if (hMatrixN[nN][hash_id] == hMatrixQ[nQ][hash_id])
-                    singleLine[nN]++;
+                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
+                    singleLine[n]++;
             }
         }
         collisionMatrix.push_back(singleLine);
     }
+    return collisionMatrix;
+}
+
+vector2D LSH::getCollisionMatrix() {
+
+    //get Hash Matrix
+    hashMatrixN = computeHash(setN);
+    hashMatrixQ = computeHash(setQ);
+
+    //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
+    vector2D temp1;
+    vector2D temp2;
+    setQ.swap(temp1);
+    setN.swap(temp2);
+
+    //compute collision matrix
+    vector2D collisionMatrix;
+    collisionMatrix = computeCollision(hashMatrixN, hashMatrixQ);
+
+//    //release the memory of the hashMatrixs, detail see <Effective STL>
+    vector2D temp3;
+    vector2D temp4;
+    hashMatrixN.swap(temp3);
+    hashMatrixQ.swap(temp4);
+
     return collisionMatrix;
 }
 

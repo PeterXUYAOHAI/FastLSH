@@ -9,9 +9,15 @@ int main (int argc, char **argv){
 
     LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
 
+    //here we use same set for N and query set
     mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv");
     mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv");
 
+    vector2D collisionMatrix;
+    collisionMatrix = mlsh.getCollisionMatrix();
+
+//    std::cout<<collisionMatrix.size();
+//    std::cout<<collisionMatrix[0].size();
 
 //  gengerate random test
 //    LSH mlsh;
@@ -39,8 +45,6 @@ int main (int argc, char **argv){
 //    std::cout<<hashmatrix[0][0]<<std::endl;
 //    std::cout<<hashmatrix.size()<<std::endl;
 //    std::cout<<hashmatrix[0].size()<<std::endl;
-
-
 
 
 

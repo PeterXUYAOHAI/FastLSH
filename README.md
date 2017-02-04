@@ -6,7 +6,8 @@ This is a C++ implementation of E2LSH and C2LSH. More detail to come.
 
 
 ##Parameters
-* ```N``` the number of vectors in the dataset
+* ```N``` the number of vectors in the N dataset
+* ```Q``` the number of vectors in the query dataset
 * ```D``` the number of dimensions
 * ```L``` the number of group hash
 * ```K``` the number of lines in each hash group -- the larger the value, the fewer the collisions
