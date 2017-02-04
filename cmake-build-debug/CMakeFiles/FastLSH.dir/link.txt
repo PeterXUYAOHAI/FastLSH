@@ -1,1 +1,1 @@
-/usr/bin/c++   -g   CMakeFiles/FastLSH.dir/tests/main.cpp.o CMakeFiles/FastLSH.dir/src/LSH.cpp.o  -o FastLSH 
+/usr/bin/c++   -g   CMakeFiles/FastLSH.dir/tests/main.cpp.o CMakeFiles/FastLSH.dir/src/LSH.cpp.o  -o FastLSH -rdynamic 

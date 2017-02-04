@@ -26,6 +26,7 @@ using namespace std;
 int NUM_THREADS; 
 //load dataset from files
 
+
 int**  load_data(const char* filename, int row, int col)
 {
 	ifstream file;// declare file stream:

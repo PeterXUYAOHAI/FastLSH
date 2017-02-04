@@ -6,9 +6,29 @@
 #include <iostream>
 #include <random>
 
+LSH::LSH() {
+}
+
+LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q) {
+    this->N = N;
+    this->D = D;
+    this->L = L;
+    this->K = K;
+    this->W = W;
+    randomLine = generateRandomLine(L,K,D);
+    randomVector = generateUniformRandomVector(L, W);
+}
 
 
-vector2D LSH::loadData(std::string filePath, size_t row, size_t col) {
+void LSH::loadSetN(std::string filePath){
+    setN = loadDataFromLinuxSystem(filePath, N, L);
+}
+
+void LSH::loadSetQ(std::string filePath){
+    setQ = loadDataFromLinuxSystem(filePath, Q, L);
+}
+
+vector2D LSH::loadDataFromLinuxSystem(std::string filePath, size_t row, size_t col) {
     std::ifstream file;// declare file stream:
     file.open(filePath);
     vector2D data;
@@ -100,6 +120,23 @@ vector2D LSH::computeHash(vector2D dataset, size_t L, double W, size_t N, size_t
     }
     return hashMatrix;
 }
+
+vector2D LSH::computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t L, size_t nN, size_t nQ){
+    vector2D collisionMatrix;
+    for (int q = 0; q <nQ ; ++q) {
+        vector1D singleLine(nN, 0);
+       for (int n = 0; n <nN ; ++n){
+            for (int hash_id = 0; hash_id < L; ++hash_id) {
+                if (hMatrixN[nN][hash_id] == hMatrixQ[nQ][hash_id])
+                    singleLine[nN]++;
+            }
+        }
+        collisionMatrix.push_back(singleLine);
+    }
+    return collisionMatrix;
+}
+
+
 
 
 
