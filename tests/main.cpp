@@ -7,6 +7,7 @@
 int main (int argc, char **argv){
     std::cout<<"hello world!";
 
+    // Para set:(size_t N, size_t D, size_t L, size_t K, double W, size_t Q)
     LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
 
     //here we use same set for N and query set
