@@ -21,6 +21,7 @@ int main (int argc, char **argv){
 //    std::cout<<collisionMatrix[0].size();
 
 //  gengerate random test
+
 //    LSH mlsh;
 
 //    vector3D temp = mlsh.generateRandomLine(200,3,50);
