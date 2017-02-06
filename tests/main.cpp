@@ -1,17 +1,84 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <fstream>
 
 #include "../include/LSH.h"
 #include "../include/hdfs.h"
 #include "hdfs.h"
 
 int main (int argc, char **argv){
-//    std::cout<<"hello world!";
+    std::cout<<"hello world!";
+
+    LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
+
+    mlsh.setUseHdfs(true);
+    mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
+    mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
+
+    vector2D collisionMatrix;
+    collisionMatrix = mlsh.getCollisionMatrix();
+
+    std::cout<<collisionMatrix.size();
+    std::cout<<collisionMatrix[0].size();
+    std::cout<<collisionMatrix[0][200];
 
 
+//    {
+        //hdfs sample flow
+//        hdfsFS fs = hdfsConnect("default", 0);
+//
+//        if (!fs) {
+//            fprintf(stderr, "Failed to connect to hdfs.\n");
+//            exit(-1);
+//        }
+//
+//        int ne = 5;
+//        hdfsFileInfo *fInfo = hdfsGetPathInfo(fs, "/");
+//        hdfsFileInfo *dirInfo = hdfsListDirectory(fs, "/", &ne);
+//        std::cout << fInfo->mName;
+//        std::cout << dirInfo[0].mName << std::endl;
+//
+//
+//        hdfsFile readFile;
+//        char *buffer;
+//        tSize bufferSize;
+//
+//        readFile = hdfsOpenFile(fs, "/dataset1000NoIndex.csv", O_RDONLY, 0, 0, 0);
+//
+//
+//        if (!hdfsFileIsOpenForRead(readFile)) {
+//            fprintf(stderr, "hdfsFileIsOpenForRead: we just opened a file "
+//                    "with O_RDONLY, and it did not show up as 'open for "
+//                    "read'\n");
+//            exit(-1);
+//        }
+//
+//        buffer = (char *) malloc(sizeof(char) * 300000);
+//        bufferSize = 50000;
+//        tSize num_read_bytes = hdfsRead(fs, readFile, (void *) buffer, bufferSize);
+//
+//        std::cout << num_read_bytes << std::endl;
+//
+//        for (int i = 0; i < 200; ++i) {
+//            std::cout << buffer[i];
+//        }
+//
+//
+//        std::stringstream ss;
+//        ss << buffer;
+//        std::string value;
+//        getline(ss, value, ',');
+//        getline(ss, value, ',');
+//        std::cout << std::endl << value;
+//        free(buffer);
+//        hdfsCloseFile(fs, readFile);
+//        hdfsDisconnect(fs);
+//
+//    }
 
-    hdfsFS fs = hdfsConnect("default" , 0);
-
+    {
+        //sample read from linux file system
 
 //    // Para set:(size_t N, size_t D, size_t L, size_t K, double W, size_t Q)
 //    LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
@@ -25,6 +92,8 @@ int main (int argc, char **argv){
 
 //    std::cout<<collisionMatrix.size();
 //    std::cout<<collisionMatrix[0].size();
+
+    }
 
 //  gengerate random test
 

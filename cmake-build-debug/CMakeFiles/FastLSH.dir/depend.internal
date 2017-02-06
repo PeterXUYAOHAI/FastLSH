@@ -4,6 +4,10 @@
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/src/LSH.cpp
+CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
+ /home/peter/FYP/FastLSH/include/LSH.h
+ /home/peter/FYP/FastLSH/src/hdfsRead.cpp
+ /usr/local/hadoop/include/hdfs.h
 CMakeFiles/FastLSH.dir/tests/main.cpp.o
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/hdfs.h

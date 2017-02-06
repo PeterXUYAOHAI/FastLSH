@@ -99,6 +99,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/src/LSH.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/main.cpp">
 			<Option target="FastLSH"/>
 		</Unit>

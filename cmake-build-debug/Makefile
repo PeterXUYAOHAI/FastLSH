@@ -150,6 +150,33 @@ src/LSH.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
 .PHONY : src/LSH.cpp.s
 
+src/hdfsRead.o: src/hdfsRead.cpp.o
+
+.PHONY : src/hdfsRead.o
+
+# target to build an object file
+src/hdfsRead.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
+.PHONY : src/hdfsRead.cpp.o
+
+src/hdfsRead.i: src/hdfsRead.cpp.i
+
+.PHONY : src/hdfsRead.i
+
+# target to preprocess a source file
+src/hdfsRead.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.i
+.PHONY : src/hdfsRead.cpp.i
+
+src/hdfsRead.s: src/hdfsRead.cpp.s
+
+.PHONY : src/hdfsRead.s
+
+# target to generate assembly for a file
+src/hdfsRead.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.s
+.PHONY : src/hdfsRead.cpp.s
+
 tests/main.o: tests/main.cpp.o
 
 .PHONY : tests/main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... src/LSH.o"
 	@echo "... src/LSH.i"
 	@echo "... src/LSH.s"
+	@echo "... src/hdfsRead.o"
+	@echo "... src/hdfsRead.i"
+	@echo "... src/hdfsRead.s"
 	@echo "... tests/main.o"
 	@echo "... tests/main.i"
 	@echo "... tests/main.s"

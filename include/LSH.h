@@ -20,9 +20,12 @@ class LSH{
 
     LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q);
 
-    void loadSetN(std::string filePath);
 
-    void loadSetQ(std::string filePath);
+    void loadSetQ(char *filePath, int fileSize);
+
+    void loadSetN(char *filePath, int fileSize);
+
+    bool setUseHdfs(bool useHdfs);
 
     vector2D getCollisionMatrix();
 
@@ -35,6 +38,9 @@ private:
     size_t K; //# the number of hash functions in each group hash
     size_t M; //# of dimensions at projection space
     double W; //bucket width
+    bool useHdfs;
+    int NfileSize;
+    int QfileSize;
 
     vector3D randomLine;
     vector1D randomVector;
@@ -42,6 +48,7 @@ private:
     vector2D setQ;
     vector2D hashMatrixN;
     vector2D hashMatrixQ;
+
 
     vector2D computeHash(vector2D dataset);
 
@@ -51,7 +58,11 @@ private:
 
     vector1D generateUniformRandomVector(size_t number, double maxium);
 
-    vector2D loadDataFromLinuxSystem(std::string filePath, size_t row, size_t col);
+    vector2D loadDataFromHDFS(char *filePath, int row, int col, int fileSize);
+
+    vector2D loadDataFromLinuxSystem(char *filePath, size_t row, size_t col);
+
+
 };
 
 

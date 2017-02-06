@@ -40,7 +40,7 @@ include_directories( ${HDFS_INCLUDE_DIRS} )
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/main.cpp include/LSH.h src/LSH.cpp)
+        README.md tests/main.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp)
 
 add_executable(FastLSH ${SOURCE_FILES})
 target_link_libraries (FastLSH ${HDFS_LIBRARIES})

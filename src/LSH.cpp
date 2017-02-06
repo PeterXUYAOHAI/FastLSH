@@ -16,20 +16,37 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q) {
     this->K = K;
     this->W = W;
     this->Q = Q;
+    useHdfs = false;
     randomLine = generateRandomLine();
     randomVector = generateUniformRandomVector(K,W);
 }
 
 
-void LSH::loadSetN(std::string filePath){
-    setN = loadDataFromLinuxSystem(filePath, N, D);
+void LSH::loadSetN(char* filePath, int fileSize){
+    NfileSize = fileSize;
+    if(!useHdfs) {
+        setN = loadDataFromLinuxSystem(filePath, N, D);
+    }
+    else {
+        setN = loadDataFromHDFS(filePath, N, D, NfileSize);
+    }
+
 }
 
-void LSH::loadSetQ(std::string filePath){
-    setQ = loadDataFromLinuxSystem(filePath, Q, D);
+void LSH::loadSetQ(char* filePath, int fileSize){
+    QfileSize = fileSize;
+    if(!useHdfs)
+        setQ = loadDataFromLinuxSystem(filePath, Q, D);
+    else
+        setQ = loadDataFromHDFS(filePath, Q, D, QfileSize);
 }
 
-vector2D LSH::loadDataFromLinuxSystem(std::string filePath, size_t row, size_t col) {
+bool LSH::setUseHdfs(bool useHdfs){
+    this->useHdfs = useHdfs;
+    return this->useHdfs;
+}
+
+vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
     std::ifstream file;// declare file stream:
     file.open(filePath);
     vector2D data;
