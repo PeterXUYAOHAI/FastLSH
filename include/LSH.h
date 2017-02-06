@@ -9,6 +9,7 @@
 #ifndef FASTLSH_LSH_H
 #define FASTLSH_LSH_H
 
+//typedef to make code less verbose
 typedef std::vector<std::vector<std::vector<double>>> vector3D;
 typedef std::vector<std::vector<double>> vector2D;
 typedef std::vector<double> vector1D;
@@ -19,7 +20,6 @@ class LSH{
     LSH();
 
     LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q);
-
 
     void loadSetQ(char *filePath, int fileSize);
 
@@ -38,16 +38,16 @@ private:
     size_t K; //# the number of hash functions in each group hash
     size_t M; //# of dimensions at projection space
     double W; //bucket width
-    bool useHdfs;
-    int NfileSize;
-    int QfileSize;
+    bool useHdfs; //whether use hdfs flag
+    int NfileSize; //N file binary size, for hdfs use
+    int QfileSize; //Q file binary size, for hdfs use
 
-    vector3D randomLine;
-    vector1D randomVector;
-    vector2D setN;
-    vector2D setQ;
-    vector2D hashMatrixN;
-    vector2D hashMatrixQ;
+    vector3D randomLine; //collection of randomline for points to project on
+    vector1D randomVector; //random values to assist k group of LSH
+    vector2D setN; // original data set of N
+    vector2D setQ; // original data set of Q
+    vector2D hashMatrixN; // hashMatrix of N where hash value is stored
+    vector2D hashMatrixQ; // hashMatrix of Q where hash value is stored
 
 
     vector2D computeHash(vector2D dataset);

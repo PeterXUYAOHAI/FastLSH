@@ -12,22 +12,25 @@
 
 vector2D LSH::loadDataFromHDFS(char* filePath, int row, int col, int fileSize){
 
-    int exists;
-    char* buffer;
-    int bufferSize;
-    hdfsFS fs;
-    vector2D data;
-    hdfsFile readFile;
-    std::stringstream ss;
+    int exists; //file exist flag
+    char* buffer; //buffer store file read from hdfs
+    int bufferSize; //bufferSize, if not specify define, set as 500000
+    hdfsFS fs; //hdfsFS object
+    hdfsFile readFile; //file read from hdfs
+    vector2D data; //return value
+    std::stringstream ss; //stringstream to hold data
+
+    //intermid var for file reading
     std::string value;
     std::string num;
 
-
+    //if fileSize not specify, set as default-500000
     if(fileSize!=0)
         bufferSize = fileSize;
     else
-        bufferSize = 300000;
+        bufferSize = 500000;
 
+    //hdfs read precedure
     fs = hdfsConnectNewInstance("default", 0);
     if(!fs) {
         std::cout<< "Oops! Failed to connect to hdfs!\n";
@@ -59,13 +62,16 @@ vector2D LSH::loadDataFromHDFS(char* filePath, int row, int col, int fileSize){
 
     hdfsRead(fs, readFile, (void*)buffer, bufferSize);
 
+    //pip file from hdfs to stringstream
     ss<< buffer;
 
+    //close hdfs related object, free memory
     free(buffer);
     hdfsCloseFile(fs, readFile);
     hdfsDisconnect(fs);
 
 
+    //read csv file syntax
     for (int i = 0; i < row; i++) {
         std::vector<double> temp(col, 0);
         data.push_back(temp);

@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/PeterXUYAOHAI/FastLSH.svg?branch=master)](https://travis-ci.org/PeterXUYAOHAI/FastLSH)
 
 This is a C++ implementation of E2LSH and C2LSH. More detail to come.
+The build won't pass now because  travis don't support hadoop environment. I will try to fix it.
 
 
 ##Parameters
