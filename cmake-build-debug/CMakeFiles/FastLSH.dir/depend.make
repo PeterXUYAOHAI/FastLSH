@@ -5,5 +5,7 @@ CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../include/LSH.h
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../src/LSH.cpp
 
 CMakeFiles/FastLSH.dir/tests/main.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/main.cpp.o: ../include/hdfs.h
 CMakeFiles/FastLSH.dir/tests/main.cpp.o: ../tests/main.cpp
+CMakeFiles/FastLSH.dir/tests/main.cpp.o: /usr/local/hadoop/include/hdfs.h
 

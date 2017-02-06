@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/local/hadoop/include -I/usr/lib/jvm/java-8-openjdk-amd64/include -I/usr/lib/jvm/java-8-openjdk-amd64/include/linux 
 

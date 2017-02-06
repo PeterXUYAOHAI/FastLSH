@@ -14,6 +14,16 @@ cstddef
 string
 -
 
+/home/peter/FYP/FastLSH/include/hdfs.h
+errno.h
+-
+fcntl.h
+-
+stdint.h
+-
+time.h
+-
+
 /home/peter/FYP/FastLSH/src/LSH.cpp
 ../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
@@ -31,4 +41,18 @@ vector
 -
 ../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
+../include/hdfs.h
+/home/peter/FYP/FastLSH/include/hdfs.h
+hdfs.h
+/home/peter/FYP/FastLSH/tests/hdfs.h
+
+/usr/local/hadoop/include/hdfs.h
+errno.h
+-
+fcntl.h
+-
+stdint.h
+-
+time.h
+-
 

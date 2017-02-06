@@ -11,6 +11,9 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/local/hadoop/include"
+  "/usr/lib/jvm/java-8-openjdk-amd64/include"
+  "/usr/lib/jvm/java-8-openjdk-amd64/include/linux"
   )
 
 # Targets to which this target links.
