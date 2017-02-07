@@ -6,7 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o"
   "CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o"
   "CMakeFiles/FastLSH.dir/src/compute.cpp.o"
-  "CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o"
+  "CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.o"
+  "CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )

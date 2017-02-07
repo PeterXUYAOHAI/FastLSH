@@ -408,32 +408,59 @@ tests/driver.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.s
 .PHONY : tests/driver.cpp.s
 
-tests/unitTests/mt-OpenMP_test.o: tests/unitTests/mt-OpenMP_test.cpp.o
+tests/unitTests/hdfsTest.o: tests/unitTests/hdfsTest.cpp.o
 
-.PHONY : tests/unitTests/mt-OpenMP_test.o
+.PHONY : tests/unitTests/hdfsTest.o
 
 # target to build an object file
-tests/unitTests/mt-OpenMP_test.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o
-.PHONY : tests/unitTests/mt-OpenMP_test.cpp.o
+tests/unitTests/hdfsTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o
+.PHONY : tests/unitTests/hdfsTest.cpp.o
 
-tests/unitTests/mt-OpenMP_test.i: tests/unitTests/mt-OpenMP_test.cpp.i
+tests/unitTests/hdfsTest.i: tests/unitTests/hdfsTest.cpp.i
 
-.PHONY : tests/unitTests/mt-OpenMP_test.i
+.PHONY : tests/unitTests/hdfsTest.i
 
 # target to preprocess a source file
-tests/unitTests/mt-OpenMP_test.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.i
-.PHONY : tests/unitTests/mt-OpenMP_test.cpp.i
+tests/unitTests/hdfsTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.i
+.PHONY : tests/unitTests/hdfsTest.cpp.i
 
-tests/unitTests/mt-OpenMP_test.s: tests/unitTests/mt-OpenMP_test.cpp.s
+tests/unitTests/hdfsTest.s: tests/unitTests/hdfsTest.cpp.s
 
-.PHONY : tests/unitTests/mt-OpenMP_test.s
+.PHONY : tests/unitTests/hdfsTest.s
 
 # target to generate assembly for a file
-tests/unitTests/mt-OpenMP_test.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.s
-.PHONY : tests/unitTests/mt-OpenMP_test.cpp.s
+tests/unitTests/hdfsTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.s
+.PHONY : tests/unitTests/hdfsTest.cpp.s
+
+tests/unitTests/mt-OpenMPTest.o: tests/unitTests/mt-OpenMPTest.cpp.o
+
+.PHONY : tests/unitTests/mt-OpenMPTest.o
+
+# target to build an object file
+tests/unitTests/mt-OpenMPTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.o
+.PHONY : tests/unitTests/mt-OpenMPTest.cpp.o
+
+tests/unitTests/mt-OpenMPTest.i: tests/unitTests/mt-OpenMPTest.cpp.i
+
+.PHONY : tests/unitTests/mt-OpenMPTest.i
+
+# target to preprocess a source file
+tests/unitTests/mt-OpenMPTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.i
+.PHONY : tests/unitTests/mt-OpenMPTest.cpp.i
+
+tests/unitTests/mt-OpenMPTest.s: tests/unitTests/mt-OpenMPTest.cpp.s
+
+.PHONY : tests/unitTests/mt-OpenMPTest.s
+
+# target to generate assembly for a file
+tests/unitTests/mt-OpenMPTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.s
+.PHONY : tests/unitTests/mt-OpenMPTest.cpp.s
 
 # Help Target
 help:
@@ -473,9 +500,12 @@ help:
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"
-	@echo "... tests/unitTests/mt-OpenMP_test.o"
-	@echo "... tests/unitTests/mt-OpenMP_test.i"
-	@echo "... tests/unitTests/mt-OpenMP_test.s"
+	@echo "... tests/unitTests/hdfsTest.o"
+	@echo "... tests/unitTests/hdfsTest.i"
+	@echo "... tests/unitTests/hdfsTest.s"
+	@echo "... tests/unitTests/mt-OpenMPTest.o"
+	@echo "... tests/unitTests/mt-OpenMPTest.i"
+	@echo "... tests/unitTests/mt-OpenMPTest.s"
 .PHONY : help
 
 

@@ -356,7 +356,15 @@ hdfs.h
 gtest/gtest.h
 -
 
-/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMP_test.cpp
+/home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp
+gtest/gtest.h
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+chrono
+-
+
+/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp
 gtest/gtest.h
 -
 ../../include/LSH.h

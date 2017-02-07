@@ -57,7 +57,7 @@ include_directories( ${HDFS_INCLUDE_DIRS} )
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/computeMt-openMP.cpp src/computeMt-stdthread.cpp src/computeMt-pthread.cpp src/compute.cpp tests/unitTests/mt-OpenMP_test.cpp)
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/computeMt-openMP.cpp src/computeMt-stdthread.cpp src/computeMt-pthread.cpp src/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/hdfsTest.cpp)
 
 add_executable(FastLSH ${SOURCE_FILES})
 target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest)
