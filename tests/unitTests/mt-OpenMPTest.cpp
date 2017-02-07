@@ -6,6 +6,7 @@
 #include "../../include/LSH.h"
 #include <chrono>
 
+//marco to clean the code
 #define now() std::chrono::high_resolution_clock::now()
 #define dcast std::chrono::duration_cast<std::chrono::microseconds>
 
@@ -13,12 +14,14 @@ class openMPTest:public ::testing::Test{
 
     protected:
         virtual void SetUp() {
+            //preload data
             mlsh = LSH(1000, 57, 200, 1, 1.2, 1000);
             mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
             mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
         }
     LSH mlsh;
 
+    // prepare timer
     std::chrono::high_resolution_clock::time_point t1;
     std::chrono::high_resolution_clock::time_point t2;
 };
@@ -54,6 +57,7 @@ TEST_F(openMPTest, hashValueTest){
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_openMP\n";
 
+    //compare if two hash result are same
     ASSERT_EQ(hashQ,hashQ_mt);
     ASSERT_EQ(hashN, hashN_mt);
 }
@@ -86,6 +90,8 @@ TEST_F(openMPTest, resultTest) {
 
     std::cout <<duration << " μs for singleThread\n";
 
+
+    //compare if the two collision counting are same
     ASSERT_EQ(singleThreadResult.size(), openMPResult.size());
 
     ASSERT_EQ(singleThreadResult[0].size(), openMPResult[0].size());

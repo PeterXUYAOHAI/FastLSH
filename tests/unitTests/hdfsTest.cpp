@@ -17,15 +17,19 @@ protected:
     }
 
     LSH mlsh;
+
+    //varibale to hold read data
     vector2D setNLinux;
     vector2D setQLinux;
     vector2D setNHdfs;
     vector2D setQHdfs;
 
+    //prepare timer
     std::chrono::high_resolution_clock::time_point t1;
     std::chrono::high_resolution_clock::time_point t2;
 };
 
+//see if can read without exception, also print the time used
 TEST_F(hdfsTest, readTest) {
 
     t1 = now();

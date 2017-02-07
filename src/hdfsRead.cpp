@@ -30,7 +30,7 @@ vector2D LSH::loadDataFromHDFS(char* filePath, int row, int col, int fileSize){
     else
         bufferSize = 500000;
 
-    //hdfs read precedure
+    //hdfs read procedure
     fs = hdfsConnectNewInstance("default", 0);
     if(!fs) {
         std::cout<< "Oops! Failed to connect to hdfs!\n";
