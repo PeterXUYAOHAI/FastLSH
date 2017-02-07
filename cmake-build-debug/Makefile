@@ -408,32 +408,32 @@ tests/driver.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.s
 .PHONY : tests/driver.cpp.s
 
-tests/mt-OpenMP_test.o: tests/mt-OpenMP_test.cpp.o
+tests/unitTests/mt-OpenMP_test.o: tests/unitTests/mt-OpenMP_test.cpp.o
 
-.PHONY : tests/mt-OpenMP_test.o
+.PHONY : tests/unitTests/mt-OpenMP_test.o
 
 # target to build an object file
-tests/mt-OpenMP_test.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o
-.PHONY : tests/mt-OpenMP_test.cpp.o
+tests/unitTests/mt-OpenMP_test.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o
+.PHONY : tests/unitTests/mt-OpenMP_test.cpp.o
 
-tests/mt-OpenMP_test.i: tests/mt-OpenMP_test.cpp.i
+tests/unitTests/mt-OpenMP_test.i: tests/unitTests/mt-OpenMP_test.cpp.i
 
-.PHONY : tests/mt-OpenMP_test.i
+.PHONY : tests/unitTests/mt-OpenMP_test.i
 
 # target to preprocess a source file
-tests/mt-OpenMP_test.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i
-.PHONY : tests/mt-OpenMP_test.cpp.i
+tests/unitTests/mt-OpenMP_test.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.i
+.PHONY : tests/unitTests/mt-OpenMP_test.cpp.i
 
-tests/mt-OpenMP_test.s: tests/mt-OpenMP_test.cpp.s
+tests/unitTests/mt-OpenMP_test.s: tests/unitTests/mt-OpenMP_test.cpp.s
 
-.PHONY : tests/mt-OpenMP_test.s
+.PHONY : tests/unitTests/mt-OpenMP_test.s
 
 # target to generate assembly for a file
-tests/mt-OpenMP_test.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s
-.PHONY : tests/mt-OpenMP_test.cpp.s
+tests/unitTests/mt-OpenMP_test.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.s
+.PHONY : tests/unitTests/mt-OpenMP_test.cpp.s
 
 # Help Target
 help:
@@ -473,9 +473,9 @@ help:
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"
-	@echo "... tests/mt-OpenMP_test.o"
-	@echo "... tests/mt-OpenMP_test.i"
-	@echo "... tests/mt-OpenMP_test.s"
+	@echo "... tests/unitTests/mt-OpenMP_test.o"
+	@echo "... tests/unitTests/mt-OpenMP_test.i"
+	@echo "... tests/unitTests/mt-OpenMP_test.s"
 .PHONY : help
 
 

@@ -382,7 +382,7 @@
 		<Unit filename="/home/peter/FYP/FastLSH/tests/driver.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMP_test.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/CMakeLists.txt">

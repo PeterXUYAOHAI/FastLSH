@@ -225,28 +225,28 @@ CMakeFiles/FastLSH.dir/src/compute.cpp.o.provides: CMakeFiles/FastLSH.dir/src/co
 CMakeFiles/FastLSH.dir/src/compute.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/compute.cpp.o
 
 
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o: ../tests/mt-OpenMP_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o -c /home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o: ../tests/unitTests/mt-OpenMP_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMP_test.cpp
 
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp > CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMP_test.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.i
 
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp -o CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMP_test.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.s
 
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o
 
 
 # Object files for target FastLSH
@@ -258,7 +258,7 @@ FastLSH_OBJECTS = \
 "CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/compute.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o"
+"CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o"
 
 # External object files for target FastLSH
 FastLSH_EXTERNAL_OBJECTS =
@@ -270,7 +270,7 @@ FastLSH: CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/compute.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/build.make
 FastLSH: /usr/local/hadoop/lib/native/libhdfs.so
 FastLSH: /usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so
@@ -292,7 +292,7 @@ CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/compute.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMP_test.cpp.o.requires
 
 .PHONY : CMakeFiles/FastLSH.dir/requires
 

@@ -5,7 +5,6 @@
 #include "../include/LSH.h"
 #include <random>
 
-
 vector2D LSH::computeHash_openmp(vector2D dataset, size_t pointNum){
     vector2D hashMatrix;
 
