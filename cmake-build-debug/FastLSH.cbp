@@ -93,10 +93,22 @@
 		<Unit filename="/home/peter/FYP/FastLSH/README.md">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/include/LSH.h">
+		<Unit filename="/home/peter/FYP/FastLSH/include/LSHEssential.h">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/LSH.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/LSHEssential.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/computeMt-openMP.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/computeMt-pthread.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/computeMt-stdthread.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">

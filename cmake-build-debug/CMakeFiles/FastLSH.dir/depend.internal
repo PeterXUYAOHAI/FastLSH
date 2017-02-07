@@ -8,6 +8,13 @@ CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/src/hdfsRead.cpp
  /usr/local/hadoop/include/hdfs.h
+CMakeFiles/FastLSH.dir/src/mtCompute-openMP.cpp.o
+ /home/peter/FYP/FastLSH/include/LSH.h
+ /home/peter/FYP/FastLSH/src/mtCompute-openMP.cpp
+CMakeFiles/FastLSH.dir/src/mtCompute-pthread.cpp.o
+ /home/peter/FYP/FastLSH/src/mtCompute-pthread.cpp
+CMakeFiles/FastLSH.dir/src/mtCompute-stdthread.cpp.o
+ /home/peter/FYP/FastLSH/src/mtCompute-stdthread.cpp
 CMakeFiles/FastLSH.dir/tests/main.cpp.o
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/hdfs.h

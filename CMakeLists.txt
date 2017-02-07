@@ -1,6 +1,16 @@
 cmake_minimum_required(VERSION 3.2)
 project(FastLSH)
 
+
+#import OpenMP
+find_package(OpenMP)
+if (OPENMP_FOUND)
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
+
+
+#import libhdfs
 set(HDFS_FOUND "NO")
 find_package(JNI)
 
@@ -28,19 +38,19 @@ if(JAVA_INCLUDE_PATH)
     endif()
 endif()
 
-
-message(${HDFS_LIBRARIES})
-
-message($ENV{CLASSPATH})
-
-message($ENV{test})
+#
+#message(${HDFS_LIBRARIES})
+#
+#message($ENV{CLASSPATH})
+#
+#message($ENV{test})
 
 include_directories( ${HDFS_INCLUDE_DIRS} )
 
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/main.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp)
+        README.md tests/main.cpp include/LSHEssential.h src/LSHEssential.cpp src/hdfsRead.cpp src/computeMt-openMP.cpp src/computeMt-stdthread.cpp src/computeMt-pthread.cpp src/compute.cpp)
 
 add_executable(FastLSH ${SOURCE_FILES})
 target_link_libraries (FastLSH ${HDFS_LIBRARIES})

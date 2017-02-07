@@ -202,6 +202,12 @@ JAVA_INCLUDE_PATH2:PATH=/usr/lib/jvm/java-8-openjdk-amd64/include/linux
 //Path to a library.
 JAVA_JVM_LIBRARY:FILEPATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/libjvm.so
 
+//C++ compiler flags for OpenMP parallization
+OpenMP_CXX_FLAGS:STRING=-fopenmp
+
+//C compiler flags for OpenMP parallization
+OpenMP_C_FLAGS:STRING=-fopenmp
+
 //Path to a program.
 ProcessorCount_cmd_getconf:FILEPATH=/usr/bin/getconf
 
@@ -348,6 +354,8 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding JNI
 FIND_PACKAGE_MESSAGE_DETAILS_JNI:INTERNAL=[/usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so][/usr/lib/jvm/default-java/jre/lib/amd64/server/libjvm.so][/usr/lib/jvm/java-8-openjdk-amd64/include][/usr/lib/jvm/java-8-openjdk-amd64/include/linux][/usr/lib/jvm/java-8-openjdk-amd64/include][v()]
+//Details about finding OpenMP
+FIND_PACKAGE_MESSAGE_DETAILS_OpenMP:INTERNAL=[-fopenmp][-fopenmp][v()]
 //ADVANCED property for variable: JAVA_AWT_INCLUDE_PATH
 JAVA_AWT_INCLUDE_PATH-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: JAVA_AWT_LIBRARY
@@ -358,6 +366,12 @@ JAVA_INCLUDE_PATH-ADVANCED:INTERNAL=1
 JAVA_INCLUDE_PATH2-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: JAVA_JVM_LIBRARY
 JAVA_JVM_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_CXX_FLAGS
+OpenMP_CXX_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: OpenMP_C_FLAGS
+OpenMP_C_FLAGS-ADVANCED:INTERNAL=1
+//Test OpenMP_FLAG_DETECTED
+OpenMP_FLAG_DETECTED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_getconf
 ProcessorCount_cmd_getconf-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: ProcessorCount_cmd_sysctl

@@ -3,7 +3,7 @@
 #include <sstream>
 #include <fstream>
 
-#include "../include/LSH.h"
+#include "../include/LSHEssential.h"
 #include "../include/hdfs.h"
 #include "hdfs.h"
 
@@ -12,17 +12,38 @@ int main (int argc, char **argv){
 
     LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
 
-    mlsh.setUseHdfs(true);
-    mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
-    mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
+    {
+        // test use multithread - openMP
+        mlsh.setUseMultiThread();
+        mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
+        mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
 
-    vector2D collisionMatrix;
-    collisionMatrix = mlsh.getCollisionMatrix();
+        vector2D collisionMatrix;
+        collisionMatrix = mlsh.getCollisionMatrix();
 
-    std::cout<<collisionMatrix.size();
-    std::cout<<collisionMatrix[0].size();
-    std::cout<<collisionMatrix[0][200];
 
+
+    }
+
+
+
+
+
+
+
+    {
+        // test use hdfs
+//        mlsh.setUseHdfs(true);
+//        mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
+//        mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
+//
+//        vector2D collisionMatrix;
+//        collisionMatrix = mlsh.getCollisionMatrix();
+//
+//        std::cout << collisionMatrix.size();
+//        std::cout << collisionMatrix[0].size();
+//        std::cout << collisionMatrix[0][200];
+    }
 
 //    {
         //hdfs sample flow

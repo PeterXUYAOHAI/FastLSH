@@ -27,7 +27,11 @@ class LSH{
 
     bool setUseHdfs(bool useHdfs);
 
+    bool setUseMultiThread(bool useMultiThread);
+
     vector2D getCollisionMatrix();
+
+    void reportStatus();
 
 private:
 
@@ -41,6 +45,7 @@ private:
     bool useHdfs; //whether use hdfs flag
     int NfileSize; //N file binary size, for hdfs use
     int QfileSize; //Q file binary size, for hdfs use
+    bool useMultiThread;
 
     vector3D randomLine; //collection of randomline for points to project on
     vector1D randomVector; //random values to assist k group of LSH
@@ -62,7 +67,15 @@ private:
 
     vector2D loadDataFromLinuxSystem(char *filePath, size_t row, size_t col);
 
+    int clear();
 
+    int reset();
+
+    vector2D computeHash(vector2D dataset, size_t pNum);
+
+    vector2D computeHash_openmp(vector2D dataset, size_t pointNum);
+
+    vector2D computeCollision_openmp(vector2D hMatrixN, vector2D hMatrixQ);
 };
 
 

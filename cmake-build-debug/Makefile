@@ -123,32 +123,140 @@ FastLSH/fast:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/build
 .PHONY : FastLSH/fast
 
-src/LSH.o: src/LSH.cpp.o
+src/LSHEssential.o: src/LSHEssential.cpp.o
 
-.PHONY : src/LSH.o
+.PHONY : src/LSHEssential.o
 
 # target to build an object file
-src/LSH.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.o
-.PHONY : src/LSH.cpp.o
+src/LSHEssential.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o
+.PHONY : src/LSHEssential.cpp.o
 
-src/LSH.i: src/LSH.cpp.i
+src/LSHEssential.i: src/LSHEssential.cpp.i
 
-.PHONY : src/LSH.i
+.PHONY : src/LSHEssential.i
 
 # target to preprocess a source file
-src/LSH.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.i
-.PHONY : src/LSH.cpp.i
+src/LSHEssential.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.i
+.PHONY : src/LSHEssential.cpp.i
 
-src/LSH.s: src/LSH.cpp.s
+src/LSHEssential.s: src/LSHEssential.cpp.s
 
-.PHONY : src/LSH.s
+.PHONY : src/LSHEssential.s
 
 # target to generate assembly for a file
-src/LSH.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
-.PHONY : src/LSH.cpp.s
+src/LSHEssential.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.s
+.PHONY : src/LSHEssential.cpp.s
+
+src/compute.o: src/compute.cpp.o
+
+.PHONY : src/compute.o
+
+# target to build an object file
+src/compute.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute.cpp.o
+.PHONY : src/compute.cpp.o
+
+src/compute.i: src/compute.cpp.i
+
+.PHONY : src/compute.i
+
+# target to preprocess a source file
+src/compute.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute.cpp.i
+.PHONY : src/compute.cpp.i
+
+src/compute.s: src/compute.cpp.s
+
+.PHONY : src/compute.s
+
+# target to generate assembly for a file
+src/compute.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute.cpp.s
+.PHONY : src/compute.cpp.s
+
+src/computeMt-openMP.o: src/computeMt-openMP.cpp.o
+
+.PHONY : src/computeMt-openMP.o
+
+# target to build an object file
+src/computeMt-openMP.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o
+.PHONY : src/computeMt-openMP.cpp.o
+
+src/computeMt-openMP.i: src/computeMt-openMP.cpp.i
+
+.PHONY : src/computeMt-openMP.i
+
+# target to preprocess a source file
+src/computeMt-openMP.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.i
+.PHONY : src/computeMt-openMP.cpp.i
+
+src/computeMt-openMP.s: src/computeMt-openMP.cpp.s
+
+.PHONY : src/computeMt-openMP.s
+
+# target to generate assembly for a file
+src/computeMt-openMP.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.s
+.PHONY : src/computeMt-openMP.cpp.s
+
+src/computeMt-pthread.o: src/computeMt-pthread.cpp.o
+
+.PHONY : src/computeMt-pthread.o
+
+# target to build an object file
+src/computeMt-pthread.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o
+.PHONY : src/computeMt-pthread.cpp.o
+
+src/computeMt-pthread.i: src/computeMt-pthread.cpp.i
+
+.PHONY : src/computeMt-pthread.i
+
+# target to preprocess a source file
+src/computeMt-pthread.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.i
+.PHONY : src/computeMt-pthread.cpp.i
+
+src/computeMt-pthread.s: src/computeMt-pthread.cpp.s
+
+.PHONY : src/computeMt-pthread.s
+
+# target to generate assembly for a file
+src/computeMt-pthread.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.s
+.PHONY : src/computeMt-pthread.cpp.s
+
+src/computeMt-stdthread.o: src/computeMt-stdthread.cpp.o
+
+.PHONY : src/computeMt-stdthread.o
+
+# target to build an object file
+src/computeMt-stdthread.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o
+.PHONY : src/computeMt-stdthread.cpp.o
+
+src/computeMt-stdthread.i: src/computeMt-stdthread.cpp.i
+
+.PHONY : src/computeMt-stdthread.i
+
+# target to preprocess a source file
+src/computeMt-stdthread.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.i
+.PHONY : src/computeMt-stdthread.cpp.i
+
+src/computeMt-stdthread.s: src/computeMt-stdthread.cpp.s
+
+.PHONY : src/computeMt-stdthread.s
+
+# target to generate assembly for a file
+src/computeMt-stdthread.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.s
+.PHONY : src/computeMt-stdthread.cpp.s
 
 src/hdfsRead.o: src/hdfsRead.cpp.o
 
@@ -213,9 +321,21 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... FastLSH"
-	@echo "... src/LSH.o"
-	@echo "... src/LSH.i"
-	@echo "... src/LSH.s"
+	@echo "... src/LSHEssential.o"
+	@echo "... src/LSHEssential.i"
+	@echo "... src/LSHEssential.s"
+	@echo "... src/compute.o"
+	@echo "... src/compute.i"
+	@echo "... src/compute.s"
+	@echo "... src/computeMt-openMP.o"
+	@echo "... src/computeMt-openMP.i"
+	@echo "... src/computeMt-openMP.s"
+	@echo "... src/computeMt-pthread.o"
+	@echo "... src/computeMt-pthread.i"
+	@echo "... src/computeMt-pthread.s"
+	@echo "... src/computeMt-stdthread.o"
+	@echo "... src/computeMt-stdthread.i"
+	@echo "... src/computeMt-stdthread.s"
 	@echo "... src/hdfsRead.o"
 	@echo "... src/hdfsRead.i"
 	@echo "... src/hdfsRead.s"

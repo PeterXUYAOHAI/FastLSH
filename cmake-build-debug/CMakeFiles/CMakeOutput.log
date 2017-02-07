@@ -550,3 +550,51 @@ make[1]: Leaving directory '/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles
     Feature record: CXX_FEATURE:0cxx_variable_templates
     Feature record: CXX_FEATURE:0cxx_variadic_macros
     Feature record: CXX_FEATURE:0cxx_variadic_templates
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_46bc3/fast"
+/usr/bin/make -f CMakeFiles/cmTC_46bc3.dir/build.make CMakeFiles/cmTC_46bc3.dir/build
+make[1]: Entering directory '/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_46bc3.dir/src.c.o
+/usr/bin/cc    -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_46bc3.dir/src.c.o   -c /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_46bc3
+/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46bc3.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_46bc3.dir/src.c.o  -o cmTC_46bc3 -rdynamic 
+make[1]: Leaving directory '/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeeded with the following output:
+Change Dir: /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_d8c4d/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d8c4d.dir/build.make CMakeFiles/cmTC_d8c4d.dir/build
+make[1]: Entering directory '/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d8c4d.dir/src.cxx.o
+/usr/bin/c++     -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTC_d8c4d.dir/src.cxx.o -c /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_d8c4d
+/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d8c4d.dir/link.txt --verbose=1
+/usr/bin/c++    -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTC_d8c4d.dir/src.cxx.o  -o cmTC_d8c4d -rdynamic 
+make[1]: Leaving directory '/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+

@@ -1,7 +1,7 @@
 //
 // Created by peter on 17-2-4.
 //
-#include "../include/LSH.h"
+#include "../include/LSHEssential.h"
 #include <fstream>
 #include <iostream>
 #include <random>
@@ -45,6 +45,8 @@ bool LSH::setUseHdfs(bool useHdfs){
     this->useHdfs = useHdfs;
     return this->useHdfs;
 }
+
+
 
 vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
     std::ifstream file;// declare file stream:
@@ -108,57 +110,11 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 }
 
 
-vector2D LSH::computeHash(vector2D dataset){
-    vector2D hashMatrix;
-//    vector3D randomLine = generateRandomLine(L,K,D);
-//    vector1D randomVector = generateUniformRandomVector(K,W);
-
-    //loop through # of data point
-    for (int n = 0; n < N; ++n) {
-        //loop through # of hash function group
-        vector1D vL;
-        for (int l = 0; l < L; ++l) {
-            double hashFinalValue = 0;
-            //loop through the inner of a hash function group
-            for (int k = 0; k < K; ++k) {
-                double dTemp = 0;
-                //loop through all the dimensions
-                for (int d = 0; d < D; ++d) {
-                    //vector(math) multiply to make projection
-                    dTemp += dataset[n][d]*randomLine[l][k][d];
-                }
-                //assign hashvalue into bucket
-                double hashvalue = floor(dTemp/W);
-                //merge hash group results **see documentation
-                hashFinalValue = hashvalue*randomVector[k] + hashFinalValue;
-            }
-            vL.push_back(hashFinalValue);
-        }
-        hashMatrix.push_back(vL);
-    }
-    return hashMatrix;
-}
-
-vector2D LSH::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
-    vector2D collisionMatrix;
-    for (int q = 0; q <Q ; ++q) {
-        vector1D singleLine(N, 0);
-       for (int n = 0; n <N ; ++n){
-            for (int hash_id = 0; hash_id < L; ++hash_id) {
-                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
-                    singleLine[n]++;
-            }
-        }
-        collisionMatrix.push_back(singleLine);
-    }
-    return collisionMatrix;
-}
-
 vector2D LSH::getCollisionMatrix() {
 
     //get Hash Matrix
-    hashMatrixN = computeHash(setN);
-    hashMatrixQ = computeHash(setQ);
+    hashMatrixN = computeHash(setN, N);
+    hashMatrixQ = computeHash(setQ, Q);
 
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
     vector2D temp1;
