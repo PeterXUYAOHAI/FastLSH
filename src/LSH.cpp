@@ -125,10 +125,10 @@ vector2D LSH::getCollisionMatrix() {
         hashMatrixQ = computeHash_openmp(setQ, Q);
     }
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
-    vector2D temp1;
-    vector2D temp2;
-    setQ.swap(temp1);
-    setN.swap(temp2);
+//    vector2D temp1;
+//    vector2D temp2;
+//    setQ.swap(temp1);
+//    setN.swap(temp2);
 
     //compute collision matrix
     vector2D collisionMatrix;
@@ -138,10 +138,10 @@ vector2D LSH::getCollisionMatrix() {
         collisionMatrix = computeCollision_openmp(hashMatrixN, hashMatrixQ);
 
 //    //release the memory of the hashMatrixs, detail see <Effective STL>
-    vector2D temp3;
-    vector2D temp4;
-    hashMatrixN.swap(temp3);
-    hashMatrixQ.swap(temp4);
+//    vector2D temp3;
+//    vector2D temp4;
+//    hashMatrixN.swap(temp3);
+//    hashMatrixQ.swap(temp4);
 
     return collisionMatrix;
 }

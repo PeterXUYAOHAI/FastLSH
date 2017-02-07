@@ -15,19 +15,19 @@ int main (int argc, char **argv){
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 
-    LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
+//    LSH mlsh(1000, 57, 200, 1, 1.2, 1000);
 
     {
         // test use multithread - openMP
-        mlsh.setUseMultiThread(true);
-        mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
-        mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
-
-        vector2D collisionMatrix;
-        collisionMatrix = mlsh.getCollisionMatrix();
-        std::cout << collisionMatrix.size();
-        std::cout << collisionMatrix[0].size();
-        std::cout << collisionMatrix[0][200];
+//        mlsh.setUseMultiThread(true);
+//        mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
+//        mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
+//
+//        vector2D collisionMatrix;
+//        collisionMatrix = mlsh.getCollisionMatrix();
+//        std::cout << collisionMatrix.size();
+//        std::cout << collisionMatrix[0].size();
+//        std::cout << collisionMatrix[0][200];
 
     }
 

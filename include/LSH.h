@@ -5,6 +5,7 @@
 #include <vector>
 #include <cstddef>
 #include <string>
+#include <gtest/gtest_prod.h>
 
 #ifndef FASTLSH_LSH_H
 #define FASTLSH_LSH_H
@@ -59,8 +60,6 @@ private:
     vector2D hashMatrixQ; // hashMatrix of Q where hash value is stored
 
 
-    vector2D computeHash(vector2D dataset);
-
     vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
 
     vector3D generateRandomLine();
@@ -76,6 +75,8 @@ private:
     vector2D computeHash_openmp(vector2D dataset, size_t pointNum);
 
     vector2D computeCollision_openmp(vector2D hMatrixN, vector2D hMatrixQ);
+
+    FRIEND_TEST(openMPTest, hashValueTest);
 };
 
 

@@ -51,7 +51,7 @@ vector2D LSH::computeCollision_openmp(vector2D hMatrixN, vector2D hMatrixQ){
         for (int n = 0; n <N ; ++n){
             for (int hash_id = 0; hash_id < L; ++hash_id) {
                 if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
-                    collisionMatrix[q][n];
+                    collisionMatrix[q][n]++;
             }
         }
     }
