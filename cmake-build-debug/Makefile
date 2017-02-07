@@ -78,6 +78,50 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/progress.marks
@@ -123,32 +167,84 @@ FastLSH/fast:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/build
 .PHONY : FastLSH/fast
 
-src/LSHEssential.o: src/LSHEssential.cpp.o
+#=============================================================================
+# Target rules for targets named gmock_main
 
-.PHONY : src/LSHEssential.o
+# Build rule for target.
+gmock_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock_main
+.PHONY : gmock_main
+
+# fast build rule for target.
+gmock_main/fast:
+	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
+.PHONY : gmock_main/fast
+
+#=============================================================================
+# Target rules for targets named gmock
+
+# Build rule for target.
+gmock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gmock
+.PHONY : gmock
+
+# fast build rule for target.
+gmock/fast:
+	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
+.PHONY : gmock/fast
+
+#=============================================================================
+# Target rules for targets named gtest_main
+
+# Build rule for target.
+gtest_main: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest_main
+.PHONY : gtest_main
+
+# fast build rule for target.
+gtest_main/fast:
+	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
+.PHONY : gtest_main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+src/LSH.o: src/LSH.cpp.o
+
+.PHONY : src/LSH.o
 
 # target to build an object file
-src/LSHEssential.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o
-.PHONY : src/LSHEssential.cpp.o
+src/LSH.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.o
+.PHONY : src/LSH.cpp.o
 
-src/LSHEssential.i: src/LSHEssential.cpp.i
+src/LSH.i: src/LSH.cpp.i
 
-.PHONY : src/LSHEssential.i
+.PHONY : src/LSH.i
 
 # target to preprocess a source file
-src/LSHEssential.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.i
-.PHONY : src/LSHEssential.cpp.i
+src/LSH.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.i
+.PHONY : src/LSH.cpp.i
 
-src/LSHEssential.s: src/LSHEssential.cpp.s
+src/LSH.s: src/LSH.cpp.s
 
-.PHONY : src/LSHEssential.s
+.PHONY : src/LSH.s
 
 # target to generate assembly for a file
-src/LSHEssential.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.s
-.PHONY : src/LSHEssential.cpp.s
+src/LSH.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
+.PHONY : src/LSH.cpp.s
 
 src/compute.o: src/compute.cpp.o
 
@@ -285,32 +381,59 @@ src/hdfsRead.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.s
 .PHONY : src/hdfsRead.cpp.s
 
-tests/main.o: tests/main.cpp.o
+tests/driver.o: tests/driver.cpp.o
 
-.PHONY : tests/main.o
+.PHONY : tests/driver.o
 
 # target to build an object file
-tests/main.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/main.cpp.o
-.PHONY : tests/main.cpp.o
+tests/driver.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.o
+.PHONY : tests/driver.cpp.o
 
-tests/main.i: tests/main.cpp.i
+tests/driver.i: tests/driver.cpp.i
 
-.PHONY : tests/main.i
+.PHONY : tests/driver.i
 
 # target to preprocess a source file
-tests/main.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/main.cpp.i
-.PHONY : tests/main.cpp.i
+tests/driver.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.i
+.PHONY : tests/driver.cpp.i
 
-tests/main.s: tests/main.cpp.s
+tests/driver.s: tests/driver.cpp.s
 
-.PHONY : tests/main.s
+.PHONY : tests/driver.s
 
 # target to generate assembly for a file
-tests/main.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/main.cpp.s
-.PHONY : tests/main.cpp.s
+tests/driver.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.s
+.PHONY : tests/driver.cpp.s
+
+tests/mt-OpenMP_test.o: tests/mt-OpenMP_test.cpp.o
+
+.PHONY : tests/mt-OpenMP_test.o
+
+# target to build an object file
+tests/mt-OpenMP_test.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o
+.PHONY : tests/mt-OpenMP_test.cpp.o
+
+tests/mt-OpenMP_test.i: tests/mt-OpenMP_test.cpp.i
+
+.PHONY : tests/mt-OpenMP_test.i
+
+# target to preprocess a source file
+tests/mt-OpenMP_test.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i
+.PHONY : tests/mt-OpenMP_test.cpp.i
+
+tests/mt-OpenMP_test.s: tests/mt-OpenMP_test.cpp.s
+
+.PHONY : tests/mt-OpenMP_test.s
+
+# target to generate assembly for a file
+tests/mt-OpenMP_test.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s
+.PHONY : tests/mt-OpenMP_test.cpp.s
 
 # Help Target
 help:
@@ -320,10 +443,18 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... FastLSH"
-	@echo "... src/LSHEssential.o"
-	@echo "... src/LSHEssential.i"
-	@echo "... src/LSHEssential.s"
+	@echo "... gmock_main"
+	@echo "... gmock"
+	@echo "... gtest_main"
+	@echo "... gtest"
+	@echo "... src/LSH.o"
+	@echo "... src/LSH.i"
+	@echo "... src/LSH.s"
 	@echo "... src/compute.o"
 	@echo "... src/compute.i"
 	@echo "... src/compute.s"
@@ -339,9 +470,12 @@ help:
 	@echo "... src/hdfsRead.o"
 	@echo "... src/hdfsRead.i"
 	@echo "... src/hdfsRead.s"
-	@echo "... tests/main.o"
-	@echo "... tests/main.i"
-	@echo "... tests/main.s"
+	@echo "... tests/driver.o"
+	@echo "... tests/driver.i"
+	@echo "... tests/driver.s"
+	@echo "... tests/mt-OpenMP_test.o"
+	@echo "... tests/mt-OpenMP_test.i"
+	@echo "... tests/mt-OpenMP_test.s"
 .PHONY : help
 
 

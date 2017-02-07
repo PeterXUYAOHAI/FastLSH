@@ -57,52 +57,52 @@ include CMakeFiles/FastLSH.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/FastLSH.dir/flags.make
 
-CMakeFiles/FastLSH.dir/tests/main.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/main.cpp.o: ../tests/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/FastLSH.dir/tests/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/main.cpp.o -c /home/peter/FYP/FastLSH/tests/main.cpp
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../tests/driver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/FastLSH.dir/tests/driver.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/driver.cpp.o -c /home/peter/FYP/FastLSH/tests/driver.cpp
 
-CMakeFiles/FastLSH.dir/tests/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/main.cpp > CMakeFiles/FastLSH.dir/tests/main.cpp.i
+CMakeFiles/FastLSH.dir/tests/driver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/driver.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/driver.cpp > CMakeFiles/FastLSH.dir/tests/driver.cpp.i
 
-CMakeFiles/FastLSH.dir/tests/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/main.cpp -o CMakeFiles/FastLSH.dir/tests/main.cpp.s
+CMakeFiles/FastLSH.dir/tests/driver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/driver.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/driver.cpp -o CMakeFiles/FastLSH.dir/tests/driver.cpp.s
 
-CMakeFiles/FastLSH.dir/tests/main.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/tests/main.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/driver.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/tests/main.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/main.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/main.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/driver.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/driver.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/tests/main.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/main.cpp.o
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/driver.cpp.o
 
 
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o: ../src/LSHEssential.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o -c /home/peter/FYP/FastLSH/src/LSHEssential.cpp
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../src/LSH.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FastLSH.dir/src/LSH.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/LSH.cpp.o -c /home/peter/FYP/FastLSH/src/LSH.cpp
 
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/LSHEssential.cpp > CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.i
+CMakeFiles/FastLSH.dir/src/LSH.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/LSH.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/LSH.cpp > CMakeFiles/FastLSH.dir/src/LSH.cpp.i
 
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/LSHEssential.cpp -o CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.s
+CMakeFiles/FastLSH.dir/src/LSH.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/LSH.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/LSH.cpp -o CMakeFiles/FastLSH.dir/src/LSH.cpp.s
 
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.requires:
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/src/LSH.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.provides: CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.provides
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o.provides: CMakeFiles/FastLSH.dir/src/LSH.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/src/LSH.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/LSH.cpp.o
 
 
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: CMakeFiles/FastLSH.dir/flags.make
@@ -225,32 +225,58 @@ CMakeFiles/FastLSH.dir/src/compute.cpp.o.provides: CMakeFiles/FastLSH.dir/src/co
 CMakeFiles/FastLSH.dir/src/compute.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/compute.cpp.o
 
 
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o: ../tests/mt-OpenMP_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o -c /home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp
+
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp > CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.i
+
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/mt-OpenMP_test.cpp -o CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.s
+
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires:
+
+.PHONY : CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires
+
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides
+
+CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o
+
+
 # Object files for target FastLSH
 FastLSH_OBJECTS = \
-"CMakeFiles/FastLSH.dir/tests/main.cpp.o" \
-"CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/driver.cpp.o" \
+"CMakeFiles/FastLSH.dir/src/LSH.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o" \
-"CMakeFiles/FastLSH.dir/src/compute.cpp.o"
+"CMakeFiles/FastLSH.dir/src/compute.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o"
 
 # External object files for target FastLSH
 FastLSH_EXTERNAL_OBJECTS =
 
-FastLSH: CMakeFiles/FastLSH.dir/tests/main.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/driver.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/src/LSH.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/compute.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/build.make
 FastLSH: /usr/local/hadoop/lib/native/libhdfs.so
 FastLSH: /usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so
 FastLSH: /usr/lib/jvm/default-java/jre/lib/amd64/server/libjvm.so
 FastLSH: CMakeFiles/FastLSH.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable FastLSH"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable FastLSH"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FastLSH.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -258,13 +284,14 @@ CMakeFiles/FastLSH.dir/build: FastLSH
 
 .PHONY : CMakeFiles/FastLSH.dir/build
 
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/main.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/driver.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/LSH.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/compute.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o.requires
 
 .PHONY : CMakeFiles/FastLSH.dir/requires
 

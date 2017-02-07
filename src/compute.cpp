@@ -2,11 +2,8 @@
 // Created by peter on 17-2-7.
 //
 
-#include "../include/LSHEssential.h"
-#include <fstream>
-#include <iostream>
+#include "../include/LSH.h"
 #include <random>
-#include <sstream>
 
 vector2D LSH::computeHash(vector2D dataset, size_t pNum){
     vector2D hashMatrix;

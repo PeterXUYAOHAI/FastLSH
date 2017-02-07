@@ -1,11 +1,12 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/FastLSH.dir/tests/main.cpp.o"
-  "CMakeFiles/FastLSH.dir/src/LSHEssential.cpp.o"
+  "CMakeFiles/FastLSH.dir/tests/driver.cpp.o"
+  "CMakeFiles/FastLSH.dir/src/LSH.cpp.o"
   "CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o"
   "CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o"
   "CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o"
   "CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o"
   "CMakeFiles/FastLSH.dir/src/compute.cpp.o"
+  "CMakeFiles/FastLSH.dir/tests/mt-OpenMP_test.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )
