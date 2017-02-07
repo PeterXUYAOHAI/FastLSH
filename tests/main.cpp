@@ -14,14 +14,15 @@ int main (int argc, char **argv){
 
     {
         // test use multithread - openMP
-        mlsh.setUseMultiThread();
+        mlsh.setUseMultiThread(true);
         mlsh.loadSetN("/dataset1000NoIndex.csv", 0);
         mlsh.loadSetQ("/dataset1000NoIndex.csv", 0);
 
         vector2D collisionMatrix;
         collisionMatrix = mlsh.getCollisionMatrix();
-
-
+        std::cout << collisionMatrix.size();
+        std::cout << collisionMatrix[0].size();
+        std::cout << collisionMatrix[0][200];
 
     }
 

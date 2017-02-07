@@ -33,6 +33,10 @@ class LSH{
 
     void reportStatus();
 
+    int clear();
+
+    int reset();
+
 private:
 
     size_t N; //# of vectors in the dataset
@@ -66,10 +70,6 @@ private:
     vector2D loadDataFromHDFS(char *filePath, int row, int col, int fileSize);
 
     vector2D loadDataFromLinuxSystem(char *filePath, size_t row, size_t col);
-
-    int clear();
-
-    int reset();
 
     vector2D computeHash(vector2D dataset, size_t pNum);
 

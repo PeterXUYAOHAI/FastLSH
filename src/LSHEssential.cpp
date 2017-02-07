@@ -46,7 +46,10 @@ bool LSH::setUseHdfs(bool useHdfs){
     return this->useHdfs;
 }
 
-
+bool LSH::setUseMultiThread(bool useMultiThread) {
+    this->useMultiThread = useMultiThread;
+    return this->useMultiThread;
+}
 
 vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
     std::ifstream file;// declare file stream:
@@ -113,9 +116,14 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 vector2D LSH::getCollisionMatrix() {
 
     //get Hash Matrix
-    hashMatrixN = computeHash(setN, N);
-    hashMatrixQ = computeHash(setQ, Q);
-
+    if (!useMultiThread) {
+        hashMatrixN = computeHash(setN, N);
+        hashMatrixQ = computeHash(setQ, Q);
+    }
+    else{
+        hashMatrixN = computeHash_openmp(setN, N);
+        hashMatrixQ = computeHash_openmp(setQ, Q);
+    }
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
     vector2D temp1;
     vector2D temp2;
@@ -124,7 +132,10 @@ vector2D LSH::getCollisionMatrix() {
 
     //compute collision matrix
     vector2D collisionMatrix;
-    collisionMatrix = computeCollision(hashMatrixN, hashMatrixQ);
+    if(!useMultiThread)
+        collisionMatrix = computeCollision(hashMatrixN, hashMatrixQ);
+    else
+        collisionMatrix = computeCollision_openmp(hashMatrixN, hashMatrixQ);
 
 //    //release the memory of the hashMatrixs, detail see <Effective STL>
     vector2D temp3;

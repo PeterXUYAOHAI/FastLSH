@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/peter/FYP/FastLSH/include/LSH.h
+/home/peter/FYP/FastLSH/include/LSHEssential.h
 vector
 -
 cstddef
@@ -24,9 +24,9 @@ stdint.h
 time.h
 -
 
-/home/peter/FYP/FastLSH/src/LSH.cpp
-../include/LSH.h
-/home/peter/FYP/FastLSH/include/LSH.h
+/home/peter/FYP/FastLSH/src/LSHEssential.cpp
+../include/LSHEssential.h
+/home/peter/FYP/FastLSH/include/LSHEssential.h
 fstream
 -
 iostream
@@ -34,9 +34,37 @@ iostream
 random
 -
 
+/home/peter/FYP/FastLSH/src/compute.cpp
+../include/LSHEssential.h
+/home/peter/FYP/FastLSH/include/LSHEssential.h
+fstream
+-
+iostream
+-
+random
+-
+sstream
+-
+
+/home/peter/FYP/FastLSH/src/computeMt-openMP.cpp
+../include/LSHEssential.h
+/home/peter/FYP/FastLSH/include/LSHEssential.h
+fstream
+-
+iostream
+-
+random
+-
+sstream
+-
+
+/home/peter/FYP/FastLSH/src/computeMt-pthread.cpp
+
+/home/peter/FYP/FastLSH/src/computeMt-stdthread.cpp
+
 /home/peter/FYP/FastLSH/src/hdfsRead.cpp
-../include/LSH.h
-/home/peter/FYP/FastLSH/include/LSH.h
+../include/LSHEssential.h
+/home/peter/FYP/FastLSH/include/LSHEssential.h
 hdfs.h
 /home/peter/FYP/FastLSH/src/hdfs.h
 fstream
@@ -48,22 +76,6 @@ random
 sstream
 -
 
-/home/peter/FYP/FastLSH/src/mtCompute-openMP.cpp
-../include/LSH.h
-/home/peter/FYP/FastLSH/include/LSH.h
-fstream
--
-iostream
--
-random
--
-sstream
--
-
-/home/peter/FYP/FastLSH/src/mtCompute-pthread.cpp
-
-/home/peter/FYP/FastLSH/src/mtCompute-stdthread.cpp
-
 /home/peter/FYP/FastLSH/tests/main.cpp
 iostream
 -
@@ -73,8 +85,8 @@ sstream
 -
 fstream
 -
-../include/LSH.h
-/home/peter/FYP/FastLSH/include/LSH.h
+../include/LSHEssential.h
+/home/peter/FYP/FastLSH/include/LSHEssential.h
 ../include/hdfs.h
 /home/peter/FYP/FastLSH/include/hdfs.h
 hdfs.h
