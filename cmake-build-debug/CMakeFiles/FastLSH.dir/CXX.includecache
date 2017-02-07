@@ -308,21 +308,21 @@ iostream
 random
 -
 
-/home/peter/FYP/FastLSH/src/compute.cpp
-../include/LSH.h
+/home/peter/FYP/FastLSH/src/compute/compute.cpp
+../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
 random
 -
 
-/home/peter/FYP/FastLSH/src/computeMt-openMP.cpp
-../include/LSH.h
+/home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp
+../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
 random
 -
 
-/home/peter/FYP/FastLSH/src/computeMt-pthread.cpp
+/home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp
 
-/home/peter/FYP/FastLSH/src/computeMt-stdthread.cpp
+/home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp
 
 /home/peter/FYP/FastLSH/src/hdfsRead.cpp
 ../include/LSH.h
@@ -363,6 +363,12 @@ gtest/gtest.h
 /home/peter/FYP/FastLSH/include/LSH.h
 chrono
 -
+
+/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp
+gtest/gtest.h
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
 
 /home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp
 gtest/gtest.h

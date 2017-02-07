@@ -5,18 +5,18 @@ CMakeFiles/FastLSH.dir/src/LSH.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/src/LSH.cpp
-CMakeFiles/FastLSH.dir/src/compute.cpp.o
+CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
- /home/peter/FYP/FastLSH/src/compute.cpp
-CMakeFiles/FastLSH.dir/src/computeMt-openMP.cpp.o
+ /home/peter/FYP/FastLSH/src/compute/compute.cpp
+CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
- /home/peter/FYP/FastLSH/src/computeMt-openMP.cpp
-CMakeFiles/FastLSH.dir/src/computeMt-pthread.cpp.o
- /home/peter/FYP/FastLSH/src/computeMt-pthread.cpp
-CMakeFiles/FastLSH.dir/src/computeMt-stdthread.cpp.o
- /home/peter/FYP/FastLSH/src/computeMt-stdthread.cpp
+ /home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp
+CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o
+ /home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp
+CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o
+ /home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
@@ -74,6 +74,31 @@ CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o
+ ../lib/googletest/googletest/include/gtest/gtest-death-test.h
+ ../lib/googletest/googletest/include/gtest/gtest-message.h
+ ../lib/googletest/googletest/include/gtest/gtest-param-test.h
+ ../lib/googletest/googletest/include/gtest/gtest-printers.h
+ ../lib/googletest/googletest/include/gtest/gtest-test-part.h
+ ../lib/googletest/googletest/include/gtest/gtest-typed-test.h
+ ../lib/googletest/googletest/include/gtest/gtest.h
+ ../lib/googletest/googletest/include/gtest/gtest_pred_impl.h
+ ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ ../lib/googletest/googletest/include/gtest/internal/custom/gtest-port.h
+ ../lib/googletest/googletest/include/gtest/internal/custom/gtest-printers.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-filepath.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-internal.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-linked_ptr.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-param-util-generated.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-param-util.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-port-arch.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-port.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
+ ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/LSH.h
+ /home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp
 CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest-death-test.h
  ../lib/googletest/googletest/include/gtest/gtest-message.h

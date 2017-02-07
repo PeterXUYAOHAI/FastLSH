@@ -77,7 +77,12 @@ private:
     vector2D computeCollision_openmp(vector2D hMatrixN, vector2D hMatrixQ);
 
     FRIEND_TEST(openMPTest, hashValueTest);
+
     FRIEND_TEST(hdfsTest, readTest);
+
+    FRIEND_TEST(metaTest, linuxReadTest);
+
+    FRIEND_TEST(metaTest, randGeneTest);
 };
 
 

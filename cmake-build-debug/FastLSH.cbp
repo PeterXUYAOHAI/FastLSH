@@ -364,16 +364,16 @@
 		<Unit filename="/home/peter/FYP/FastLSH/src/LSH.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/compute.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/compute.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/computeMt-openMP.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/computeMt-pthread.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/computeMt-stdthread.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
@@ -383,6 +383,9 @@
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp">
