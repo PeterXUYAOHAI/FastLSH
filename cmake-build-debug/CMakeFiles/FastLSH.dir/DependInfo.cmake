@@ -14,6 +14,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o"
   "/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o"
   "/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.o"
+  "/home/peter/FYP/FastLSH/tests/unitTests/mt-stdthreadTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

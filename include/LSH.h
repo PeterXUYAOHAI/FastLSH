@@ -83,6 +83,10 @@ private:
     FRIEND_TEST(metaTest, linuxReadTest);
 
     FRIEND_TEST(metaTest, randGeneTest);
+
+    vector2D computeHash_stdthread(vector2D dataset, size_t pointNum);
+
+    vector2D computeCollision_stdthread(vector2D hMatrixN, vector2D hMatrixQ);
 };
 
 

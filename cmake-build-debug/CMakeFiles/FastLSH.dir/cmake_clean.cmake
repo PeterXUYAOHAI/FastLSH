@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.o"
   "CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o"
   "CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o"
+  "CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )
