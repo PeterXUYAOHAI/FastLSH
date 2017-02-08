@@ -329,6 +329,10 @@ thread
 -
 random
 -
+iostream
+-
+algorithm
+-
 
 /home/peter/FYP/FastLSH/src/hdfsRead.cpp
 ../include/LSH.h
@@ -393,6 +397,8 @@ gtest/gtest.h
 -
 ../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
+chrono
+-
 
 /usr/local/hadoop/include/hdfs.h
 errno.h

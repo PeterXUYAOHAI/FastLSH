@@ -48,6 +48,7 @@ bool LSH::setUseHdfs(bool useHdfs){
 
 bool LSH::setUseMultiThread(bool useMultiThread) {
     this->useMultiThread = useMultiThread;
+    multiThreadMode = 0; //set as default mode - openMP
     return this->useMultiThread;
 }
 
@@ -121,8 +122,14 @@ vector2D LSH::getCollisionMatrix() {
         hashMatrixQ = computeHash(setQ, Q);
     }
     else{
-        hashMatrixN = computeHash_openmp(setN, N);
-        hashMatrixQ = computeHash_openmp(setQ, Q);
+        if (multiThreadMode == 0) {
+            hashMatrixN = computeHash_openmp(setN, N);
+            hashMatrixQ = computeHash_openmp(setQ, Q);
+        }
+        else if(multiThreadMode==1){
+            hashMatrixN = computeHash_stdthread(setN, N);
+            hashMatrixQ = computeHash_stdthread(setQ, Q);
+        }
     }
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
 //    vector2D temp1;
@@ -134,9 +141,12 @@ vector2D LSH::getCollisionMatrix() {
     vector2D collisionMatrix;
     if(!useMultiThread)
         collisionMatrix = computeCollision(hashMatrixN, hashMatrixQ);
-    else
-        collisionMatrix = computeCollision_openmp(hashMatrixN, hashMatrixQ);
-
+    else {
+        if (multiThreadMode == 0)
+            collisionMatrix = computeCollision_openmp(hashMatrixN, hashMatrixQ);
+        else if(multiThreadMode ==1)
+            collisionMatrix = computeCollision_stdthread(hashMatrixN, hashMatrixQ);
+    }
 //    //release the memory of the hashMatrixs, detail see <Effective STL>
 //    vector2D temp3;
 //    vector2D temp4;
@@ -147,8 +157,18 @@ vector2D LSH::getCollisionMatrix() {
 }
 
 
+bool LSH::setMultiThreadMode(int multiMode){
+    multiThreadMode = multiMode;
+}
 
 
+bool LSH::setDefault(){
+    useHdfs = false;
+    useMultiThread = false;
+    multiThreadMode = 0;
+
+    return true;
+}
 
 
 

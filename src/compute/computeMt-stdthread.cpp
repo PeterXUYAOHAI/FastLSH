@@ -23,7 +23,6 @@ vector2D LSH::computeHash_stdthread(vector2D dataset, size_t pointNum){
             const size_t nloop = outloop*inloop;
 
 
-            std::cout<<"parallel ("<<nthreads<<" threads):"<<std::endl;
             std::vector<std::thread> threads(nthreads);
             for(int t = 0;t<nthreads;t++)
             {
@@ -80,7 +79,6 @@ vector2D LSH::computeCollision_stdthread(vector2D hMatrixN, vector2D hMatrixQ){
     const size_t outloop = Q;
     const size_t inloop = N;
     const size_t nloop = outloop*inloop;
-    std::cout<<"parallel ("<<nthreads<<" threads):"<<std::endl;
     std::vector<std::thread> threads(nthreads);
     for(int t = 0;t<nthreads;t++)
     {

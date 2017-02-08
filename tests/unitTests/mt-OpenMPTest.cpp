@@ -57,6 +57,8 @@ TEST_F(openMPTest, hashValueTest){
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_openMP\n";
 
+    mlsh.setDefault();
+
     //compare if two hash result are same
     ASSERT_EQ(hashQ,hashQ_mt);
     ASSERT_EQ(hashN, hashN_mt);
