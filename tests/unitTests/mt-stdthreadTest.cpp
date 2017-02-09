@@ -4,7 +4,6 @@
 
 #include <gtest/gtest.h>
 #include "../../include/LSH.h"
-
 #include <chrono>
 
 //marco to clean the code

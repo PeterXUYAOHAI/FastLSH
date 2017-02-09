@@ -17,6 +17,7 @@ vector2D LSH::computeHash_stdthread(vector2D dataset, size_t pointNum){
         hashMatrix.push_back(vL);
     }
 
+    // it is a implementation of nested loop to stdthread
             const size_t nthreads = std::thread::hardware_concurrency();
             const size_t outloop = pointNum;
             const size_t inloop = L;
@@ -34,8 +35,8 @@ vector2D LSH::computeHash_stdthread(vector2D dataset, size_t pointNum){
                             {
                                 // inner loop
                                 {
-                                    int n = i/inloop;
-                                    int l = i%inloop;
+                                    int n = i/inloop; //retrive outer loop index
+                                    int l = i%inloop; //retrive inner loop index
                                     // (optional) make output critical
                                     double hashFinalValue = 0;
                                     //loop through the inner of a hash function group
@@ -57,6 +58,8 @@ vector2D LSH::computeHash_stdthread(vector2D dataset, size_t pointNum){
                             }
                         },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
             }
+
+            //lambda to start threads
             std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
 
     return hashMatrix;
