@@ -54,14 +54,14 @@ TEST_F(pthreadTest, hashValueTest){
     vector2D hashQ_mt = mlsh.computeHash(mlsh.setQ, mlsh.Q);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
-    std::cout <<duration << " μs computeHashQ_stdthread\n";
+    std::cout <<duration << " μs computeHashQ_pthread\n";
 
 
     t1 = now();
     vector2D hashN_mt = mlsh.computeHash(mlsh.setN, mlsh.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
-    std::cout <<duration << " μs computeHashN_stdthread\n";
+    std::cout <<duration << " μs computeHashN_pthread\n";
 
     mlsh.setDefault();
     //compare if two hash result are same
@@ -90,7 +90,7 @@ TEST_F(pthreadTest, resultTest){
 
     duration = dcast( t2 - t1 ).count();
 
-    std::cout <<duration << " μs for stdThread\n";
+    std::cout <<duration << " μs for pThread\n";
 
     mlsh.setDefault();
 

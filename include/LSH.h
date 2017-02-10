@@ -97,13 +97,17 @@ private:
 
     FRIEND_TEST(pthreadTest, hashValueTest);
 
-    void *computeHashPthreadFuc(void *loopPara);
+//    void *computeHashPthreadFuc(void *loopPara);
 
-    void *computeCollisionPthreadFuc(void *loopPara);
+//    void *computeCollisionPthreadFuc(void *loopPara);
 
     vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
 
     vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
+
+    friend void *computeHashPthreadFuc(void *loopPara);
+
+    friend void *computeCollisionPthreadFuc(void *loopPara);
 };
 
 

@@ -45,6 +45,7 @@ struct nLoopHashParaF{
     int bi;
     int ei;
     int inloop;
+    LSH *mlsh;
     vector2D* hashMatrix;
     vector2D* dataset;
 };
@@ -53,18 +54,20 @@ struct nLoopColliPara{
     int bi;
     int ei;
     int inloop;
+    LSH *mlsh;
     vector2D* collisionMatrix;
     vector2D* hMatrixQ;
     vector2D* hMatrixN;
 };
 
 
-void* LSH::computeHashPthreadFuc(void *loopPara)
+void* computeHashPthreadFuc(void *loopPara)
 {
     struct nLoopHashParaF *my_data;
     int bi,ei,inloop;
     my_data = (nLoopHashParaF *) loopPara;
 
+    LSH *mlsh = my_data->mlsh;
     bi = my_data->bi;
     ei = my_data->ei;
     inloop = my_data->inloop;
@@ -78,17 +81,17 @@ void* LSH::computeHashPthreadFuc(void *loopPara)
             // (optional) make output critical
             double hashFinalValue = 0;
             //loop through the inner of a hash function group
-            for (int k = 0; k < K; ++k) {
+            for (int k = 0; k < mlsh->K; ++k) {
                 double dTemp = 0;
                 //loop through all the dimensions
-                for (int d = 0; d < D; ++d) {
+                for (int d = 0; d < mlsh->D; ++d) {
                     //vector(math) multiply to make projection
-                    dTemp += (*(my_data->dataset))[n][d]*randomLine[l][k][d];
+                    dTemp += (*(my_data->dataset))[n][d]*mlsh->randomLine[l][k][d];
                 }
                 //assign hashvalue into bucket
-                double hashvalue = floor(dTemp/W);
+                double hashvalue = floor(dTemp/mlsh->W);
                 //merge hash group results **see documentation
-                hashFinalValue = hashvalue*randomVector[k] + hashFinalValue;
+                hashFinalValue = hashvalue*mlsh->randomVector[k] + hashFinalValue;
             }
             (*(my_data->hashMatrix))[n][l] = hashFinalValue;
 
@@ -99,7 +102,7 @@ void* LSH::computeHashPthreadFuc(void *loopPara)
 
 
 
-void* LSH::computeCollisionPthreadFuc(void *loopPara)
+void* computeCollisionPthreadFuc(void *loopPara)
 {
     struct nLoopColliPara *my_data;
     int bi,ei,inloop;
@@ -107,6 +110,7 @@ void* LSH::computeCollisionPthreadFuc(void *loopPara)
 
     bi = my_data->bi;
     ei = my_data->ei;
+    LSH *mlsh = my_data->mlsh;
     inloop = my_data->inloop;
 
     for(int i = bi;i<ei;i++)
@@ -115,7 +119,7 @@ void* LSH::computeCollisionPthreadFuc(void *loopPara)
         {
             int q = i/inloop;
             int n = i%inloop;
-            for (int hash_id = 0; hash_id < L; ++hash_id) {
+            for (int hash_id = 0; hash_id < mlsh->L; ++hash_id) {
                 if ((*(my_data->hMatrixQ))[n][hash_id] == (*(my_data->hMatrixQ))[q][hash_id])
                     (*my_data->collisionMatrix)[q][n]++;
             }
@@ -143,7 +147,6 @@ vector2D LSH::computeHash_pthread(vector2D dataset, size_t pointNum){
 
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopHashParaF> thread_args(nthreads);
-
     /* spawn the threads */
     for (int t=0; t<nthreads; ++t)
     {
@@ -153,9 +156,10 @@ vector2D LSH::computeHash_pthread(vector2D dataset, size_t pointNum){
         tempPara.inloop = inloop;
         tempPara.dataset = &dataset;
         tempPara.hashMatrix = &hashMatrix;
+        tempPara.mlsh = this;
         thread_args[t] = tempPara;
 
-        pthread_create(&threads[t], NULL, computeHashPthreadFuc, (void*)static_cast<nLoopHashParaF*>(&(thread_args[t])));
+        pthread_create(&threads[t], NULL, computeHashPthreadFuc, (void*)(&(thread_args[t])));
     }
 
     /* wait for threads to finish */
@@ -197,6 +201,7 @@ vector2D LSH::computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ){
         tempPara.hMatrixN = &hashMatrixN;
         tempPara.hMatrixQ = &hashMatrixQ;
         tempPara.collisionMatrix = &collisionMatrix;
+        tempPara.mlsh = this;
         thread_args[t] = tempPara;
 
         pthread_create(&threads[t], NULL, computeCollisionPthreadFuc, (void*)&(thread_args[t]));
