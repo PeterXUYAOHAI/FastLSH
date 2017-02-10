@@ -391,6 +391,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-pthreadTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-stdthreadTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>

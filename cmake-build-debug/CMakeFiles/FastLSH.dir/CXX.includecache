@@ -321,6 +321,24 @@ random
 -
 
 /home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp
+pthread.h
+-
+random
+-
+iostream
+-
+algorithm
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+windows.h
+-
+sys/param.h
+-
+sys/sysctl.h
+-
+unistd.h
+-
 
 /home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp
 ../../include/LSH.h
@@ -385,6 +403,14 @@ gtest/gtest.h
 /home/peter/FYP/FastLSH/include/LSH.h
 
 /home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp
+gtest/gtest.h
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+chrono
+-
+
+/home/peter/FYP/FastLSH/tests/unitTests/mt-pthreadTest.cpp
 gtest/gtest.h
 -
 ../../include/LSH.h

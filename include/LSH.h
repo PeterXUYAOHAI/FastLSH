@@ -30,7 +30,7 @@ class LSH{
 
     bool setUseMultiThread(bool useMultiThread);
 
-    bool setMultiThreadMode(int multiMode); //default 0-openMP, 1-stdthread
+    bool setMultiThreadMode(int multiMode); //default 0-openMP, 1-stdthread 2-pthread
 
     bool setDefault();
 
@@ -55,7 +55,7 @@ private:
     int NfileSize; //N file binary size, for hdfs use
     int QfileSize; //Q file binary size, for hdfs use
     bool useMultiThread;
-    int multiThreadMode;
+    int multiThreadMode; //default 0-openMP, 1-stdthread 2-pthread
 
     vector3D randomLine; //collection of randomline for points to project on
     vector1D randomVector; //random values to assist k group of LSH
@@ -95,6 +95,15 @@ private:
 
     FRIEND_TEST(stdthreadTest, hashValueTest);
 
+    FRIEND_TEST(pthreadTest, hashValueTest);
+
+    void *computeHashPthreadFuc(void *loopPara);
+
+    void *computeCollisionPthreadFuc(void *loopPara);
+
+    vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
+
+    vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
 };
 
 

@@ -130,6 +130,9 @@ vector2D LSH::getCollisionMatrix() {
             hashMatrixN = computeHash_stdthread(setN, N);
             hashMatrixQ = computeHash_stdthread(setQ, Q);
         }
+        else if(multiThreadMode ==2)
+            hashMatrixN = computeHash_pthread(setN, N);
+            hashMatrixQ = computeHash_pthread(setQ, Q);
     }
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
 //    vector2D temp1;
@@ -146,6 +149,8 @@ vector2D LSH::getCollisionMatrix() {
             collisionMatrix = computeCollision_openmp(hashMatrixN, hashMatrixQ);
         else if(multiThreadMode ==1)
             collisionMatrix = computeCollision_stdthread(hashMatrixN, hashMatrixQ);
+        else if(multiThreadMode ==2)
+            collisionMatrix = computeCollision_pthread(hashMatrixN,hashMatrixQ);
     }
 //    //release the memory of the hashMatrixs, detail see <Effective STL>
 //    vector2D temp3;

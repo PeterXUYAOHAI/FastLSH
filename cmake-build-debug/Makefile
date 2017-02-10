@@ -489,6 +489,33 @@ tests/unitTests/mt-OpenMPTest.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-OpenMPTest.cpp.s
 .PHONY : tests/unitTests/mt-OpenMPTest.cpp.s
 
+tests/unitTests/mt-pthreadTest.o: tests/unitTests/mt-pthreadTest.cpp.o
+
+.PHONY : tests/unitTests/mt-pthreadTest.o
+
+# target to build an object file
+tests/unitTests/mt-pthreadTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-pthreadTest.cpp.o
+.PHONY : tests/unitTests/mt-pthreadTest.cpp.o
+
+tests/unitTests/mt-pthreadTest.i: tests/unitTests/mt-pthreadTest.cpp.i
+
+.PHONY : tests/unitTests/mt-pthreadTest.i
+
+# target to preprocess a source file
+tests/unitTests/mt-pthreadTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-pthreadTest.cpp.i
+.PHONY : tests/unitTests/mt-pthreadTest.cpp.i
+
+tests/unitTests/mt-pthreadTest.s: tests/unitTests/mt-pthreadTest.cpp.s
+
+.PHONY : tests/unitTests/mt-pthreadTest.s
+
+# target to generate assembly for a file
+tests/unitTests/mt-pthreadTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-pthreadTest.cpp.s
+.PHONY : tests/unitTests/mt-pthreadTest.cpp.s
+
 tests/unitTests/mt-stdthreadTest.o: tests/unitTests/mt-stdthreadTest.cpp.o
 
 .PHONY : tests/unitTests/mt-stdthreadTest.o
@@ -563,6 +590,9 @@ help:
 	@echo "... tests/unitTests/mt-OpenMPTest.o"
 	@echo "... tests/unitTests/mt-OpenMPTest.i"
 	@echo "... tests/unitTests/mt-OpenMPTest.s"
+	@echo "... tests/unitTests/mt-pthreadTest.o"
+	@echo "... tests/unitTests/mt-pthreadTest.i"
+	@echo "... tests/unitTests/mt-pthreadTest.s"
 	@echo "... tests/unitTests/mt-stdthreadTest.o"
 	@echo "... tests/unitTests/mt-stdthreadTest.i"
 	@echo "... tests/unitTests/mt-stdthreadTest.s"
