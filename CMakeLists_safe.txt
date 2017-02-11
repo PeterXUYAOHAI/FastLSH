@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.2)
+project(FastLSH)
+
+
+# Include the GoogleTest directory
+set(GTEST_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/lib/googletest/googletest)
+# Add GoogleTest as a build subdirectory
+add_subdirectory(lib/googletest)
+# Include the GoogleTest header directory
+include_directories(${GTEST_DIRECTORY}/include)
+
+#import OpenMP
+find_package(OpenMP)
+if (OPENMP_FOUND)
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif()
+
+
+set(CMAKE_CXX_STANDARD 11)
+
+set(SOURCE_FILES
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp  src/compute/computeMt-openMP.cpp src/compute/computeMt-stdthread.cpp src/compute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp)
+
+add_executable(FastLSH ${SOURCE_FILES})
+target_link_libraries (FastLSH  gtest)
