@@ -4,8 +4,9 @@
 
 This is a C++ implementation of E2LSH and C2LSH. More detail to come.
 The build won't pass now because  travis don't support hadoop environment. I will try to fix it.
-
-
+##attention:
+if your machine do not have hadoop installed, this code won't build. If you are using MAC, the openMP functionality won't work.
+try to use CMakeList_safe.txt in the repo, mostly it will solve the problem.
 ##Parameters
 * ```N``` the number of vectors in the N dataset
 * ```Q``` the number of vectors in the query dataset
