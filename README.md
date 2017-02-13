@@ -7,7 +7,7 @@ The build won't pass now because  travis don't support hadoop environment. I wil
 
 ##Attention:
 if your machine do not have hadoop installed, this code won't build. If you are using MAC, the openMP functionality won't work.
-Try to use CMakeList_safe.txt in the repo and comment line 30-32, 40-41 in the LSH.cpp, mostly it will solve the problem. 
+Try to use CMakeList_safe.txt in the repo and comment line 30-32, 40-41 in the LSH.cpp, line 9 in the driver.cpp, mostly it will solve the problem. 
 
 
 ##Parameters
