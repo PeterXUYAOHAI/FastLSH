@@ -19,12 +19,15 @@ protected:
     virtual void SetUp() {
         //preload data
         mlsh = LSH(1000, 57, 200, 1, 1.2, 1000);
+//        mlsh = LSH(300000, 57, 200, 1, 1.2, 1000);
         mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
         mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
+//        mlsh.loadSetN("/home/peter/FYP/dataset300000NoIndex.csv", 0);
+//        mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
     }
     LSH mlsh;
 
-    // prepare timer
+    // prepare timerY
     std::chrono::high_resolution_clock::time_point t1;
     std::chrono::high_resolution_clock::time_point t2;
 
@@ -51,14 +54,14 @@ TEST_F(pthreadTest, hashValueTest){
     mlsh.setMultiThreadMode(2);
 
     t1 = now();
-    vector2D hashQ_mt = mlsh.computeHash(mlsh.setQ, mlsh.Q);
+    vector2D hashQ_mt = mlsh.computeHash_pthread(mlsh.setQ, mlsh.Q);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashQ_pthread\n";
 
 
     t1 = now();
-    vector2D hashN_mt = mlsh.computeHash(mlsh.setN, mlsh.N);
+    vector2D hashN_mt = mlsh.computeHash_pthread(mlsh.setN, mlsh.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_pthread\n";

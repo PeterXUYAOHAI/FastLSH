@@ -45,7 +45,7 @@ if(JAVA_INCLUDE_PATH)
     endif()
 endif()
 
-#
+
 #message(${HDFS_LIBRARIES})
 #
 #message($ENV{CLASSPATH})

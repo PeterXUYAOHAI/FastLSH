@@ -12,12 +12,28 @@
 #include <mutex>
 
 int main (int argc, char **argv){
-    std::cout<<"hello world!";
+    std::cout<<"hello world!\n";
 
-    //run the registered tests
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
+            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
+            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
+            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
+            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
+            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
 
+    std::cout<<"Would you like to run the test(Y/N)\n";
+
+    std::string input;
+    std::cin>>input;
+
+    if(input=="Y") {
+        //run the registered tests
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }
+    else{
+        exit(0);
+    }
 
 
 

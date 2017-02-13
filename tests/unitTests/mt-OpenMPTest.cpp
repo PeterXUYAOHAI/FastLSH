@@ -16,8 +16,12 @@ class openMPTest:public ::testing::Test{
         virtual void SetUp() {
             //preload data
             mlsh = LSH(1000, 57, 200, 1, 1.2, 1000);
+//            mlsh = LSH(300000, 57, 200, 1, 1.2, 1000);
             mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
             mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
+
+//            mlsh.loadSetN("/home/peter/FYP/dataset300000NoIndex.csv", 0);
+//            mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
         }
     LSH mlsh;
 
@@ -52,7 +56,7 @@ TEST_F(openMPTest, hashValueTest){
 
 
     t1 = now();
-    vector2D hashN_mt = mlsh.computeHash(mlsh.setN, mlsh.N);
+    vector2D hashN_mt = mlsh.computeHash_openmp(mlsh.setN, mlsh.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_openMP\n";
