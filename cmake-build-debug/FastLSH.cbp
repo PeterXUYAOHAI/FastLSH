@@ -379,6 +379,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/memcached.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/driver.cpp">
 			<Option target="FastLSH"/>
 		</Unit>

@@ -26,6 +26,8 @@ CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../include/LSH.h
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../src/hdfsRead.cpp
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: /usr/local/hadoop/include/hdfs.h
 
+CMakeFiles/FastLSH.dir/src/memcached.cpp.o: ../src/memcached.cpp
+
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-message.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-param-test.h

@@ -381,6 +381,33 @@ src/hdfsRead.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.s
 .PHONY : src/hdfsRead.cpp.s
 
+src/memcached.o: src/memcached.cpp.o
+
+.PHONY : src/memcached.o
+
+# target to build an object file
+src/memcached.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/memcached.cpp.o
+.PHONY : src/memcached.cpp.o
+
+src/memcached.i: src/memcached.cpp.i
+
+.PHONY : src/memcached.i
+
+# target to preprocess a source file
+src/memcached.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/memcached.cpp.i
+.PHONY : src/memcached.cpp.i
+
+src/memcached.s: src/memcached.cpp.s
+
+.PHONY : src/memcached.s
+
+# target to generate assembly for a file
+src/memcached.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/memcached.cpp.s
+.PHONY : src/memcached.cpp.s
+
 tests/driver.o: tests/driver.cpp.o
 
 .PHONY : tests/driver.o
@@ -578,6 +605,9 @@ help:
 	@echo "... src/hdfsRead.o"
 	@echo "... src/hdfsRead.i"
 	@echo "... src/hdfsRead.s"
+	@echo "... src/memcached.o"
+	@echo "... src/memcached.i"
+	@echo "... src/memcached.s"
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"

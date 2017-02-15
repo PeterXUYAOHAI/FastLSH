@@ -366,6 +366,8 @@ random
 sstream
 -
 
+/home/peter/FYP/FastLSH/src/memcached.cpp
+
 /home/peter/FYP/FastLSH/tests/driver.cpp
 iostream
 -
@@ -386,6 +388,8 @@ gtest/gtest.h
 thread
 -
 mutex
+-
+libmemcached/memcached.h
 -
 
 /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp

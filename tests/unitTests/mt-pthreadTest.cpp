@@ -1,9 +1,7 @@
 //
 // Created by peter on 17-2-10.
 //
-//
-// Created by peter on 17-2-8.
-//
+
 
 #include <gtest/gtest.h>
 #include "../../include/LSH.h"

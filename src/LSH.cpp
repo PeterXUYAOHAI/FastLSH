@@ -19,6 +19,8 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q) {
     useHdfs = false;
     randomLine = generateRandomLine();
     randomVector = generateUniformRandomVector(K,W);
+    runID = generateRunId();
+    std::cout<<"This runId is "<<runID<<std::endl;
 }
 
 
@@ -175,7 +177,20 @@ bool LSH::setDefault(){
     return true;
 }
 
+std::string LSH::generateRunId(){
+    std::string runId = "";
+    time_t t = time(0);
+    struct tm * now = localtime( & t );
 
+    runId+=(now->tm_year+1900);
+    runId+=(now->tm_mon);
+    runId+=(now->tm_mday);
+    runId+=(now->tm_hour);
+    runId+=(now->tm_min);
+    runId+=(now->tm_sec);
+
+    return runId;
+}
 
 
 

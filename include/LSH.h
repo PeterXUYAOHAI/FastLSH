@@ -42,6 +42,8 @@ class LSH{
 
     int reset();
 
+
+
 private:
 
     size_t N; //# of vectors in the dataset
@@ -56,6 +58,7 @@ private:
     int QfileSize; //Q file binary size, for hdfs use
     bool useMultiThread;
     int multiThreadMode; //default 0-openMP, 1-stdthread 2-pthread
+    std::string runID; //runID for recognize this particular run -- mainly for get value from in-memory storage
 
     vector3D randomLine; //collection of randomline for points to project on
     vector1D randomVector; //random values to assist k group of LSH
@@ -108,6 +111,18 @@ private:
     friend void *computeHashPthreadFuc(void *loopPara);
 
     friend void *computeCollisionPthreadFuc(void *loopPara);
+
+    int saveHashNToMemc(std::string server, unsigned short port);
+
+    int saveHashNToMemc(const char *server, unsigned short port);
+
+    std::string generateRunId();
+
+    int saveHashNToMemc(const char *server, unsigned short port, time_t exp);
+
+    vector2D readHashNFromMemc(std::string runId);
+
+    vector2D readHashNFromMemc(const char *server, unsigned short port, std::string runId);
 };
 
 
