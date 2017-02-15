@@ -18,6 +18,12 @@ Try to use CMakeList_safe.txt in the repo and comment line 30-32, 40-41 in the L
 * ```K``` the number of lines in each hash group -- the larger the value, the fewer the collisions
 * ```W``` the number of bucket width
 
+## TODO
+* Access to MPI
+* Access to memcache
+* Distributed computing
+* Parameter generator
+
 ## Authors
 
 * **Peter XU **  [PeterXUYAOHAI](https://github.com/PeterXUYAOHAI)
