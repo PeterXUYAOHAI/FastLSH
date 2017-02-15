@@ -28,9 +28,13 @@ CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../include/LSH.h
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../src/hdfsRead.cpp
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: /usr/local/hadoop/include/hdfs.h
 
-CMakeFiles/FastLSH.dir/src/memcached.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
-CMakeFiles/FastLSH.dir/src/memcached.cpp.o: ../include/LSH.h
-CMakeFiles/FastLSH.dir/src/memcached.cpp.o: ../src/memcached.cpp
+CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../src/inMemoryStore/memcached.cpp
+
+CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../src/inMemoryStore/redis.cpp
 
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-message.h
@@ -208,4 +212,29 @@ CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.o: ../lib/googletest
 CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.o: ../include/LSH.h
 CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.o: ../tests/unitTests/mt-stdthreadTest.cpp
+
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-message.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-param-test.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-printers.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-test-part.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-typed-test.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_pred_impl.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/custom/gtest-port.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/custom/gtest-printers.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-filepath.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-internal.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-linked_ptr.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-param-util-generated.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-param-util.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-port-arch.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-port.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o: ../tests/unitTests/redisTest.cpp
 

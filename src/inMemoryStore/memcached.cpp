@@ -4,13 +4,13 @@
 #include <libmemcached/memcached.h>
 #include <iostream>
 #include <sstream>
-#include "../include/LSH.h"
+#include "../../include/LSH.h"
 
 
 //remember to start the server:
 // >>memcached -p 11211 -m 64m -d
 
-//check if server is on
+// check if server is on
 // telnet 127.0.0.1 11211
 
 

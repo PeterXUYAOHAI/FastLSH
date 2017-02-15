@@ -11,14 +11,30 @@
 #include <thread>
 #include <mutex>
 
-#include <libmemcached/memcached.h>
-
+#include <hiredis/hiredis.h>
 
 int main (int argc, char **argv){
 
+//    redisReply *reply;
+//    redisContext *c = redisConnect("127.0.0.1", 6379);
+//
+//    if ( c->err)
+//    {
+//        redisFree(c);
+//        printf("Connect to redisServer faile\n");
+//        return 0;
+//    }
+//
+//    printf("Connect to redisServer Success\n");
+//
+//    reply = (redisReply*)redisCommand( c, "SET foo bar");
+//
+//    reply = (redisReply*)redisCommand( c, "GET foo");
+//
+//    std::cout<<reply->str;
 
-    std::cout<<"hello world!\n";
-
+//    std::cout<<"hello world!\n";
+//
     std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
             "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
             "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"

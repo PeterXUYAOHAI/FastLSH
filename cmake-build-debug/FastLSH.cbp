@@ -382,7 +382,10 @@
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/memcached.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/driver.cpp">
@@ -404,6 +407,9 @@
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-stdthreadTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/redisTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/CMakeLists.txt">

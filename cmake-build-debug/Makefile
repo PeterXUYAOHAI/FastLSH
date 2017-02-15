@@ -408,32 +408,59 @@ src/hdfsRead.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.s
 .PHONY : src/hdfsRead.cpp.s
 
-src/memcached.o: src/memcached.cpp.o
+src/inMemoryStore/memcached.o: src/inMemoryStore/memcached.cpp.o
 
-.PHONY : src/memcached.o
+.PHONY : src/inMemoryStore/memcached.o
 
 # target to build an object file
-src/memcached.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/memcached.cpp.o
-.PHONY : src/memcached.cpp.o
+src/inMemoryStore/memcached.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o
+.PHONY : src/inMemoryStore/memcached.cpp.o
 
-src/memcached.i: src/memcached.cpp.i
+src/inMemoryStore/memcached.i: src/inMemoryStore/memcached.cpp.i
 
-.PHONY : src/memcached.i
+.PHONY : src/inMemoryStore/memcached.i
 
 # target to preprocess a source file
-src/memcached.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/memcached.cpp.i
-.PHONY : src/memcached.cpp.i
+src/inMemoryStore/memcached.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.i
+.PHONY : src/inMemoryStore/memcached.cpp.i
 
-src/memcached.s: src/memcached.cpp.s
+src/inMemoryStore/memcached.s: src/inMemoryStore/memcached.cpp.s
 
-.PHONY : src/memcached.s
+.PHONY : src/inMemoryStore/memcached.s
 
 # target to generate assembly for a file
-src/memcached.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/memcached.cpp.s
-.PHONY : src/memcached.cpp.s
+src/inMemoryStore/memcached.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.s
+.PHONY : src/inMemoryStore/memcached.cpp.s
+
+src/inMemoryStore/redis.o: src/inMemoryStore/redis.cpp.o
+
+.PHONY : src/inMemoryStore/redis.o
+
+# target to build an object file
+src/inMemoryStore/redis.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o
+.PHONY : src/inMemoryStore/redis.cpp.o
+
+src/inMemoryStore/redis.i: src/inMemoryStore/redis.cpp.i
+
+.PHONY : src/inMemoryStore/redis.i
+
+# target to preprocess a source file
+src/inMemoryStore/redis.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.i
+.PHONY : src/inMemoryStore/redis.cpp.i
+
+src/inMemoryStore/redis.s: src/inMemoryStore/redis.cpp.s
+
+.PHONY : src/inMemoryStore/redis.s
+
+# target to generate assembly for a file
+src/inMemoryStore/redis.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.s
+.PHONY : src/inMemoryStore/redis.cpp.s
 
 tests/driver.o: tests/driver.cpp.o
 
@@ -624,6 +651,33 @@ tests/unitTests/mt-stdthreadTest.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/mt-stdthreadTest.cpp.s
 .PHONY : tests/unitTests/mt-stdthreadTest.cpp.s
 
+tests/unitTests/redisTest.o: tests/unitTests/redisTest.cpp.o
+
+.PHONY : tests/unitTests/redisTest.o
+
+# target to build an object file
+tests/unitTests/redisTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o
+.PHONY : tests/unitTests/redisTest.cpp.o
+
+tests/unitTests/redisTest.i: tests/unitTests/redisTest.cpp.i
+
+.PHONY : tests/unitTests/redisTest.i
+
+# target to preprocess a source file
+tests/unitTests/redisTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.i
+.PHONY : tests/unitTests/redisTest.cpp.i
+
+tests/unitTests/redisTest.s: tests/unitTests/redisTest.cpp.s
+
+.PHONY : tests/unitTests/redisTest.s
+
+# target to generate assembly for a file
+tests/unitTests/redisTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.s
+.PHONY : tests/unitTests/redisTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -662,9 +716,12 @@ help:
 	@echo "... src/hdfsRead.o"
 	@echo "... src/hdfsRead.i"
 	@echo "... src/hdfsRead.s"
-	@echo "... src/memcached.o"
-	@echo "... src/memcached.i"
-	@echo "... src/memcached.s"
+	@echo "... src/inMemoryStore/memcached.o"
+	@echo "... src/inMemoryStore/memcached.i"
+	@echo "... src/inMemoryStore/memcached.s"
+	@echo "... src/inMemoryStore/redis.o"
+	@echo "... src/inMemoryStore/redis.i"
+	@echo "... src/inMemoryStore/redis.s"
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"
@@ -686,6 +743,9 @@ help:
 	@echo "... tests/unitTests/mt-stdthreadTest.o"
 	@echo "... tests/unitTests/mt-stdthreadTest.i"
 	@echo "... tests/unitTests/mt-stdthreadTest.s"
+	@echo "... tests/unitTests/redisTest.o"
+	@echo "... tests/unitTests/redisTest.i"
+	@echo "... tests/unitTests/redisTest.s"
 .PHONY : help
 
 

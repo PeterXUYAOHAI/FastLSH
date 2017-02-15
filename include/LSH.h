@@ -40,6 +40,10 @@ class LSH{
 
     void readHashNFromMemc(const char *server, unsigned short port, std::string runId);
 
+    int saveHashNToRedis(const char *server, unsigned short port);
+
+    int readHashNFromRedis(const char *server, unsigned short port, std::string srunId);
+
     void reportStatus();
 
     int clear();
@@ -106,9 +110,8 @@ private:
 
     FRIEND_TEST(memcachedTest, resultTest);
 
-//    void *computeHashPthreadFuc(void *loopPara);
+    FRIEND_TEST(redisTest, resultTest);
 
-//    void *computeCollisionPthreadFuc(void *loopPara);
 
     vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
 
@@ -119,7 +122,6 @@ private:
     friend void *computeCollisionPthreadFuc(void *loopPara);
 
     std::string generateRunId();
-
 
 };
 

@@ -368,15 +368,27 @@ random
 sstream
 -
 
-/home/peter/FYP/FastLSH/src/memcached.cpp
+/home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp
 libmemcached/memcached.h
 -
 iostream
 -
 sstream
 -
-../include/LSH.h
+../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
+
+/home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp
+libmemcached/memcached.h
+-
+iostream
+-
+sstream
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+hiredis/hiredis.h
+-
 
 /home/peter/FYP/FastLSH/tests/driver.cpp
 iostream
@@ -399,7 +411,7 @@ thread
 -
 mutex
 -
-libmemcached/memcached.h
+hiredis/hiredis.h
 -
 
 /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp
@@ -441,6 +453,14 @@ chrono
 -
 
 /home/peter/FYP/FastLSH/tests/unitTests/mt-stdthreadTest.cpp
+gtest/gtest.h
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+chrono
+-
+
+/home/peter/FYP/FastLSH/tests/unitTests/redisTest.cpp
 gtest/gtest.h
 -
 ../../include/LSH.h
