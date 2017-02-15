@@ -388,6 +388,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/memcachedTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>

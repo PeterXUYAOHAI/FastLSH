@@ -47,7 +47,7 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
             if (j<(L-1))
                 valueString += (std::to_string(hashMatrixN[i][j])+",");
             else
-                valueString += (std::to_string(hashMatrixN[i][j]));
+                valueString += (std::to_string(hashMatrixN[i][j])+"\n");
         }
         rc = memcached_set(memc, keyString.c_str(), keyString.size(), valueString.c_str(), valueString.size(), (time_t)exp, (uint32_t)0);
 
@@ -64,23 +64,28 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
 
 
 //srunId--the specific runId of the hashmatrix
-vector2D LSH::readHashNFromMemc(const char* server, in_port_t port,std::string srunId){
+void LSH::readHashNFromMemc(const char* server, in_port_t port,std::string srunId){
 
     if (hashMatrixN.size()>0){
         fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
         char answ;
         std::cin>>answ;
         if(answ =='N')
-            return NULL;
+            return ;
     }
 
     memcached_server_st *servers = NULL;
     memcached_st *memc;
     memcached_return rc;
+    size_t value_length;
+    uint32_t flags;
 
     memc = memcached_create(NULL);
     servers = memcached_server_list_append(servers, server, port, &rc);
     rc = memcached_server_push(memc, servers);
+    std::string value;
+    std::string num;
+
 
     vector2D data;
 
@@ -88,36 +93,23 @@ vector2D LSH::readHashNFromMemc(const char* server, in_port_t port,std::string s
         std::vector<double> temp(L, 0);
         std::string keyString = (srunId+"HaN"+std::to_string(i));
         char *retrieved_value;
-        retrieved_value = memcached_get(memc, keyString, keyString.size(), &value_length, &flags, &rc);
+        std::stringstream ss;
 
-        data.push_back(temp);
-    }
+        retrieved_value = memcached_get(memc, keyString.c_str(), keyString.size(), &value_length, &flags, &rc);
+        ss<< retrieved_value;
+        free(retrieved_value);
 
-    std::stringstream ss;
-
-    ss<< buffer;
-
-    //close hdfs related object, free memory
-    free(buffer);
-    hdfsCloseFile(fs, readFile);
-    hdfsDisconnect(fs);
-
-
-    //read csv file syntax
-
-    for (int i = 0; i<row; i++) {
-        for (int j = 0; j<col; j++) {
-            if (j!=col-1)
+        for (int j = 0; j<L; j++) {
+            if (j != L - 1)
                 getline(ss, value, ',');
             else
-                getline(ss,value,'\n');
+                getline(ss, value, '\n');
             num = std::string(value, 0, value.length());
-            data[i][j] = ::atof(num.c_str());
+            temp[j] = ::atof(num.c_str());
         }
+        data.push_back(temp);
     }
-
-    return data;
-
+    hashMatrixN = data;
 }
 
 

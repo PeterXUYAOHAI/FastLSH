@@ -462,6 +462,33 @@ tests/unitTests/hdfsTest.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.s
 .PHONY : tests/unitTests/hdfsTest.cpp.s
 
+tests/unitTests/memcachedTest.o: tests/unitTests/memcachedTest.cpp.o
+
+.PHONY : tests/unitTests/memcachedTest.o
+
+# target to build an object file
+tests/unitTests/memcachedTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/memcachedTest.cpp.o
+.PHONY : tests/unitTests/memcachedTest.cpp.o
+
+tests/unitTests/memcachedTest.i: tests/unitTests/memcachedTest.cpp.i
+
+.PHONY : tests/unitTests/memcachedTest.i
+
+# target to preprocess a source file
+tests/unitTests/memcachedTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/memcachedTest.cpp.i
+.PHONY : tests/unitTests/memcachedTest.cpp.i
+
+tests/unitTests/memcachedTest.s: tests/unitTests/memcachedTest.cpp.s
+
+.PHONY : tests/unitTests/memcachedTest.s
+
+# target to generate assembly for a file
+tests/unitTests/memcachedTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/memcachedTest.cpp.s
+.PHONY : tests/unitTests/memcachedTest.cpp.s
+
 tests/unitTests/metaTest.o: tests/unitTests/metaTest.cpp.o
 
 .PHONY : tests/unitTests/metaTest.o
@@ -614,6 +641,9 @@ help:
 	@echo "... tests/unitTests/hdfsTest.o"
 	@echo "... tests/unitTests/hdfsTest.i"
 	@echo "... tests/unitTests/hdfsTest.s"
+	@echo "... tests/unitTests/memcachedTest.o"
+	@echo "... tests/unitTests/memcachedTest.i"
+	@echo "... tests/unitTests/memcachedTest.s"
 	@echo "... tests/unitTests/metaTest.o"
 	@echo "... tests/unitTests/metaTest.i"
 	@echo "... tests/unitTests/metaTest.s"

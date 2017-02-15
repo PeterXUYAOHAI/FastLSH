@@ -112,17 +112,11 @@ private:
 
     friend void *computeCollisionPthreadFuc(void *loopPara);
 
-    int saveHashNToMemc(std::string server, unsigned short port);
-
-    int saveHashNToMemc(const char *server, unsigned short port);
-
     std::string generateRunId();
 
     int saveHashNToMemc(const char *server, unsigned short port, time_t exp);
 
-    vector2D readHashNFromMemc(std::string runId);
-
-    vector2D readHashNFromMemc(const char *server, unsigned short port, std::string runId);
+    void readHashNFromMemc(const char *server, unsigned short port, std::string runId);
 };
 
 
