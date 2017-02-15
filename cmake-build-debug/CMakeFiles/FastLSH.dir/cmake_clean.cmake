@@ -13,6 +13,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/tests/unitTests/mt-pthreadTest.cpp.o"
   "CMakeFiles/FastLSH.dir/src/memcached.cpp.o"
   "CMakeFiles/FastLSH.dir/tests/unitTests/memcachedTest.cpp.o"
+  "CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )

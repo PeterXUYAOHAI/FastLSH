@@ -298,6 +298,8 @@ stdint.h
 time.h
 -
 
+/home/peter/FYP/FastLSH/ref/memcachedexa.cpp
+
 /home/peter/FYP/FastLSH/src/LSH.cpp
 ../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
@@ -367,6 +369,14 @@ sstream
 -
 
 /home/peter/FYP/FastLSH/src/memcached.cpp
+libmemcached/memcached.h
+-
+iostream
+-
+sstream
+-
+../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
 
 /home/peter/FYP/FastLSH/tests/driver.cpp
 iostream
@@ -393,6 +403,14 @@ libmemcached/memcached.h
 -
 
 /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp
+gtest/gtest.h
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+chrono
+-
+
+/home/peter/FYP/FastLSH/tests/unitTests/memcachedTest.cpp
 gtest/gtest.h
 -
 ../../include/LSH.h

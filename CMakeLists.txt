@@ -57,7 +57,7 @@ include_directories( ${HDFS_INCLUDE_DIRS} )
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/computeMt-openMP.cpp src/compute/computeMt-stdthread.cpp src/compute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp src/memcached.cpp tests/unitTests/memcachedTest.cpp)
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/computeMt-openMP.cpp src/compute/computeMt-stdthread.cpp src/compute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp src/memcached.cpp tests/unitTests/memcachedTest.cpp ref/memcachedexa.cpp)
 
 add_executable(FastLSH ${SOURCE_FILES})
 target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached)

@@ -361,6 +361,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/ref/memcachedexa.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/LSH.cpp">
 			<Option target="FastLSH"/>
 		</Unit>

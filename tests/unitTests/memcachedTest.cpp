@@ -9,7 +9,7 @@
 #define now() std::chrono::high_resolution_clock::now()
 #define dcast std::chrono::duration_cast<std::chrono::microseconds>
 
-class stdthreadTest:public ::testing::Test{
+class memcachedTest:public ::testing::Test{
 
 protected:
     virtual void SetUp() {
@@ -27,75 +27,45 @@ protected:
 
 };
 
-TEST_F(stdthreadTest, hashValueTest){
-    vector2D singleThreadResult;
-    vector2D stdthreadResult;
+TEST_F(memcachedTest, noExistTest){
 
-    t1 = now();
-    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.Q);
-    t2 = now();
-    auto duration = dcast( t2 - t1 ).count();
-    std::cout <<duration << " μs computeHashQ_singeThread\n";
-
-    t1 = now();
-    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.N);
-    t2 = now();
-    duration = dcast( t2 - t1 ).count();
-    std::cout <<duration << " μs computeHashN_singeThread\n";
-
-    mlsh.setUseMultiThread(true);
-    mlsh.setMultiThreadMode(1);
-
-    t1 = now();
-    vector2D hashQ_mt = mlsh.computeHash_stdthread(mlsh.setQ, mlsh.Q);
-    t2 = now();
-    duration = dcast( t2 - t1 ).count();
-    std::cout <<duration << " μs computeHashQ_stdthread\n";
-
-
-    t1 = now();
-    vector2D hashN_mt = mlsh.computeHash_stdthread(mlsh.setN, mlsh.N);
-    t2 = now();
-    duration = dcast( t2 - t1 ).count();
-    std::cout <<duration << " μs computeHashN_stdthread\n";
-
-    mlsh.setDefault();
-    //compare if two hash result are same
-    ASSERT_EQ(hashQ,hashQ_mt);
-    ASSERT_EQ(hashN, hashN_mt);
+    ASSERT_EQ(mlsh.saveHashNToMemc("localhost", 11211, 0), 1);
 }
 
-TEST_F(stdthreadTest, resultTest){
-    vector2D singleThreadResult;
-    vector2D stdthreadResult;
+
+TEST_F(memcachedTest, resultTest){
+
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.N);
+
+    mlsh.hashMatrixN = hashN;
+
 
     t1 = now();
-    singleThreadResult = mlsh.getCollisionMatrix();
+    ASSERT_EQ(mlsh.saveHashNToMemc("localhost", 11211, 0), 0);
     t2 = now();
 
     auto duration = dcast( t2 - t1 ).count();
 
-    std::cout <<duration << " μs for singleThread\n";
-
-    mlsh.setUseMultiThread(true);
-    mlsh.setMultiThreadMode(1);
+    std::cout <<duration << " μs for saving to memcache\n";
 
     t1 = now();
-    stdthreadResult = mlsh.getCollisionMatrix();
+    mlsh.readHashNFromMemc("localhost", 11211, mlsh.runID);
     t2 = now();
 
     duration = dcast( t2 - t1 ).count();
 
-    std::cout <<duration << " μs for stdThread\n";
+    std::cout <<duration << " μs for reading from memcache\n";
 
-    mlsh.setDefault();
+    //compare if re-readed hashMatrix are same with the original one
+    ASSERT_EQ(hashN.size(), mlsh.hashMatrixN.size());
 
-    //compare if the two collision counting are same
-    ASSERT_EQ(singleThreadResult.size(), stdthreadResult.size());
+    ASSERT_EQ(hashN[0].size(), mlsh.hashMatrixN[0].size());
 
-    ASSERT_EQ(singleThreadResult[0].size(), stdthreadResult[0].size());
-
-    ASSERT_EQ(singleThreadResult, stdthreadResult);
+    for (int i = 0; i < mlsh.N; ++i) {
+        for (int j = 0; j < mlsh.L; ++j) {
+            ASSERT_NEAR(hashN[i][j], mlsh.hashMatrixN[i][j],0.5);
+        }
+    }
 
 }
 

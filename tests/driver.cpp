@@ -16,61 +16,22 @@
 
 int main (int argc, char **argv){
 
-    memcached_server_st *servers = NULL;
-    memcached_st *memc;
-    memcached_return rc;
-    char *key = "keystring";
-    char *value = "keyvalue";
 
-    char *retrieved_value;
-    size_t value_length;
-    uint32_t flags;
+    std::cout<<"hello world!\n";
 
-    memc = memcached_create(NULL);
-    servers = memcached_server_list_append(servers, "localhost", 11211, &rc);
-    rc = memcached_server_push(memc, servers);
+    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
+            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
+            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
+            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
+            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
+            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
 
-    if (rc == MEMCACHED_SUCCESS)
-        fprintf(stderr, "Added server successfully\n");
-    else
-        fprintf(stderr, "Couldn't add server: %s\n", memcached_strerror(memc, rc));
+    std::cout<<"Would you like to run the test(Y/N)\n";
 
-    rc = memcached_set(memc, key, strlen(key), value, strlen(value), (time_t)0, (uint32_t)0);
-
-    if (rc == MEMCACHED_SUCCESS)
-        fprintf(stderr, "Key stored successfully\n");
-    else
-        fprintf(stderr, "Couldn't store key: %s\n", memcached_strerror(memc, rc));
-
-    retrieved_value = memcached_get(memc, key, strlen(key), &value_length, &flags, &rc);
-    printf("Yay!\n");
-
-    if (rc == MEMCACHED_SUCCESS) {
-        fprintf(stderr, "Key retrieved successfully\n");
-        printf("The key '%s' returned value '%s'.\n", key, retrieved_value);
-        free(retrieved_value);
-    }
-    else
-        fprintf(stderr, "Couldn't retrieve key: %s\n", memcached_strerror(memc, rc));
-
-    return 0;
+    std::string input;
+    std::cin>>input;
 
 
-//    std::cout<<"hello world!\n";
-//
-//    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
-//            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
-//            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
-//            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
-//            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
-//            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
-//
-//    std::cout<<"Would you like to run the test(Y/N)\n";
-//
-//    std::string input;
-//    std::cin>>input;
-//
-//
 //    //TODO add normalization
 //    //TODO multithread-read
 //    //TODO add mpi
@@ -80,18 +41,17 @@ int main (int argc, char **argv){
 //    //TODO change generate collision table procedure--no need to store the whole table, as soon as the candidate appear, push back the candidate.
 //    //TODO add conservative style -- delete hash as soon as it used
 //    //TODO add fed query set style
-//    //TODO add KNN + KNN Pruning
 //    //TODO finish cmd line style
 //    //TODO Set similarity style
 //
-//    if(input=="Y") {
-//        //run the registered tests
-//        ::testing::InitGoogleTest(&argc, argv);
-//        return RUN_ALL_TESTS();
-//    }
-//    else{
-//        exit(0);
-//    }
+    if(input=="Y") {
+        //run the registered tests
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }
+    else{
+        exit(0);
+    }
 
 
 

@@ -219,6 +219,33 @@ gtest/fast:
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+ref/memcachedexa.o: ref/memcachedexa.cpp.o
+
+.PHONY : ref/memcachedexa.o
+
+# target to build an object file
+ref/memcachedexa.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.o
+.PHONY : ref/memcachedexa.cpp.o
+
+ref/memcachedexa.i: ref/memcachedexa.cpp.i
+
+.PHONY : ref/memcachedexa.i
+
+# target to preprocess a source file
+ref/memcachedexa.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.i
+.PHONY : ref/memcachedexa.cpp.i
+
+ref/memcachedexa.s: ref/memcachedexa.cpp.s
+
+.PHONY : ref/memcachedexa.s
+
+# target to generate assembly for a file
+ref/memcachedexa.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.s
+.PHONY : ref/memcachedexa.cpp.s
+
 src/LSH.o: src/LSH.cpp.o
 
 .PHONY : src/LSH.o
@@ -614,6 +641,9 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... ref/memcachedexa.o"
+	@echo "... ref/memcachedexa.i"
+	@echo "... ref/memcachedexa.s"
 	@echo "... src/LSH.o"
 	@echo "... src/LSH.i"
 	@echo "... src/LSH.s"

@@ -182,12 +182,12 @@ std::string LSH::generateRunId(){
     time_t t = time(0);
     struct tm * now = localtime( & t );
 
-    runId+=(now->tm_year+1900);
-    runId+=(now->tm_mon);
-    runId+=(now->tm_mday);
-    runId+=(now->tm_hour);
-    runId+=(now->tm_min);
-    runId+=(now->tm_sec);
+    runId+=std::to_string(now->tm_year+1900);
+    runId+=std::to_string(now->tm_mon);
+    runId+=std::to_string(now->tm_mday);
+    runId+=std::to_string(now->tm_hour);
+    runId+=std::to_string(now->tm_min);
+    runId+=std::to_string(now->tm_sec);
 
     return runId;
 }

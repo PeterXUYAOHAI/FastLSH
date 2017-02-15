@@ -36,6 +36,10 @@ class LSH{
 
     vector2D getCollisionMatrix();
 
+    int saveHashNToMemc(const char *server, unsigned short port, time_t exp);
+
+    void readHashNFromMemc(const char *server, unsigned short port, std::string runId);
+
     void reportStatus();
 
     int clear();
@@ -100,6 +104,8 @@ private:
 
     FRIEND_TEST(pthreadTest, hashValueTest);
 
+    FRIEND_TEST(memcachedTest, resultTest);
+
 //    void *computeHashPthreadFuc(void *loopPara);
 
 //    void *computeCollisionPthreadFuc(void *loopPara);
@@ -114,9 +120,7 @@ private:
 
     std::string generateRunId();
 
-    int saveHashNToMemc(const char *server, unsigned short port, time_t exp);
 
-    void readHashNFromMemc(const char *server, unsigned short port, std::string runId);
 };
 
 

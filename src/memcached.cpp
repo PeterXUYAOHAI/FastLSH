@@ -19,8 +19,8 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
 
     //check if hashMatrixAlreadyExist
     if (hashMatrixN.size()<=0){
-        fprintf(stderr, "hashMatrixN not exist\n Maybe you haven't calculate it yet");
-        return 0;
+        fprintf(stderr, "hashMatrixN not exist, Maybe you haven't calculate it yet\n");
+        return 1;
     }
 
 
@@ -37,7 +37,7 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
     else
         fprintf(stderr, "Couldn't add server: %s\n", memcached_strerror(memc, rc));
 
-    fprintf(stderr, "Start to pip file into memcache");
+    fprintf(stderr, "Start to pip file into memcache\n");
 
 
     for (int i = 0; i < N; ++i) {
@@ -45,7 +45,7 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
         std::string valueString = "";
         for (int j = 0; j < L; ++j) {
             if (j<(L-1))
-                valueString += (std::to_string(hashMatrixN[i][j])+",");
+                valueString += (std::to_string(hashMatrixN[i][j])+","); // the value won't be exactly the same, because it is double
             else
                 valueString += (std::to_string(hashMatrixN[i][j])+"\n");
         }
@@ -57,8 +57,9 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
         }
     }
 
-    fprintf(stderr, "HashMatrixN successfully stored, get them from memcache by %sHaN+queryIndex", runID);
+    fprintf(stderr, "HashMatrixN successfully stored, get them from memcache by %sHaN+queryIndex\n", runID);
 
+    return 0;
 
 }
 
@@ -66,13 +67,14 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
 //srunId--the specific runId of the hashmatrix
 void LSH::readHashNFromMemc(const char* server, in_port_t port,std::string srunId){
 
-    if (hashMatrixN.size()>0){
-        fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
-        char answ;
-        std::cin>>answ;
-        if(answ =='N')
-            return ;
-    }
+    // disabled for the gtest
+//    if (hashMatrixN.size()>0){
+//        fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
+//        char answ;
+//        std::cin>>answ;
+//        if(answ =='N')
+//            return ;
+//    }
 
     memcached_server_st *servers = NULL;
     memcached_st *memc;

@@ -32,6 +32,7 @@ TEST_F(stdthreadTest, hashValueTest){
     vector2D singleThreadResult;
     vector2D stdthreadResult;
 
+
     t1 = now();
     vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.Q);
     t2 = now();
