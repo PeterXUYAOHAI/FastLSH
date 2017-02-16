@@ -20,7 +20,8 @@ Try to use CMakeList_safe.txt in the repo and comment line 30-32, 40-41 in the L
 
 ## TODO
 * Access to MPI
-* Access to memcache
+* Access to Redis
+* ~~Access to memcached~~
 * Distributed computing
 * Parameter generator
 
