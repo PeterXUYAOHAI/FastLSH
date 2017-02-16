@@ -57,7 +57,7 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
         }
     }
 
-    fprintf(stderr, "HashMatrixN successfully stored, get them from memcache by %sHaN+queryIndex\n", runID);
+    fprintf(stderr, "HashMatrixN successfully stored, get them from memcache by %sHaN+queryIndex\n", runID.c_str());
 
     return 0;
 

@@ -49,14 +49,13 @@ int LSH::saveHashNToRedis(const char* server, in_port_t port){
 
         reply = (redisReply*)redisCommand( c, cmd.c_str());
 
-
-        if (reply->str != "OK") {
-            fprintf(stderr, "Couldn't store key: %s, storage failed\n", keyString);
+        if (strcmp(reply->str, "OK") != 0 ) {
+            fprintf(stderr, "Couldn't store key: %s, storage failed, %s\n", keyString.c_str(), reply->str);
             return 0;
         }
     }
 
-    fprintf(stderr, "HashMatrixN successfully stored, get them from memcache by %sHaN+queryIndex\n", runID);
+    fprintf(stderr, "HashMatrixN successfully stored, get them from memcache by %sHaN+queryIndex\n", runID.c_str());
 
     redisFree(c);
 
