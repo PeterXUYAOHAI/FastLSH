@@ -20,7 +20,7 @@ endif()
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp  src/compute/computeMt-openMP.cpp src/compute/computeMt-stdthread.cpp src/compute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp)
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp  src/compute/MTCompute/computeMt-openMP.cpp src/compute/MTCompute/computeMt-stdthread.cpp src/compute/MTCompute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp)
 
 add_executable(FastLSH ${SOURCE_FILES})
 target_link_libraries (FastLSH  gtest)
