@@ -67,17 +67,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -121,6 +110,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/home/peter/clion-2016.3.2/bin/cmake/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,6 +166,19 @@ FastLSH: cmake_check_build_system
 FastLSH/fast:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/build
 .PHONY : FastLSH/fast
+
+#=============================================================================
+# Target rules for targets named mpiLSH
+
+# Build rule for target.
+mpiLSH: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mpiLSH
+.PHONY : mpiLSH
+
+# fast build rule for target.
+mpiLSH/fast:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/build
+.PHONY : mpiLSH/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -360,7 +373,7 @@ src/compute/clusterCompute/mpiCompute.o: src/compute/clusterCompute/mpiCompute.c
 
 # target to build an object file
 src/compute/clusterCompute/mpiCompute.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
 .PHONY : src/compute/clusterCompute/mpiCompute.cpp.o
 
 src/compute/clusterCompute/mpiCompute.i: src/compute/clusterCompute/mpiCompute.cpp.i
@@ -369,7 +382,7 @@ src/compute/clusterCompute/mpiCompute.i: src/compute/clusterCompute/mpiCompute.c
 
 # target to preprocess a source file
 src/compute/clusterCompute/mpiCompute.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i
 .PHONY : src/compute/clusterCompute/mpiCompute.cpp.i
 
 src/compute/clusterCompute/mpiCompute.s: src/compute/clusterCompute/mpiCompute.cpp.s
@@ -378,7 +391,7 @@ src/compute/clusterCompute/mpiCompute.s: src/compute/clusterCompute/mpiCompute.c
 
 # target to generate assembly for a file
 src/compute/clusterCompute/mpiCompute.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s
 .PHONY : src/compute/clusterCompute/mpiCompute.cpp.s
 
 src/compute/compute.o: src/compute/compute.cpp.o
@@ -712,12 +725,13 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... rebuild_cache"
 	@echo "... list_install_components"
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... FastLSH"
+	@echo "... rebuild_cache"
+	@echo "... mpiLSH"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"

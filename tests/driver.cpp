@@ -12,18 +12,43 @@
 #include <mutex>
 
 #include <hiredis/hiredis.h>
-
+#include <mpi.h>
 
 int main (int argc, char **argv){
 
 
 
-
-
-
-
+//    // Initialize the MPI environment
+//    MPI_Init(NULL, NULL);
 //
+//    // Get the number of processes
+//    int world_size;
+//    MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 //
+//    // Get the rank of the process
+//    int world_rank;
+//    MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
+//
+//    // Get the name of the processor
+//    char processor_name[MPI_MAX_PROCESSOR_NAME];
+//    int name_len;
+//    MPI_Get_processor_name(processor_name, &name_len);
+//
+//    std::cin>>name_len;
+//    // Print off a hello world message
+//    printf("Hello world from processor %s, rank %d"
+//                   " out of %d processors\n",
+//           processor_name, world_rank, world_size);
+//
+//    // Finalize the MPI environment.
+//    MPI_Finalize();
+//
+//    std::cout<<"yes";
+//
+//    std::cin>>name_len;
+
+
+
     std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
             "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
             "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
@@ -35,6 +60,8 @@ int main (int argc, char **argv){
 
     std::string input;
     std::cin>>input;
+
+
 //
 //
 ////    //TODO add normalization
@@ -49,14 +76,14 @@ int main (int argc, char **argv){
 ////    //TODO finish cmd line style
 ////    //TODO Set similarity style
 ////
-//    if(input=="Y") {
-//        //run the registered tests
-//        ::testing::InitGoogleTest(&argc, argv);
-//        return RUN_ALL_TESTS();
-//    }
-//    else{
-//        exit(0);
-//    }
+    if(input=="Y") {
+        //run the registered tests
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }
+    else{
+        exit(0);
+    }
 
 
 

@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/peter/FYP/FastLSH/cmake-build-debug
 CMakeFiles/FastLSH.dir/all: lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/depend
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19 "Built target FastLSH"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target FastLSH"
 .PHONY : CMakeFiles/FastLSH.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/FastLSH.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FastLSH.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles 21
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles 20
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FastLSH.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/FastLSH.dir/rule
@@ -93,6 +93,43 @@ CMakeFiles/FastLSH.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/FastLSH.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/mpiLSH.dir
+
+# All Build rule for target.
+CMakeFiles/mpiLSH.dir/all:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/depend
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=30,31 "Built target mpiLSH"
+.PHONY : CMakeFiles/mpiLSH.dir/all
+
+# Include target in all.
+all: CMakeFiles/mpiLSH.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/mpiLSH.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/mpiLSH.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/mpiLSH.dir/rule
+
+# Convenience name for target.
+mpiLSH: CMakeFiles/mpiLSH.dir/rule
+
+.PHONY : mpiLSH
+
+# clean rule for target.
+CMakeFiles/mpiLSH.dir/clean:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/clean
+.PHONY : CMakeFiles/mpiLSH.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/mpiLSH.dir/clean
 
 .PHONY : clean
 
@@ -143,7 +180,7 @@ lib/googletest/googlemock/preinstall: lib/googletest/googlemock/gtest/preinstall
 lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=23,24,25,26 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=22,23,24,25 "Built target gmock_main"
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Include target in all.
@@ -180,7 +217,7 @@ clean: lib/googletest/googlemock/CMakeFiles/gmock_main.dir/clean
 lib/googletest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f lib/googletest/googlemock/CMakeFiles/gmock.dir/build.make lib/googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=20,21,22 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=19,20,21 "Built target gmock"
 .PHONY : lib/googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Include target in all.
@@ -237,7 +274,7 @@ lib/googletest/googlemock/gtest/preinstall:
 lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=29,30 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=28,29 "Built target gtest_main"
 .PHONY : lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Include target in all.
@@ -274,7 +311,7 @@ clean: lib/googletest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=27,28 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=26,27 "Built target gtest"
 .PHONY : lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Include target in all.

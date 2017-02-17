@@ -9,7 +9,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o"
   "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o"
   "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o"
-  "/home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o"
   "/home/peter/FYP/FastLSH/src/compute/compute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o"
   "/home/peter/FYP/FastLSH/src/hdfsRead.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o"
   "/home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o"

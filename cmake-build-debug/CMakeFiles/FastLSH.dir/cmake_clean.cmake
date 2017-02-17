@@ -16,7 +16,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.o"
   "CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o"
   "CMakeFiles/FastLSH.dir/tests/unitTests/redisTest.cpp.o"
-  "CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )
