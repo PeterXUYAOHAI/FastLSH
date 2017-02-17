@@ -14,7 +14,7 @@ It has been tested on Ubuntu 16.04 with the following programs
 * Redis 3.2
 * OpenMPI 2.02
 
-If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo and comment the lines where compile error happens. I will creat a safa brach.
+If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo and comment the lines where compile error happens. I will creat a safa brach soon.
 
 
 ##Parameters
