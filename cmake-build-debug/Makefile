@@ -273,6 +273,114 @@ src/LSH.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
 .PHONY : src/LSH.cpp.s
 
+src/compute/MTCompute/computeMt-openMP.o: src/compute/MTCompute/computeMt-openMP.cpp.o
+
+.PHONY : src/compute/MTCompute/computeMt-openMP.o
+
+# target to build an object file
+src/compute/MTCompute/computeMt-openMP.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o
+.PHONY : src/compute/MTCompute/computeMt-openMP.cpp.o
+
+src/compute/MTCompute/computeMt-openMP.i: src/compute/MTCompute/computeMt-openMP.cpp.i
+
+.PHONY : src/compute/MTCompute/computeMt-openMP.i
+
+# target to preprocess a source file
+src/compute/MTCompute/computeMt-openMP.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.i
+.PHONY : src/compute/MTCompute/computeMt-openMP.cpp.i
+
+src/compute/MTCompute/computeMt-openMP.s: src/compute/MTCompute/computeMt-openMP.cpp.s
+
+.PHONY : src/compute/MTCompute/computeMt-openMP.s
+
+# target to generate assembly for a file
+src/compute/MTCompute/computeMt-openMP.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.s
+.PHONY : src/compute/MTCompute/computeMt-openMP.cpp.s
+
+src/compute/MTCompute/computeMt-pthread.o: src/compute/MTCompute/computeMt-pthread.cpp.o
+
+.PHONY : src/compute/MTCompute/computeMt-pthread.o
+
+# target to build an object file
+src/compute/MTCompute/computeMt-pthread.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o
+.PHONY : src/compute/MTCompute/computeMt-pthread.cpp.o
+
+src/compute/MTCompute/computeMt-pthread.i: src/compute/MTCompute/computeMt-pthread.cpp.i
+
+.PHONY : src/compute/MTCompute/computeMt-pthread.i
+
+# target to preprocess a source file
+src/compute/MTCompute/computeMt-pthread.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.i
+.PHONY : src/compute/MTCompute/computeMt-pthread.cpp.i
+
+src/compute/MTCompute/computeMt-pthread.s: src/compute/MTCompute/computeMt-pthread.cpp.s
+
+.PHONY : src/compute/MTCompute/computeMt-pthread.s
+
+# target to generate assembly for a file
+src/compute/MTCompute/computeMt-pthread.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.s
+.PHONY : src/compute/MTCompute/computeMt-pthread.cpp.s
+
+src/compute/MTCompute/computeMt-stdthread.o: src/compute/MTCompute/computeMt-stdthread.cpp.o
+
+.PHONY : src/compute/MTCompute/computeMt-stdthread.o
+
+# target to build an object file
+src/compute/MTCompute/computeMt-stdthread.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
+.PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.o
+
+src/compute/MTCompute/computeMt-stdthread.i: src/compute/MTCompute/computeMt-stdthread.cpp.i
+
+.PHONY : src/compute/MTCompute/computeMt-stdthread.i
+
+# target to preprocess a source file
+src/compute/MTCompute/computeMt-stdthread.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.i
+.PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.i
+
+src/compute/MTCompute/computeMt-stdthread.s: src/compute/MTCompute/computeMt-stdthread.cpp.s
+
+.PHONY : src/compute/MTCompute/computeMt-stdthread.s
+
+# target to generate assembly for a file
+src/compute/MTCompute/computeMt-stdthread.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.s
+.PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.s
+
+src/compute/clusterCompute/mpiCompute.o: src/compute/clusterCompute/mpiCompute.cpp.o
+
+.PHONY : src/compute/clusterCompute/mpiCompute.o
+
+# target to build an object file
+src/compute/clusterCompute/mpiCompute.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
+.PHONY : src/compute/clusterCompute/mpiCompute.cpp.o
+
+src/compute/clusterCompute/mpiCompute.i: src/compute/clusterCompute/mpiCompute.cpp.i
+
+.PHONY : src/compute/clusterCompute/mpiCompute.i
+
+# target to preprocess a source file
+src/compute/clusterCompute/mpiCompute.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i
+.PHONY : src/compute/clusterCompute/mpiCompute.cpp.i
+
+src/compute/clusterCompute/mpiCompute.s: src/compute/clusterCompute/mpiCompute.cpp.s
+
+.PHONY : src/compute/clusterCompute/mpiCompute.s
+
+# target to generate assembly for a file
+src/compute/clusterCompute/mpiCompute.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s
+.PHONY : src/compute/clusterCompute/mpiCompute.cpp.s
+
 src/compute/compute.o: src/compute/compute.cpp.o
 
 .PHONY : src/compute/compute.o
@@ -299,87 +407,6 @@ src/compute/compute.s: src/compute/compute.cpp.s
 src/compute/compute.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/compute.cpp.s
 .PHONY : src/compute/compute.cpp.s
-
-src/compute/computeMt-openMP.o: src/compute/computeMt-openMP.cpp.o
-
-.PHONY : src/compute/computeMt-openMP.o
-
-# target to build an object file
-src/compute/computeMt-openMP.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o
-.PHONY : src/compute/computeMt-openMP.cpp.o
-
-src/compute/computeMt-openMP.i: src/compute/computeMt-openMP.cpp.i
-
-.PHONY : src/compute/computeMt-openMP.i
-
-# target to preprocess a source file
-src/compute/computeMt-openMP.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.i
-.PHONY : src/compute/computeMt-openMP.cpp.i
-
-src/compute/computeMt-openMP.s: src/compute/computeMt-openMP.cpp.s
-
-.PHONY : src/compute/computeMt-openMP.s
-
-# target to generate assembly for a file
-src/compute/computeMt-openMP.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.s
-.PHONY : src/compute/computeMt-openMP.cpp.s
-
-src/compute/computeMt-pthread.o: src/compute/computeMt-pthread.cpp.o
-
-.PHONY : src/compute/computeMt-pthread.o
-
-# target to build an object file
-src/compute/computeMt-pthread.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o
-.PHONY : src/compute/computeMt-pthread.cpp.o
-
-src/compute/computeMt-pthread.i: src/compute/computeMt-pthread.cpp.i
-
-.PHONY : src/compute/computeMt-pthread.i
-
-# target to preprocess a source file
-src/compute/computeMt-pthread.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.i
-.PHONY : src/compute/computeMt-pthread.cpp.i
-
-src/compute/computeMt-pthread.s: src/compute/computeMt-pthread.cpp.s
-
-.PHONY : src/compute/computeMt-pthread.s
-
-# target to generate assembly for a file
-src/compute/computeMt-pthread.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.s
-.PHONY : src/compute/computeMt-pthread.cpp.s
-
-src/compute/computeMt-stdthread.o: src/compute/computeMt-stdthread.cpp.o
-
-.PHONY : src/compute/computeMt-stdthread.o
-
-# target to build an object file
-src/compute/computeMt-stdthread.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o
-.PHONY : src/compute/computeMt-stdthread.cpp.o
-
-src/compute/computeMt-stdthread.i: src/compute/computeMt-stdthread.cpp.i
-
-.PHONY : src/compute/computeMt-stdthread.i
-
-# target to preprocess a source file
-src/compute/computeMt-stdthread.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.i
-.PHONY : src/compute/computeMt-stdthread.cpp.i
-
-src/compute/computeMt-stdthread.s: src/compute/computeMt-stdthread.cpp.s
-
-.PHONY : src/compute/computeMt-stdthread.s
-
-# target to generate assembly for a file
-src/compute/computeMt-stdthread.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.s
-.PHONY : src/compute/computeMt-stdthread.cpp.s
 
 src/hdfsRead.o: src/hdfsRead.cpp.o
 
@@ -701,18 +728,21 @@ help:
 	@echo "... src/LSH.o"
 	@echo "... src/LSH.i"
 	@echo "... src/LSH.s"
+	@echo "... src/compute/MTCompute/computeMt-openMP.o"
+	@echo "... src/compute/MTCompute/computeMt-openMP.i"
+	@echo "... src/compute/MTCompute/computeMt-openMP.s"
+	@echo "... src/compute/MTCompute/computeMt-pthread.o"
+	@echo "... src/compute/MTCompute/computeMt-pthread.i"
+	@echo "... src/compute/MTCompute/computeMt-pthread.s"
+	@echo "... src/compute/MTCompute/computeMt-stdthread.o"
+	@echo "... src/compute/MTCompute/computeMt-stdthread.i"
+	@echo "... src/compute/MTCompute/computeMt-stdthread.s"
+	@echo "... src/compute/clusterCompute/mpiCompute.o"
+	@echo "... src/compute/clusterCompute/mpiCompute.i"
+	@echo "... src/compute/clusterCompute/mpiCompute.s"
 	@echo "... src/compute/compute.o"
 	@echo "... src/compute/compute.i"
 	@echo "... src/compute/compute.s"
-	@echo "... src/compute/computeMt-openMP.o"
-	@echo "... src/compute/computeMt-openMP.i"
-	@echo "... src/compute/computeMt-openMP.s"
-	@echo "... src/compute/computeMt-pthread.o"
-	@echo "... src/compute/computeMt-pthread.i"
-	@echo "... src/compute/computeMt-pthread.s"
-	@echo "... src/compute/computeMt-stdthread.o"
-	@echo "... src/compute/computeMt-stdthread.i"
-	@echo "... src/compute/computeMt-stdthread.s"
 	@echo "... src/hdfsRead.o"
 	@echo "... src/hdfsRead.i"
 	@echo "... src/hdfsRead.s"

@@ -13,27 +13,16 @@
 
 #include <hiredis/hiredis.h>
 
+
 int main (int argc, char **argv){
 
-//    redisReply *reply;
-//    redisContext *c = redisConnect("127.0.0.1", 6379);
-//
-//    if ( c->err)
-//    {
-//        redisFree(c);
-//        printf("Connect to redisServer faile\n");
-//        return 0;
-//    }
-//
-//    printf("Connect to redisServer Success\n");
-//
-//    reply = (redisReply*)redisCommand( c, "SET foo bar");
-//
-//    reply = (redisReply*)redisCommand( c, "GET foo");
-//
-//    std::cout<<reply->str;
 
-//    std::cout<<"hello world!\n";
+
+
+
+
+
+//
 //
     std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
             "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
@@ -46,28 +35,28 @@ int main (int argc, char **argv){
 
     std::string input;
     std::cin>>input;
-
-
-//    //TODO add normalization
-//    //TODO multithread-read
-//    //TODO add mpi
-//    //TODO parameter generation
-//    //TODO in memory data store-memcache, Redis
-//    //TODO distrubuted program-hadoop
-//    //TODO change generate collision table procedure--no need to store the whole table, as soon as the candidate appear, push back the candidate.
-//    //TODO add conservative style -- delete hash as soon as it used
-//    //TODO add fed query set style
-//    //TODO finish cmd line style
-//    //TODO Set similarity style
 //
-    if(input=="Y") {
-        //run the registered tests
-        ::testing::InitGoogleTest(&argc, argv);
-        return RUN_ALL_TESTS();
-    }
-    else{
-        exit(0);
-    }
+//
+////    //TODO add normalization
+////    //TODO multithread-read
+////    //TODO add mpi
+////    //TODO parameter generation
+////    //TO-DO in memory data store-memcache, Redis
+////    //TODO distrubuted program-hadoop
+////    //TODO change generate collision table procedure--no need to store the whole table, as soon as the candidate appear, push back the candidate.
+////    //TODO add conservative style -- delete hash as soon as it used
+////    //TODO add fed query set style
+////    //TODO finish cmd line style
+////    //TODO Set similarity style
+////
+//    if(input=="Y") {
+//        //run the registered tests
+//        ::testing::InitGoogleTest(&argc, argv);
+//        return RUN_ALL_TESTS();
+//    }
+//    else{
+//        exit(0);
+//    }
 
 
 

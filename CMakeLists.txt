@@ -45,6 +45,20 @@ if(JAVA_INCLUDE_PATH)
     endif()
 endif()
 
+#MPI
+#complie with openmp
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fopenmp")
+
+#find_package(MPI)
+#include_directories(SYSTEM ${MPI_INCLUDE_PATH})
+
+
+find_package(MPI REQUIRED)
+if (MPI_FOUND)
+    include_directories(SYSTEM ${MPI_INCLUDE_PATH})
+else (MPI_FOUND)
+    message(SEND_ERROR "This application cannot compile without MPI")
+endif (MPI_FOUND)
 
 #message(${HDFS_LIBRARIES})
 #
@@ -57,7 +71,19 @@ include_directories( ${HDFS_INCLUDE_DIRS} )
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/computeMt-openMP.cpp src/compute/computeMt-stdthread.cpp src/compute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/memcachedTest.cpp ref/memcachedexa.cpp src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp)
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/MTCompute/computeMt-openMP.cpp src/compute/MTCompute/computeMt-stdthread.cpp src/compute/MTCompute/computeMt-pthread.cpp src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp tests/unitTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/memcachedTest.cpp ref/memcachedexa.cpp src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp src/compute/clusterCompute/mpiCompute.cpp)
+
+
+message(${MPIEXEC})
+
+message(${SOURCE_FILES})
+
 
 add_executable(FastLSH ${SOURCE_FILES})
-target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis)
+target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis mpi)
+target_link_libraries(FastLSH ${MPI_LIBRARIES})
+
+add_custom_command(TARGET FastLSH
+        COMMAND ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 4
+        ${MPIEXEC_PREFLAGS} FastLSH
+        )

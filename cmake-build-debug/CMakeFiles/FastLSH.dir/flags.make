@@ -6,5 +6,5 @@ CXX_FLAGS =  -fopenmp -g   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/peter/FYP/FastLSH/lib/googletest/googletest/include -I/usr/local/hadoop/include -I/usr/lib/jvm/java-8-openjdk-amd64/include -I/usr/lib/jvm/java-8-openjdk-amd64/include/linux 
+CXX_INCLUDES = -I/home/peter/FYP/FastLSH/lib/googletest/googletest/include -isystem /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -isystem /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -isystem /usr/lib/openmpi/include -isystem /usr/lib/openmpi/include/openmpi -I/usr/local/hadoop/include -I/usr/lib/jvm/java-8-openjdk-amd64/include -I/usr/lib/jvm/java-8-openjdk-amd64/include/linux 
 

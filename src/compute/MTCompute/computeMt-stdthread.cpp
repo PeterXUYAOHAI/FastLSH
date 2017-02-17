@@ -2,7 +2,7 @@
 // Created by peter on 17-2-7.
 //
 
-#include "../../include/LSH.h"
+#include "../../../include/LSH.h"
 #include <thread>
 #include <random>
 #include <iostream>

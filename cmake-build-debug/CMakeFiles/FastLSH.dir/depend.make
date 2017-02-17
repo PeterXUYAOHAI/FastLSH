@@ -7,21 +7,23 @@ CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../lib/googletest/googletest/include/gtest
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../include/LSH.h
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../src/LSH.cpp
 
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../src/compute/MTCompute/computeMt-openMP.cpp
+
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../src/compute/MTCompute/computeMt-pthread.cpp
+
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../src/compute/MTCompute/computeMt-stdthread.cpp
+
+CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o: ../src/compute/clusterCompute/mpiCompute.cpp
+
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../include/LSH.h
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../src/compute/compute.cpp
-
-CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
-CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o: ../include/LSH.h
-CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o: ../src/compute/computeMt-openMP.cpp
-
-CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
-CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o: ../include/LSH.h
-CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o: ../src/compute/computeMt-pthread.cpp
-
-CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
-CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o: ../include/LSH.h
-CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o: ../src/compute/computeMt-stdthread.cpp
 
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../include/LSH.h

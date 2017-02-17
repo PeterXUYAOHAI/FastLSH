@@ -5,7 +5,7 @@
 #include <random>
 #include <iostream>
 #include <algorithm>
-#include "../../include/LSH.h"
+#include "../../../include/LSH.h"
 
 #ifdef _WIN32
 #include <windows.h>

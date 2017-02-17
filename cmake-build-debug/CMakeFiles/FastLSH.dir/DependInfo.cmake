@@ -6,10 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/peter/FYP/FastLSH/ref/memcachedexa.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.o"
   "/home/peter/FYP/FastLSH/src/LSH.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/LSH.cpp.o"
+  "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o"
+  "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o"
+  "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o"
+  "/home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o"
   "/home/peter/FYP/FastLSH/src/compute/compute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o"
-  "/home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o"
-  "/home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o"
-  "/home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o"
   "/home/peter/FYP/FastLSH/src/hdfsRead.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o"
   "/home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o"
   "/home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o"
@@ -27,6 +28,10 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../lib/googletest/googletest/include"
+  "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"
+  "/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"
+  "/usr/lib/openmpi/include"
+  "/usr/lib/openmpi/include/openmpi"
   "/usr/local/hadoop/include"
   "/usr/lib/jvm/java-8-openjdk-amd64/include"
   "/usr/lib/jvm/java-8-openjdk-amd64/include/linux"

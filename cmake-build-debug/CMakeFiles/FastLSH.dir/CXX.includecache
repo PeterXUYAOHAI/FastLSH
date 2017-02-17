@@ -310,19 +310,13 @@ iostream
 random
 -
 
-/home/peter/FYP/FastLSH/src/compute/compute.cpp
-../../include/LSH.h
+/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp
+../../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
 random
 -
 
-/home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp
-../../include/LSH.h
-/home/peter/FYP/FastLSH/include/LSH.h
-random
--
-
-/home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp
+/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp
 pthread.h
 -
 random
@@ -331,7 +325,7 @@ iostream
 -
 algorithm
 -
-../../include/LSH.h
+../../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
 windows.h
 -
@@ -342,8 +336,8 @@ sys/sysctl.h
 unistd.h
 -
 
-/home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp
-../../include/LSH.h
+/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp
+../../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
 thread
 -
@@ -352,6 +346,14 @@ random
 iostream
 -
 algorithm
+-
+
+/home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp
+
+/home/peter/FYP/FastLSH/src/compute/compute.cpp
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+random
 -
 
 /home/peter/FYP/FastLSH/src/hdfsRead.cpp

@@ -7,22 +7,24 @@ CMakeFiles/FastLSH.dir/src/LSH.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/src/LSH.cpp
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o
+ ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/LSH.h
+ /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o
+ ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/LSH.h
+ /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
+ ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/LSH.h
+ /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp
+CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
+ /home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/src/compute/compute.cpp
-CMakeFiles/FastLSH.dir/src/compute/computeMt-openMP.cpp.o
- ../lib/googletest/googletest/include/gtest/gtest_prod.h
- /home/peter/FYP/FastLSH/include/LSH.h
- /home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp
-CMakeFiles/FastLSH.dir/src/compute/computeMt-pthread.cpp.o
- ../lib/googletest/googletest/include/gtest/gtest_prod.h
- /home/peter/FYP/FastLSH/include/LSH.h
- /home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp
-CMakeFiles/FastLSH.dir/src/compute/computeMt-stdthread.cpp.o
- ../lib/googletest/googletest/include/gtest/gtest_prod.h
- /home/peter/FYP/FastLSH/include/LSH.h
- /home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h

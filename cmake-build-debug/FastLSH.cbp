@@ -85,6 +85,10 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/peter/FYP/FastLSH/lib/googletest/googletest/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"/>
+					<Add directory="/usr/lib/openmpi/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi"/>
 					<Add directory="/usr/local/hadoop/include"/>
 					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include"/>
 					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include/linux"/>
@@ -112,6 +116,10 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/peter/FYP/FastLSH/lib/googletest/googletest/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"/>
+					<Add directory="/usr/lib/openmpi/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi"/>
 					<Add directory="/usr/local/hadoop/include"/>
 					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include"/>
 					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include/linux"/>
@@ -367,16 +375,19 @@
 		<Unit filename="/home/peter/FYP/FastLSH/src/LSH.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/compute/compute.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/compute/computeMt-openMP.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/compute/computeMt-pthread.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/compute/computeMt-stdthread.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
