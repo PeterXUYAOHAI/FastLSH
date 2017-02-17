@@ -6,8 +6,15 @@ This is a C++ implementation of E2LSH and C2LSH. More detail to come.
 The build won't pass now because  travis don't support hadoop environment. I will try to fix it.
 
 ##Attention:
-If your machine do not have hadoop installed, this code won't build. If you are using MAC, the openMP functionality won't work.
-Try to use CMakeList_safe.txt in the repo and comment line 30-32, 40-41 in the LSH.cpp, line 9 in the driver.cpp, mostly it will solve the problem. 
+The current version requires certain programs installedfor the full functionality.
+It has been tested on Ubuntu 16.04 with the following programs
+* Hadoop 2.7.3
+* OpenMP 4.5
+* Memcached 1.4.34
+* Redis 3.2
+* OpenMPI 2.02
+
+If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo and comment the lines where compile error happens. I will creat a safa brach.
 
 
 ##Parameters
