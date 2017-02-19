@@ -55,3 +55,25 @@ TEST_F(metaTest, linuxReadTest){
     ASSERT_EQ(mlsh.setQ[0][0],1302);
     ASSERT_EQ(mlsh.setQ[0][0],1302);
 }
+
+//just legency
+//TEST_F(metaTest, hashValueTest){
+//
+//    mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
+//
+//    vector2D setQN;
+//    vector2D hashQ;
+//
+//    setQN = mlsh.normalize(mlsh.setQ);
+//    hashQ = mlsh.computeHash(setQN,mlsh.Q);
+//
+//    double temp;
+//
+//
+//    for (int i = 0; i < mlsh.Q; ++i) {
+//        for (int j = 0; j < mlsh.L; ++j) {
+//            std::cout<<hashQ[i][j]<<"\n";
+//            ASSERT_EQ(modf(hashQ[i][j], &temp),0);
+//        }
+//    }
+//}

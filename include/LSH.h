@@ -128,6 +128,8 @@ private:
     FRIEND_TEST(memcachedTest, resultTest);
 
     FRIEND_TEST(redisTest, resultTest);
+
+    FRIEND_TEST(metaTest, hashValueTest);
 };
 
 
