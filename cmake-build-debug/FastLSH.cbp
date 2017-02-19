@@ -67,6 +67,68 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="boostmpiLSH">
+				<Option output="/home/peter/FYP/FastLSH/cmake-build-debug/boostmpiLSH" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/peter/FYP/FastLSH/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/peter/FYP/FastLSH/lib/googletest/googletest/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"/>
+					<Add directory="/usr/lib/openmpi/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi"/>
+					<Add directory="/usr/local/hadoop/include"/>
+					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include"/>
+					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include/linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 boostmpiLSH"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="boostmpiLSH/fast">
+				<Option output="/home/peter/FYP/FastLSH/cmake-build-debug/boostmpiLSH" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/peter/FYP/FastLSH/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/peter/FYP/FastLSH/lib/googletest/googletest/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include"/>
+					<Add directory="/usr/lib/openmpi/include"/>
+					<Add directory="/usr/lib/openmpi/include/openmpi"/>
+					<Add directory="/usr/local/hadoop/include"/>
+					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include"/>
+					<Add directory="/usr/lib/jvm/java-8-openjdk-amd64/include/linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 boostmpiLSH/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/peter/FYP/FastLSH/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="FastLSH">
 				<Option output="/home/peter/FYP/FastLSH/cmake-build-debug/FastLSH" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/peter/FYP/FastLSH/cmake-build-debug"/>
@@ -445,6 +507,9 @@
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp">
 			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/compute/clusterCompute/boostmpiCompute.cpp">
+			<Option target="boostmpiLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp">
 			<Option target="mpiLSH"/>

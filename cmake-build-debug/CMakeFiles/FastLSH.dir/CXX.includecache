@@ -348,8 +348,6 @@ iostream
 algorithm
 -
 
-/home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp
-
 /home/peter/FYP/FastLSH/src/compute/compute.cpp
 ../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h

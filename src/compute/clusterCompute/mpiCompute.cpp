@@ -48,13 +48,10 @@ vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
 
 
 
-
-
-
-
-
 int main (int argc, char **argv) {
 
+    //distable for now
+    exit(0);
 
     int my_id, root_process, ierr, num_procs;
     MPI_Status status;
@@ -120,6 +117,7 @@ int main (int argc, char **argv) {
         {
 
 
+
         }
         //this part is for send random values
         {
@@ -148,17 +146,19 @@ int main (int argc, char **argv) {
         }
 
 
-        
 
 
 
-        openMPResult = mlsh.getCollisionMatrix();
-        hashMatrixN = computeHash(setN, N);
-        hashMatrixQ = computeHash(setQ, Q);
-        collisionMatrix = computeCollision(hashMatrixN, hashMatrixQ);
+
+//        openMPResult = mlsh.getCollisionMatrix();
+//        hashMatrixN = computeHash(setN, N);
+//        hashMatrixQ = computeHash(setQ, Q);
+//        collisionMatrix = computeCollision(hashMatrixN, hashMatrixQ);
 
     }
     else {
+
+
 
         /* I must be slave process, so I must receive my array segment,
 

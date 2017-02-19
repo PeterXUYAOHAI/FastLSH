@@ -19,8 +19,6 @@ CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp
-CMakeFiles/FastLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
- /home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
  /home/peter/FYP/FastLSH/include/LSH.h

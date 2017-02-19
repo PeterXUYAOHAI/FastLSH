@@ -155,6 +155,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named boostmpiLSH
+
+# Build rule for target.
+boostmpiLSH: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 boostmpiLSH
+.PHONY : boostmpiLSH
+
+# fast build rule for target.
+boostmpiLSH/fast:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/build
+.PHONY : boostmpiLSH/fast
+
+#=============================================================================
 # Target rules for targets named FastLSH
 
 # Build rule for target.
@@ -366,6 +379,33 @@ src/compute/MTCompute/computeMt-stdthread.s: src/compute/MTCompute/computeMt-std
 src/compute/MTCompute/computeMt-stdthread.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.s
 .PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.s
+
+src/compute/clusterCompute/boostmpiCompute.o: src/compute/clusterCompute/boostmpiCompute.cpp.o
+
+.PHONY : src/compute/clusterCompute/boostmpiCompute.o
+
+# target to build an object file
+src/compute/clusterCompute/boostmpiCompute.cpp.o:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o
+.PHONY : src/compute/clusterCompute/boostmpiCompute.cpp.o
+
+src/compute/clusterCompute/boostmpiCompute.i: src/compute/clusterCompute/boostmpiCompute.cpp.i
+
+.PHONY : src/compute/clusterCompute/boostmpiCompute.i
+
+# target to preprocess a source file
+src/compute/clusterCompute/boostmpiCompute.cpp.i:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.i
+.PHONY : src/compute/clusterCompute/boostmpiCompute.cpp.i
+
+src/compute/clusterCompute/boostmpiCompute.s: src/compute/clusterCompute/boostmpiCompute.cpp.s
+
+.PHONY : src/compute/clusterCompute/boostmpiCompute.s
+
+# target to generate assembly for a file
+src/compute/clusterCompute/boostmpiCompute.cpp.s:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.s
+.PHONY : src/compute/clusterCompute/boostmpiCompute.cpp.s
 
 src/compute/clusterCompute/mpiCompute.o: src/compute/clusterCompute/mpiCompute.cpp.o
 
@@ -729,6 +769,7 @@ help:
 	@echo "... install"
 	@echo "... install/local"
 	@echo "... install/strip"
+	@echo "... boostmpiLSH"
 	@echo "... FastLSH"
 	@echo "... rebuild_cache"
 	@echo "... mpiLSH"
@@ -751,6 +792,9 @@ help:
 	@echo "... src/compute/MTCompute/computeMt-stdthread.o"
 	@echo "... src/compute/MTCompute/computeMt-stdthread.i"
 	@echo "... src/compute/MTCompute/computeMt-stdthread.s"
+	@echo "... src/compute/clusterCompute/boostmpiCompute.o"
+	@echo "... src/compute/clusterCompute/boostmpiCompute.i"
+	@echo "... src/compute/clusterCompute/boostmpiCompute.s"
 	@echo "... src/compute/clusterCompute/mpiCompute.o"
 	@echo "... src/compute/clusterCompute/mpiCompute.i"
 	@echo "... src/compute/clusterCompute/mpiCompute.s"
