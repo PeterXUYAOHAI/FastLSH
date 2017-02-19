@@ -90,8 +90,6 @@ mpiLSH_EXTERNAL_OBJECTS =
 
 mpiLSH: CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
 mpiLSH: CMakeFiles/mpiLSH.dir/build.make
-mpiLSH: /usr/lib/openmpi/lib/libmpi_cxx.so
-mpiLSH: /usr/lib/openmpi/lib/libmpi.so
 mpiLSH: CMakeFiles/mpiLSH.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable mpiLSH"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/mpiLSH.dir/link.txt --verbose=$(VERBOSE)

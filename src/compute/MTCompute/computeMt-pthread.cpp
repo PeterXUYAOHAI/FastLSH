@@ -120,10 +120,7 @@ void* computeCollisionPthreadFuc(void *loopPara)
             int q = i/inloop;
             int n = i%inloop;
             for (int hash_id = 0; hash_id < mlsh->L; ++hash_id) {
-
-//                if ((*(my_data->hMatrixN))[n][hash_id] == (*(my_data->hMatrixQ))[q][hash_id])
-                //TODO this part may have some potential error 1.pointer issue 2. double compare
-                if (((*my_data->hMatrixN))[n][hash_id] == ((*my_data->hMatrixQ))[q][hash_id])
+                if ((int)(*my_data->hMatrixN)[n][hash_id] == (int)(*my_data->hMatrixQ)[q][hash_id])
                     (*my_data->collisionMatrix)[q][n]++;
             }
         }

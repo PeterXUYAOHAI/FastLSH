@@ -118,23 +118,33 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 
 vector2D LSH::getCollisionMatrix() {
 
+    //normalize data
+    setQNorm = normalize(setQ);
+    setNNorm = normalize(setN);
+
+    //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
+//    vector2D temp1;
+//    vector2D temp2;
+//    setQ.swap(temp1);
+//    setN.swap(temp2);
+
     //get Hash Matrix
     if (!useMultiThread) {
-        hashMatrixN = computeHash(setN, N);
-        hashMatrixQ = computeHash(setQ, Q);
+        hashMatrixN = computeHash(setNNorm, N);
+        hashMatrixQ = computeHash(setQNorm, Q);
     }
     else{
         if (multiThreadMode == 0) {
-            hashMatrixN = computeHash_openmp(setN, N);
-            hashMatrixQ = computeHash_openmp(setQ, Q);
+            hashMatrixN = computeHash_openmp(setNNorm, N);
+            hashMatrixQ = computeHash_openmp(setQNorm, Q);
         }
         else if(multiThreadMode==1){
-            hashMatrixN = computeHash_stdthread(setN, N);
-            hashMatrixQ = computeHash_stdthread(setQ, Q);
+            hashMatrixN = computeHash_stdthread(setNNorm, N);
+            hashMatrixQ = computeHash_stdthread(setQNorm, Q);
         }
         else if(multiThreadMode ==2){
-            hashMatrixN = computeHash_pthread(setN, N);
-            hashMatrixQ = computeHash_pthread(setQ, Q);
+            hashMatrixN = computeHash_pthread(setNNorm, N);
+            hashMatrixQ = computeHash_pthread(setQNorm, Q);
         }
     }
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>

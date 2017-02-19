@@ -11,26 +11,22 @@
 #include <thread>
 #include <mutex>
 
-#include <hiredis/hiredis.h>
-#include <mpi.h>
 
 int main (int argc, char **argv){
 
-//    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
-//            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
-//            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
-//            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
-//            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
-//            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
-//
-//    std::cout<<"Would you like to run the test(Y/N)\n";
-//
-//    std::string input;
-//    std::cin>>input;
+    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
+            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
+            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
+            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
+            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
+            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
+
+    std::cout<<"Would you like to run the test(Y/N)\n";
+
+    std::string input;
+    std::cin>>input;
 
 
-//
-//
 ////    //TODO add normalization
 ////    //TODO multithread-read
 ////    //TODO parameter generation
@@ -42,14 +38,14 @@ int main (int argc, char **argv){
 ////    //TODO finish cmd line style
 ////    //TODO Set similarity style
 ////
-//    if(input=="Y") {
-//        //run the registered tests
-//        ::testing::InitGoogleTest(&argc, argv);
-//        return RUN_ALL_TESTS();
-//    }
-//    else{
-//        exit(0);
-//    }
+    if(input=="Y") {
+        //run the registered tests
+        ::testing::InitGoogleTest(&argc, argv);
+        return RUN_ALL_TESTS();
+    }
+    else{
+        exit(0);
+    }
 
 
 

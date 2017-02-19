@@ -72,6 +72,11 @@ private:
     vector1D randomVector; //random values to assist k group of LSH
     vector2D setN; // original data set of N
     vector2D setQ; // original data set of Q
+
+    //this two brings extra cost of memory, may merge to the setN, setQ to save memory
+    vector2D setNNorm; // normalized data set of N
+    vector2D setQNorm; // normalized data set of Q
+
     vector2D hashMatrixN; // hashMatrix of N where hash value is stored
     vector2D hashMatrixQ; // hashMatrix of Q where hash value is stored
 
@@ -96,6 +101,18 @@ private:
 
     vector2D computeCollision_stdthread(vector2D hMatrixN, vector2D hMatrixQ);
 
+    vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
+
+    vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
+
+    friend void *computeHashPthreadFuc(void *loopPara);
+
+    friend void *computeCollisionPthreadFuc(void *loopPara);
+
+    std::string generateRunId();
+
+    vector2D normalize(vector2D dataset);
+
     FRIEND_TEST(openMPTest, hashValueTest);
 
     FRIEND_TEST(hdfsTest, readTest);
@@ -111,18 +128,6 @@ private:
     FRIEND_TEST(memcachedTest, resultTest);
 
     FRIEND_TEST(redisTest, resultTest);
-
-
-    vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
-
-    vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
-
-    friend void *computeHashPthreadFuc(void *loopPara);
-
-    friend void *computeCollisionPthreadFuc(void *loopPara);
-
-    std::string generateRunId();
-
 };
 
 

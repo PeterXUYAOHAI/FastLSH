@@ -72,7 +72,7 @@ TEST_F(pthreadTest, hashValueTest){
 
 TEST_F(pthreadTest, resultTest){
     vector2D singleThreadResult;
-    vector2D stdthreadResult;
+    vector2D pthreadResult;
 
     t1 = now();
     singleThreadResult = mlsh.getCollisionMatrix();
@@ -86,7 +86,7 @@ TEST_F(pthreadTest, resultTest){
     mlsh.setMultiThreadMode(2);
 
     t1 = now();
-    stdthreadResult = mlsh.getCollisionMatrix();
+    pthreadResult = mlsh.getCollisionMatrix();
     t2 = now();
 
     duration = dcast( t2 - t1 ).count();
@@ -96,11 +96,11 @@ TEST_F(pthreadTest, resultTest){
     mlsh.setDefault();
 
     //compare if the two collision counting are same
-    ASSERT_EQ(singleThreadResult.size(), stdthreadResult.size());
+    ASSERT_EQ(singleThreadResult.size(), pthreadResult.size());
 
-    ASSERT_EQ(singleThreadResult[0].size(), stdthreadResult[0].size());
+    ASSERT_EQ(singleThreadResult[0].size(), pthreadResult[0].size());
 
-    ASSERT_EQ(singleThreadResult, stdthreadResult);
+    ASSERT_EQ(singleThreadResult, pthreadResult);
 
 }
 

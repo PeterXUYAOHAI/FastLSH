@@ -77,7 +77,7 @@ set(SOURCE_FILES
         src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp
         tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp
         tests/unitTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/memcachedTest.cpp
-        ref/memcachedexa.cpp src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp )
+        src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp src/normalization.cpp)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp)
@@ -105,7 +105,7 @@ add_executable(FastLSH ${SOURCE_FILES})
 add_executable(boostmpiLSH ${BoostMPI_FILES})
 
 target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis mpi)
-target_link_libraries(mpiLSH ${MPI_LIBRARIES})
+#target_link_libraries(mpiLSH ${MPI_LIBRARIES})
 target_link_libraries(boostmpiLSH ${Boost_LIBRARIES} ${MPI_LIBRARIES})
 
 

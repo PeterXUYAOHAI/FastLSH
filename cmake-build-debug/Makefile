@@ -245,33 +245,6 @@ gtest/fast:
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-ref/memcachedexa.o: ref/memcachedexa.cpp.o
-
-.PHONY : ref/memcachedexa.o
-
-# target to build an object file
-ref/memcachedexa.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.o
-.PHONY : ref/memcachedexa.cpp.o
-
-ref/memcachedexa.i: ref/memcachedexa.cpp.i
-
-.PHONY : ref/memcachedexa.i
-
-# target to preprocess a source file
-ref/memcachedexa.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.i
-.PHONY : ref/memcachedexa.cpp.i
-
-ref/memcachedexa.s: ref/memcachedexa.cpp.s
-
-.PHONY : ref/memcachedexa.s
-
-# target to generate assembly for a file
-ref/memcachedexa.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/ref/memcachedexa.cpp.s
-.PHONY : ref/memcachedexa.cpp.s
-
 src/LSH.o: src/LSH.cpp.o
 
 .PHONY : src/LSH.o
@@ -542,6 +515,33 @@ src/inMemoryStore/redis.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.s
 .PHONY : src/inMemoryStore/redis.cpp.s
 
+src/normalization.o: src/normalization.cpp.o
+
+.PHONY : src/normalization.o
+
+# target to build an object file
+src/normalization.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.o
+.PHONY : src/normalization.cpp.o
+
+src/normalization.i: src/normalization.cpp.i
+
+.PHONY : src/normalization.i
+
+# target to preprocess a source file
+src/normalization.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.i
+.PHONY : src/normalization.cpp.i
+
+src/normalization.s: src/normalization.cpp.s
+
+.PHONY : src/normalization.s
+
+# target to generate assembly for a file
+src/normalization.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.s
+.PHONY : src/normalization.cpp.s
+
 tests/driver.o: tests/driver.cpp.o
 
 .PHONY : tests/driver.o
@@ -777,9 +777,6 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... ref/memcachedexa.o"
-	@echo "... ref/memcachedexa.i"
-	@echo "... ref/memcachedexa.s"
 	@echo "... src/LSH.o"
 	@echo "... src/LSH.i"
 	@echo "... src/LSH.s"
@@ -810,6 +807,9 @@ help:
 	@echo "... src/inMemoryStore/redis.o"
 	@echo "... src/inMemoryStore/redis.i"
 	@echo "... src/inMemoryStore/redis.s"
+	@echo "... src/normalization.o"
+	@echo "... src/normalization.i"
+	@echo "... src/normalization.s"
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"
