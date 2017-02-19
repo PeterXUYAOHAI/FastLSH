@@ -15,11 +15,14 @@ typedef std::vector<std::vector<std::vector<double>>> vector3D;
 typedef std::vector<std::vector<double>> vector2D;
 typedef std::vector<double> vector1D;
 
+
+// example cmd to run-- mpirun -np 10 --hosts slave1 ./boostmpiCompute
+
+
 /*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
  might drag down the speed.
 
  this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
-
  ***/
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
@@ -305,7 +308,8 @@ vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t
         vector1D singleLine(N, 0);
         for (int n = 0; n <N ; ++n){
             for (int hash_id = 0; hash_id < L; ++hash_id) {
-                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
+                //cast to int for comparision, reduce double compare risk
+                if ((int)hMatrixN[n][hash_id] == (int)hMatrixQ[q][hash_id])
                     singleLine[n]++;
             }
         }

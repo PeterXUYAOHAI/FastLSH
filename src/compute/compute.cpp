@@ -42,7 +42,8 @@ vector2D LSH::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
         vector1D singleLine(N, 0);
         for (int n = 0; n <N ; ++n){
             for (int hash_id = 0; hash_id < L; ++hash_id) {
-                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
+                //cast to int for comparision, reduce double compare risk
+                if ((int)hMatrixN[n][hash_id] == (int)hMatrixQ[q][hash_id])
                     singleLine[n]++;
             }
         }
