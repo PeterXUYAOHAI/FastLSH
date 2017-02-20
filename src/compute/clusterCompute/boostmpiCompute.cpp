@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-
+#include <chrono>
 #include <boost/mpi.hpp>
 #include <boost/serialization/vector.hpp>
 
@@ -24,6 +24,13 @@ typedef std::vector<double> vector1D;
 
 //mpiexec -np 2 -host --allow-run-as-root -mca btl ^openib ./boostmpiLSH
 //mpiexec -np 8 --allow-run-as-root -host -mca btl ^openib ./boostmpiLSH
+//mpiexec -np 4 -mca btl ^openib ./boostmpiLSH
+
+#define now() std::chrono::high_resolution_clock::now()
+#define dcast std::chrono::duration_cast<std::chrono::microseconds>
+
+
+vector2D normalize(vector2D dataset);
 
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
@@ -43,13 +50,19 @@ vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t
 
 int main (int argc, char **argv) {
 
+    std::chrono::high_resolution_clock::time_point t1;
+    std::chrono::high_resolution_clock::time_point t2;
+    std::chrono::high_resolution_clock::time_point t3;
+    std::chrono::high_resolution_clock::time_point t4;
+
+    t1 = now();
     // initialize the mpi environment
     mpi::environment env;
     mpi::communicator world;
 
     std::cout<<"My name is "<<env.processor_name()<<" processor id "<<world.rank()<<"\n";
     //hardcode the paremeters
-    size_t N = 1000; //# of vectors in the dataset
+    size_t N = 300000; //# of vectors in the dataset
     size_t Q = 1000; //# of vertors in the queryset
     size_t D = 57; //# of dimensions
     size_t L = 200; //# of group hash
@@ -66,6 +79,7 @@ int main (int argc, char **argv) {
     vector1D UniformRandomVector;
     vector3D randomLine;
     vector2D setQ;
+    vector2D setQNorm;    
     vector2D hashValueQ;
 
     //the part of N for each thread
@@ -77,7 +91,7 @@ int main (int argc, char **argv) {
     int numNperSlave;
     numNperSlave = ceil(N/(double)world.size());
 
-
+std::cout<<"start to cal random \n";
     //the master node do the preparation
     if(world.rank() == root_process) {
         //generate random line
@@ -104,14 +118,19 @@ int main (int argc, char **argv) {
             UniformRandomVector.push_back(dis(gen));
         }
 
+
         //read in setQ
         setQ = loadDataFromLinuxSystem("./tests/dataset/dataset1000NoIndex.csv", Q, D);
+	std::cout<<"my q size "<<setQ.size();
+	std::cout<<"my q size "<<setQ[0].size();
+
+        setQNorm = normalize(setQ);
         //flatten setQ for transmission
-        setQ1d = flat2D(setQ);
+        setQ1d = flat2D(setQNorm);
         //flatten randomLine for transmission
         randomLine1d = flat3D(randomLine);
     }
-
+std::cout<<"start broadcast \n";
     //broadcast the shared variables
     broadcast(world, setQ1d, 0);
     broadcast(world, randomLine1d, 0);
@@ -121,23 +140,26 @@ int main (int argc, char **argv) {
     //let slaves reconstruct the multi dimensional vector
     if(world.rank()!=root_process) {
         randomLine = reconstr3D(randomLine1d, L, K, D);
-        setQ = reconstr2D(setQ1d,Q,D);
+        setQNorm = reconstr2D(setQ1d,Q,D);
+
     }
 
     //deal with N
     if (world.rank()==root_process){
-        vector2D setN;
-        setN = loadDataFromLinuxSystem("./tests/dataset/dataset1000NoIndex.csv", N, D);
-
+	vector2D setN;
+        vector2D setNNorm;
+        setN = loadDataFromLinuxSystem("../../dataset300000NoIndex.csv", N, D);
+        setNNorm = normalize(setN);
         //deal with send part of N
         {
-
+std::cout<<"start to send N set\n";
+t3=now();
             //the last part of N will be done by master node(it contains least num of N)
             for (int i = 0; i <world.size() ; ++i) {
 
                 if(i!=(world.size()-1)) {
-                    vector2D::const_iterator first = setN.begin() +  numNperSlave * i;
-                    vector2D::const_iterator last = setN.begin() +  numNperSlave * (i + 1);
+                    vector2D::const_iterator first = setNNorm.begin() +  numNperSlave * i;
+                    vector2D::const_iterator last = setNNorm.begin() +  numNperSlave * (i + 1);
                     vector2D newVec(first, last);
 
                     vector1D vecToSend = flat2D(newVec);
@@ -146,24 +168,28 @@ int main (int argc, char **argv) {
 
                     // master node get last part of the job
                 else{
-                    vector2D::const_iterator first = setN.begin() +  numNperSlave * i;
-                    vector2D::const_iterator last = setN.begin() + N;
+                    vector2D::const_iterator first = setNNorm.begin() +  numNperSlave * i;
+                    vector2D::const_iterator last = setNNorm.begin() + N;
                     vector2D newVec(first, last);
                     partialSetN = newVec;
                 }
             }
         }
+t4=now()
+auto duration2 = dcast( t4 - t3 ).count();
+std::cout <<duration2 << " μ send out N set\n";
     }
     //slave nodes receive N
     else{
         world.recv(0, 0, partialSetN1d);
         partialSetN = reconstr2D(partialSetN1d, numNperSlave, D);
+
     }
 
 
     // calculate the hash and collision (separate master and slave operation because their num of N might be different
     if(world.rank()==root_process){
-        hashValueQ = computeHash(setQ, randomLine, UniformRandomVector, Q, L, K, D ,W );
+        hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector,
                                         N- numNperSlave*(world.size()-1), L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,N- numNperSlave*(world.size()-1),L);
@@ -171,16 +197,19 @@ int main (int argc, char **argv) {
     }
 
     else{
-        hashValueQ = computeHash(setQ, randomLine, UniformRandomVector, Q, L, K, D ,W );
+        hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector, numNperSlave, L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,numNperSlave,L);
     }
 
+    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable.size()<<"\n";
+    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0].size()<<"\n";
+
+  t2 = now();
+
+    auto duration = dcast( t2 - t1 ).count();
+    std::cout <<"processor "<<world.rank()<< " "<<duration << " μsto compute\n";
     //leave them for testing
-//    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
-//    std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
-
-
     // use this to pause in IDE
     int c;
     std::cin>>c;
@@ -286,7 +315,7 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
             //loop through the inner of a hash function group
             for (int k = 0; k < K; ++k) {
                 double dTemp = 0;
-                //loop through all the dimensions
+               //loop through all the dimensions
                 for (int d = 0; d < D; ++d) {
                     //vector(math) multiply to make projection
                     dTemp += dataset[n][d]*randomLine[l][k][d];
@@ -319,3 +348,32 @@ vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t
     return collisionMatrix;
 }
 
+vector2D normalize(vector2D dataset){
+    size_t row = dataset.size();
+    size_t col = dataset[0].size();
+
+    vector1D maximums(col, -999999);
+    vector1D minimums(col, 9999999);
+
+    //find maximums and minimums of each column
+    for (int i = 0; i < row; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(dataset[i][j]>= maximums[j])
+                maximums[j]=dataset[i][j];
+            if(dataset[i][j]<=minimums[j])
+                minimums[j]=dataset[i][j];
+        }
+    }
+
+    for (int i = 0; i < row; ++i) {
+        for (int j = 0; j < col; ++j) {
+            //if max equals min, the value is set to 0.5
+            if(maximums[j]==minimums[j])
+                dataset[i][j] = 0.5;
+            else
+                //normalization formula -- (x-min(x))/(max(x)-min(x))
+                dataset[i][j] = (dataset[i][j] - minimums[j])/(maximums[j]-minimums[j]);
+        }
+    }
+    return dataset;
+}

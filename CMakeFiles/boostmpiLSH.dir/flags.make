@@ -6,5 +6,5 @@ CXX_FLAGS =  -fopenmp   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest/googletest/include -isystem /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -isystem /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -isystem /usr/lib/openmpi/include -isystem /usr/lib/openmpi/include/openmpi 
+CXX_INCLUDES = -I/home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest/googletest/include -isystem /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent -isystem /usr/lib/openmpi/include/openmpi/opal/mca/event/libevent2021/libevent/include -isystem /usr/lib/openmpi/include -isystem /usr/lib/openmpi/include/openmpi 
 

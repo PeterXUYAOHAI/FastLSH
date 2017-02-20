@@ -6,12 +6,14 @@
 
 #IncludeRegexTransform: 
 
-/home/bsft14/yaohaixu2/FastLSH/FastLSH/src/compute/clusterCompute/boostmpiCompute.cpp
+/home/mpiuser/cloud/FastLSH/FastLSH/src/compute/clusterCompute/boostmpiCompute.cpp
 iostream
 -
 vector
 -
 fstream
+-
+chrono
 -
 boost/mpi.hpp
 -

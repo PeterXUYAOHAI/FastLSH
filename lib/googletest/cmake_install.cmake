@@ -1,4 +1,4 @@
-# Install script for directory: /home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest
+# Install script for directory: /home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest/googlemock/cmake_install.cmake")
+  include("/home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest/googlemock/cmake_install.cmake")
 
 endif()
 

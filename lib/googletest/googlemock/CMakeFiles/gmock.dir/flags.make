@@ -6,5 +6,5 @@ CXX_FLAGS =    -Wall -Wshadow -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-un
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest/googlemock/include -I/home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest/googlemock -I/home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest/googletest/include -I/home/bsft14/yaohaixu2/FastLSH/FastLSH/lib/googletest/googletest 
+CXX_INCLUDES = -I/home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest/googlemock/include -I/home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest/googlemock -I/home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest/googletest/include -I/home/mpiuser/cloud/FastLSH/FastLSH/lib/googletest/googletest 
 
