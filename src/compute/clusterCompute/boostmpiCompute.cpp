@@ -21,6 +21,10 @@ typedef std::vector<double> vector1D;
  this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
 
  ***/
+
+//mpiexec -np 2 -host --allow-run-as-root -mca btl ^openib ./boostmpiLSH
+//mpiexec -np 8 --allow-run-as-root -host -mca btl ^openib ./boostmpiLSH
+
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
 vector1D flat2D(vector2D origVec);
@@ -43,6 +47,7 @@ int main (int argc, char **argv) {
     mpi::environment env;
     mpi::communicator world;
 
+    std::cout<<"My name is "<<env.processor_name()<<" processor id "<<world.rank()<<"\n";
     //hardcode the paremeters
     size_t N = 1000; //# of vectors in the dataset
     size_t Q = 1000; //# of vertors in the queryset
@@ -100,7 +105,7 @@ int main (int argc, char **argv) {
         }
 
         //read in setQ
-        setQ = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", Q, D);
+        setQ = loadDataFromLinuxSystem("./tests/dataset/dataset1000NoIndex.csv", Q, D);
         //flatten setQ for transmission
         setQ1d = flat2D(setQ);
         //flatten randomLine for transmission
@@ -122,7 +127,7 @@ int main (int argc, char **argv) {
     //deal with N
     if (world.rank()==root_process){
         vector2D setN;
-        setN = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", N, D);
+        setN = loadDataFromLinuxSystem("./tests/dataset/dataset1000NoIndex.csv", N, D);
 
         //deal with send part of N
         {

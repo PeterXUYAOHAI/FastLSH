@@ -66,20 +66,20 @@ endif (MPI_FOUND)
 #
 #message($ENV{test})
 
-include_directories( ${HDFS_INCLUDE_DIRS} )
+#include_directories( ${HDFS_INCLUDE_DIRS} )
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/MTCompute/computeMt-openMP.cpp
-        src/compute/MTCompute/computeMt-stdthread.cpp
-        src/compute/MTCompute/computeMt-pthread.cpp
-        src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp
-        tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp
-        tests/unitTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/memcachedTest.cpp
-        ref/memcachedexa.cpp src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp )
+#set(SOURCE_FILES
+#        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/MTCompute/computeMt-openMP.cpp
+#        src/compute/MTCompute/computeMt-stdthread.cpp
+#        src/compute/MTCompute/computeMt-pthread.cpp
+#        src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp
+#        tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp
+#        tests/unitTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/memcachedTest.cpp
+#        ref/memcachedexa.cpp src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp )
 
-set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
+#set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp)
 
 
@@ -94,18 +94,18 @@ set(Boost_USE_MULTITHREADED ON)
 set(Boost_USE_STATIC_RUNTIME ON)
 
 
-message(${MPIEXEC})
+#message(${MPIEXEC})
 
-message(${SOURCE_FILES})
+#message(${SOURCE_FILES})
 
 message(${MPI_LIBRARIES})
 
-add_executable(mpiLSH ${MPI_FILES})
-add_executable(FastLSH ${SOURCE_FILES})
+#add_executable(mpiLSH ${MPI_FILES})
+#add_executable(FastLSH ${SOURCE_FILES})
 add_executable(boostmpiLSH ${BoostMPI_FILES})
 
-target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis mpi)
-target_link_libraries(mpiLSH ${MPI_LIBRARIES})
+#target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis mpi)
+#target_link_libraries(mpiLSH ${MPI_LIBRARIES})
 target_link_libraries(boostmpiLSH ${Boost_LIBRARIES} ${MPI_LIBRARIES})
 
 
@@ -115,7 +115,7 @@ target_link_libraries(boostmpiLSH ${Boost_LIBRARIES} ${MPI_LIBRARIES})
 #        ${MPIEXEC_PREFLAGS} mpiLSH
 #        )
 
-add_custom_command(TARGET boostmpiLSH
-        COMMAND ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 4
-        ${MPIEXEC_PREFLAGS} boostmpiLSH
-        )
+#add_custom_command(TARGET boostmpiLSH
+#        COMMAND ${MPIEXEC} ${MPIEXEC_NUMPROC_FLAG} 4
+#        ${MPIEXEC_PREFLAGS} boostmpiLSH
+#        )
