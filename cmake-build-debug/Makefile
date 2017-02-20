@@ -155,6 +155,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named paraGen
+
+# Build rule for target.
+paraGen: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 paraGen
+.PHONY : paraGen
+
+# fast build rule for target.
+paraGen/fast:
+	$(MAKE) -f CMakeFiles/paraGen.dir/build.make CMakeFiles/paraGen.dir/build
+.PHONY : paraGen/fast
+
+#=============================================================================
 # Target rules for targets named boostmpiLSH
 
 # Build rule for target.
@@ -542,6 +555,33 @@ src/normalization.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.s
 .PHONY : src/normalization.cpp.s
 
+src/paragen.o: src/paragen.cpp.o
+
+.PHONY : src/paragen.o
+
+# target to build an object file
+src/paragen.cpp.o:
+	$(MAKE) -f CMakeFiles/paraGen.dir/build.make CMakeFiles/paraGen.dir/src/paragen.cpp.o
+.PHONY : src/paragen.cpp.o
+
+src/paragen.i: src/paragen.cpp.i
+
+.PHONY : src/paragen.i
+
+# target to preprocess a source file
+src/paragen.cpp.i:
+	$(MAKE) -f CMakeFiles/paraGen.dir/build.make CMakeFiles/paraGen.dir/src/paragen.cpp.i
+.PHONY : src/paragen.cpp.i
+
+src/paragen.s: src/paragen.cpp.s
+
+.PHONY : src/paragen.s
+
+# target to generate assembly for a file
+src/paragen.cpp.s:
+	$(MAKE) -f CMakeFiles/paraGen.dir/build.make CMakeFiles/paraGen.dir/src/paragen.cpp.s
+.PHONY : src/paragen.cpp.s
+
 tests/driver.o: tests/driver.cpp.o
 
 .PHONY : tests/driver.o
@@ -767,6 +807,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... paraGen"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... boostmpiLSH"
@@ -810,6 +851,9 @@ help:
 	@echo "... src/normalization.o"
 	@echo "... src/normalization.i"
 	@echo "... src/normalization.s"
+	@echo "... src/paragen.o"
+	@echo "... src/paragen.i"
+	@echo "... src/paragen.s"
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"

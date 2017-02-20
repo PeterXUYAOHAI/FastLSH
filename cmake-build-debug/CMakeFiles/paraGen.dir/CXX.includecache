@@ -6,17 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/peter/FYP/FastLSH/src/compute/clusterCompute/boostmpiCompute.cpp
+/home/peter/FYP/FastLSH/src/paragen.cpp
 iostream
 -
 vector
 -
 fstream
 -
-random
+math.h
 -
-boost/mpi.hpp
--
-boost/serialization/vector.hpp
+sstream
 -
 

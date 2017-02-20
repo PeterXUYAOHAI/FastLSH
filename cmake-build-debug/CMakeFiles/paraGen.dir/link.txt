@@ -1,0 +1,1 @@
+/usr/bin/c++    -fopenmp -g   CMakeFiles/paraGen.dir/src/paragen.cpp.o  -o paraGen -rdynamic 

@@ -81,7 +81,7 @@ set(SOURCE_FILES
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp)
-
+set(Paragen_FILES src/paragen.cpp)
 
 #find boost library
 find_package (Boost 1.55.0 REQUIRED COMPONENTS system filesystem mpi)
@@ -103,6 +103,7 @@ message(${MPI_LIBRARIES})
 add_executable(mpiLSH ${MPI_FILES})
 add_executable(FastLSH ${SOURCE_FILES})
 add_executable(boostmpiLSH ${BoostMPI_FILES})
+add_executable(paraGen ${Paragen_FILES})
 
 target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis mpi)
 #target_link_libraries(mpiLSH ${MPI_LIBRARIES})

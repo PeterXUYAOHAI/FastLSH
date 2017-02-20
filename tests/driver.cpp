@@ -14,6 +14,7 @@
 
 int main (int argc, char **argv){
 
+    //http://www.kammerl.de/ascii/AsciiSignature.php
     std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
             "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
             "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"

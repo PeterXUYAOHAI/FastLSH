@@ -6,17 +6,22 @@
 #include <vector>
 #include <fstream>
 
+#include <random>
 #include <boost/mpi.hpp>
 #include <boost/serialization/vector.hpp>
 
 namespace mpi = boost::mpi;
 
-typedef std::vector<std::vector<std::vector<double>>> vector3D;
-typedef std::vector<std::vector<double>> vector2D;
+typedef std::vector<std::vector<std::vector<double> > > vector3D;
+typedef std::vector<std::vector<double> > vector2D;
 typedef std::vector<double> vector1D;
 
 
+//  sudo apt-get install libboost-all-dev
 // example cmd to run-- mpirun -np 10 --hosts slave1 ./boostmpiCompute
+
+//mpic++ -std=c++11 -L/usr/lib -I/usr/include/boost/mpi -lboost_filesystem -lboost_system -lboost_mpi boostmpiCompute.cpp
+
 
 
 /*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
@@ -39,6 +44,7 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
 
 vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t N, size_t L);
 
+vector2D normalize(vector2D dataset);
 
 int main (int argc, char **argv) {
 
@@ -64,6 +70,7 @@ int main (int argc, char **argv) {
     vector1D UniformRandomVector;
     vector3D randomLine;
     vector2D setQ;
+    vector2D setQNorm;
     vector2D hashValueQ;
 
     //the part of N for each thread
@@ -104,8 +111,10 @@ int main (int argc, char **argv) {
 
         //read in setQ
         setQ = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", Q, D);
+
+        setQNorm = normalize(setQ);
         //flatten setQ for transmission
-        setQ1d = flat2D(setQ);
+        setQ1d = flat2D(setQNorm);
         //flatten randomLine for transmission
         randomLine1d = flat3D(randomLine);
     }
@@ -119,14 +128,15 @@ int main (int argc, char **argv) {
     //let slaves reconstruct the multi dimensional vector
     if(world.rank()!=root_process) {
         randomLine = reconstr3D(randomLine1d, L, K, D);
-        setQ = reconstr2D(setQ1d,Q,D);
+        setQNorm = reconstr2D(setQ1d,Q,D);
     }
 
     //deal with N
     if (world.rank()==root_process){
         vector2D setN;
+        vector2D setNNorm;
         setN = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", N, D);
-
+        setNNorm = normalize(setN);
         //deal with send part of N
         {
 
@@ -134,8 +144,8 @@ int main (int argc, char **argv) {
             for (int i = 0; i <world.size() ; ++i) {
 
                 if(i!=(world.size()-1)) {
-                    vector2D::const_iterator first = setN.begin() +  numNperSlave * i;
-                    vector2D::const_iterator last = setN.begin() +  numNperSlave * (i + 1);
+                    vector2D::const_iterator first = setNNorm.begin() +  numNperSlave * i;
+                    vector2D::const_iterator last = setNNorm.begin() +  numNperSlave * (i + 1);
                     vector2D newVec(first, last);
 
                     vector1D vecToSend = flat2D(newVec);
@@ -144,8 +154,8 @@ int main (int argc, char **argv) {
 
                     // master node get last part of the job
                 else{
-                    vector2D::const_iterator first = setN.begin() +  numNperSlave * i;
-                    vector2D::const_iterator last = setN.begin() + N;
+                    vector2D::const_iterator first = setNNorm.begin() +  numNperSlave * i;
+                    vector2D::const_iterator last = setNNorm.begin() + N;
                     vector2D newVec(first, last);
                     partialSetN = newVec;
                 }
@@ -161,7 +171,7 @@ int main (int argc, char **argv) {
 
     // calculate the hash and collision (separate master and slave operation because their num of N might be different
     if(world.rank()==root_process){
-        hashValueQ = computeHash(setQ, randomLine, UniformRandomVector, Q, L, K, D ,W );
+        hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector,
                                         N- numNperSlave*(world.size()-1), L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,N- numNperSlave*(world.size()-1),L);
@@ -169,14 +179,15 @@ int main (int argc, char **argv) {
     }
 
     else{
-        hashValueQ = computeHash(setQ, randomLine, UniformRandomVector, Q, L, K, D ,W );
+        hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector, numNperSlave, L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,numNperSlave,L);
     }
 
     //leave them for testing
-//    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
-//    std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
+    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][0]<<"\n";
+    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
+    std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
 
 
     // use this to pause in IDE
@@ -317,3 +328,32 @@ vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t
     return collisionMatrix;
 }
 
+vector2D normalize(vector2D dataset){
+    size_t row = dataset.size();
+    size_t col = dataset[0].size();
+
+    vector1D maximums(col, -999999);
+    vector1D minimums(col, 9999999);
+
+    //find maximums and minimums of each column
+    for (int i = 0; i < row; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if(dataset[i][j]>= maximums[j])
+                maximums[j]=dataset[i][j];
+            if(dataset[i][j]<=minimums[j])
+                minimums[j]=dataset[i][j];
+        }
+    }
+
+    for (int i = 0; i < row; ++i) {
+        for (int j = 0; j < col; ++j) {
+            //if max equals min, the value is set to 0.5
+            if(maximums[j]==minimums[j])
+                dataset[i][j] = 0.5;
+            else
+                //normalization formula -- (x-min(x))/(max(x)-min(x))
+                dataset[i][j] = (dataset[i][j] - minimums[j])/(maximums[j]-minimums[j]);
+        }
+    }
+    return dataset;
+}
