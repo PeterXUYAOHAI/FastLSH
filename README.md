@@ -31,11 +31,10 @@ If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo
 * ~~Access to Redis~~
 * ~~Access to memcached~~
 * Distributed computing
-* Parameter generator
-
+* ~~Parameter generator~~
 ## Authors
 
-* **Peter XU **  [PeterXUYAOHAI](https://github.com/PeterXUYAOHAI)
+* *Peter XU*  [PeterXUYAOHAI](https://github.com/PeterXUYAOHAI)
 
 
 ## Acknowledgments
