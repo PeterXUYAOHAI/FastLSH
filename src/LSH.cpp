@@ -222,9 +222,12 @@ std::string LSH::generateRunId(){
 }
 
 
-vector2D LSH::generateCandidateSet(){
-    vector2D candidateSet;
+void LSH::generateCandidateSet(){
+    //TODO here only use the size to check if collisionMatrix exists, may find a better way
+    if(collisionMatrix.size()!=Q || collisionMatrix[0].size()!=N)
+        generateCollisionMatrix();
 
+    vector2D candidateSet;
     for (int i = 0; i < Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
@@ -238,6 +241,15 @@ vector2D LSH::generateCandidateSet(){
         }
         candidateSet[i] = candidates;
     }
+
+    this->candidateSet = candidateSet;
+}
+
+
+vector2D LSH::getCandidateSet(){
+    //use size to check if candidateSet exists, if not generate it
+    if(candidateSet.size()==0)
+        generateCandidateSet();
 
     return candidateSet;
 }

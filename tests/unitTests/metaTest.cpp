@@ -16,6 +16,7 @@ protected:
     LSH mlsh;
 };
 
+
 TEST_F(metaTest, randGeneTest){
 
     mlsh.generateRandomLine();
@@ -88,6 +89,27 @@ TEST_F(metaTest, clearcollisionMatrixGenTest){
     //check size -- should be empty
     ASSERT_EQ(mlsh.collisionMatrix.size(),0);
 }
+
+
+TEST_F(metaTest, candidateSetTest){
+
+    mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
+    mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
+
+    vector2D candidateSet;
+
+    candidateSet = mlsh.getCandidateSet();
+
+    //check size -- should be empty
+    ASSERT_EQ(candidateSet.size(),1000);
+
+    for (int i = 0; i < 1000; ++i) {
+        ASSERT_GE(candidateSet[i].size(), 0);
+    }
+
+}
+
+
 
 
 

@@ -46,6 +46,8 @@ class LSH{
 
     void clearCollisionMatrix();
 
+    vector2D getCandidateSet();
+
     void reportStatus();
 
     int clear();
@@ -84,6 +86,10 @@ private:
     vector2D hashMatrixQ; // hashMatrix of Q where hash value is stored
 
     vector2D collisionMatrix; //the place to store collision
+    vector2D candidateSet; //Qx--, candidate set
+
+
+
 
     vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
 
@@ -108,6 +114,10 @@ private:
     vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
 
     vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
+
+    void generateCandidateSet();
+
+    void generateCollisionMatrix();
 
     friend void *computeHashPthreadFuc(void *loopPara);
 
@@ -138,11 +148,6 @@ private:
     FRIEND_TEST(metaTest, collisionMatrixGenTest);
 
     FRIEND_TEST(metaTest, clearcollisionMatrixGenTest);
-
-    vector2D generateCandidateSet();
-
-    void generateCollisionMatrix();
-
 
 };
 
