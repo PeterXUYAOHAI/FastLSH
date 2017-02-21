@@ -10,7 +10,7 @@ class metaTest:public ::testing::Test{
 
 protected:
     virtual void SetUp() {
-        mlsh = LSH(1000, 57, 200, 1, 1.2, 1000);
+        mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
     }
 
     LSH mlsh;
@@ -55,6 +55,42 @@ TEST_F(metaTest, linuxReadTest){
     ASSERT_EQ(mlsh.setQ[0][0],1302);
     ASSERT_EQ(mlsh.setQ[0][0],1302);
 }
+
+
+TEST_F(metaTest, collisionMatrixGenTest){
+
+    mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
+    mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
+
+    ASSERT_EQ(mlsh.collisionMatrix.size(),0);
+
+    mlsh.generateCollisionMatrix();
+
+    //check size -- here we only checked size, more checking is needed in the future
+    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.Q);
+    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.N);
+
+}
+
+
+TEST_F(metaTest, clearcollisionMatrixGenTest){
+
+    mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
+    mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
+
+    mlsh.generateCollisionMatrix();
+
+    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.Q);
+    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.N);
+
+    mlsh.clearCollisionMatrix();
+
+    //check size -- should be empty
+    ASSERT_EQ(mlsh.collisionMatrix.size(),0);
+}
+
+
+
 
 //just legency
 //TEST_F(metaTest, hashValueTest){

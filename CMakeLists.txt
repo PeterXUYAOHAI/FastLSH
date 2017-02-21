@@ -74,10 +74,10 @@ set(SOURCE_FILES
         README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/MTCompute/computeMt-openMP.cpp
         src/compute/MTCompute/computeMt-stdthread.cpp
         src/compute/MTCompute/computeMt-pthread.cpp
-        src/compute/compute.cpp tests/unitTests/mt-OpenMPTest.cpp
-        tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/mt-stdthreadTest.cpp
-        tests/unitTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/memcachedTest.cpp
-        src/inMemoryStore/redis.cpp tests/unitTests/redisTest.cpp src/normalization.cpp)
+        src/compute/compute.cpp tests/unitTests/MTTests/mt-OpenMPTest.cpp
+        tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/MTTests/mt-stdthreadTest.cpp
+        tests/unitTests/MTTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
+        src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp src/normalization.cpp)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp)

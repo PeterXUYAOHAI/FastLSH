@@ -594,25 +594,25 @@
 		<Unit filename="/home/peter/FYP/FastLSH/tests/driver.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-OpenMPTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-pthreadTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-stdthreadTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/memcachedTest.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/redisTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-OpenMPTest.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-pthreadTest.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/mt-stdthreadTest.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/redisTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/CMakeLists.txt">

@@ -20,7 +20,7 @@ class LSH{
 
     LSH();
 
-    LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q);
+    LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T);
 
     void loadSetQ(char *filePath, int fileSize);
 
@@ -44,6 +44,8 @@ class LSH{
 
     int readHashNFromRedis(const char *server, unsigned short port, std::string srunId);
 
+    void clearCollisionMatrix();
+
     void reportStatus();
 
     int clear();
@@ -61,6 +63,7 @@ private:
     size_t K; //# the number of hash functions in each group hash
     size_t M; //# of dimensions at projection space
     double W; //bucket width
+    size_t T; // threshold
     bool useHdfs; //whether use hdfs flag
     int NfileSize; //N file binary size, for hdfs use
     int QfileSize; //Q file binary size, for hdfs use
@@ -80,6 +83,7 @@ private:
     vector2D hashMatrixN; // hashMatrix of N where hash value is stored
     vector2D hashMatrixQ; // hashMatrix of Q where hash value is stored
 
+    vector2D collisionMatrix; //the place to store collision
 
     vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
 
@@ -130,6 +134,16 @@ private:
     FRIEND_TEST(redisTest, resultTest);
 
     FRIEND_TEST(metaTest, hashValueTest);
+
+    FRIEND_TEST(metaTest, collisionMatrixGenTest);
+
+    FRIEND_TEST(metaTest, clearcollisionMatrixGenTest);
+
+    vector2D generateCandidateSet();
+
+    void generateCollisionMatrix();
+
+
 };
 
 

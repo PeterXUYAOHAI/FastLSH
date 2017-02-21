@@ -3,7 +3,7 @@
 //
 
 #include <gtest/gtest.h>
-#include "../../include/LSH.h"
+#include "../../../include/LSH.h"
 #include <chrono>
 
 //marco to clean the code
@@ -15,7 +15,7 @@ class openMPTest:public ::testing::Test{
     protected:
         virtual void SetUp() {
             //preload data
-            mlsh = LSH(1000, 57, 200, 1, 1.2, 1000);
+            mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
 //            mlsh = LSH(300000, 57, 200, 1, 1.2, 1000);
             mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
             mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
@@ -85,6 +85,8 @@ TEST_F(openMPTest, resultTest) {
 
     std::cout <<duration << " μs for openMP\n";
 
+
+    mlsh.clearCollisionMatrix();
 
     mlsh.setUseMultiThread(false);
 

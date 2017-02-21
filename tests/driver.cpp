@@ -28,9 +28,7 @@ int main (int argc, char **argv){
     std::cin>>input;
 
 
-////    //TODO add normalization
 ////    //TODO multithread-read
-////    //TODO parameter generation
 ////    //TO-DO in memory data store-memcache, Redis
 ////    //TODO distrubuted program-hadoop
 ////    //TODO change generate collision table procedure--no need to store the whole table, as soon as the candidate appear, push back the candidate.

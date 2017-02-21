@@ -9,13 +9,14 @@
 LSH::LSH() {
 }
 
-LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q) {
+LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T) {
     this->N = N;
     this->D = D;
     this->L = L;
     this->K = K;
     this->W = W;
     this->Q = Q;
+    this->T = T;
     useHdfs = false;
     randomLine = generateRandomLine();
     randomVector = generateUniformRandomVector(K,W);
@@ -118,6 +119,15 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 
 vector2D LSH::getCollisionMatrix() {
 
+    if(collisionMatrix.size()==0)
+        generateCollisionMatrix();
+
+    return collisionMatrix;
+}
+
+
+void LSH::generateCollisionMatrix(){
+
     //normalize data
     setQNorm = normalize(setQ);
     setNNorm = normalize(setN);
@@ -171,8 +181,16 @@ vector2D LSH::getCollisionMatrix() {
 //    hashMatrixN.swap(temp3);
 //    hashMatrixQ.swap(temp4);
 
-    return collisionMatrix;
+    //TODO this need to be modified, duplication exists
+    this->collisionMatrix = collisionMatrix;
 }
+
+
+void LSH::clearCollisionMatrix(){
+    vector2D temp;
+    collisionMatrix.swap(temp);
+}
+
 
 
 bool LSH::setMultiThreadMode(int multiMode){
@@ -203,6 +221,26 @@ std::string LSH::generateRunId(){
     return runId;
 }
 
+
+vector2D LSH::generateCandidateSet(){
+    vector2D candidateSet;
+
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    for (int i = 0; i < Q; ++i) {
+        vector1D candidates;
+        for (int j = 0; j < N; ++j) {
+            if(collisionMatrix[i][j]>=T)
+                candidates.push_back((double &&) j);
+        }
+        candidateSet[i] = candidates;
+    }
+
+    return candidateSet;
+}
 
 
 

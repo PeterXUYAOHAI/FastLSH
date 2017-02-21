@@ -189,5 +189,4 @@ int main (int argc, char **argv) {
     std::cout<<"Theta (false negative rate) [user input] =  "<<Theta<<std::endl;
     std::cout<<"K (# projections in each hash function) [user input] =  "<<K<<std::endl;
 
-    std::cout<<Z;
 }
