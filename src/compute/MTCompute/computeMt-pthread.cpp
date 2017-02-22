@@ -60,6 +60,14 @@ struct nLoopColliPara{
     vector2D* hMatrixN;
 };
 
+struct nLoopCandidatePara{
+    int bi;
+    int ei;
+    LSH *mlsh;
+    vector2D *candidateSet;
+
+};
+
 
 void* computeHashPthreadFuc(void *loopPara)
 {
@@ -129,6 +137,68 @@ void* computeCollisionPthreadFuc(void *loopPara)
 }
 
 
+void* computeCandidateNormalPthreadFuc(void *loopPara)
+{
+    struct nLoopCandidatePara *my_data;
+    int bi,ei;
+    my_data = (nLoopCandidatePara *) loopPara;
+
+    bi = my_data->bi;
+    ei = my_data->ei;
+    LSH *mlsh = my_data->mlsh;
+
+
+    for(int i = bi;i<ei;i++)
+    {
+        // inner loop
+        {
+            vector1D candidates;
+            for (int j = 0; j < mlsh->N; ++j) {
+                if(mlsh->collisionMatrix[i][j]>=mlsh->T)
+                    candidates.push_back((double &&) j);
+            }
+            (*my_data->candidateSet)[i] = candidates;
+
+        }
+    }
+    return NULL;
+}
+
+
+void* computeCandidatesQuickPthreadFuc(void *loopPara)
+{
+    struct nLoopCandidatePara *my_data;
+    int bi,ei;
+    my_data = (nLoopCandidatePara *) loopPara;
+
+    bi = my_data->bi;
+    ei = my_data->ei;
+    LSH *mlsh = my_data->mlsh;
+
+    for(int i = bi;i<ei;i++)
+    {
+        // inner loop
+        {
+            vector1D singleRow(0, 0);
+            for (int n = 0; n <mlsh->N ; ++n){
+                int colliNum = 0;
+                for (int hash_id = 0; hash_id < mlsh->L; ++hash_id) {
+                    if (mlsh->hashMatrixN[n][hash_id] == mlsh->hashMatrixQ[i][hash_id]) {
+                        colliNum++;
+                        if(colliNum>=mlsh->T){
+                            singleRow.push_back((double &&) n);
+                            break;
+                        }
+
+                    }
+                }
+            }
+            (*my_data->candidateSet)[i] = singleRow;
+        }
+    }
+    return NULL;
+}
+
 
 vector2D LSH::computeHash_pthread(vector2D dataset, size_t pointNum){
     vector2D hashMatrix;
@@ -171,11 +241,6 @@ vector2D LSH::computeHash_pthread(vector2D dataset, size_t pointNum){
 }
 
 
-
-
-
-
-
 vector2D LSH::computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ){
     vector2D collisionMatrix;
     for (int i = 0; i < Q ; ++i) {
@@ -215,6 +280,76 @@ vector2D LSH::computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ){
     return collisionMatrix;
 }
 
+
+vector2D LSH::computeCandidateNormal_pthread(){
+    vector2D candidateSet;
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    const size_t nthreads = getNumOfCores();
+    const size_t nloop = Q;
+
+    std::vector<pthread_t> threads(nthreads);
+    std::vector<nLoopCandidatePara> thread_args(nthreads);
+
+    /* spawn the threads */
+    for (int t=0; t<nthreads; ++t)
+    {
+        nLoopCandidatePara tempPara;
+        tempPara.bi = t*nloop/nthreads;
+        tempPara.ei = (t+1)==nthreads?nloop:(t+1)*nloop/nthreads;
+        tempPara.candidateSet = &candidateSet;
+        tempPara.mlsh = this;
+        thread_args[t] = tempPara;
+
+        pthread_create(&threads[t], NULL, computeCandidateNormalPthreadFuc, (void*)&(thread_args[t]));
+    }
+
+    /* wait for threads to finish */
+    for (int t=0; t<nthreads; ++t) {
+        pthread_join(threads[t], NULL);
+    }
+
+    return candidateSet;
+}
+
+
+vector2D LSH::computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T){
+    vector2D candidateSet;
+    //Prepare set to store candidates
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    const size_t nthreads = getNumOfCores();
+    const size_t nloop = Q;
+
+    std::vector<pthread_t> threads(nthreads);
+    std::vector<nLoopCandidatePara> thread_args(nthreads);
+
+    /* spawn the threads */
+    for (int t=0; t<nthreads; ++t)
+    {
+        nLoopCandidatePara tempPara;
+        tempPara.bi = t*nloop/nthreads;
+        tempPara.ei = (t+1)==nthreads?nloop:(t+1)*nloop/nthreads;
+        tempPara.candidateSet = &candidateSet;
+        tempPara.mlsh = this;
+        thread_args[t] = tempPara;
+
+        pthread_create(&threads[t], NULL, computeCandidatesQuickPthreadFuc, (void*)&(thread_args[t]));
+    }
+
+    /* wait for threads to finish */
+    for (int t=0; t<nthreads; ++t) {
+        pthread_join(threads[t], NULL);
+    }
+
+    return candidateSet;
+}
 
 
 

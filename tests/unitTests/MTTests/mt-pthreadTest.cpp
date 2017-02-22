@@ -105,6 +105,57 @@ TEST_F(pthreadTest, resultTest){
 
 }
 
+TEST_F(pthreadTest, candidateSetNormalModeTest){
 
+    vector2D candidateSetSingleThread;
+    vector2D candidateSetpthread;
+
+    candidateSetSingleThread = mlsh.getCandidateSet();
+
+    mlsh.clearCollisionMatrix();
+    mlsh.clearCandidateSet();
+    mlsh.clearHashMatrix();
+
+    mlsh.setUseMultiThread(true);
+    mlsh.setMultiThreadMode(2);
+
+    candidateSetpthread = mlsh.getCandidateSet();
+
+    //check size -- should be empty
+    ASSERT_EQ(candidateSetSingleThread.size(),candidateSetpthread.size());
+    ASSERT_EQ(candidateSetSingleThread[0].size(),candidateSetpthread[0].size());
+
+    //check values
+    ASSERT_EQ(candidateSetSingleThread,candidateSetpthread);
+
+}
+
+
+TEST_F(pthreadTest, candidateSetQuickModeTest){
+
+    vector2D candidateSetSingleThread;
+    vector2D candidateSetpthread;
+
+    mlsh.setComputeMode(1);
+
+    candidateSetSingleThread = mlsh.getCandidateSet();
+
+    mlsh.clearCollisionMatrix();
+    mlsh.clearCandidateSet();
+    mlsh.clearHashMatrix();
+
+    mlsh.setUseMultiThread(true);
+    mlsh.setMultiThreadMode(2);
+
+    candidateSetpthread = mlsh.getCandidateSet();
+
+    //check size -- should be empty
+    ASSERT_EQ(candidateSetSingleThread.size(),candidateSetpthread.size());
+    ASSERT_EQ(candidateSetSingleThread[0].size(),candidateSetpthread[0].size());
+
+    //check values
+    ASSERT_EQ(candidateSetSingleThread,candidateSetpthread);
+
+}
 
 

@@ -128,6 +128,10 @@ private:
 
     friend void *computeCollisionPthreadFuc(void *loopPara);
 
+    friend void* computeCandidateNormalPthreadFuc(void *loopPara);
+
+    friend void* computeCandidatesQuickPthreadFuc(void *loopPara);
+
     std::string generateRunId();
 
     vector2D normalize(vector2D dataset);
@@ -176,6 +180,12 @@ private:
     vector2D computeCandidateNormal_stdthread();
 
     vector2D computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
+    vector2D computeCandidateNormal_pthread();
+
+    vector2D computeCandidateQuick_pthread();
+
+    vector2D computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 };
 
 
