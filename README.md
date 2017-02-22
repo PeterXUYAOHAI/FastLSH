@@ -32,6 +32,8 @@ If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo
 * ~~Access to memcached~~
 * Distributed computing
 * ~~Parameter generator~~
+* Rename function names
+* Rafactor, apply design patterns
 ## Authors
 
 * *Peter XU*  [PeterXUYAOHAI](https://github.com/PeterXUYAOHAI)
