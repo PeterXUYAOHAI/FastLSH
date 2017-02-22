@@ -798,6 +798,33 @@ tests/unitTests/metaTest.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.s
 .PHONY : tests/unitTests/metaTest.cpp.s
 
+tests/unitTests/singleThreadTest.o: tests/unitTests/singleThreadTest.cpp.o
+
+.PHONY : tests/unitTests/singleThreadTest.o
+
+# target to build an object file
+tests/unitTests/singleThreadTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o
+.PHONY : tests/unitTests/singleThreadTest.cpp.o
+
+tests/unitTests/singleThreadTest.i: tests/unitTests/singleThreadTest.cpp.i
+
+.PHONY : tests/unitTests/singleThreadTest.i
+
+# target to preprocess a source file
+tests/unitTests/singleThreadTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.i
+.PHONY : tests/unitTests/singleThreadTest.cpp.i
+
+tests/unitTests/singleThreadTest.s: tests/unitTests/singleThreadTest.cpp.s
+
+.PHONY : tests/unitTests/singleThreadTest.s
+
+# target to generate assembly for a file
+tests/unitTests/singleThreadTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.s
+.PHONY : tests/unitTests/singleThreadTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -878,6 +905,9 @@ help:
 	@echo "... tests/unitTests/metaTest.o"
 	@echo "... tests/unitTests/metaTest.i"
 	@echo "... tests/unitTests/metaTest.s"
+	@echo "... tests/unitTests/singleThreadTest.o"
+	@echo "... tests/unitTests/singleThreadTest.i"
+	@echo "... tests/unitTests/singleThreadTest.s"
 .PHONY : help
 
 

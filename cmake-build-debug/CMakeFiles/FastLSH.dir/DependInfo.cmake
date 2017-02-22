@@ -21,6 +21,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o"
   "/home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/redisTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o"
   "/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o"
+  "/home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

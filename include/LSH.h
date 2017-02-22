@@ -46,7 +46,11 @@ class LSH{
 
     void clearCollisionMatrix();
 
+    void clearCandidateSet();
+
     vector2D getCandidateSet();
+
+    bool setComputeMode(int computeMode);
 
     void reportStatus();
 
@@ -71,6 +75,7 @@ private:
     int QfileSize; //Q file binary size, for hdfs use
     bool useMultiThread;
     int multiThreadMode; //default 0-openMP, 1-stdthread 2-pthread
+    int computeMode; //default 0-normal((g-collisionmatrix-> candidate)need more memory)   1-quickMode(need less memory, the collision matrix won't be generated
     std::string runID; //runID for recognize this particular run -- mainly for get value from in-memory storage
 
     vector3D randomLine; //collection of randomline for points to project on
@@ -115,8 +120,6 @@ private:
 
     vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
 
-    void generateCandidateSet();
-
     void generateCollisionMatrix();
 
     friend void *computeHashPthreadFuc(void *loopPara);
@@ -143,12 +146,19 @@ private:
 
     FRIEND_TEST(redisTest, resultTest);
 
-    FRIEND_TEST(metaTest, hashValueTest);
+    FRIEND_TEST(singleThreadTest, collisionMatrixGenTest);
 
-    FRIEND_TEST(metaTest, collisionMatrixGenTest);
+    FRIEND_TEST(singleThreadTest, clearcollisionMatrixGenTest);
 
-    FRIEND_TEST(metaTest, clearcollisionMatrixGenTest);
+    FRIEND_TEST(metaTest, clearCollisionMatrixTest);
 
+    FRIEND_TEST(metaTest, clearCandidateSetTest);
+
+    vector2D computeCandidatesQuick(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
+    void computeCandidateNormal();
+
+    void generateHashMatrixes();
 };
 
 

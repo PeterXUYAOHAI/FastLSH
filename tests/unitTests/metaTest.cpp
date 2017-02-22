@@ -58,28 +58,12 @@ TEST_F(metaTest, linuxReadTest){
 }
 
 
-TEST_F(metaTest, collisionMatrixGenTest){
+TEST_F(metaTest, clearCollisionMatrixTest){
 
     mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
     mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
 
-    ASSERT_EQ(mlsh.collisionMatrix.size(),0);
-
-    mlsh.generateCollisionMatrix();
-
-    //check size -- here we only checked size, more checking is needed in the future
-    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.Q);
-    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.N);
-
-}
-
-
-TEST_F(metaTest, clearcollisionMatrixGenTest){
-
-    mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
-    mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
-
-    mlsh.generateCollisionMatrix();
+    mlsh.getCollisionMatrix();
 
     ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.Q);
     ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.N);
@@ -91,24 +75,20 @@ TEST_F(metaTest, clearcollisionMatrixGenTest){
 }
 
 
-TEST_F(metaTest, candidateSetTest){
+TEST_F(metaTest, clearCandidateSetTest){
 
     mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
     mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
 
-    vector2D candidateSet;
+    mlsh.getCandidateSet();
 
-    candidateSet = mlsh.getCandidateSet();
+    ASSERT_EQ(mlsh.candidateSet.size(),mlsh.Q);
+
+    mlsh.clearCandidateSet();
 
     //check size -- should be empty
-    ASSERT_EQ(candidateSet.size(),1000);
-
-    for (int i = 0; i < 1000; ++i) {
-        ASSERT_GE(candidateSet[i].size(), 0);
-    }
-
+    ASSERT_EQ(mlsh.candidateSet.size(),0);
 }
-
 
 
 

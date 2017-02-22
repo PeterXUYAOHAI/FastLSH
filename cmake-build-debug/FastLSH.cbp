@@ -615,6 +615,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

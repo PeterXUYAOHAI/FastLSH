@@ -470,6 +470,12 @@ gtest/gtest.h
 ../../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
 
+/home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp
+gtest/gtest.h
+-
+../../include/LSH.h
+/home/peter/FYP/FastLSH/include/LSH.h
+
 /usr/local/hadoop/include/hdfs.h
 errno.h
 -

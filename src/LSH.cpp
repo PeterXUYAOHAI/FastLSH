@@ -18,6 +18,7 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T) {
     this->Q = Q;
     this->T = T;
     useHdfs = false;
+    computeMode = 0;
     randomLine = generateRandomLine();
     randomVector = generateUniformRandomVector(K,W);
     runID = generateRunId();
@@ -53,6 +54,11 @@ bool LSH::setUseMultiThread(bool useMultiThread) {
     this->useMultiThread = useMultiThread;
     multiThreadMode = 0; //set as default mode - openMP
     return this->useMultiThread;
+}
+
+bool LSH::setComputeMode(int computeMode){
+    this->computeMode = computeMode;
+    return true;
 }
 
 vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
@@ -118,25 +124,18 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 
 
 vector2D LSH::getCollisionMatrix() {
-
+    if(hashMatrixQ.size()==0||hashMatrixQ.size()==0)
+        generateHashMatrixes();
     if(collisionMatrix.size()==0)
         generateCollisionMatrix();
-
     return collisionMatrix;
 }
 
-
-void LSH::generateCollisionMatrix(){
+void LSH::generateHashMatrixes(){
 
     //normalize data
     setQNorm = normalize(setQ);
     setNNorm = normalize(setN);
-
-    //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
-//    vector2D temp1;
-//    vector2D temp2;
-//    setQ.swap(temp1);
-//    setN.swap(temp2);
 
     //get Hash Matrix
     if (!useMultiThread) {
@@ -157,6 +156,19 @@ void LSH::generateCollisionMatrix(){
             hashMatrixQ = computeHash_pthread(setQNorm, Q);
         }
     }
+
+}
+
+
+void LSH::generateCollisionMatrix(){
+
+    //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
+//    vector2D temp1;
+//    vector2D temp2;
+//    setQ.swap(temp1);
+//    setN.swap(temp2);
+
+
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
 //    vector2D temp1;
 //    vector2D temp2;
@@ -191,6 +203,10 @@ void LSH::clearCollisionMatrix(){
     collisionMatrix.swap(temp);
 }
 
+void LSH::clearCandidateSet(){
+    vector2D temp;
+    candidateSet.swap(temp);
+}
 
 
 bool LSH::setMultiThreadMode(int multiMode){
@@ -202,7 +218,7 @@ bool LSH::setDefault(){
     useHdfs = false;
     useMultiThread = false;
     multiThreadMode = 0;
-
+    computeMode = 0;
     return true;
 }
 
@@ -222,34 +238,16 @@ std::string LSH::generateRunId(){
 }
 
 
-void LSH::generateCandidateSet(){
-    //TODO here only use the size to check if collisionMatrix exists, may find a better way
-    if(collisionMatrix.size()!=Q || collisionMatrix[0].size()!=N)
-        generateCollisionMatrix();
-
-    vector2D candidateSet;
-    for (int i = 0; i < Q; ++i) {
-        vector1D temp(0,0);
-        candidateSet.push_back(temp);
-    }
-
-    for (int i = 0; i < Q; ++i) {
-        vector1D candidates;
-        for (int j = 0; j < N; ++j) {
-            if(collisionMatrix[i][j]>=T)
-                candidates.push_back((double &&) j);
-        }
-        candidateSet[i] = candidates;
-    }
-
-    this->candidateSet = candidateSet;
-}
-
 
 vector2D LSH::getCandidateSet(){
     //use size to check if candidateSet exists, if not generate it
-    if(candidateSet.size()==0)
-        generateCandidateSet();
+    if(candidateSet.size()==0){
+        generateHashMatrixes();
+        if(computeMode==0)
+            computeCandidateNormal();
+        else if(computeMode==1)
+            computeCandidatesQuick(hashMatrixN,hashMatrixQ,T);
+    }
 
     return candidateSet;
 }
