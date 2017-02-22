@@ -102,7 +102,6 @@ vector2D LSH::computeCandidatesQuick_openmp(vector2D hMatrixN, vector2D hMatrixQ
                         singleRow.push_back((double &&) n);
                         break;
                     }
-
                 }
             }
         }

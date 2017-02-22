@@ -113,6 +113,89 @@ vector2D LSH::computeCollision_stdthread(vector2D hMatrixN, vector2D hMatrixQ){
 
 
 
+vector2D LSH::computeCandidateNormal_stdthread(){
+
+    vector2D candidateSet;
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    const size_t nthreads = std::thread::hardware_concurrency();
+    const size_t nloop = Q;
+    std::vector<std::thread> threads(nthreads);
+
+    for(int t = 0;t<nthreads;t++)
+    {
+        threads[t] = std::thread(std::bind(
+                [&](const int bi, const int ei, const int t)
+                {
+                    // loop over all items
+                    for(int i = bi;i<ei;i++)
+                    {
+                        vector1D candidates;
+                        for (int j = 0; j < N; ++j) {
+                            if(collisionMatrix[i][j]>=T)
+                                candidates.push_back((double &&) j);
+                        }
+                        candidateSet[i] = candidates;
+                    }
+                },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
+    }
+
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+    return candidateSet;
+}
+
+
+
+
+//by quick mode, it means get candidateset directly, skip the collision table
+vector2D LSH::computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T){
+    vector2D candidateSet;
+    //Prepare set to store candidates
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    const size_t nthreads = std::thread::hardware_concurrency();
+    const size_t nloop = Q;
+    std::vector<std::thread> threads(nthreads);
+
+    for(int t = 0;t<nthreads;t++)
+    {
+        threads[t] = std::thread(std::bind(
+                [&](const int bi, const int ei, const int t)
+                {
+                    // loop over all items
+                    for(int i = bi;i<ei;i++)
+                    {
+                        vector1D singleRow(0, 0);
+                        for (int n = 0; n <N ; ++n){
+                            int colliNum = 0;
+                            for (int hash_id = 0; hash_id < L; ++hash_id) {
+                                if (hMatrixN[n][hash_id] == hMatrixQ[i][hash_id]) {
+                                    colliNum++;
+                                    if(colliNum>=T){
+                                        singleRow.push_back((double &&) n);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        candidateSet[i] = singleRow;
+                    }
+                },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
+    }
+
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+    return candidateSet;
+}
+
+
+
+
 
 //
 ////try stdthread
@@ -149,9 +232,3 @@ vector2D LSH::computeCollision_stdthread(vector2D hMatrixN, vector2D hMatrixQ){
 //// Post loop
 //std::cout<<std::endl;
 //}
-//
-//
-//
-//
-//
-//

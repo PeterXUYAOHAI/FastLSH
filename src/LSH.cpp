@@ -189,8 +189,8 @@ void LSH::generateCandidatesNormal(){
     else {
         if (multiThreadMode == 0)
             candidateSet = computeCandidateNormal_openmp();
-//        else if(multiThreadMode ==1)
-//            collisionMatrix = computeCollision_stdthread(hashMatrixN, hashMatrixQ);
+        else if(multiThreadMode ==1)
+            candidateSet = computeCandidateNormal_stdthread();
 //        else if(multiThreadMode ==2)
 //            collisionMatrix = computeCollision_pthread(hashMatrixN,hashMatrixQ);
     }
@@ -209,8 +209,8 @@ void LSH::generateCandidatesQuick(){
     else {
         if (multiThreadMode == 0)
             candidateSet = computeCandidatesQuick_openmp(hashMatrixN, hashMatrixQ,T);
-//        else if(multiThreadMode ==1)
-//            collisionMatrix = computeCollision_stdthread(hashMatrixN, hashMatrixQ);
+        else if(multiThreadMode ==1)
+            candidateSet = computeCandidatesQuick_stdthread(hashMatrixN, hashMatrixQ,T);
 //        else if(multiThreadMode ==2)
 //            collisionMatrix = computeCollision_pthread(hashMatrixN,hashMatrixQ);
     }
@@ -218,8 +218,6 @@ void LSH::generateCandidatesQuick(){
     //TODO this need to be modified, duplication exists
     this->candidateSet = candidateSet;
 }
-
-
 
 
 vector2D LSH::getCollisionMatrix() {

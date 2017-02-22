@@ -173,6 +173,9 @@ private:
     vector2D computeCandidatesQuick_openmp(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 
 
+    vector2D computeCandidateNormal_stdthread();
+
+    vector2D computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 };
 
 
