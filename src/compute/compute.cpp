@@ -55,11 +55,7 @@ vector2D LSH::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
 
 
 
-void LSH::computeCandidateNormal(){
-    //TODO here only use the size to check if collisionMatrix exists, may find a better way
-    if(collisionMatrix.size()!=Q || collisionMatrix[0].size()!=N)
-        generateCollisionMatrix();
-
+vector2D LSH::computeCandidateNormal(){
     vector2D candidateSet;
     for (int i = 0; i < Q; ++i) {
         vector1D temp(0,0);
@@ -74,11 +70,8 @@ void LSH::computeCandidateNormal(){
         }
         candidateSet[i] = candidates;
     }
-
-    this->candidateSet = candidateSet;
+    return candidateSet;
 }
-
-
 
 
 //by quick mode, it means get candidateset directly, skip the collision table
@@ -107,7 +100,5 @@ vector2D LSH::computeCandidatesQuick(vector2D hMatrixN, vector2D hMatrixQ, size_
         candidateSet[q] = singleRow;
     }
 
-    //TODO structure is bad, signatures are not uniform
-    this->candidateSet = candidateSet;
     return candidateSet;
 }

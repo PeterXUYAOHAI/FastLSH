@@ -98,7 +98,6 @@ TEST_F(openMPTest, resultTest) {
 
     std::cout <<duration << " μs for singleThread\n";
 
-
     //compare if the two collision counting are same
     ASSERT_EQ(singleThreadResult.size(), openMPResult.size());
 
@@ -107,6 +106,57 @@ TEST_F(openMPTest, resultTest) {
     ASSERT_EQ(singleThreadResult, openMPResult);
 }
 
+
+TEST_F(openMPTest, candidateSetNormalModeTest){
+
+    vector2D candidateSetSingleThread;
+    vector2D candidateSetOpenMP;
+
+    candidateSetSingleThread = mlsh.getCandidateSet();
+
+    mlsh.clearCollisionMatrix();
+    mlsh.clearCandidateSet();
+    mlsh.clearHashMatrix();
+
+    mlsh.setUseMultiThread(true);
+
+    candidateSetOpenMP = mlsh.getCandidateSet();
+
+    //check size -- should be empty
+    ASSERT_EQ(candidateSetSingleThread.size(),candidateSetOpenMP.size());
+    ASSERT_EQ(candidateSetSingleThread[0].size(),candidateSetOpenMP[0].size());
+
+    //check values
+    ASSERT_EQ(candidateSetSingleThread,candidateSetOpenMP);
+
+}
+
+
+TEST_F(openMPTest, candidateSetQuickModeTest){
+
+    vector2D candidateSetSingleThread;
+    vector2D candidateSetOpenMP;
+
+    mlsh.setComputeMode(1);
+
+    candidateSetSingleThread = mlsh.getCandidateSet();
+
+    mlsh.clearCollisionMatrix();
+    mlsh.clearCandidateSet();
+    mlsh.clearHashMatrix();
+
+    mlsh.setUseMultiThread(true);
+
+    candidateSetOpenMP = mlsh.getCandidateSet();
+
+    //check size -- should be empty
+    ASSERT_EQ(candidateSetSingleThread.size(),candidateSetOpenMP.size());
+    ASSERT_EQ(candidateSetSingleThread[0].size(),candidateSetOpenMP[0].size());
+
+    //check values
+    ASSERT_EQ(candidateSetSingleThread,candidateSetOpenMP);
+
+}
 
 
 

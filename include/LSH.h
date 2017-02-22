@@ -44,6 +44,8 @@ class LSH{
 
     int readHashNFromRedis(const char *server, unsigned short port, std::string srunId);
 
+    void clearHashMatrix();
+
     void clearCollisionMatrix();
 
     void clearCandidateSet();
@@ -156,9 +158,21 @@ private:
 
     vector2D computeCandidatesQuick(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 
-    void computeCandidateNormal();
+    vector2D computeCandidateNormal();
 
     void generateHashMatrixes();
+
+    vector2D computeCandidateNormal_openmp();
+
+    void generateCandidates();
+
+    void generateCandidatesNormal();
+
+    void generateCandidatesQuick();
+
+    vector2D computeCandidatesQuick_openmp(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
+
 };
 
 

@@ -123,14 +123,6 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
 }
 
 
-vector2D LSH::getCollisionMatrix() {
-    if(hashMatrixQ.size()==0||hashMatrixQ.size()==0)
-        generateHashMatrixes();
-    if(collisionMatrix.size()==0)
-        generateCollisionMatrix();
-    return collisionMatrix;
-}
-
 void LSH::generateHashMatrixes(){
 
     //normalize data
@@ -159,15 +151,7 @@ void LSH::generateHashMatrixes(){
 
 }
 
-
 void LSH::generateCollisionMatrix(){
-
-    //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
-//    vector2D temp1;
-//    vector2D temp2;
-//    setQ.swap(temp1);
-//    setN.swap(temp2);
-
 
     //release the memory of the raw sets(setQ, setN), detail see <Effective STL>
 //    vector2D temp1;
@@ -187,14 +171,86 @@ void LSH::generateCollisionMatrix(){
         else if(multiThreadMode ==2)
             collisionMatrix = computeCollision_pthread(hashMatrixN,hashMatrixQ);
     }
-//    //release the memory of the hashMatrixs, detail see <Effective STL>
-//    vector2D temp3;
-//    vector2D temp4;
-//    hashMatrixN.swap(temp3);
-//    hashMatrixQ.swap(temp4);
 
     //TODO this need to be modified, duplication exists
     this->collisionMatrix = collisionMatrix;
+}
+
+
+void LSH::generateCandidatesNormal(){
+    //TODO here only use the size to check if collisionMatrix exists, may find a better way
+    if(collisionMatrix.size()!=Q || collisionMatrix[0].size()!=N)
+        generateCollisionMatrix();
+
+    vector2D candidateSet;
+    if(!useMultiThread)
+        candidateSet = computeCandidateNormal();
+
+    else {
+        if (multiThreadMode == 0)
+            candidateSet = computeCandidateNormal_openmp();
+//        else if(multiThreadMode ==1)
+//            collisionMatrix = computeCollision_stdthread(hashMatrixN, hashMatrixQ);
+//        else if(multiThreadMode ==2)
+//            collisionMatrix = computeCollision_pthread(hashMatrixN,hashMatrixQ);
+    }
+
+    //TODO this need to be modified, duplication exists
+    this->candidateSet = candidateSet;
+}
+
+
+void LSH::generateCandidatesQuick(){
+
+    //compute collision matrix
+    vector2D candidateSet;
+    if(!useMultiThread)
+        candidateSet = computeCandidatesQuick(hashMatrixN, hashMatrixQ, T);
+    else {
+        if (multiThreadMode == 0)
+            candidateSet = computeCandidatesQuick_openmp(hashMatrixN, hashMatrixQ,T);
+//        else if(multiThreadMode ==1)
+//            collisionMatrix = computeCollision_stdthread(hashMatrixN, hashMatrixQ);
+//        else if(multiThreadMode ==2)
+//            collisionMatrix = computeCollision_pthread(hashMatrixN,hashMatrixQ);
+    }
+
+    //TODO this need to be modified, duplication exists
+    this->candidateSet = candidateSet;
+}
+
+
+
+
+vector2D LSH::getCollisionMatrix() {
+
+    if(collisionMatrix.size()==0) {
+        if (hashMatrixQ.size() == 0 || hashMatrixQ.size() == 0)
+            generateHashMatrixes();
+        generateCollisionMatrix();
+    }
+    return collisionMatrix;
+}
+
+
+vector2D LSH::getCandidateSet(){
+    //use size to check if candidateSet exists, if not generate it
+    if(candidateSet.size()==0){
+        if(hashMatrixN.size()==0||hashMatrixQ.size()==0)
+            generateHashMatrixes();
+        if(computeMode==0)
+            generateCandidatesNormal();
+        else if(computeMode==1)
+            generateCandidatesQuick();
+    }
+    return this->candidateSet;
+}
+
+void LSH::clearHashMatrix(){
+    vector2D temp1;
+    vector2D temp2;
+    hashMatrixQ.swap(temp1);
+    hashMatrixN.swap(temp1);
 }
 
 
@@ -203,16 +259,18 @@ void LSH::clearCollisionMatrix(){
     collisionMatrix.swap(temp);
 }
 
+
 void LSH::clearCandidateSet(){
     vector2D temp;
     candidateSet.swap(temp);
 }
 
-
 bool LSH::setMultiThreadMode(int multiMode){
+
+    useMultiThread = true;
+
     multiThreadMode = multiMode;
 }
-
 
 bool LSH::setDefault(){
     useHdfs = false;
@@ -235,21 +293,6 @@ std::string LSH::generateRunId(){
     runId+=std::to_string(now->tm_sec);
 
     return runId;
-}
-
-
-
-vector2D LSH::getCandidateSet(){
-    //use size to check if candidateSet exists, if not generate it
-    if(candidateSet.size()==0){
-        generateHashMatrixes();
-        if(computeMode==0)
-            computeCandidateNormal();
-        else if(computeMode==1)
-            computeCandidatesQuick(hashMatrixN,hashMatrixQ,T);
-    }
-
-    return candidateSet;
 }
 
 
