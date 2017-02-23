@@ -234,6 +234,7 @@ vector2D LSH::getCollisionMatrix() {
 vector2D LSH::getCandidateSet(){
     //use size to check if candidateSet exists, if not generate it
     if(candidateSet.size()==0){
+        //if hash matrix not calculated
         if(hashMatrixN.size()==0||hashMatrixQ.size()==0)
             generateHashMatrixes();
         if(computeMode==0)
@@ -278,6 +279,7 @@ bool LSH::setDefault(){
     return true;
 }
 
+//use timestamp as run id
 std::string LSH::generateRunId(){
     std::string runId = "";
     time_t t = time(0);

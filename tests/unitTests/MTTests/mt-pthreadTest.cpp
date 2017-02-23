@@ -140,6 +140,7 @@ TEST_F(pthreadTest, candidateSetQuickModeTest){
 
     candidateSetSingleThread = mlsh.getCandidateSet();
 
+    //clear everything stored, make sure it will recalculate
     mlsh.clearCollisionMatrix();
     mlsh.clearCandidateSet();
     mlsh.clearHashMatrix();

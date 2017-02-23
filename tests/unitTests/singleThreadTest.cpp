@@ -89,6 +89,7 @@ TEST_F(singleThreadTest, genCandidateMultiModeTest){
     auto duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs getCandidateNormal_singeThread\n";
 
+    //clear everything stored, make sure it will recalculate
     mlsh.clearCandidateSet();
     mlsh.clearCollisionMatrix();
     mlsh.clearHashMatrix();
