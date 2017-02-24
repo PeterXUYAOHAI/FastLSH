@@ -34,8 +34,6 @@ class LSH{
 
     bool setDefault();
 
-    vector2D getCollisionMatrix();
-
     int saveHashNToMemc(const char *server, unsigned short port, time_t exp);
 
     void readHashNFromMemc(const char *server, unsigned short port, std::string runId);
@@ -49,6 +47,8 @@ class LSH{
     void clearCollisionMatrix();
 
     void clearCandidateSet();
+
+    vector2D getCollisionMatrix();
 
     vector2D getCandidateSet();
 
@@ -167,9 +167,7 @@ private:
     void generateHashMatrixes();
 
     vector2D computeCandidateNormal_openmp();
-
-    void generateCandidates();
-
+    
     void generateCandidatesNormal();
 
     void generateCandidatesQuick();
@@ -182,8 +180,6 @@ private:
     vector2D computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 
     vector2D computeCandidateNormal_pthread();
-
-    vector2D computeCandidateQuick_pthread();
 
     vector2D computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 };

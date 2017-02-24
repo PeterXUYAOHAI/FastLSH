@@ -45,22 +45,6 @@ void LSH::loadSetQ(char* filePath, int fileSize){
         setQ = loadDataFromHDFS(filePath, Q, D, QfileSize);
 }
 
-bool LSH::setUseHdfs(bool useHdfs){
-    this->useHdfs = useHdfs;
-    return this->useHdfs;
-}
-
-bool LSH::setUseMultiThread(bool useMultiThread) {
-    this->useMultiThread = useMultiThread;
-    multiThreadMode = 0; //set as default mode - openMP
-    return this->useMultiThread;
-}
-
-bool LSH::setComputeMode(int computeMode){
-    this->computeMode = computeMode;
-    return true;
-}
-
 vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
     std::ifstream file;// declare file stream:
     file.open(filePath);
@@ -85,7 +69,6 @@ vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
     file.close();
     return data;
 }
-
 
 vector3D LSH::generateRandomLine(){
 
@@ -220,6 +203,23 @@ void LSH::generateCandidatesQuick(){
 }
 
 
+//use timestamp as run id
+std::string LSH::generateRunId(){
+    std::string runId = "";
+    time_t t = time(0);
+    struct tm * now = localtime( & t );
+
+    runId+=std::to_string(now->tm_year+1900);
+    runId+=std::to_string(now->tm_mon);
+    runId+=std::to_string(now->tm_mday);
+    runId+=std::to_string(now->tm_hour);
+    runId+=std::to_string(now->tm_min);
+    runId+=std::to_string(now->tm_sec);
+
+    return runId;
+}
+
+
 vector2D LSH::getCollisionMatrix() {
 
     if(collisionMatrix.size()==0) {
@@ -229,7 +229,6 @@ vector2D LSH::getCollisionMatrix() {
     }
     return collisionMatrix;
 }
-
 
 vector2D LSH::getCandidateSet(){
     //use size to check if candidateSet exists, if not generate it
@@ -245,6 +244,7 @@ vector2D LSH::getCandidateSet(){
     return this->candidateSet;
 }
 
+
 void LSH::clearHashMatrix(){
     vector2D temp1;
     vector2D temp2;
@@ -257,7 +257,6 @@ void LSH::clearCollisionMatrix(){
     vector2D temp;
     collisionMatrix.swap(temp);
 }
-
 
 void LSH::clearCandidateSet(){
     vector2D temp;
@@ -279,20 +278,20 @@ bool LSH::setDefault(){
     return true;
 }
 
-//use timestamp as run id
-std::string LSH::generateRunId(){
-    std::string runId = "";
-    time_t t = time(0);
-    struct tm * now = localtime( & t );
+bool LSH::setUseHdfs(bool useHdfs){
+    this->useHdfs = useHdfs;
+    return this->useHdfs;
+}
 
-    runId+=std::to_string(now->tm_year+1900);
-    runId+=std::to_string(now->tm_mon);
-    runId+=std::to_string(now->tm_mday);
-    runId+=std::to_string(now->tm_hour);
-    runId+=std::to_string(now->tm_min);
-    runId+=std::to_string(now->tm_sec);
+bool LSH::setUseMultiThread(bool useMultiThread) {
+    this->useMultiThread = useMultiThread;
+    multiThreadMode = 0; //set as default mode - openMP
+    return this->useMultiThread;
+}
 
-    return runId;
+bool LSH::setComputeMode(int computeMode){
+    this->computeMode = computeMode;
+    return true;
 }
 
 
