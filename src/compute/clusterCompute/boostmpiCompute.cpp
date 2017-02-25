@@ -33,9 +33,13 @@ vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
 vector1D flat2D(vector2D origVec);
 
+vector1D flat2DCandidate(vector2D origCandida);
+
 vector1D flat3D(vector3D origVec);
 
 vector2D reconstr2D(vector1D origVec, int d1, int d2);
+
+vector2D reconstr2DCandidate(vector1D candidateRecv, int lineNum);
 
 vector3D reconstr3D(vector1D origVec, int d1, int d2, int d3);
 
@@ -45,6 +49,8 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
 vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t N, size_t L);
 
 vector2D normalize(vector2D dataset);
+
+vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collisionMatrix);
 
 int main (int argc, char **argv) {
 
@@ -59,6 +65,7 @@ int main (int argc, char **argv) {
     size_t L = 200; //# of group hash
     size_t K = 1; //# the number of hash functions in each group hash
     double W = 1.2; //bucket width
+    size_t  T = 100;
     int root_process = 0;
 
     //1d structure for communication between process
@@ -77,6 +84,7 @@ int main (int argc, char **argv) {
     vector2D partialSetN;
     vector2D partialHashValueN;
     vector2D partialCollisionTable;
+    vector2D partialCandidateSet;
 
     //as the name indicates
     int numNperSlave;
@@ -171,10 +179,17 @@ int main (int argc, char **argv) {
 
     // calculate the hash and collision (separate master and slave operation because their num of N might be different
     if(world.rank()==root_process){
+        vector2D gatheredCandidateSet;
         hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector,
                                         N- numNperSlave*(world.size()-1), L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,N- numNperSlave*(world.size()-1),L);
+        partialCandidateSet = computeCandidateNormal(Q, N- numNperSlave*(world.size()-1), T, partialCollisionTable);
+        for (int i = 1; i < world.size(); ++i) {
+            vector1D candidateRecv;
+            world.recv(i,0,candidateRecv);
+            gatheredCandidateSet = reconstr2DCandidate(candidateRecv, Q);
+        }
 
     }
 
@@ -182,6 +197,10 @@ int main (int argc, char **argv) {
         hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector, numNperSlave, L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,numNperSlave,L);
+        partialCandidateSet = computeCandidateNormal(Q, numNperSlave, T, partialCollisionTable);
+        vector1D candidate1D  = flat2DCandidate(partialCandidateSet);
+        world.send(0,0,candidate1D);
+
     }
 
     //leave them for testing
@@ -233,6 +252,18 @@ vector1D flat2D(vector2D origVec){
     return result;
 }
 
+vector1D flat2DCandidate(vector2D origCandida){
+    vector1D result;
+    for (int i = 0; i < origCandida.size(); ++i) {
+
+        for (int j = 0; j < origCandida[0].size(); ++j) {
+            result.push_back(origCandida[i][j]);
+        }
+        //-1 as flag to indicate new line
+        result.push_back(-1);
+    }
+}
+
 vector1D flat3D(vector3D origVec){
     vector1D result;
     for (int i = 0; i < origVec.size(); ++i) {
@@ -256,6 +287,24 @@ vector2D reconstr2D(vector1D origVec, int d1, int d2){
 
     for (int i = 0; i < origVec.size(); ++i) {
         result[i/d2][i%d2] = origVec[i];
+    }
+    return result;
+}
+
+
+vector2D reconstr2DCandidate(vector1D candidateRecv, int lineNum){
+    vector2D result;
+    for (int i = 0; i < lineNum; ++i) {
+        vector1D vL(0,0);
+        result.push_back(vL);
+    }
+    int line = 0;
+    for (int i = 0; i < candidateRecv.size(); ++i) {
+        if(candidateRecv[i]==-1) {
+            line++;
+            continue;
+        }
+        result[line].push_back(candidateRecv[i]);
     }
     return result;
 }
@@ -356,4 +405,23 @@ vector2D normalize(vector2D dataset){
         }
     }
     return dataset;
+}
+
+
+vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collisionMatrix){
+    vector2D candidateSet;
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    for (int i = 0; i < Q; ++i) {
+        vector1D candidates;
+        for (int j = 0; j < N; ++j) {
+            if(collisionMatrix[i][j]>=T)
+                candidates.push_back((double &&) j);
+        }
+        candidateSet[i] = candidates;
+    }
+    return candidateSet;
 }

@@ -167,7 +167,7 @@ private:
     void generateHashMatrixes();
 
     vector2D computeCandidateNormal_openmp();
-    
+
     void generateCandidatesNormal();
 
     void generateCandidatesQuick();
