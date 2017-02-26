@@ -29,6 +29,8 @@ typedef std::vector<double> vector1D;
 
  this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
  ***/
+
+
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
 vector1D flat2D(vector2D origVec);
@@ -188,7 +190,14 @@ int main (int argc, char **argv) {
         for (int i = 1; i < world.size(); ++i) {
             vector1D candidateRecv;
             world.recv(i,0,candidateRecv);
-            gatheredCandidateSet = reconstr2DCandidate(candidateRecv, Q);
+            vector2D temp = reconstr2DCandidate(candidateRecv, Q);
+            for (int j = 0; j < temp.size(); ++j) {
+                gatheredCandidateSet.push_back(temp[0]);
+            }
+        }
+
+        for (int k = 0; k < partialCandidateSet.size(); ++k) {
+            gatheredCandidateSet.push_back(partialCandidateSet[k]);
         }
 
     }
