@@ -5,7 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
-
+#include <chrono>
 #include <random>
 #include <boost/mpi.hpp>
 #include <boost/serialization/vector.hpp>
@@ -29,6 +29,18 @@ typedef std::vector<double> vector1D;
 
  this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
  ***/
+
+/*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
+ might drag down the speed.
+ this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
+ ***/
+
+//mpiexec -np 2 -host --allow-run-as-root -mca btl ^openib ./boostmpiLSH
+//mpiexec -np 8 --allow-run-as-root -host -mca btl ^openib ./boostmpiLSH
+//mpiexec -np 4 -mca btl ^openib ./boostmpiLSH
+
+#define now() std::chrono::high_resolution_clock::now()
+#define dcast std::chrono::duration_cast<std::chrono::microseconds>
 
 
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
@@ -56,10 +68,19 @@ vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collision
 
 int main (int argc, char **argv) {
 
+    std::chrono::high_resolution_clock::time_point t1;
+    std::chrono::high_resolution_clock::time_point t2;
+    std::chrono::high_resolution_clock::time_point t3;
+    std::chrono::high_resolution_clock::time_point t4;
+
+    t1 = now();
+ 
+ 
     // initialize the mpi environment
     mpi::environment env;
     mpi::communicator world;
 
+    std::cout<<"My name is "<<env.processor_name()<<" processor id "<<world.rank()<<"\n";
     //hardcode the paremeters
     size_t N = 1000; //# of vectors in the dataset
     size_t Q = 1000; //# of vertors in the queryset
@@ -92,7 +113,7 @@ int main (int argc, char **argv) {
     int numNperSlave;
     numNperSlave = ceil(N/(double)world.size());
 
-
+std::cout<<"start to cal random \n";
     //the master node do the preparation
     if(world.rank() == root_process) {
         //generate random line
@@ -172,6 +193,9 @@ int main (int argc, char **argv) {
             }
         }
     }
+t4=now()
+auto duration2 = dcast( t4 - t3 ).count();
+std::cout <<duration2 << " μ send out N set\n";
     //slave nodes receive N
     else{
         world.recv(0, 0, partialSetN1d);
@@ -216,6 +240,10 @@ int main (int argc, char **argv) {
     std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][0]<<"\n";
     std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
     std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
+ 
+    t2 = now();
+    auto duration = dcast( t2 - t1 ).count();
+    std::cout <<"processor "<<world.rank()<< " "<<duration << " μsto compute\n";
 
 
     // use this to pause in IDE
