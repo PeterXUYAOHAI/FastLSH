@@ -6,20 +6,32 @@
 #include <vector>
 #include <fstream>
 #include <chrono>
+#include <random>
 #include <boost/mpi.hpp>
 #include <boost/serialization/vector.hpp>
 
 namespace mpi = boost::mpi;
 
-typedef std::vector<std::vector<std::vector<double>>> vector3D;
-typedef std::vector<std::vector<double>> vector2D;
+typedef std::vector<std::vector<std::vector<double> > > vector3D;
+typedef std::vector<std::vector<double> > vector2D;
 typedef std::vector<double> vector1D;
+
+
+//  sudo apt-get install libboost-all-dev
+// example cmd to run-- mpirun -np 10 --hosts slave1 ./boostmpiCompute
+
+//mpic++ -std=c++11 -L/usr/lib -I/usr/include/boost/mpi -lboost_filesystem -lboost_system -lboost_mpi boostmpiCompute.cpp
+
+
 
 /*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
  might drag down the speed.
-
  this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
+ ***/
 
+/*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
+ might drag down the speed.
+ this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
  ***/
 
 //mpiexec -np 2 -host --allow-run-as-root -mca btl ^openib ./boostmpiLSH
@@ -30,15 +42,17 @@ typedef std::vector<double> vector1D;
 #define dcast std::chrono::duration_cast<std::chrono::microseconds>
 
 
-vector2D normalize(vector2D dataset);
-
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
 vector1D flat2D(vector2D origVec);
 
+vector1D flat2DCandidate(vector2D origCandida);
+
 vector1D flat3D(vector3D origVec);
 
 vector2D reconstr2D(vector1D origVec, int d1, int d2);
+
+vector2D reconstr2DCandidate(vector1D candidateRecv, int lineNum);
 
 vector3D reconstr3D(vector1D origVec, int d1, int d2, int d3);
 
@@ -47,6 +61,9 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
 
 vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t N, size_t L);
 
+vector2D normalize(vector2D dataset);
+
+vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collisionMatrix);
 
 int main (int argc, char **argv) {
 
@@ -56,18 +73,21 @@ int main (int argc, char **argv) {
     std::chrono::high_resolution_clock::time_point t4;
 
     t1 = now();
+ 
+ 
     // initialize the mpi environment
     mpi::environment env;
     mpi::communicator world;
 
     std::cout<<"My name is "<<env.processor_name()<<" processor id "<<world.rank()<<"\n";
     //hardcode the paremeters
-    size_t N = 300000; //# of vectors in the dataset
+    size_t N = 1000; //# of vectors in the dataset
     size_t Q = 1000; //# of vertors in the queryset
     size_t D = 57; //# of dimensions
     size_t L = 200; //# of group hash
     size_t K = 1; //# the number of hash functions in each group hash
     double W = 1.2; //bucket width
+    size_t  T = 100;
     int root_process = 0;
 
     //1d structure for communication between process
@@ -79,13 +99,14 @@ int main (int argc, char **argv) {
     vector1D UniformRandomVector;
     vector3D randomLine;
     vector2D setQ;
-    vector2D setQNorm;    
+    vector2D setQNorm;
     vector2D hashValueQ;
 
     //the part of N for each thread
     vector2D partialSetN;
     vector2D partialHashValueN;
     vector2D partialCollisionTable;
+    vector2D partialCandidateSet;
 
     //as the name indicates
     int numNperSlave;
@@ -118,11 +139,8 @@ std::cout<<"start to cal random \n";
             UniformRandomVector.push_back(dis(gen));
         }
 
-
         //read in setQ
-        setQ = loadDataFromLinuxSystem("./tests/dataset/dataset1000NoIndex.csv", Q, D);
-	std::cout<<"my q size "<<setQ.size();
-	std::cout<<"my q size "<<setQ[0].size();
+        setQ = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", Q, D);
 
         setQNorm = normalize(setQ);
         //flatten setQ for transmission
@@ -130,7 +148,7 @@ std::cout<<"start to cal random \n";
         //flatten randomLine for transmission
         randomLine1d = flat3D(randomLine);
     }
-std::cout<<"start broadcast \n";
+
     //broadcast the shared variables
     broadcast(world, setQ1d, 0);
     broadcast(world, randomLine1d, 0);
@@ -141,19 +159,17 @@ std::cout<<"start broadcast \n";
     if(world.rank()!=root_process) {
         randomLine = reconstr3D(randomLine1d, L, K, D);
         setQNorm = reconstr2D(setQ1d,Q,D);
-
     }
 
     //deal with N
     if (world.rank()==root_process){
-	vector2D setN;
+        vector2D setN;
         vector2D setNNorm;
-        setN = loadDataFromLinuxSystem("../../dataset300000NoIndex.csv", N, D);
+        setN = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", N, D);
         setNNorm = normalize(setN);
         //deal with send part of N
         {
-std::cout<<"start to send N set\n";
-t3=now();
+
             //the last part of N will be done by master node(it contains least num of N)
             for (int i = 0; i <world.size() ; ++i) {
 
@@ -175,24 +191,37 @@ t3=now();
                 }
             }
         }
+    }
 t4=now()
 auto duration2 = dcast( t4 - t3 ).count();
 std::cout <<duration2 << " μ send out N set\n";
-    }
     //slave nodes receive N
     else{
         world.recv(0, 0, partialSetN1d);
         partialSetN = reconstr2D(partialSetN1d, numNperSlave, D);
-
     }
 
 
     // calculate the hash and collision (separate master and slave operation because their num of N might be different
     if(world.rank()==root_process){
+        vector2D gatheredCandidateSet;
         hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector,
                                         N- numNperSlave*(world.size()-1), L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,N- numNperSlave*(world.size()-1),L);
+        partialCandidateSet = computeCandidateNormal(Q, N- numNperSlave*(world.size()-1), T, partialCollisionTable);
+        for (int i = 1; i < world.size(); ++i) {
+            vector1D candidateRecv;
+            world.recv(i,0,candidateRecv);
+            vector2D temp = reconstr2DCandidate(candidateRecv, Q);
+            for (int j = 0; j < temp.size(); ++j) {
+                gatheredCandidateSet.push_back(temp[0]);
+            }
+        }
+
+        for (int k = 0; k < partialCandidateSet.size(); ++k) {
+            gatheredCandidateSet.push_back(partialCandidateSet[k]);
+        }
 
     }
 
@@ -200,16 +229,22 @@ std::cout <<duration2 << " μ send out N set\n";
         hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector, numNperSlave, L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,numNperSlave,L);
+        partialCandidateSet = computeCandidateNormal(Q, numNperSlave, T, partialCollisionTable);
+        vector1D candidate1D  = flat2DCandidate(partialCandidateSet);
+        world.send(0,0,candidate1D);
+
     }
 
-    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable.size()<<"\n";
-    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0].size()<<"\n";
-
-  t2 = now();
-
+    //leave them for testing
+    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][0]<<"\n";
+    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
+    std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
+ 
+    t2 = now();
     auto duration = dcast( t2 - t1 ).count();
     std::cout <<"processor "<<world.rank()<< " "<<duration << " μsto compute\n";
-    //leave them for testing
+
+
     // use this to pause in IDE
     int c;
     std::cin>>c;
@@ -253,6 +288,18 @@ vector1D flat2D(vector2D origVec){
     return result;
 }
 
+vector1D flat2DCandidate(vector2D origCandida){
+    vector1D result;
+    for (int i = 0; i < origCandida.size(); ++i) {
+
+        for (int j = 0; j < origCandida[0].size(); ++j) {
+            result.push_back(origCandida[i][j]);
+        }
+        //-1 as flag to indicate new line
+        result.push_back(-1);
+    }
+}
+
 vector1D flat3D(vector3D origVec){
     vector1D result;
     for (int i = 0; i < origVec.size(); ++i) {
@@ -276,6 +323,24 @@ vector2D reconstr2D(vector1D origVec, int d1, int d2){
 
     for (int i = 0; i < origVec.size(); ++i) {
         result[i/d2][i%d2] = origVec[i];
+    }
+    return result;
+}
+
+
+vector2D reconstr2DCandidate(vector1D candidateRecv, int lineNum){
+    vector2D result;
+    for (int i = 0; i < lineNum; ++i) {
+        vector1D vL(0,0);
+        result.push_back(vL);
+    }
+    int line = 0;
+    for (int i = 0; i < candidateRecv.size(); ++i) {
+        if(candidateRecv[i]==-1) {
+            line++;
+            continue;
+        }
+        result[line].push_back(candidateRecv[i]);
     }
     return result;
 }
@@ -315,7 +380,7 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
             //loop through the inner of a hash function group
             for (int k = 0; k < K; ++k) {
                 double dTemp = 0;
-               //loop through all the dimensions
+                //loop through all the dimensions
                 for (int d = 0; d < D; ++d) {
                     //vector(math) multiply to make projection
                     dTemp += dataset[n][d]*randomLine[l][k][d];
@@ -376,4 +441,23 @@ vector2D normalize(vector2D dataset){
         }
     }
     return dataset;
+}
+
+
+vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collisionMatrix){
+    vector2D candidateSet;
+    for (int i = 0; i < Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    for (int i = 0; i < Q; ++i) {
+        vector1D candidates;
+        for (int j = 0; j < N; ++j) {
+            if(collisionMatrix[i][j]>=T)
+                candidates.push_back((double &&) j);
+        }
+        candidateSet[i] = candidates;
+    }
+    return candidateSet;
 }
