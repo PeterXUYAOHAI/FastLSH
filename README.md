@@ -34,6 +34,10 @@ If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo
 * ~~Parameter generator~~
 * Rename function names
 * Rafactor, apply design patterns
+
+## System Structure 
+![system structure](https://cloud.githubusercontent.com/assets/11495951/23577931/713716c4-0106-11e7-9cc2-a0338c80d3b2.PNG)
+
 ## Authors
 
 * *Peter XU*  [PeterXUYAOHAI](https://github.com/PeterXUYAOHAI)
