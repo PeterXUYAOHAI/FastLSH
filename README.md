@@ -14,6 +14,7 @@ It has been tested on Ubuntu 16.04 with the following programs
 * Redis 3.2
 * OpenMPI 2.02
 * Boost 1.5
+* Spark 2.1.0
 
 If you can not fulfill the requisites, try to use CMakeList_safe.txt in the repo and comment the lines where compile error happens.(i.e. Line 32-34 and 42-43 in src/LSH.cpp as well as 9 and 14 in test/driver.cpp) I will creat a safa brach soon.
 
