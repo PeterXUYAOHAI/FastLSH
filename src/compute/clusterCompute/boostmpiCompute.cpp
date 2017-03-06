@@ -193,7 +193,7 @@ std::cout<<"start to cal random \n";
             }
         }
     }
-t4=now()
+t4=now();
 auto duration2 = dcast( t4 - t3 ).count();
 std::cout <<duration2 << " μ send out N set\n";
     //slave nodes receive N

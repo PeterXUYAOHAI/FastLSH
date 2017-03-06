@@ -8,8 +8,7 @@
 
 vector2D LSH::computeHash(vector2D dataset, size_t pNum){
     vector2D hashMatrix;
-//    vector3D randomLine = generateRandomLine(L,K,D);
-//    vector1D randomVector = generateUniformRandomVector(K,W);
+
 
     //loop through # of data point
     for (int n = 0; n < pNum; ++n) {
