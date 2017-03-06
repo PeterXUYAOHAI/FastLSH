@@ -29,6 +29,10 @@ object FastLSH {
     var randomLine = Array.fill[Double](L, K, D)(r.nextGaussian())
     var randomVector = Array.fill[Double](K)(r.nextDouble()*W)
 
+    //broadcast frequent used var
+    sc.broadcast(randomLine)
+    sc.broadcast(randomVector)
+
     //read in data
     val dfq = sparkSession.read.option("header","false").
       csv("/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv")
@@ -65,17 +69,17 @@ object FastLSH {
       .map(r=>(0 until D)
         .map(d=> if((maxq(d)-minq(d))>0) (r(d)-minq(d))/(maxq(d)-minq(d)) else 0.5).toList)
 
+    //broadcast frequent used small and cache reused -- spark practice
     sc.broadcast(datasetQB)
-
     datasetN.cache()
 
+    //get hash values
     var hashMatrixN = datasetN.map(n=>(0 until L)
       .map(l=>(0 until K)
         .map(k=>math.floor((0 until D)
         .map(d=>n(d)*randomLine(l)(k)(d))
         .reduce(_+_)/W)*randomVector(k))
         .reduce(_+_)))
-
 
     var hashMatrixQB = datasetQB.map(n=>(0 until L)
       .map(l=>(0 until K)
@@ -84,16 +88,18 @@ object FastLSH {
         .reduce(_+_)/W)*randomVector(k))
         .reduce(_+_)))
 
+    //still cache...
     hashMatrixN.cache()
 
+    //get the collisionMatrixes
     var collisionMatrix = hashMatrixN.map(n=>hashMatrixQB.map(q=>(0 until L)
       .map(l=>if(n(l)==q(l)) 1 else 0).reduce(_+_)))
 
+    //rdd still cache..
     collisionMatrix.cache()
 
+    //filter out candidate set 
     var candidateSet = collisionMatrix.map(h=>(0 until N).filter(n=>(h(n)>T)))
-
-
     candidateSet.collect()
 
   }
