@@ -96,8 +96,6 @@ private:
     vector2D candidateSet; //Qx--, candidate set
 
 
-
-
     vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
 
     vector3D generateRandomLine();
@@ -136,6 +134,28 @@ private:
 
     vector2D normalize(vector2D dataset);
 
+    vector2D computeCandidatesQuick(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
+    vector2D computeCandidateNormal();
+
+    void generateHashMatrixes();
+
+    vector2D computeCandidateNormal_openmp();
+
+    void generateCandidatesNormal();
+
+    void generateCandidatesQuick();
+
+    vector2D computeCandidatesQuick_openmp(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
+    vector2D computeCandidateNormal_stdthread();
+
+    vector2D computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
+    vector2D computeCandidateNormal_pthread();
+
+    vector2D computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+
     FRIEND_TEST(openMPTest, hashValueTest);
 
     FRIEND_TEST(hdfsTest, readTest);
@@ -160,28 +180,6 @@ private:
 
     FRIEND_TEST(metaTest, clearCandidateSetTest);
 
-    vector2D computeCandidatesQuick(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
-
-    vector2D computeCandidateNormal();
-
-    void generateHashMatrixes();
-
-    vector2D computeCandidateNormal_openmp();
-
-    void generateCandidatesNormal();
-
-    void generateCandidatesQuick();
-
-    vector2D computeCandidatesQuick_openmp(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
-
-
-    vector2D computeCandidateNormal_stdthread();
-
-    vector2D computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
-
-    vector2D computeCandidateNormal_pthread();
-
-    vector2D computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
 };
 
 
