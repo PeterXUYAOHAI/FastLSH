@@ -98,7 +98,7 @@ object FastLSH {
     //rdd still cache..
     collisionMatrix.cache()
 
-    //filter out candidate set 
+    //filter out candidate set
     var candidateSet = collisionMatrix.map(h=>(0 until N).filter(n=>(h(n)>T)))
     candidateSet.collect()
 
