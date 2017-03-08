@@ -453,7 +453,7 @@ src/fileLoader.o: src/fileLoader.cpp.o
 
 # target to build an object file
 src/fileLoader.cpp.o:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o
 .PHONY : src/fileLoader.cpp.o
 
 src/fileLoader.i: src/fileLoader.cpp.i
@@ -462,7 +462,7 @@ src/fileLoader.i: src/fileLoader.cpp.i
 
 # target to preprocess a source file
 src/fileLoader.cpp.i:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.i
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/fileLoader.cpp.i
 .PHONY : src/fileLoader.cpp.i
 
 src/fileLoader.s: src/fileLoader.cpp.s
@@ -471,7 +471,7 @@ src/fileLoader.s: src/fileLoader.cpp.s
 
 # target to generate assembly for a file
 src/fileLoader.cpp.s:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.s
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/fileLoader.cpp.s
 .PHONY : src/fileLoader.cpp.s
 
 src/hdfsRead.o: src/hdfsRead.cpp.o

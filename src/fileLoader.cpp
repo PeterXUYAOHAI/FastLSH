@@ -9,7 +9,7 @@
 #include "../include/hdfsLoader.h"
 #include "../include/lfsLoader.h"
 
-vector2D fileLoader::ssToVector() {
+vector2D fileLoader::ssToVector(size_t row, size_t col) {
 
     vector2D data;
     std::string value;
@@ -34,15 +34,13 @@ vector2D fileLoader::ssToVector() {
     return data;
 }
 
-
-
-vector2D fileLoader::loadFile(){
-    loadToSS();
-    return ssToVector();
+vector2D fileLoader::loadFile(char* filePath, size_t row, size_t col){
+    loadToSS(filePath);
+    return ssToVector(row, col);
 }
 
 
-void lfsLoader::loadToSS() {
+void lfsLoader::loadToSS(char* filePath) {
     std::ifstream file;
     file.open(filePath);
 
@@ -52,7 +50,7 @@ void lfsLoader::loadToSS() {
     }
 }
 
-void hdfsLoader::loadToSS() {
+void hdfsLoader::loadToSS(char* filePath) {
 
     int exists; //file exist flag
     char* buffer; //buffer store file read from hdfs

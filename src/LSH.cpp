@@ -2,6 +2,8 @@
 // Created by peter on 17-2-4.
 //
 #include "../include/LSH.h"
+#include "../include/lfsLoader.h"
+#include "../include/hdfsLoader.h"
 #include <fstream>
 #include <iostream>
 #include <random>
@@ -22,27 +24,39 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T) {
     randomLine = generateRandomLine();
     randomVector = generateUniformRandomVector(K,W);
     runID = generateRunId();
+    this->theFileLoader = new lfsLoader();
     std::cout<<"This runId is "<<runID<<std::endl;
 }
 
 
 void LSH::loadSetN(char* filePath, int fileSize){
-    NfileSize = fileSize;
-    if(!useHdfs) {
-        setN = loadDataFromLinuxSystem(filePath, N, D);
-    }
-    else {
-        setN = loadDataFromHDFS(filePath, N, D, NfileSize);
-    }
+//    NfileSize = fileSize;
+//    if(!useHdfs) {
+//        setN = loadDataFromLinuxSystem(filePath, N, D);
+//    }
+//    else {
+//        setN = loadDataFromHDFS(filePath, N, D, NfileSize);
+//    }
+
+    setN = theFileLoader->loadFile(filePath,N,D);
+//    NfileSize = fileSize;
+//    if(!useHdfs) {
+//        setN = loadDataFromLinuxSystem(filePath, N, D);
+//    }
+//    else {
+//        setN = loadDataFromHDFS(filePath, N, D, NfileSize);
+//    }
 
 }
 
 void LSH::loadSetQ(char* filePath, int fileSize){
-    QfileSize = fileSize;
-    if(!useHdfs)
-        setQ = loadDataFromLinuxSystem(filePath, Q, D);
-    else
-        setQ = loadDataFromHDFS(filePath, Q, D, QfileSize);
+    setQ = theFileLoader->loadFile(filePath,Q,D);
+//    QfileSize = fileSize;
+//    if(!useHdfs)
+//        setQ = loadDataFromLinuxSystem(filePath, Q, D);
+//    else
+//        setQ = loadDataFromHDFS(filePath, Q, D, QfileSize);
+//
 }
 
 vector2D LSH::loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
@@ -271,7 +285,10 @@ bool LSH::setMultiThreadMode(int multiMode){
 }
 
 bool LSH::setDefault(){
-    useHdfs = false;
+//    useHdfs = false;
+    delete theFileLoader;
+    theFileLoader = new lfsLoader();
+
     useMultiThread = false;
     multiThreadMode = 0;
     computeMode = 0;
@@ -279,8 +296,13 @@ bool LSH::setDefault(){
 }
 
 bool LSH::setUseHdfs(bool useHdfs){
-    this->useHdfs = useHdfs;
-    return this->useHdfs;
+    delete theFileLoader;
+    if(useHdfs)
+        theFileLoader = new hdfsLoader();
+    else
+        theFileLoader = new lfsLoader();
+//    this->useHdfs = useHdfs;
+//    return this->useHdfs;
 }
 
 bool LSH::setUseMultiThread(bool useMultiThread) {

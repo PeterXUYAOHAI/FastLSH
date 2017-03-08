@@ -9,13 +9,9 @@
 
 class hdfsLoader: public fileLoader {
 
-public:
-    hdfsLoader(char* filePath, size_t row, size_t col, size_t fileSize):
-            fileLoader(filePath,row,col), fileSize(fileSize){}
-
 private:
     size_t fileSize;
-    void loadToSS();
+    virtual void loadToSS(char* filePath);
 
 };
 

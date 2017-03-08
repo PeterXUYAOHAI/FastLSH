@@ -16,16 +16,12 @@ typedef std::vector<double> vector1D;
 
 class fileLoader {
 public:
-    fileLoader(char* filePath, size_t row, size_t col):filePath(filePath),row(row),col(col){}
-    vector2D loadFile();
+    vector2D loadFile(char* filePath, size_t row, size_t col);
 protected:
-    char* filePath;
-    size_t row;
-    size_t col;
     std::stringstream ss;
 private:
-    virtual void loadToSS()=0;
-    vector2D ssToVector();
+    virtual void loadToSS(char* filePath)=0;
+    vector2D ssToVector(size_t row, size_t col);
 
 };
 

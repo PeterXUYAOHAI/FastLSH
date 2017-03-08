@@ -12,9 +12,6 @@
 
 class lfsLoader: public fileLoader {
 
-public:
-    lfsLoader(char* filePath, size_t row, size_t col): fileLoader(filePath,row,col){}
-
 private:
-    void loadToSS();
+    virtual void loadToSS(char* filePath);
 };

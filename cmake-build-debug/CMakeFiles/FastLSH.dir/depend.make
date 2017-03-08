@@ -3,39 +3,56 @@
 
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../include/fileLoader.h
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../include/hdfsLoader.h
+CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../include/lfsLoader.h
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o: ../src/LSH.cpp
 
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../src/compute/MTCompute/computeMt-openMP.cpp
 
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../src/compute/MTCompute/computeMt-pthread.cpp
 
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../src/compute/MTCompute/computeMt-stdthread.cpp
 
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../src/compute/compute.cpp
+
+CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o: ../include/fileLoader.h
+CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o: ../include/hdfsLoader.h
+CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o: ../include/lfsLoader.h
+CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o: ../src/fileLoader.cpp
+CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o: /usr/local/hadoop/include/hdfs.h
 
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: ../src/hdfsRead.cpp
 CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o: /usr/local/hadoop/include/hdfs.h
 
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../src/inMemoryStore/memcached.cpp
 
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../src/inMemoryStore/redis.cpp
 
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/src/normalization.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o: ../src/normalization.cpp
 
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -61,6 +78,7 @@ CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../include/hdfs.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../tests/driver.cpp
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: /usr/local/hadoop/include/hdfs.h
@@ -88,6 +106,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../lib/googl
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../tests/unitTests/MTTests/mt-OpenMPTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -113,6 +132,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../lib/goog
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../tests/unitTests/MTTests/mt-pthreadTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -138,6 +158,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../lib/go
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../tests/unitTests/MTTests/mt-stdthreadTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -163,6 +184,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../lib/googletest/googlet
 CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../tests/unitTests/hdfsTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -188,6 +210,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ..
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -213,6 +236,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../lib
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../tests/unitTests/inMemoryStoreTest/redisTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -238,6 +262,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../lib/googletest/googlet
 CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../tests/unitTests/metaTest.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
@@ -263,5 +288,6 @@ CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../lib/googletest
 CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
 CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../include/LSH.h
+CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../include/fileLoader.h
 CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../tests/unitTests/singleThreadTest.cpp
 

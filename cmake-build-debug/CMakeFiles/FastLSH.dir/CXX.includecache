@@ -287,6 +287,16 @@ string
 -
 gtest/gtest_prod.h
 -
+fileLoader.h
+/home/peter/FYP/FastLSH/include/fileLoader.h
+
+/home/peter/FYP/FastLSH/include/fileLoader.h
+vector
+-
+cstdio
+-
+sstream
+-
 
 /home/peter/FYP/FastLSH/include/hdfs.h
 errno.h
@@ -298,9 +308,23 @@ stdint.h
 time.h
 -
 
+/home/peter/FYP/FastLSH/include/hdfsLoader.h
+fileLoader.h
+/home/peter/FYP/FastLSH/include/fileLoader.h
+
+/home/peter/FYP/FastLSH/include/lfsLoader.h
+vector
+-
+fileLoader.h
+/home/peter/FYP/FastLSH/include/fileLoader.h
+
 /home/peter/FYP/FastLSH/src/LSH.cpp
 ../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
+../include/lfsLoader.h
+/home/peter/FYP/FastLSH/include/lfsLoader.h
+../include/hdfsLoader.h
+/home/peter/FYP/FastLSH/include/hdfsLoader.h
 fstream
 -
 iostream
@@ -353,6 +377,20 @@ random
 -
 iostream
 -
+
+/home/peter/FYP/FastLSH/src/fileLoader.cpp
+fstream
+-
+hdfs.h
+-
+iostream
+-
+../include/fileLoader.h
+/home/peter/FYP/FastLSH/include/fileLoader.h
+../include/hdfsLoader.h
+/home/peter/FYP/FastLSH/include/hdfsLoader.h
+../include/lfsLoader.h
+/home/peter/FYP/FastLSH/include/lfsLoader.h
 
 /home/peter/FYP/FastLSH/src/hdfsRead.cpp
 ../include/LSH.h

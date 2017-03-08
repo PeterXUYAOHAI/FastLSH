@@ -541,7 +541,7 @@
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/include/fileLoader.h">
-			<Option target="boostmpiLSH"/>
+			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/include/hdfsLoader.h">
 			<Option target="FastLSH"/>
@@ -586,7 +586,7 @@
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/fileLoader.cpp">
-			<Option target="boostmpiLSH"/>
+			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
 			<Option target="FastLSH"/>

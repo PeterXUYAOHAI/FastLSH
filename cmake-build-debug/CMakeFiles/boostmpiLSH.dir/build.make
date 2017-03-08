@@ -81,40 +81,14 @@ CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o.prov
 CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o.provides.build: CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o
 
 
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o: CMakeFiles/boostmpiLSH.dir/flags.make
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o: ../src/fileLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o -c /home/peter/FYP/FastLSH/src/fileLoader.cpp
-
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/fileLoader.cpp > CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.i
-
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/fileLoader.cpp -o CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.s
-
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.requires:
-
-.PHONY : CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.requires
-
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.provides: CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.requires
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.provides.build
-.PHONY : CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.provides
-
-CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.provides.build: CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o
-
-
 # Object files for target boostmpiLSH
 boostmpiLSH_OBJECTS = \
-"CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o" \
-"CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o"
+"CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o"
 
 # External object files for target boostmpiLSH
 boostmpiLSH_EXTERNAL_OBJECTS =
 
 boostmpiLSH: CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o
-boostmpiLSH: CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o
 boostmpiLSH: CMakeFiles/boostmpiLSH.dir/build.make
 boostmpiLSH: /usr/lib/x86_64-linux-gnu/libboost_system.so
 boostmpiLSH: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
@@ -123,7 +97,7 @@ boostmpiLSH: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
 boostmpiLSH: /usr/lib/openmpi/lib/libmpi_cxx.so
 boostmpiLSH: /usr/lib/openmpi/lib/libmpi.so
 boostmpiLSH: CMakeFiles/boostmpiLSH.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable boostmpiLSH"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable boostmpiLSH"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/boostmpiLSH.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/mpiexec -np 4 boostmpiLSH
 
@@ -133,7 +107,6 @@ CMakeFiles/boostmpiLSH.dir/build: boostmpiLSH
 .PHONY : CMakeFiles/boostmpiLSH.dir/build
 
 CMakeFiles/boostmpiLSH.dir/requires: CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o.requires
-CMakeFiles/boostmpiLSH.dir/requires: CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o.requires
 
 .PHONY : CMakeFiles/boostmpiLSH.dir/requires
 
