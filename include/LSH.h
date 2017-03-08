@@ -70,12 +70,8 @@ private:
     size_t D; //# of dimensions
     size_t L; //# of group hash
     size_t K; //# the number of hash functions in each group hash
-    size_t M; //# of dimensions at projection space
     double W; //bucket width
     size_t T; // threshold
-    bool useHdfs; //whether use hdfs flag
-    int NfileSize; //N file binary size, for hdfs use
-    int QfileSize; //Q file binary size, for hdfs use
     bool useMultiThread;
     int multiThreadMode; //default 0-openMP, 1-stdthread 2-pthread
     int computeMode; //default 0-normal((g-collisionmatrix-> candidate)need more memory)   1-quickMode(need less memory, the collision matrix won't be generated
@@ -106,10 +102,6 @@ private:
     vector3D generateRandomLine();
 
     vector1D generateUniformRandomVector(size_t number, double maxium);
-
-    vector2D loadDataFromHDFS(char *filePath, int row, int col, int fileSize);
-
-    vector2D loadDataFromLinuxSystem(char *filePath, size_t row, size_t col);
 
     vector2D computeHash(vector2D dataset, size_t pNum);
 

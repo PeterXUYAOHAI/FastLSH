@@ -10,7 +10,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o"
   "/home/peter/FYP/FastLSH/src/compute/compute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o"
   "/home/peter/FYP/FastLSH/src/fileLoader.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/fileLoader.cpp.o"
-  "/home/peter/FYP/FastLSH/src/hdfsRead.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o"
   "/home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o"
   "/home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o"
   "/home/peter/FYP/FastLSH/src/normalization.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/FastLSH.dir/src/normalization.cpp.o"

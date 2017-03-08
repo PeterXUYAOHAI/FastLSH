@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/tests/driver.cpp.o"
   "CMakeFiles/FastLSH.dir/src/LSH.cpp.o"
-  "CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o"
   "CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o"
   "CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o"
   "CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o"

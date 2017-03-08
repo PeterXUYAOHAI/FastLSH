@@ -10,7 +10,7 @@
 #include <sstream>
 
 
-vector2D LSH::loadDataFromHDFS(char* filePath, int row, int col, int fileSize){
+vector2D loadDataFromHDFS(char* filePath, int row, int col, int fileSize){
 
     int exists; //file exist flag
     char* buffer; //buffer store file read from hdfs

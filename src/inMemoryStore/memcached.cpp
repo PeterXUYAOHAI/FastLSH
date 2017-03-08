@@ -23,7 +23,6 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
         return 1;
     }
 
-
     memcached_server_st *servers = NULL;
     memcached_st *memc;
     memcached_return rc;

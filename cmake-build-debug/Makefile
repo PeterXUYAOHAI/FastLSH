@@ -474,33 +474,6 @@ src/fileLoader.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/fileLoader.cpp.s
 .PHONY : src/fileLoader.cpp.s
 
-src/hdfsRead.o: src/hdfsRead.cpp.o
-
-.PHONY : src/hdfsRead.o
-
-# target to build an object file
-src/hdfsRead.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.o
-.PHONY : src/hdfsRead.cpp.o
-
-src/hdfsRead.i: src/hdfsRead.cpp.i
-
-.PHONY : src/hdfsRead.i
-
-# target to preprocess a source file
-src/hdfsRead.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.i
-.PHONY : src/hdfsRead.cpp.i
-
-src/hdfsRead.s: src/hdfsRead.cpp.s
-
-.PHONY : src/hdfsRead.s
-
-# target to generate assembly for a file
-src/hdfsRead.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/hdfsRead.cpp.s
-.PHONY : src/hdfsRead.cpp.s
-
 src/inMemoryStore/memcached.o: src/inMemoryStore/memcached.cpp.o
 
 .PHONY : src/inMemoryStore/memcached.o
@@ -896,9 +869,6 @@ help:
 	@echo "... src/fileLoader.o"
 	@echo "... src/fileLoader.i"
 	@echo "... src/fileLoader.s"
-	@echo "... src/hdfsRead.o"
-	@echo "... src/hdfsRead.i"
-	@echo "... src/hdfsRead.s"
 	@echo "... src/inMemoryStore/memcached.o"
 	@echo "... src/inMemoryStore/memcached.i"
 	@echo "... src/inMemoryStore/memcached.s"

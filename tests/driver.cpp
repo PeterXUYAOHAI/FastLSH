@@ -5,7 +5,7 @@
 
 
 #include "../include/LSH.h"
-#include "../include/hdfs.h"
+#include "../lengency/hdfs.h"
 #include "hdfs.h"
 #include <gtest/gtest.h>
 #include <thread>

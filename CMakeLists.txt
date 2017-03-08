@@ -71,7 +71,7 @@ include_directories( ${HDFS_INCLUDE_DIRS} )
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/hdfsRead.cpp src/compute/MTCompute/computeMt-openMP.cpp
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/compute/MTCompute/computeMt-openMP.cpp
         src/compute/MTCompute/computeMt-stdthread.cpp
         src/compute/MTCompute/computeMt-pthread.cpp
         src/compute/compute.cpp tests/unitTests/MTTests/mt-OpenMPTest.cpp
