@@ -77,10 +77,10 @@ set(SOURCE_FILES
         src/compute/compute.cpp tests/unitTests/MTTests/mt-OpenMPTest.cpp
         tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/MTTests/mt-stdthreadTest.cpp
         tests/unitTests/MTTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
-        src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp src/normalization.cpp tests/unitTests/singleThreadTest.cpp)
+        src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp src/normalization.cpp tests/unitTests/singleThreadTest.cpp include/hdfsLoader.h include/lfsLoader.h)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
-set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp)
+set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp src/fileLoader.cpp include/fileLoader.h)
 set(Paragen_FILES src/paragen.cpp)
 
 #find boost library

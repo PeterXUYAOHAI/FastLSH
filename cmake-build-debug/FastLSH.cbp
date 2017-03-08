@@ -540,6 +540,15 @@
 		<Unit filename="/home/peter/FYP/FastLSH/include/LSH.h">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/include/fileLoader.h">
+			<Option target="boostmpiLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/include/hdfsLoader.h">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/include/lfsLoader.h">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/lib/googletest/googlemock/src/gmock-all.cc">
 			<Option target="gmock_main"/>
 			<Option target="gmock"/>
@@ -575,6 +584,9 @@
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/compute/compute.cpp">
 			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/fileLoader.cpp">
+			<Option target="boostmpiLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/hdfsRead.cpp">
 			<Option target="FastLSH"/>

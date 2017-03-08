@@ -447,6 +447,33 @@ src/compute/compute.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/compute.cpp.s
 .PHONY : src/compute/compute.cpp.s
 
+src/fileLoader.o: src/fileLoader.cpp.o
+
+.PHONY : src/fileLoader.o
+
+# target to build an object file
+src/fileLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.o
+.PHONY : src/fileLoader.cpp.o
+
+src/fileLoader.i: src/fileLoader.cpp.i
+
+.PHONY : src/fileLoader.i
+
+# target to preprocess a source file
+src/fileLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.i
+.PHONY : src/fileLoader.cpp.i
+
+src/fileLoader.s: src/fileLoader.cpp.s
+
+.PHONY : src/fileLoader.s
+
+# target to generate assembly for a file
+src/fileLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/fileLoader.cpp.s
+.PHONY : src/fileLoader.cpp.s
+
 src/hdfsRead.o: src/hdfsRead.cpp.o
 
 .PHONY : src/hdfsRead.o
@@ -866,6 +893,9 @@ help:
 	@echo "... src/compute/compute.o"
 	@echo "... src/compute/compute.i"
 	@echo "... src/compute/compute.s"
+	@echo "... src/fileLoader.o"
+	@echo "... src/fileLoader.i"
+	@echo "... src/fileLoader.s"
 	@echo "... src/hdfsRead.o"
 	@echo "... src/hdfsRead.i"
 	@echo "... src/hdfsRead.s"
