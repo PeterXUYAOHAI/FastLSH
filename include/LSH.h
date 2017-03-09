@@ -6,7 +6,7 @@
 #include <cstddef>
 #include <string>
 #include <gtest/gtest_prod.h>
-#include "fileLoader.h"
+#include "FileLoader.h"
 
 #ifndef FASTLSH_LSH_H
 #define FASTLSH_LSH_H
@@ -77,14 +77,14 @@ private:
     int computeMode; //default 0-normal((g-collisionmatrix-> candidate)need more memory)   1-quickMode(need less memory, the collision matrix won't be generated
     std::string runID; //runID for recognize this particular run -- mainly for get value from in-memory storage
 
-    fileLoader *theFileLoader;
+    FileLoader *theFileLoader;
 
     vector3D randomLine; //collection of randomline for points to project on
     vector1D randomVector; //random values to assist k group of LSH
     vector2D setN; // original data set of N
     vector2D setQ; // original data set of Q
 
-    //this two brings extra cost of memory, may merge to the setN, setQ to save memory
+    //todo this two brings extra cost of memory, may merge to the setN, setQ to save memory
     vector2D setNNorm; // normalized data set of N
     vector2D setQNorm; // normalized data set of Q
 

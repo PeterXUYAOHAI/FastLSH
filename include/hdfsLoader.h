@@ -5,15 +5,8 @@
 #ifndef FASTLSH_HDFSLOADER_H
 #define FASTLSH_HDFSLOADER_H
 
-#include "fileLoader.h"
+#include "FileLoader.h"
 
-class hdfsLoader: public fileLoader {
-
-private:
-    size_t fileSize;
-    virtual void loadToSS(char* filePath);
-
-};
 
 
 

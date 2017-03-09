@@ -8,10 +8,5 @@
 #endif //FASTLSH_LFSLOADER_H
 
 #include <vector>
-#include "fileLoader.h"
+#include "FileLoader.h"
 
-class lfsLoader: public fileLoader {
-
-private:
-    virtual void loadToSS(char* filePath);
-};

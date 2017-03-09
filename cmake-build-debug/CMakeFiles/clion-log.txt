@@ -9,8 +9,17 @@
 --   mpi
 --   serialization
 /usr/bin/mpiexec
-README.mdtests/driver.cppinclude/LSH.hsrc/LSH.cppsrc/compute/MTCompute/computeMt-openMP.cppsrc/compute/MTCompute/computeMt-stdthread.cppsrc/compute/MTCompute/computeMt-pthread.cppsrc/compute/compute.cpptests/unitTests/MTTests/mt-OpenMPTest.cpptests/unitTests/hdfsTest.cpptests/unitTests/metaTest.cpptests/unitTests/MTTests/mt-stdthreadTest.cpptests/unitTests/MTTests/mt-pthreadTest.cppsrc/inMemoryStore/memcached.cpptests/unitTests/inMemoryStoreTest/memcachedTest.cppsrc/inMemoryStore/redis.cpptests/unitTests/inMemoryStoreTest/redisTest.cppsrc/normalization.cpptests/unitTests/singleThreadTest.cppinclude/hdfsLoader.hinclude/lfsLoader.hsrc/fileLoader.cppinclude/fileLoader.h
+README.mdtests/driver.cppinclude/LSH.hsrc/LSH.cppsrc/compute/MTCompute/computeMt-openMP.cppsrc/compute/MTCompute/computeMt-stdthread.cppsrc/compute/MTCompute/computeMt-pthread.cppsrc/compute/compute.cpptests/unitTests/MTTests/mt-OpenMPTest.cpptests/unitTests/hdfsTest.cpptests/unitTests/metaTest.cpptests/unitTests/MTTests/mt-stdthreadTest.cpptests/unitTests/MTTests/mt-pthreadTest.cppsrc/inMemoryStore/memcached.cpptests/unitTests/inMemoryStoreTest/memcachedTest.cppsrc/inMemoryStore/redis.cpptests/unitTests/inMemoryStoreTest/redisTest.cppsrc/normalization.cpptests/unitTests/singleThreadTest.cppsrc/FileLoader.cppinclude/FileLoader.h,include/Computer.h,tests/unitTests/computerTest.cpp
 /usr/lib/openmpi/lib/libmpi_cxx.so/usr/lib/openmpi/lib/libmpi.so
 -- Configuring done
+CMake Error at CMakeLists.txt:108 (add_executable):
+  Cannot find source file:
+
+    include/FileLoader.h,
+
+  Tried extensions .c .C .c++ .cc .cpp .cxx .m .M .mm .h .hh .h++ .hm .hpp
+  .hxx .in .txx
+
+
 -- Generating done
 -- Build files have been written to: /home/peter/FYP/FastLSH/cmake-build-debug

@@ -17,7 +17,7 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T):
     randomLine = generateRandomLine();
     randomVector = generateUniformRandomVector(K,W);
     runID = generateRunId();
-    this->theFileLoader = new lfsLoader();
+    this->theFileLoader = new LfsLoader();
     std::cout<<"This runId is "<<runID<<std::endl;
 }
 
@@ -233,7 +233,7 @@ bool LSH::setMultiThreadMode(int multiMode){
 bool LSH::setDefault(){
 //    useHdfs = false;
     delete theFileLoader;
-    theFileLoader = new lfsLoader();
+    theFileLoader = new LfsLoader();
 
     useMultiThread = false;
     multiThreadMode = 0;
@@ -244,9 +244,9 @@ bool LSH::setDefault(){
 bool LSH::setUseHdfs(bool useHdfs){
     delete theFileLoader;
     if(useHdfs)
-        theFileLoader = new hdfsLoader();
+        theFileLoader = new HdfsLoader();
     else
-        theFileLoader = new lfsLoader();
+        theFileLoader = new LfsLoader();
 //    this->useHdfs = useHdfs;
 //    return this->useHdfs;
 }

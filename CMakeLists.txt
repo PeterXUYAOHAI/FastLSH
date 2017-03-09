@@ -79,8 +79,9 @@ set(SOURCE_FILES
         tests/unitTests/MTTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp
         tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
         src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp
-        src/normalization.cpp tests/unitTests/singleThreadTest.cpp include/hdfsLoader.h
-        include/lfsLoader.h src/fileLoader.cpp include/fileLoader.h)
+        src/normalization.cpp tests/unitTests/singleThreadTest.cpp
+        src/FileLoader.cpp include/FileLoader.h, include/Computer.h,
+        tests/unitTests/computerTest.cpp)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp )
