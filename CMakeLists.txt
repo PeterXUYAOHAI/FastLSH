@@ -80,11 +80,11 @@ set(SOURCE_FILES
         tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
         src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp
         src/normalization.cpp tests/unitTests/singleThreadTest.cpp
-        src/FileLoader.cpp include/FileLoader.h, include/Computer.h,
-        tests/unitTests/computerTest.cpp)
+        src/FileLoader.cpp include/FileLoader.h
+        include/Computer.cpp include/Computer.h tests/unitTests/computerTest.cpp)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
-set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp )
+set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp include/Computer.cpp include/Computer.h)
 set(Paragen_FILES src/paragen.cpp)
 
 #find boost library

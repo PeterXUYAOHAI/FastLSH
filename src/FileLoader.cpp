@@ -6,8 +6,7 @@
 #include <hdfs.h>
 #include <iostream>
 #include "../include/FileLoader.h"
-#include "../include/hdfsLoader.h"
-#include "../include/lfsLoader.h"
+
 
 vector2D FileLoader::ssToVector(size_t row, size_t col) {
 

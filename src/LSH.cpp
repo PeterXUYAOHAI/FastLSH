@@ -2,8 +2,6 @@
 // Created by peter on 17-2-4.
 //
 #include "../include/LSH.h"
-#include "../include/lfsLoader.h"
-#include "../include/hdfsLoader.h"
 #include <fstream>
 #include <iostream>
 #include <random>

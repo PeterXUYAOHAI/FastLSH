@@ -177,6 +177,8 @@ private:
 
     FRIEND_TEST(metaTest, clearCandidateSetTest);
 
+    FRIEND_TEST(computerTest, valueTest);
+
 };
 
 
