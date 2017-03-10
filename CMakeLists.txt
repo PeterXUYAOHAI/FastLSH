@@ -82,7 +82,7 @@ set(SOURCE_FILES
         src/normalization.cpp tests/unitTests/singleThreadTest.cpp
         src/FileLoader.cpp include/FileLoader.h
         include/Computer.cpp include/Computer.h tests/unitTests/computerTest.cpp include/ParameterHolder.h
-        include/Generator.h)
+        include/Generator.h include/Generator.cpp include/PthreadComputer.cpp)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp include/Computer.cpp include/Computer.h)

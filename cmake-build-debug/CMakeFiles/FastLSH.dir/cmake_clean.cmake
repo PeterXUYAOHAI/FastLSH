@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o"
   "CMakeFiles/FastLSH.dir/include/Computer.cpp.o"
   "CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o"
+  "CMakeFiles/FastLSH.dir/include/Generator.cpp.o"
+  "CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )

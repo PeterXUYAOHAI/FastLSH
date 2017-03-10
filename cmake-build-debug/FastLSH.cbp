@@ -548,6 +548,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/include/FileLoader.h">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/include/Generator.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/include/Generator.h">
 			<Option target="FastLSH"/>
 		</Unit>
@@ -555,6 +558,9 @@
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/include/ParameterHolder.h">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/include/PthreadComputer.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/lib/googletest/googlemock/src/gmock-all.cc">

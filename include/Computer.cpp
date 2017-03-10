@@ -396,3 +396,6 @@ vector2D ComputerStdThreadQuick::computeCandidate(vector2D hMatrixN, vector2D hM
 }
 
 
+
+
+

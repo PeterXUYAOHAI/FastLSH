@@ -5,55 +5,80 @@ CMakeFiles/FastLSH.dir/include/Computer.cpp.o
  /home/peter/FYP/FastLSH/include/Computer.cpp
  /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
+CMakeFiles/FastLSH.dir/include/Generator.cpp.o
+ /home/peter/FYP/FastLSH/include/Computer.h
+ /home/peter/FYP/FastLSH/include/Generator.cpp
+ /home/peter/FYP/FastLSH/include/Generator.h
+ /home/peter/FYP/FastLSH/include/ParameterHolder.h
+CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o
+ /home/peter/FYP/FastLSH/include/Computer.h
+ /home/peter/FYP/FastLSH/include/ParameterHolder.h
+ /home/peter/FYP/FastLSH/include/PthreadComputer.cpp
 CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o
  /home/peter/FYP/FastLSH/include/FileLoader.h
  /home/peter/FYP/FastLSH/src/FileLoader.cpp
  /usr/local/hadoop/include/hdfs.h
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/LSH.cpp
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp
 CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp
 CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/compute/compute.cpp
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest_prod.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/src/normalization.cpp
@@ -80,10 +105,11 @@ CMakeFiles/FastLSH.dir/tests/driver.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
- /home/peter/FYP/FastLSH/lengency/hdfs.h
  /home/peter/FYP/FastLSH/tests/driver.cpp
  /usr/local/hadoop/include/hdfs.h
 CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
@@ -109,7 +135,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-OpenMPTest.cpp
@@ -136,7 +164,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-pthreadTest.cpp
@@ -163,7 +193,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-stdthreadTest.cpp
@@ -192,6 +224,7 @@ CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
  /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/computerTest.cpp
@@ -218,7 +251,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp
@@ -245,7 +280,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
@@ -272,7 +309,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/redisTest.cpp
@@ -299,7 +338,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp
@@ -326,7 +367,9 @@ CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-tuple.h
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
+ /home/peter/FYP/FastLSH/include/Computer.h
  /home/peter/FYP/FastLSH/include/FileLoader.h
+ /home/peter/FYP/FastLSH/include/Generator.h
  /home/peter/FYP/FastLSH/include/LSH.h
  /home/peter/FYP/FastLSH/include/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp

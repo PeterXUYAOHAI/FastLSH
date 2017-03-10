@@ -107,28 +107,28 @@ public:
     virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
 };
 
-//
-//class ComputerPthread: public Computer{
-//
-//public:
-//    ComputerPthread(ParameterHolder &ph):Computer(ph){};
-//    virtual vector2D computeHash(vector2D dataset, size_t pNum);
-//};
-//
-//class ComputerPthreadNormal: public ComputerPthread{
-//
-//public:
-//    ComputerPthreadNormal(ParameterHolder &ph): ComputerPthread(ph){};
-//    virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
-//    virtual vector2D computeCandidate(vector2D collisionMatrix);
-//};
-//
-//class ComputerPthreadQuick: public ComputerPthread{
-//
-//public:
-//    ComputerPthreadQuick(ParameterHolder &ph): ComputerPthread(ph){};
-//    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
-//};
+
+class ComputerPthread: public Computer{
+
+public:
+    ComputerPthread(ParameterHolder &ph):Computer(ph){};
+    virtual vector2D computeHash(vector2D dataset, size_t pNum);
+};
+
+class ComputerPthreadNormal: public ComputerPthread{
+
+public:
+    ComputerPthreadNormal(ParameterHolder &ph): ComputerPthread(ph){};
+    virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
+    virtual vector2D computeCandidate(vector2D collisionMatrix);
+};
+
+class ComputerPthreadQuick: public ComputerPthread{
+
+public:
+    ComputerPthreadQuick(ParameterHolder &ph): ComputerPthread(ph){};
+    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
+};
 
 
 

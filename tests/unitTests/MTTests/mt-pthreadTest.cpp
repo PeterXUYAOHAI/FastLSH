@@ -48,8 +48,8 @@ TEST_F(pthreadTest, hashValueTest){
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_singeThread\n";
 
-    mlsh.setUseMultiThread(true);
-    mlsh.setMultiThreadMode(2);
+    mlsh.setThreadMode(2);
+
 
     t1 = now();
     vector2D hashQ_mt = mlsh.computeHash_pthread(mlsh.setQ, mlsh.ph.Q);
@@ -83,8 +83,7 @@ TEST_F(pthreadTest, resultTest){
     std::cout <<duration << " μs for singleThread\n";
 
     mlsh.clearCollisionMatrix();
-    mlsh.setUseMultiThread(true);
-    mlsh.setMultiThreadMode(2);
+    mlsh.setThreadMode(2);
 
     t1 = now();
     pthreadResult = mlsh.getCollisionMatrix();
@@ -116,8 +115,8 @@ TEST_F(pthreadTest, candidateSetNormalModeTest){
     mlsh.clearCandidateSet();
     mlsh.clearHashMatrix();
 
-    mlsh.setUseMultiThread(true);
-    mlsh.setMultiThreadMode(2);
+
+    mlsh.setThreadMode(2);
 
     candidateSetpthread = mlsh.getCandidateSet();
 
@@ -145,8 +144,7 @@ TEST_F(pthreadTest, candidateSetQuickModeTest){
     mlsh.clearCandidateSet();
     mlsh.clearHashMatrix();
 
-    mlsh.setUseMultiThread(true);
-    mlsh.setMultiThreadMode(2);
+    mlsh.setThreadMode(2);
 
     candidateSetpthread = mlsh.getCandidateSet();
 

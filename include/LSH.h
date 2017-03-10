@@ -9,6 +9,7 @@
 #include "FileLoader.h"
 #include "ParameterHolder.h"
 #include "Computer.h"
+#include "Generator.h"
 
 #ifndef FASTLSH_LSH_H
 #define FASTLSH_LSH_H
@@ -25,15 +26,15 @@ class LSH{
 
     LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T);
 
+    ~LSH();
+
     void loadSetQ(char *filePath, int fileSize);
 
     void loadSetN(char *filePath, int fileSize);
 
     bool setUseHdfs(bool useHdfs);
 
-    bool setUseMultiThread(bool useMultiThread);
-
-    bool setMultiThreadMode(int multiMode); //default 0-openMP, 1-stdthread 2-pthread
+    bool setThreadMode(int threadMode); //default 0-singleThread 1-openMP, 2-stdthread 3-pthread
 
     bool setDefault();
 
@@ -74,15 +75,15 @@ private:
 //    size_t K; //# the number of hash functions in each group hash
 //    double W; //bucket width
 //    size_t T; // threshold
-    bool useMultiThread;
-    int multiThreadMode; //default 0-openMP, 1-stdthread 2-pthread
+
+    int threadMode; //default 0-singleThread 1-openMP, 2-stdthread 3-pthread
     int computeMode; //default 0-normal((g-collisionmatrix-> candidate)need more memory)   1-quickMode(need less memory, the collision matrix won't be generated
     std::string runID; //runID for recognize this particular run -- mainly for get value from in-memory storage
 
     FileLoader *theFileLoader;
     ParameterHolder ph;
     DataSetHolder dh;
-    Generator theGenrator;
+    Generator *theGenerator;
 
     vector3D randomLine; //collection of randomline for points to project on
     vector1D randomVector; //random values to assist k group of LSH
@@ -187,6 +188,8 @@ private:
     FRIEND_TEST(computerTest, openMPTest);
 
     FRIEND_TEST(computerTest, StdThreadTest);
+
+    FRIEND_TEST(computerTest, PthreadTest);
 
 };
 

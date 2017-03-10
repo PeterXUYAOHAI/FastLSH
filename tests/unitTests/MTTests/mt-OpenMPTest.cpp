@@ -15,6 +15,7 @@ class openMPTest:public ::testing::Test{
     protected:
         virtual void SetUp() {
             //preload data
+
             mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
 //            mlsh = LSH(300000, 57, 200, 1, 1.2, 1000);
             mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
@@ -46,7 +47,8 @@ TEST_F(openMPTest, hashValueTest){
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_singeThread\n";
 
-    mlsh.setUseMultiThread(true);
+    mlsh.setThreadMode(1);
+
 
     t1 = now();
     vector2D hashQ_mt = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
@@ -74,7 +76,7 @@ TEST_F(openMPTest, resultTest) {
     vector2D singleThreadResult;
     vector2D openMPResult;
 
-    mlsh.setUseMultiThread(true);
+    mlsh.setThreadMode(1);
 
 
     t1 = now();
@@ -88,7 +90,7 @@ TEST_F(openMPTest, resultTest) {
 
     mlsh.clearCollisionMatrix();
 
-    mlsh.setUseMultiThread(false);
+    mlsh.setThreadMode(1);
 
     t1 = now();
     singleThreadResult = mlsh.getCollisionMatrix();
@@ -118,7 +120,7 @@ TEST_F(openMPTest, candidateSetNormalModeTest){
     mlsh.clearCandidateSet();
     mlsh.clearHashMatrix();
 
-    mlsh.setUseMultiThread(true);
+    mlsh.setThreadMode(1);
 
     candidateSetOpenMP = mlsh.getCandidateSet();
 
@@ -146,7 +148,7 @@ TEST_F(openMPTest, candidateSetQuickModeTest){
     mlsh.clearCandidateSet();
     mlsh.clearHashMatrix();
 
-    mlsh.setUseMultiThread(true);
+    mlsh.setThreadMode(1);
 
     candidateSetOpenMP = mlsh.getCandidateSet();
 

@@ -306,6 +306,16 @@ cstdio
 sstream
 -
 
+/home/peter/FYP/FastLSH/include/Generator.cpp
+iostream
+-
+Generator.h
+/home/peter/FYP/FastLSH/include/Generator.h
+
+/home/peter/FYP/FastLSH/include/Generator.h
+Computer.h
+/home/peter/FYP/FastLSH/include/Computer.h
+
 /home/peter/FYP/FastLSH/include/LSH.h
 vector
 -
@@ -319,6 +329,10 @@ FileLoader.h
 /home/peter/FYP/FastLSH/include/FileLoader.h
 ParameterHolder.h
 /home/peter/FYP/FastLSH/include/ParameterHolder.h
+Computer.h
+/home/peter/FYP/FastLSH/include/Computer.h
+Generator.h
+/home/peter/FYP/FastLSH/include/Generator.h
 
 /home/peter/FYP/FastLSH/include/ParameterHolder.h
 cstdio
@@ -326,15 +340,25 @@ cstdio
 vector
 -
 
-/home/peter/FYP/FastLSH/lengency/hdfs.h
-errno.h
+/home/peter/FYP/FastLSH/include/PthreadComputer.cpp
+pthread.h
 -
-fcntl.h
+random
 -
-stdint.h
+iostream
 -
-time.h
+algorithm
 -
+windows.h
+-
+sys/param.h
+-
+sys/sysctl.h
+-
+unistd.h
+-
+Computer.h
+/home/peter/FYP/FastLSH/include/Computer.h
 
 /home/peter/FYP/FastLSH/src/FileLoader.cpp
 fstream
@@ -437,8 +461,6 @@ fstream
 -
 ../include/LSH.h
 /home/peter/FYP/FastLSH/include/LSH.h
-../lengency/hdfs.h
-/home/peter/FYP/FastLSH/lengency/hdfs.h
 hdfs.h
 /home/peter/FYP/FastLSH/tests/hdfs.h
 gtest/gtest.h
