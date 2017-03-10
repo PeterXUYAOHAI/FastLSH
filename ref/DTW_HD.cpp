@@ -43,7 +43,7 @@ using namespace std;
 #define R 0.02*sqrt(D)
 #define KNN 0.05*T
 
-//compute Euclidean distance between two datasets with length N
+//Computer Euclidean distance between two datasets with length N
 float distance(float p[], float q[], int N)
 {
 	float dist = 0;
@@ -54,7 +54,7 @@ float distance(float p[], float q[], int N)
 	return sqrt(dist);
 }
 
-//compute Euclidean distance between two points with dimension d
+//Computer Euclidean distance between two points with dimension d
 float distance_HD(float p[], float q[], int d)
 {
     float dist=0;
@@ -64,7 +64,7 @@ float distance_HD(float p[], float q[], int d)
     return dist;
 }
 
-//compute Euclidean distance between two series with dimension d
+//Computer Euclidean distance between two series with dimension d
 float distance_HD(float** p, float** q)
 {
     float dist=0;

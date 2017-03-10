@@ -1,1 +1,1 @@
-/usr/bin/c++    -fopenmp -g   CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o  -o mpiLSH -rdynamic 
+/usr/bin/c++    -fopenmp -g   CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o  -o mpiLSH -rdynamic 

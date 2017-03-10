@@ -57,38 +57,38 @@ include CMakeFiles/mpiLSH.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/mpiLSH.dir/flags.make
 
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o: CMakeFiles/mpiLSH.dir/flags.make
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o: ../src/compute/clusterCompute/mpiCompute.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o -c /home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o: CMakeFiles/mpiLSH.dir/flags.make
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o: ../src/clusterCompute/mpiCompute.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o -c /home/peter/FYP/FastLSH/src/clusterCompute/mpiCompute.cpp
 
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp > CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/clusterCompute/mpiCompute.cpp > CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.i
 
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/compute/clusterCompute/mpiCompute.cpp -o CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/clusterCompute/mpiCompute.cpp -o CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.s
 
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.requires:
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.requires:
 
-.PHONY : CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.requires
+.PHONY : CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.requires
 
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.provides: CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.requires
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.provides.build
-.PHONY : CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.provides
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.provides: CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.requires
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.provides.build
+.PHONY : CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.provides
 
-CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.provides.build: CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
+CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.provides.build: CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o
 
 
 # Object files for target mpiLSH
 mpiLSH_OBJECTS = \
-"CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o"
+"CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o"
 
 # External object files for target mpiLSH
 mpiLSH_EXTERNAL_OBJECTS =
 
-mpiLSH: CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
+mpiLSH: CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o
 mpiLSH: CMakeFiles/mpiLSH.dir/build.make
 mpiLSH: CMakeFiles/mpiLSH.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable mpiLSH"
@@ -99,7 +99,7 @@ CMakeFiles/mpiLSH.dir/build: mpiLSH
 
 .PHONY : CMakeFiles/mpiLSH.dir/build
 
-CMakeFiles/mpiLSH.dir/requires: CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o.requires
+CMakeFiles/mpiLSH.dir/requires: CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o.requires
 
 .PHONY : CMakeFiles/mpiLSH.dir/requires
 

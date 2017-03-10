@@ -6,10 +6,10 @@
 #include <cstddef>
 #include <string>
 #include <gtest/gtest_prod.h>
-#include "FileLoader.h"
-#include "ParameterHolder.h"
-#include "Computer.h"
-#include "Generator.h"
+#include "otherClasses/FileLoader.h"
+#include "otherClasses/ParameterHolder.h"
+#include "otherClasses/Computer.h"
+#include "otherClasses/Generator.h"
 
 #ifndef FASTLSH_LSH_H
 #define FASTLSH_LSH_H
@@ -26,7 +26,7 @@ class LSH{
 
     LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T);
 
-    ~LSH();
+   // ~LSH();
 
     void loadSetQ(char *filePath, int fileSize);
 
@@ -60,7 +60,7 @@ class LSH{
 
     void reportStatus();
 
-    int clear();
+    void clear();
 
     int reset();
 
@@ -68,31 +68,16 @@ class LSH{
 
 private:
 
-//    size_t N; //# of vectors in the dataset
-//    size_t Q; //# of vertors in the queryset
-//    size_t D; //# of dimensions
-//    size_t L; //# of group hash
-//    size_t K; //# the number of hash functions in each group hash
-//    double W; //bucket width
-//    size_t T; // threshold
-
     int threadMode; //default 0-singleThread 1-openMP, 2-stdthread 3-pthread
     int computeMode; //default 0-normal((g-collisionmatrix-> candidate)need more memory)   1-quickMode(need less memory, the collision matrix won't be generated
     std::string runID; //runID for recognize this particular run -- mainly for get value from in-memory storage
 
     FileLoader *theFileLoader;
-    ParameterHolder ph;
-    DataSetHolder dh;
     Generator *theGenerator;
+    ParameterHolder ph;
 
-    vector3D randomLine; //collection of randomline for points to project on
-    vector1D randomVector; //random values to assist k group of LSH
     vector2D setN; // original data set of N
     vector2D setQ; // original data set of Q
-
-    //todo this two brings extra cost of memory, may merge to the setN, setQ to save memory
-    vector2D setNNorm; // normalized data set of N
-    vector2D setQNorm; // normalized data set of Q
 
     vector2D hashMatrixN; // hashMatrix of N where hash value is stored
     vector2D hashMatrixQ; // hashMatrix of Q where hash value is stored
@@ -100,96 +85,49 @@ private:
     vector2D collisionMatrix; //the place to store collision
     vector2D candidateSet; //Qx--, candidate set
 
-
-
-
-    vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
+    vector2D normalize(vector2D dataset);
 
     vector3D generateRandomLine();
-
     vector1D generateUniformRandomVector(size_t number, double maxium);
-
-    vector2D computeHash(vector2D dataset, size_t pNum);
-
-    vector2D computeHash_openmp(vector2D dataset, size_t pointNum);
-
-    vector2D computeCollision_openmp(vector2D hMatrixN, vector2D hMatrixQ);
-
-    vector2D computeHash_stdthread(vector2D dataset, size_t pointNum);
-
-    vector2D computeCollision_stdthread(vector2D hMatrixN, vector2D hMatrixQ);
-
-    vector2D computeHash_pthread(vector2D dataset, size_t pointNum);
-
-    vector2D computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ);
-
-    void generateCollisionMatrix();
-
-    friend void *computeHashPthreadFuc(void *loopPara);
-
-    friend void *computeCollisionPthreadFuc(void *loopPara);
-
-    friend void* computeCandidateNormalPthreadFuc(void *loopPara);
-
-    friend void* computeCandidatesQuickPthreadFuc(void *loopPara);
 
     std::string generateRunId();
 
-    vector2D normalize(vector2D dataset);
 
-    vector2D computeCandidatesQuick(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+    FRIEND_TEST(OpenMPTest, hashValueTest);
 
-    vector2D computeCandidateNormal();
+    FRIEND_TEST(StdthreadTest, hashValueTest);
 
-    void generateHashMatrixes();
+    FRIEND_TEST(PthreadTest, hashValueTest);
 
-    vector2D computeCandidateNormal_openmp();
+    FRIEND_TEST(MemcachedTest, resultTest);
 
-    void generateCandidatesNormal();
+    FRIEND_TEST(RedisTest, resultTest);
 
-    void generateCandidatesQuick();
+    FRIEND_TEST(SingleThreadTest, collisionMatrixGenTest);
 
-    vector2D computeCandidatesQuick_openmp(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+    FRIEND_TEST(SingleThreadTest, clearcollisionMatrixGenTest);
 
-    vector2D computeCandidateNormal_stdthread();
+    FRIEND_TEST(MetaTest, linuxReadTest);
 
-    vector2D computeCandidatesQuick_stdthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+    FRIEND_TEST(MetaTest, randGeneTest);
 
-    vector2D computeCandidateNormal_pthread();
+    FRIEND_TEST(MetaTest, clearCollisionMatrixTest);
 
-    vector2D computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+    FRIEND_TEST(MetaTest, clearCandidateSetTest);
 
-    FRIEND_TEST(openMPTest, hashValueTest);
+    FRIEND_TEST(MetaTest, clearTest);
 
-    FRIEND_TEST(hdfsTest, readTest);
+    FRIEND_TEST(ComputerTest, singleThreadTest);
 
-    FRIEND_TEST(metaTest, linuxReadTest);
+    FRIEND_TEST(ComputerTest, openMPTest);
 
-    FRIEND_TEST(metaTest, randGeneTest);
+    FRIEND_TEST(ComputerTest, StdThreadTest);
 
-    FRIEND_TEST(stdthreadTest, hashValueTest);
+    FRIEND_TEST(ComputerTest, PthreadTest);
 
-    FRIEND_TEST(pthreadTest, hashValueTest);
+    FRIEND_TEST(GeneratorTest, geTest);
 
-    FRIEND_TEST(memcachedTest, resultTest);
-
-    FRIEND_TEST(redisTest, resultTest);
-
-    FRIEND_TEST(singleThreadTest, collisionMatrixGenTest);
-
-    FRIEND_TEST(singleThreadTest, clearcollisionMatrixGenTest);
-
-    FRIEND_TEST(metaTest, clearCollisionMatrixTest);
-
-    FRIEND_TEST(metaTest, clearCandidateSetTest);
-
-    FRIEND_TEST(computerTest, singleThreadTest);
-
-    FRIEND_TEST(computerTest, openMPTest);
-
-    FRIEND_TEST(computerTest, StdThreadTest);
-
-    FRIEND_TEST(computerTest, PthreadTest);
+    FRIEND_TEST(HdfsTest, readTest);
 
 };
 

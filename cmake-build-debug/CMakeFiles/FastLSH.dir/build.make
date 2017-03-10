@@ -105,225 +105,105 @@ CMakeFiles/FastLSH.dir/src/LSH.cpp.o.provides: CMakeFiles/FastLSH.dir/src/LSH.cp
 CMakeFiles/FastLSH.dir/src/LSH.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/LSH.cpp.o
 
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o: ../src/compute/MTCompute/computeMt-openMP.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o -c /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o: ../tests/unitTests/HdfsTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/HdfsTest.cpp
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp > CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/HdfsTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.i
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-openMP.cpp -o CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/HdfsTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.s
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.provides: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o
 
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o: ../src/compute/MTCompute/computeMt-stdthread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o -c /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o: ../tests/unitTests/MetaTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MetaTest.cpp
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp > CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MetaTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.i
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-stdthread.cpp -o CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MetaTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.s
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.provides: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o
 
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o: ../src/compute/MTCompute/computeMt-pthread.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o -c /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o: ../tests/unitTests/MTTests/StdthreadTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MTTests/StdthreadTest.cpp
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp > CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MTTests/StdthreadTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.i
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/compute/MTCompute/computeMt-pthread.cpp -o CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MTTests/StdthreadTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.s
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.provides: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o
 
 
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o: ../src/compute/compute.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o -c /home/peter/FYP/FastLSH/src/compute/compute.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o: ../tests/unitTests/MTTests/PthreadTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MTTests/PthreadTest.cpp
 
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/compute/compute.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/compute/compute.cpp > CMakeFiles/FastLSH.dir/src/compute/compute.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MTTests/PthreadTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.i
 
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/compute/compute.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/compute/compute.cpp -o CMakeFiles/FastLSH.dir/src/compute/compute.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MTTests/PthreadTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.s
 
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.provides: CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
-
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o: ../tests/unitTests/MTTests/mt-OpenMPTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-OpenMPTest.cpp
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-OpenMPTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.i
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-OpenMPTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.s
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.requires:
-
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.requires
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.provides
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
-
-
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o: ../tests/unitTests/hdfsTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp
-
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.i
-
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/hdfsTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.s
-
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.requires:
-
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.requires
-
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.provides
-
-CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o
-
-
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o: ../tests/unitTests/metaTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp
-
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.i
-
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/metaTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.s
-
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.requires:
-
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.requires
-
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.provides
-
-CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o
-
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o: ../tests/unitTests/MTTests/mt-stdthreadTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-stdthreadTest.cpp
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-stdthreadTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.i
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-stdthreadTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.s
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.requires:
-
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.requires
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.provides
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o
-
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o: ../tests/unitTests/MTTests/mt-pthreadTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-pthreadTest.cpp
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-pthreadTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.i
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MTTests/mt-pthreadTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.s
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.requires:
-
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.requires
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.provides
-
-CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o
 
 
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: CMakeFiles/FastLSH.dir/flags.make
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o: ../src/inMemoryStore/memcached.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o -c /home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp
 
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.i: cmake_force
@@ -345,33 +225,57 @@ CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o.provides: CMakeFiles/Fa
 CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o
 
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o: ../tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o: ../tests/unitTests/MTTests/OpenMPTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/MTTests/OpenMPTest.cpp
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/MTTests/OpenMPTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.i
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/MTTests/OpenMPTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.s
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o
+
+
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o: ../tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp
+
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i
+
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s
+
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.requires:
+
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.requires
+
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.provides
+
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o
 
 
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: CMakeFiles/FastLSH.dir/flags.make
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o: ../src/inMemoryStore/redis.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o -c /home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp
 
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.i: cmake_force
@@ -393,33 +297,33 @@ CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o.provides: CMakeFiles/FastLS
 CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o
 
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o: ../tests/unitTests/inMemoryStoreTest/redisTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/redisTest.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o: ../tests/unitTests/inMemoryStoreTest/RedisTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/RedisTest.cpp
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/redisTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/RedisTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/redisTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/inMemoryStoreTest/RedisTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o
 
 
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o: CMakeFiles/FastLSH.dir/flags.make
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o: ../src/normalization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/FastLSH.dir/src/normalization.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/FastLSH.dir/src/normalization.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/normalization.cpp.o -c /home/peter/FYP/FastLSH/src/normalization.cpp
 
 CMakeFiles/FastLSH.dir/src/normalization.cpp.i: cmake_force
@@ -441,33 +345,33 @@ CMakeFiles/FastLSH.dir/src/normalization.cpp.o.provides: CMakeFiles/FastLSH.dir/
 CMakeFiles/FastLSH.dir/src/normalization.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/normalization.cpp.o
 
 
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o: ../tests/unitTests/singleThreadTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o: ../tests/unitTests/SingleThreadTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/SingleThreadTest.cpp
 
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/SingleThreadTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.i
 
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/singleThreadTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/SingleThreadTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.s
 
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o
 
 
 CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o: CMakeFiles/FastLSH.dir/flags.make
 CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o: ../src/FileLoader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o -c /home/peter/FYP/FastLSH/src/FileLoader.cpp
 
 CMakeFiles/FastLSH.dir/src/FileLoader.cpp.i: cmake_force
@@ -489,159 +393,229 @@ CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o.provides: CMakeFiles/FastLSH.dir/src
 CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o
 
 
-CMakeFiles/FastLSH.dir/include/Computer.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/include/Computer.cpp.o: ../include/Computer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/FastLSH.dir/include/Computer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/include/Computer.cpp.o -c /home/peter/FYP/FastLSH/include/Computer.cpp
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o: ../tests/unitTests/ComputerTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/ComputerTest.cpp
 
-CMakeFiles/FastLSH.dir/include/Computer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/include/Computer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/include/Computer.cpp > CMakeFiles/FastLSH.dir/include/Computer.cpp.i
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/ComputerTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.i
 
-CMakeFiles/FastLSH.dir/include/Computer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/include/Computer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/include/Computer.cpp -o CMakeFiles/FastLSH.dir/include/Computer.cpp.s
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/ComputerTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.s
 
-CMakeFiles/FastLSH.dir/include/Computer.cpp.o.requires:
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/include/Computer.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/include/Computer.cpp.o.provides: CMakeFiles/FastLSH.dir/include/Computer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Computer.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/include/Computer.cpp.o.provides
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/include/Computer.cpp.o.provides.build: CMakeFiles/FastLSH.dir/include/Computer.cpp.o
-
-
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o: ../tests/unitTests/computerTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/computerTest.cpp
-
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/computerTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.i
-
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/computerTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.s
-
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.requires:
-
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.requires
-
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.provides
-
-CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o
+CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o
 
 
-CMakeFiles/FastLSH.dir/include/Generator.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/include/Generator.cpp.o: ../include/Generator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/FastLSH.dir/include/Generator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/include/Generator.cpp.o -c /home/peter/FYP/FastLSH/include/Generator.cpp
+CMakeFiles/FastLSH.dir/src/Generator.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/src/Generator.cpp.o: ../src/Generator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/FastLSH.dir/src/Generator.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/Generator.cpp.o -c /home/peter/FYP/FastLSH/src/Generator.cpp
 
-CMakeFiles/FastLSH.dir/include/Generator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/include/Generator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/include/Generator.cpp > CMakeFiles/FastLSH.dir/include/Generator.cpp.i
+CMakeFiles/FastLSH.dir/src/Generator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/Generator.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/Generator.cpp > CMakeFiles/FastLSH.dir/src/Generator.cpp.i
 
-CMakeFiles/FastLSH.dir/include/Generator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/include/Generator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/include/Generator.cpp -o CMakeFiles/FastLSH.dir/include/Generator.cpp.s
+CMakeFiles/FastLSH.dir/src/Generator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/Generator.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/Generator.cpp -o CMakeFiles/FastLSH.dir/src/Generator.cpp.s
 
-CMakeFiles/FastLSH.dir/include/Generator.cpp.o.requires:
+CMakeFiles/FastLSH.dir/src/Generator.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/include/Generator.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/src/Generator.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/include/Generator.cpp.o.provides: CMakeFiles/FastLSH.dir/include/Generator.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Generator.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/include/Generator.cpp.o.provides
+CMakeFiles/FastLSH.dir/src/Generator.cpp.o.provides: CMakeFiles/FastLSH.dir/src/Generator.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Generator.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/src/Generator.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/include/Generator.cpp.o.provides.build: CMakeFiles/FastLSH.dir/include/Generator.cpp.o
+CMakeFiles/FastLSH.dir/src/Generator.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/Generator.cpp.o
 
 
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o: CMakeFiles/FastLSH.dir/flags.make
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o: ../include/PthreadComputer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o -c /home/peter/FYP/FastLSH/include/PthreadComputer.cpp
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o: ../src/Computer/PthreadComputer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o -c /home/peter/FYP/FastLSH/src/Computer/PthreadComputer.cpp
 
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/include/PthreadComputer.cpp > CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.i
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/Computer/PthreadComputer.cpp > CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.i
 
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/include/PthreadComputer.cpp -o CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.s
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/Computer/PthreadComputer.cpp -o CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.s
 
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.requires:
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.requires:
 
-.PHONY : CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.requires
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.requires
 
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.provides: CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.provides.build
-.PHONY : CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.provides
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.provides: CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.provides
 
-CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.provides.build: CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o
+CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o
+
+
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o: ../tests/unitTests/GeneratorTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o -c /home/peter/FYP/FastLSH/tests/unitTests/GeneratorTest.cpp
+
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/tests/unitTests/GeneratorTest.cpp > CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.i
+
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/tests/unitTests/GeneratorTest.cpp -o CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.s
+
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.requires:
+
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.requires
+
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.provides: CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.provides
+
+CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.provides.build: CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o
+
+
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o: ../src/Computer/SingleThreadComputer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o -c /home/peter/FYP/FastLSH/src/Computer/SingleThreadComputer.cpp
+
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/Computer/SingleThreadComputer.cpp > CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.i
+
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/Computer/SingleThreadComputer.cpp -o CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.s
+
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.requires:
+
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.requires
+
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.provides: CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.provides
+
+CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o
+
+
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o: ../src/Computer/OpenMPComputer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o -c /home/peter/FYP/FastLSH/src/Computer/OpenMPComputer.cpp
+
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/Computer/OpenMPComputer.cpp > CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.i
+
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/Computer/OpenMPComputer.cpp -o CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.s
+
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.requires:
+
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.requires
+
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.provides: CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.provides
+
+CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o
+
+
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o: CMakeFiles/FastLSH.dir/flags.make
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o: ../src/Computer/StdThreadComputer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o -c /home/peter/FYP/FastLSH/src/Computer/StdThreadComputer.cpp
+
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/peter/FYP/FastLSH/src/Computer/StdThreadComputer.cpp > CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.i
+
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/peter/FYP/FastLSH/src/Computer/StdThreadComputer.cpp -o CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.s
+
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.requires:
+
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.requires
+
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.provides: CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.provides.build
+.PHONY : CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.provides
+
+CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.provides.build: CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o
 
 
 # Object files for target FastLSH
 FastLSH_OBJECTS = \
 "CMakeFiles/FastLSH.dir/tests/driver.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/LSH.cpp.o" \
-"CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o" \
-"CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o" \
-"CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o" \
-"CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/normalization.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o" \
 "CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o" \
-"CMakeFiles/FastLSH.dir/include/Computer.cpp.o" \
-"CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o" \
-"CMakeFiles/FastLSH.dir/include/Generator.cpp.o" \
-"CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o"
+"CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/src/Generator.cpp.o" \
+"CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o" \
+"CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o" \
+"CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o" \
+"CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o" \
+"CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o"
 
 # External object files for target FastLSH
 FastLSH_EXTERNAL_OBJECTS =
 
 FastLSH: CMakeFiles/FastLSH.dir/tests/driver.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/LSH.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/normalization.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/include/Computer.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/include/Generator.cpp.o
-FastLSH: CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/src/Generator.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o
+FastLSH: CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o
 FastLSH: CMakeFiles/FastLSH.dir/build.make
 FastLSH: /usr/local/hadoop/lib/native/libhdfs.so
 FastLSH: /usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so
 FastLSH: /usr/lib/jvm/default-java/jre/lib/amd64/server/libjvm.so
 FastLSH: lib/googletest/googlemock/gtest/libgtest.a
 FastLSH: CMakeFiles/FastLSH.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX executable FastLSH"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable FastLSH"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FastLSH.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -651,26 +625,25 @@ CMakeFiles/FastLSH.dir/build: FastLSH
 
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/driver.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/LSH.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/normalization.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o.requires
 CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/include/Computer.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/include/Generator.cpp.o.requires
-CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/Generator.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o.requires
+CMakeFiles/FastLSH.dir/requires: CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o.requires
 
 .PHONY : CMakeFiles/FastLSH.dir/requires
 

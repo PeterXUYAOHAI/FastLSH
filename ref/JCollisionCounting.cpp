@@ -101,7 +101,7 @@ int** preallocate(int m,int n){
 }
 
 
-// compute hit matrix for datasetQ and datasetP
+// Computer hit matrix for datasetQ and datasetP
 void *ComputeHitmatrix(void *threadarg)
 {
 	struct thread_data *my_data;
@@ -139,7 +139,7 @@ int main(int argc, char* argv[])
 	duration = (double)(finish - start) / CLOCKS_PER_SEC;
 	cout << "time for load datasets is :" << duration << endl;
 	
-	// compute hit_matrix
+	// Computer hit_matrix
 	start = clock();
 	//hitQP = ComputeHitmatrix(hashQ, hashP, NQ, NP);
 	struct SHitMatrix hm[NUM_THREADS];
@@ -211,7 +211,7 @@ int main(int argc, char* argv[])
 	
 	finish = clock();
 	duration = (double)(finish - start) / CLOCKS_PER_SEC;
-	cout << "time to compute hit matrix is :" << duration << endl;
+	cout << "time to Computer hit matrix is :" << duration << endl;
 //for (int i = 0; i < 2; ++i)
 //{
 //	for (int j = 0; j < 4; ++j)

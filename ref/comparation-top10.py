@@ -246,7 +246,7 @@ def getBFM2HD(query,doc, hitTable, dataset, paraIndex,hitparaIndex,begin, end):
     
     
 
-def getMHDbyqLSH(q,doc, hitTable, dataset, paraIndex,hitparaIndex): #compute the MHD bound matrix
+def getMHDbyqLSH(q,doc, hitTable, dataset, paraIndex,hitparaIndex): #Computer the MHD bound matrix
     hitValueofDoc=[]
     for p in doc_to_para_dict[doc]:
         if paraIndex[p]>=NP:

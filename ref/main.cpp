@@ -56,7 +56,7 @@ float**  load_data(const char* filename, int row, int col)
 
 
 
-// compute hit matrix for datasetQ and datasetP
+// Computer hit matrix for datasetQ and datasetP
 short **ComputeHitmatrix(float **hash_matrix1, float **hash_matrix2, int row1, int row2)
 {
     int i, j, hash_id;
@@ -95,7 +95,7 @@ int main(int argc, char* argv[])
     duration = (double)(finish - start) / CLOCKS_PER_SEC;
     cout << "time for load datasets is :" << duration << endl;
     
-    // compute hit_matrix
+    // Computer hit_matrix
     start = clock();
     hitQP = ComputeHitmatrix(hashQ, hashP, NQ, NP);
     cout << hitQP[0][0] <<endl;
@@ -103,6 +103,6 @@ int main(int argc, char* argv[])
     
     finish = clock();
     duration = (double)(finish - start) / CLOCKS_PER_SEC;
-    cout << "time to compute hit matrix is :" << duration << endl;
+    cout << "time to Computer hit matrix is :" << duration << endl;
     return 0;
 }

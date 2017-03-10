@@ -9,7 +9,7 @@
 --   mpi
 --   serialization
 /usr/bin/mpiexec
-README.mdtests/driver.cppinclude/LSH.hsrc/LSH.cppsrc/compute/MTCompute/computeMt-openMP.cppsrc/compute/MTCompute/computeMt-stdthread.cppsrc/compute/MTCompute/computeMt-pthread.cppsrc/compute/compute.cpptests/unitTests/MTTests/mt-OpenMPTest.cpptests/unitTests/hdfsTest.cpptests/unitTests/metaTest.cpptests/unitTests/MTTests/mt-stdthreadTest.cpptests/unitTests/MTTests/mt-pthreadTest.cppsrc/inMemoryStore/memcached.cpptests/unitTests/inMemoryStoreTest/memcachedTest.cppsrc/inMemoryStore/redis.cpptests/unitTests/inMemoryStoreTest/redisTest.cppsrc/normalization.cpptests/unitTests/singleThreadTest.cppsrc/FileLoader.cppinclude/FileLoader.hinclude/Computer.cppinclude/Computer.htests/unitTests/computerTest.cppinclude/ParameterHolder.hinclude/Generator.hinclude/Generator.cppinclude/PthreadComputer.cpp
+README.mdtests/driver.cppinclude/LSH.hsrc/LSH.cpptests/unitTests/HdfsTest.cpptests/unitTests/MetaTest.cpptests/unitTests/MTTests/StdthreadTest.cpptests/unitTests/MTTests/PthreadTest.cppsrc/inMemoryStore/memcached.cpptests/unitTests/MTTests/OpenMPTest.cpptests/unitTests/inMemoryStoreTest/MemcachedTest.cppsrc/inMemoryStore/redis.cpptests/unitTests/inMemoryStoreTest/RedisTest.cppsrc/normalization.cpptests/unitTests/SingleThreadTest.cppsrc/FileLoader.cppinclude/otherClasses/FileLoader.hinclude/otherClasses/Computer.htests/unitTests/ComputerTest.cppinclude/otherClasses/ParameterHolder.hinclude/otherClasses/Generator.hsrc/Generator.cppsrc/Computer/PthreadComputer.cpptests/unitTests/GeneratorTest.cppsrc/Computer/SingleThreadComputer.cppsrc/Computer/OpenMPComputer.cppsrc/Computer/StdThreadComputer.cpp
 /usr/lib/openmpi/lib/libmpi_cxx.so/usr/lib/openmpi/lib/libmpi.so
 -- Configuring done
 -- Generating done

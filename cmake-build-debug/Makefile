@@ -258,89 +258,113 @@ gtest/fast:
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-include/Computer.o: include/Computer.cpp.o
+src/Computer/OpenMPComputer.o: src/Computer/OpenMPComputer.cpp.o
 
-.PHONY : include/Computer.o
-
-# target to build an object file
-include/Computer.cpp.o:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/include/Computer.cpp.o
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Computer.cpp.o
-.PHONY : include/Computer.cpp.o
-
-include/Computer.i: include/Computer.cpp.i
-
-.PHONY : include/Computer.i
-
-# target to preprocess a source file
-include/Computer.cpp.i:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/include/Computer.cpp.i
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Computer.cpp.i
-.PHONY : include/Computer.cpp.i
-
-include/Computer.s: include/Computer.cpp.s
-
-.PHONY : include/Computer.s
-
-# target to generate assembly for a file
-include/Computer.cpp.s:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/include/Computer.cpp.s
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Computer.cpp.s
-.PHONY : include/Computer.cpp.s
-
-include/Generator.o: include/Generator.cpp.o
-
-.PHONY : include/Generator.o
+.PHONY : src/Computer/OpenMPComputer.o
 
 # target to build an object file
-include/Generator.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Generator.cpp.o
-.PHONY : include/Generator.cpp.o
+src/Computer/OpenMPComputer.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.o
+.PHONY : src/Computer/OpenMPComputer.cpp.o
 
-include/Generator.i: include/Generator.cpp.i
+src/Computer/OpenMPComputer.i: src/Computer/OpenMPComputer.cpp.i
 
-.PHONY : include/Generator.i
+.PHONY : src/Computer/OpenMPComputer.i
 
 # target to preprocess a source file
-include/Generator.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Generator.cpp.i
-.PHONY : include/Generator.cpp.i
+src/Computer/OpenMPComputer.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.i
+.PHONY : src/Computer/OpenMPComputer.cpp.i
 
-include/Generator.s: include/Generator.cpp.s
+src/Computer/OpenMPComputer.s: src/Computer/OpenMPComputer.cpp.s
 
-.PHONY : include/Generator.s
+.PHONY : src/Computer/OpenMPComputer.s
 
 # target to generate assembly for a file
-include/Generator.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/Generator.cpp.s
-.PHONY : include/Generator.cpp.s
+src/Computer/OpenMPComputer.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/OpenMPComputer.cpp.s
+.PHONY : src/Computer/OpenMPComputer.cpp.s
 
-include/PthreadComputer.o: include/PthreadComputer.cpp.o
+src/Computer/PthreadComputer.o: src/Computer/PthreadComputer.cpp.o
 
-.PHONY : include/PthreadComputer.o
+.PHONY : src/Computer/PthreadComputer.o
 
 # target to build an object file
-include/PthreadComputer.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.o
-.PHONY : include/PthreadComputer.cpp.o
+src/Computer/PthreadComputer.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.o
+.PHONY : src/Computer/PthreadComputer.cpp.o
 
-include/PthreadComputer.i: include/PthreadComputer.cpp.i
+src/Computer/PthreadComputer.i: src/Computer/PthreadComputer.cpp.i
 
-.PHONY : include/PthreadComputer.i
+.PHONY : src/Computer/PthreadComputer.i
 
 # target to preprocess a source file
-include/PthreadComputer.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.i
-.PHONY : include/PthreadComputer.cpp.i
+src/Computer/PthreadComputer.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.i
+.PHONY : src/Computer/PthreadComputer.cpp.i
 
-include/PthreadComputer.s: include/PthreadComputer.cpp.s
+src/Computer/PthreadComputer.s: src/Computer/PthreadComputer.cpp.s
 
-.PHONY : include/PthreadComputer.s
+.PHONY : src/Computer/PthreadComputer.s
 
 # target to generate assembly for a file
-include/PthreadComputer.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/include/PthreadComputer.cpp.s
-.PHONY : include/PthreadComputer.cpp.s
+src/Computer/PthreadComputer.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/PthreadComputer.cpp.s
+.PHONY : src/Computer/PthreadComputer.cpp.s
+
+src/Computer/SingleThreadComputer.o: src/Computer/SingleThreadComputer.cpp.o
+
+.PHONY : src/Computer/SingleThreadComputer.o
+
+# target to build an object file
+src/Computer/SingleThreadComputer.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.o
+.PHONY : src/Computer/SingleThreadComputer.cpp.o
+
+src/Computer/SingleThreadComputer.i: src/Computer/SingleThreadComputer.cpp.i
+
+.PHONY : src/Computer/SingleThreadComputer.i
+
+# target to preprocess a source file
+src/Computer/SingleThreadComputer.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.i
+.PHONY : src/Computer/SingleThreadComputer.cpp.i
+
+src/Computer/SingleThreadComputer.s: src/Computer/SingleThreadComputer.cpp.s
+
+.PHONY : src/Computer/SingleThreadComputer.s
+
+# target to generate assembly for a file
+src/Computer/SingleThreadComputer.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/SingleThreadComputer.cpp.s
+.PHONY : src/Computer/SingleThreadComputer.cpp.s
+
+src/Computer/StdThreadComputer.o: src/Computer/StdThreadComputer.cpp.o
+
+.PHONY : src/Computer/StdThreadComputer.o
+
+# target to build an object file
+src/Computer/StdThreadComputer.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.o
+.PHONY : src/Computer/StdThreadComputer.cpp.o
+
+src/Computer/StdThreadComputer.i: src/Computer/StdThreadComputer.cpp.i
+
+.PHONY : src/Computer/StdThreadComputer.i
+
+# target to preprocess a source file
+src/Computer/StdThreadComputer.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.i
+.PHONY : src/Computer/StdThreadComputer.cpp.i
+
+src/Computer/StdThreadComputer.s: src/Computer/StdThreadComputer.cpp.s
+
+.PHONY : src/Computer/StdThreadComputer.s
+
+# target to generate assembly for a file
+src/Computer/StdThreadComputer.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.s
+.PHONY : src/Computer/StdThreadComputer.cpp.s
 
 src/FileLoader.o: src/FileLoader.cpp.o
 
@@ -369,6 +393,33 @@ src/FileLoader.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader.cpp.s
 .PHONY : src/FileLoader.cpp.s
 
+src/Generator.o: src/Generator.cpp.o
+
+.PHONY : src/Generator.o
+
+# target to build an object file
+src/Generator.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Generator.cpp.o
+.PHONY : src/Generator.cpp.o
+
+src/Generator.i: src/Generator.cpp.i
+
+.PHONY : src/Generator.i
+
+# target to preprocess a source file
+src/Generator.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Generator.cpp.i
+.PHONY : src/Generator.cpp.i
+
+src/Generator.s: src/Generator.cpp.s
+
+.PHONY : src/Generator.s
+
+# target to generate assembly for a file
+src/Generator.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Generator.cpp.s
+.PHONY : src/Generator.cpp.s
+
 src/LSH.o: src/LSH.cpp.o
 
 .PHONY : src/LSH.o
@@ -396,167 +447,59 @@ src/LSH.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
 .PHONY : src/LSH.cpp.s
 
-src/compute/MTCompute/computeMt-openMP.o: src/compute/MTCompute/computeMt-openMP.cpp.o
+src/clusterCompute/boostmpiCompute.o: src/clusterCompute/boostmpiCompute.cpp.o
 
-.PHONY : src/compute/MTCompute/computeMt-openMP.o
-
-# target to build an object file
-src/compute/MTCompute/computeMt-openMP.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.o
-.PHONY : src/compute/MTCompute/computeMt-openMP.cpp.o
-
-src/compute/MTCompute/computeMt-openMP.i: src/compute/MTCompute/computeMt-openMP.cpp.i
-
-.PHONY : src/compute/MTCompute/computeMt-openMP.i
-
-# target to preprocess a source file
-src/compute/MTCompute/computeMt-openMP.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.i
-.PHONY : src/compute/MTCompute/computeMt-openMP.cpp.i
-
-src/compute/MTCompute/computeMt-openMP.s: src/compute/MTCompute/computeMt-openMP.cpp.s
-
-.PHONY : src/compute/MTCompute/computeMt-openMP.s
-
-# target to generate assembly for a file
-src/compute/MTCompute/computeMt-openMP.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-openMP.cpp.s
-.PHONY : src/compute/MTCompute/computeMt-openMP.cpp.s
-
-src/compute/MTCompute/computeMt-pthread.o: src/compute/MTCompute/computeMt-pthread.cpp.o
-
-.PHONY : src/compute/MTCompute/computeMt-pthread.o
+.PHONY : src/clusterCompute/boostmpiCompute.o
 
 # target to build an object file
-src/compute/MTCompute/computeMt-pthread.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.o
-.PHONY : src/compute/MTCompute/computeMt-pthread.cpp.o
+src/clusterCompute/boostmpiCompute.cpp.o:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.o
+.PHONY : src/clusterCompute/boostmpiCompute.cpp.o
 
-src/compute/MTCompute/computeMt-pthread.i: src/compute/MTCompute/computeMt-pthread.cpp.i
+src/clusterCompute/boostmpiCompute.i: src/clusterCompute/boostmpiCompute.cpp.i
 
-.PHONY : src/compute/MTCompute/computeMt-pthread.i
+.PHONY : src/clusterCompute/boostmpiCompute.i
 
 # target to preprocess a source file
-src/compute/MTCompute/computeMt-pthread.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.i
-.PHONY : src/compute/MTCompute/computeMt-pthread.cpp.i
+src/clusterCompute/boostmpiCompute.cpp.i:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.i
+.PHONY : src/clusterCompute/boostmpiCompute.cpp.i
 
-src/compute/MTCompute/computeMt-pthread.s: src/compute/MTCompute/computeMt-pthread.cpp.s
+src/clusterCompute/boostmpiCompute.s: src/clusterCompute/boostmpiCompute.cpp.s
 
-.PHONY : src/compute/MTCompute/computeMt-pthread.s
+.PHONY : src/clusterCompute/boostmpiCompute.s
 
 # target to generate assembly for a file
-src/compute/MTCompute/computeMt-pthread.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-pthread.cpp.s
-.PHONY : src/compute/MTCompute/computeMt-pthread.cpp.s
+src/clusterCompute/boostmpiCompute.cpp.s:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.s
+.PHONY : src/clusterCompute/boostmpiCompute.cpp.s
 
-src/compute/MTCompute/computeMt-stdthread.o: src/compute/MTCompute/computeMt-stdthread.cpp.o
+src/clusterCompute/mpiCompute.o: src/clusterCompute/mpiCompute.cpp.o
 
-.PHONY : src/compute/MTCompute/computeMt-stdthread.o
+.PHONY : src/clusterCompute/mpiCompute.o
 
 # target to build an object file
-src/compute/MTCompute/computeMt-stdthread.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.o
-.PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.o
+src/clusterCompute/mpiCompute.cpp.o:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o
+.PHONY : src/clusterCompute/mpiCompute.cpp.o
 
-src/compute/MTCompute/computeMt-stdthread.i: src/compute/MTCompute/computeMt-stdthread.cpp.i
+src/clusterCompute/mpiCompute.i: src/clusterCompute/mpiCompute.cpp.i
 
-.PHONY : src/compute/MTCompute/computeMt-stdthread.i
-
-# target to preprocess a source file
-src/compute/MTCompute/computeMt-stdthread.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.i
-.PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.i
-
-src/compute/MTCompute/computeMt-stdthread.s: src/compute/MTCompute/computeMt-stdthread.cpp.s
-
-.PHONY : src/compute/MTCompute/computeMt-stdthread.s
-
-# target to generate assembly for a file
-src/compute/MTCompute/computeMt-stdthread.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/MTCompute/computeMt-stdthread.cpp.s
-.PHONY : src/compute/MTCompute/computeMt-stdthread.cpp.s
-
-src/compute/clusterCompute/boostmpiCompute.o: src/compute/clusterCompute/boostmpiCompute.cpp.o
-
-.PHONY : src/compute/clusterCompute/boostmpiCompute.o
-
-# target to build an object file
-src/compute/clusterCompute/boostmpiCompute.cpp.o:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.o
-.PHONY : src/compute/clusterCompute/boostmpiCompute.cpp.o
-
-src/compute/clusterCompute/boostmpiCompute.i: src/compute/clusterCompute/boostmpiCompute.cpp.i
-
-.PHONY : src/compute/clusterCompute/boostmpiCompute.i
+.PHONY : src/clusterCompute/mpiCompute.i
 
 # target to preprocess a source file
-src/compute/clusterCompute/boostmpiCompute.cpp.i:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.i
-.PHONY : src/compute/clusterCompute/boostmpiCompute.cpp.i
+src/clusterCompute/mpiCompute.cpp.i:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.i
+.PHONY : src/clusterCompute/mpiCompute.cpp.i
 
-src/compute/clusterCompute/boostmpiCompute.s: src/compute/clusterCompute/boostmpiCompute.cpp.s
+src/clusterCompute/mpiCompute.s: src/clusterCompute/mpiCompute.cpp.s
 
-.PHONY : src/compute/clusterCompute/boostmpiCompute.s
-
-# target to generate assembly for a file
-src/compute/clusterCompute/boostmpiCompute.cpp.s:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/compute/clusterCompute/boostmpiCompute.cpp.s
-.PHONY : src/compute/clusterCompute/boostmpiCompute.cpp.s
-
-src/compute/clusterCompute/mpiCompute.o: src/compute/clusterCompute/mpiCompute.cpp.o
-
-.PHONY : src/compute/clusterCompute/mpiCompute.o
-
-# target to build an object file
-src/compute/clusterCompute/mpiCompute.cpp.o:
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.o
-.PHONY : src/compute/clusterCompute/mpiCompute.cpp.o
-
-src/compute/clusterCompute/mpiCompute.i: src/compute/clusterCompute/mpiCompute.cpp.i
-
-.PHONY : src/compute/clusterCompute/mpiCompute.i
-
-# target to preprocess a source file
-src/compute/clusterCompute/mpiCompute.cpp.i:
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.i
-.PHONY : src/compute/clusterCompute/mpiCompute.cpp.i
-
-src/compute/clusterCompute/mpiCompute.s: src/compute/clusterCompute/mpiCompute.cpp.s
-
-.PHONY : src/compute/clusterCompute/mpiCompute.s
+.PHONY : src/clusterCompute/mpiCompute.s
 
 # target to generate assembly for a file
-src/compute/clusterCompute/mpiCompute.cpp.s:
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/compute/clusterCompute/mpiCompute.cpp.s
-.PHONY : src/compute/clusterCompute/mpiCompute.cpp.s
-
-src/compute/compute.o: src/compute/compute.cpp.o
-
-.PHONY : src/compute/compute.o
-
-# target to build an object file
-src/compute/compute.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/compute.cpp.o
-.PHONY : src/compute/compute.cpp.o
-
-src/compute/compute.i: src/compute/compute.cpp.i
-
-.PHONY : src/compute/compute.i
-
-# target to preprocess a source file
-src/compute/compute.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/compute.cpp.i
-.PHONY : src/compute/compute.cpp.i
-
-src/compute/compute.s: src/compute/compute.cpp.s
-
-.PHONY : src/compute/compute.s
-
-# target to generate assembly for a file
-src/compute/compute.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/compute/compute.cpp.s
-.PHONY : src/compute/compute.cpp.s
+src/clusterCompute/mpiCompute.cpp.s:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.s
+.PHONY : src/clusterCompute/mpiCompute.cpp.s
 
 src/inMemoryStore/memcached.o: src/inMemoryStore/memcached.cpp.o
 
@@ -693,248 +636,275 @@ tests/driver.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.s
 .PHONY : tests/driver.cpp.s
 
-tests/unitTests/MTTests/mt-OpenMPTest.o: tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
+tests/unitTests/ComputerTest.o: tests/unitTests/ComputerTest.cpp.o
 
-.PHONY : tests/unitTests/MTTests/mt-OpenMPTest.o
-
-# target to build an object file
-tests/unitTests/MTTests/mt-OpenMPTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
-.PHONY : tests/unitTests/MTTests/mt-OpenMPTest.cpp.o
-
-tests/unitTests/MTTests/mt-OpenMPTest.i: tests/unitTests/MTTests/mt-OpenMPTest.cpp.i
-
-.PHONY : tests/unitTests/MTTests/mt-OpenMPTest.i
-
-# target to preprocess a source file
-tests/unitTests/MTTests/mt-OpenMPTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.i
-.PHONY : tests/unitTests/MTTests/mt-OpenMPTest.cpp.i
-
-tests/unitTests/MTTests/mt-OpenMPTest.s: tests/unitTests/MTTests/mt-OpenMPTest.cpp.s
-
-.PHONY : tests/unitTests/MTTests/mt-OpenMPTest.s
-
-# target to generate assembly for a file
-tests/unitTests/MTTests/mt-OpenMPTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-OpenMPTest.cpp.s
-.PHONY : tests/unitTests/MTTests/mt-OpenMPTest.cpp.s
-
-tests/unitTests/MTTests/mt-pthreadTest.o: tests/unitTests/MTTests/mt-pthreadTest.cpp.o
-
-.PHONY : tests/unitTests/MTTests/mt-pthreadTest.o
+.PHONY : tests/unitTests/ComputerTest.o
 
 # target to build an object file
-tests/unitTests/MTTests/mt-pthreadTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.o
-.PHONY : tests/unitTests/MTTests/mt-pthreadTest.cpp.o
+tests/unitTests/ComputerTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o
+.PHONY : tests/unitTests/ComputerTest.cpp.o
 
-tests/unitTests/MTTests/mt-pthreadTest.i: tests/unitTests/MTTests/mt-pthreadTest.cpp.i
+tests/unitTests/ComputerTest.i: tests/unitTests/ComputerTest.cpp.i
 
-.PHONY : tests/unitTests/MTTests/mt-pthreadTest.i
+.PHONY : tests/unitTests/ComputerTest.i
 
 # target to preprocess a source file
-tests/unitTests/MTTests/mt-pthreadTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.i
-.PHONY : tests/unitTests/MTTests/mt-pthreadTest.cpp.i
+tests/unitTests/ComputerTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.i
+.PHONY : tests/unitTests/ComputerTest.cpp.i
 
-tests/unitTests/MTTests/mt-pthreadTest.s: tests/unitTests/MTTests/mt-pthreadTest.cpp.s
+tests/unitTests/ComputerTest.s: tests/unitTests/ComputerTest.cpp.s
 
-.PHONY : tests/unitTests/MTTests/mt-pthreadTest.s
+.PHONY : tests/unitTests/ComputerTest.s
 
 # target to generate assembly for a file
-tests/unitTests/MTTests/mt-pthreadTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-pthreadTest.cpp.s
-.PHONY : tests/unitTests/MTTests/mt-pthreadTest.cpp.s
+tests/unitTests/ComputerTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.s
+.PHONY : tests/unitTests/ComputerTest.cpp.s
 
-tests/unitTests/MTTests/mt-stdthreadTest.o: tests/unitTests/MTTests/mt-stdthreadTest.cpp.o
+tests/unitTests/GeneratorTest.o: tests/unitTests/GeneratorTest.cpp.o
 
-.PHONY : tests/unitTests/MTTests/mt-stdthreadTest.o
+.PHONY : tests/unitTests/GeneratorTest.o
 
 # target to build an object file
-tests/unitTests/MTTests/mt-stdthreadTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.o
-.PHONY : tests/unitTests/MTTests/mt-stdthreadTest.cpp.o
+tests/unitTests/GeneratorTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.o
+.PHONY : tests/unitTests/GeneratorTest.cpp.o
 
-tests/unitTests/MTTests/mt-stdthreadTest.i: tests/unitTests/MTTests/mt-stdthreadTest.cpp.i
+tests/unitTests/GeneratorTest.i: tests/unitTests/GeneratorTest.cpp.i
 
-.PHONY : tests/unitTests/MTTests/mt-stdthreadTest.i
+.PHONY : tests/unitTests/GeneratorTest.i
 
 # target to preprocess a source file
-tests/unitTests/MTTests/mt-stdthreadTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.i
-.PHONY : tests/unitTests/MTTests/mt-stdthreadTest.cpp.i
+tests/unitTests/GeneratorTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.i
+.PHONY : tests/unitTests/GeneratorTest.cpp.i
 
-tests/unitTests/MTTests/mt-stdthreadTest.s: tests/unitTests/MTTests/mt-stdthreadTest.cpp.s
+tests/unitTests/GeneratorTest.s: tests/unitTests/GeneratorTest.cpp.s
 
-.PHONY : tests/unitTests/MTTests/mt-stdthreadTest.s
+.PHONY : tests/unitTests/GeneratorTest.s
 
 # target to generate assembly for a file
-tests/unitTests/MTTests/mt-stdthreadTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/mt-stdthreadTest.cpp.s
-.PHONY : tests/unitTests/MTTests/mt-stdthreadTest.cpp.s
+tests/unitTests/GeneratorTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/GeneratorTest.cpp.s
+.PHONY : tests/unitTests/GeneratorTest.cpp.s
 
-tests/unitTests/computerTest.o: tests/unitTests/computerTest.cpp.o
+tests/unitTests/HdfsTest.o: tests/unitTests/HdfsTest.cpp.o
 
-.PHONY : tests/unitTests/computerTest.o
+.PHONY : tests/unitTests/HdfsTest.o
 
 # target to build an object file
-tests/unitTests/computerTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.o
-.PHONY : tests/unitTests/computerTest.cpp.o
+tests/unitTests/HdfsTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.o
+.PHONY : tests/unitTests/HdfsTest.cpp.o
 
-tests/unitTests/computerTest.i: tests/unitTests/computerTest.cpp.i
+tests/unitTests/HdfsTest.i: tests/unitTests/HdfsTest.cpp.i
 
-.PHONY : tests/unitTests/computerTest.i
+.PHONY : tests/unitTests/HdfsTest.i
 
 # target to preprocess a source file
-tests/unitTests/computerTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.i
-.PHONY : tests/unitTests/computerTest.cpp.i
+tests/unitTests/HdfsTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.i
+.PHONY : tests/unitTests/HdfsTest.cpp.i
 
-tests/unitTests/computerTest.s: tests/unitTests/computerTest.cpp.s
+tests/unitTests/HdfsTest.s: tests/unitTests/HdfsTest.cpp.s
 
-.PHONY : tests/unitTests/computerTest.s
+.PHONY : tests/unitTests/HdfsTest.s
 
 # target to generate assembly for a file
-tests/unitTests/computerTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/computerTest.cpp.s
-.PHONY : tests/unitTests/computerTest.cpp.s
+tests/unitTests/HdfsTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/HdfsTest.cpp.s
+.PHONY : tests/unitTests/HdfsTest.cpp.s
 
-tests/unitTests/hdfsTest.o: tests/unitTests/hdfsTest.cpp.o
+tests/unitTests/MTTests/OpenMPTest.o: tests/unitTests/MTTests/OpenMPTest.cpp.o
 
-.PHONY : tests/unitTests/hdfsTest.o
+.PHONY : tests/unitTests/MTTests/OpenMPTest.o
 
 # target to build an object file
-tests/unitTests/hdfsTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.o
-.PHONY : tests/unitTests/hdfsTest.cpp.o
+tests/unitTests/MTTests/OpenMPTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.o
+.PHONY : tests/unitTests/MTTests/OpenMPTest.cpp.o
 
-tests/unitTests/hdfsTest.i: tests/unitTests/hdfsTest.cpp.i
+tests/unitTests/MTTests/OpenMPTest.i: tests/unitTests/MTTests/OpenMPTest.cpp.i
 
-.PHONY : tests/unitTests/hdfsTest.i
+.PHONY : tests/unitTests/MTTests/OpenMPTest.i
 
 # target to preprocess a source file
-tests/unitTests/hdfsTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.i
-.PHONY : tests/unitTests/hdfsTest.cpp.i
+tests/unitTests/MTTests/OpenMPTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.i
+.PHONY : tests/unitTests/MTTests/OpenMPTest.cpp.i
 
-tests/unitTests/hdfsTest.s: tests/unitTests/hdfsTest.cpp.s
+tests/unitTests/MTTests/OpenMPTest.s: tests/unitTests/MTTests/OpenMPTest.cpp.s
 
-.PHONY : tests/unitTests/hdfsTest.s
+.PHONY : tests/unitTests/MTTests/OpenMPTest.s
 
 # target to generate assembly for a file
-tests/unitTests/hdfsTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/hdfsTest.cpp.s
-.PHONY : tests/unitTests/hdfsTest.cpp.s
+tests/unitTests/MTTests/OpenMPTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/OpenMPTest.cpp.s
+.PHONY : tests/unitTests/MTTests/OpenMPTest.cpp.s
 
-tests/unitTests/inMemoryStoreTest/memcachedTest.o: tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o
+tests/unitTests/MTTests/PthreadTest.o: tests/unitTests/MTTests/PthreadTest.cpp.o
 
-.PHONY : tests/unitTests/inMemoryStoreTest/memcachedTest.o
+.PHONY : tests/unitTests/MTTests/PthreadTest.o
 
 # target to build an object file
-tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o
-.PHONY : tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.o
+tests/unitTests/MTTests/PthreadTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.o
+.PHONY : tests/unitTests/MTTests/PthreadTest.cpp.o
 
-tests/unitTests/inMemoryStoreTest/memcachedTest.i: tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i
+tests/unitTests/MTTests/PthreadTest.i: tests/unitTests/MTTests/PthreadTest.cpp.i
 
-.PHONY : tests/unitTests/inMemoryStoreTest/memcachedTest.i
+.PHONY : tests/unitTests/MTTests/PthreadTest.i
 
 # target to preprocess a source file
-tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i
-.PHONY : tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.i
+tests/unitTests/MTTests/PthreadTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.i
+.PHONY : tests/unitTests/MTTests/PthreadTest.cpp.i
 
-tests/unitTests/inMemoryStoreTest/memcachedTest.s: tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s
+tests/unitTests/MTTests/PthreadTest.s: tests/unitTests/MTTests/PthreadTest.cpp.s
 
-.PHONY : tests/unitTests/inMemoryStoreTest/memcachedTest.s
+.PHONY : tests/unitTests/MTTests/PthreadTest.s
 
 # target to generate assembly for a file
-tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s
-.PHONY : tests/unitTests/inMemoryStoreTest/memcachedTest.cpp.s
+tests/unitTests/MTTests/PthreadTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/PthreadTest.cpp.s
+.PHONY : tests/unitTests/MTTests/PthreadTest.cpp.s
 
-tests/unitTests/inMemoryStoreTest/redisTest.o: tests/unitTests/inMemoryStoreTest/redisTest.cpp.o
+tests/unitTests/MTTests/StdthreadTest.o: tests/unitTests/MTTests/StdthreadTest.cpp.o
 
-.PHONY : tests/unitTests/inMemoryStoreTest/redisTest.o
+.PHONY : tests/unitTests/MTTests/StdthreadTest.o
 
 # target to build an object file
-tests/unitTests/inMemoryStoreTest/redisTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.o
-.PHONY : tests/unitTests/inMemoryStoreTest/redisTest.cpp.o
+tests/unitTests/MTTests/StdthreadTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.o
+.PHONY : tests/unitTests/MTTests/StdthreadTest.cpp.o
 
-tests/unitTests/inMemoryStoreTest/redisTest.i: tests/unitTests/inMemoryStoreTest/redisTest.cpp.i
+tests/unitTests/MTTests/StdthreadTest.i: tests/unitTests/MTTests/StdthreadTest.cpp.i
 
-.PHONY : tests/unitTests/inMemoryStoreTest/redisTest.i
+.PHONY : tests/unitTests/MTTests/StdthreadTest.i
 
 # target to preprocess a source file
-tests/unitTests/inMemoryStoreTest/redisTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.i
-.PHONY : tests/unitTests/inMemoryStoreTest/redisTest.cpp.i
+tests/unitTests/MTTests/StdthreadTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.i
+.PHONY : tests/unitTests/MTTests/StdthreadTest.cpp.i
 
-tests/unitTests/inMemoryStoreTest/redisTest.s: tests/unitTests/inMemoryStoreTest/redisTest.cpp.s
+tests/unitTests/MTTests/StdthreadTest.s: tests/unitTests/MTTests/StdthreadTest.cpp.s
 
-.PHONY : tests/unitTests/inMemoryStoreTest/redisTest.s
+.PHONY : tests/unitTests/MTTests/StdthreadTest.s
 
 # target to generate assembly for a file
-tests/unitTests/inMemoryStoreTest/redisTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/redisTest.cpp.s
-.PHONY : tests/unitTests/inMemoryStoreTest/redisTest.cpp.s
+tests/unitTests/MTTests/StdthreadTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MTTests/StdthreadTest.cpp.s
+.PHONY : tests/unitTests/MTTests/StdthreadTest.cpp.s
 
-tests/unitTests/metaTest.o: tests/unitTests/metaTest.cpp.o
+tests/unitTests/MetaTest.o: tests/unitTests/MetaTest.cpp.o
 
-.PHONY : tests/unitTests/metaTest.o
+.PHONY : tests/unitTests/MetaTest.o
 
 # target to build an object file
-tests/unitTests/metaTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.o
-.PHONY : tests/unitTests/metaTest.cpp.o
+tests/unitTests/MetaTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.o
+.PHONY : tests/unitTests/MetaTest.cpp.o
 
-tests/unitTests/metaTest.i: tests/unitTests/metaTest.cpp.i
+tests/unitTests/MetaTest.i: tests/unitTests/MetaTest.cpp.i
 
-.PHONY : tests/unitTests/metaTest.i
+.PHONY : tests/unitTests/MetaTest.i
 
 # target to preprocess a source file
-tests/unitTests/metaTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.i
-.PHONY : tests/unitTests/metaTest.cpp.i
+tests/unitTests/MetaTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.i
+.PHONY : tests/unitTests/MetaTest.cpp.i
 
-tests/unitTests/metaTest.s: tests/unitTests/metaTest.cpp.s
+tests/unitTests/MetaTest.s: tests/unitTests/MetaTest.cpp.s
 
-.PHONY : tests/unitTests/metaTest.s
+.PHONY : tests/unitTests/MetaTest.s
 
 # target to generate assembly for a file
-tests/unitTests/metaTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/metaTest.cpp.s
-.PHONY : tests/unitTests/metaTest.cpp.s
+tests/unitTests/MetaTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/MetaTest.cpp.s
+.PHONY : tests/unitTests/MetaTest.cpp.s
 
-tests/unitTests/singleThreadTest.o: tests/unitTests/singleThreadTest.cpp.o
+tests/unitTests/SingleThreadTest.o: tests/unitTests/SingleThreadTest.cpp.o
 
-.PHONY : tests/unitTests/singleThreadTest.o
+.PHONY : tests/unitTests/SingleThreadTest.o
 
 # target to build an object file
-tests/unitTests/singleThreadTest.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.o
-.PHONY : tests/unitTests/singleThreadTest.cpp.o
+tests/unitTests/SingleThreadTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.o
+.PHONY : tests/unitTests/SingleThreadTest.cpp.o
 
-tests/unitTests/singleThreadTest.i: tests/unitTests/singleThreadTest.cpp.i
+tests/unitTests/SingleThreadTest.i: tests/unitTests/SingleThreadTest.cpp.i
 
-.PHONY : tests/unitTests/singleThreadTest.i
+.PHONY : tests/unitTests/SingleThreadTest.i
 
 # target to preprocess a source file
-tests/unitTests/singleThreadTest.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.i
-.PHONY : tests/unitTests/singleThreadTest.cpp.i
+tests/unitTests/SingleThreadTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.i
+.PHONY : tests/unitTests/SingleThreadTest.cpp.i
 
-tests/unitTests/singleThreadTest.s: tests/unitTests/singleThreadTest.cpp.s
+tests/unitTests/SingleThreadTest.s: tests/unitTests/SingleThreadTest.cpp.s
 
-.PHONY : tests/unitTests/singleThreadTest.s
+.PHONY : tests/unitTests/SingleThreadTest.s
 
 # target to generate assembly for a file
-tests/unitTests/singleThreadTest.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/singleThreadTest.cpp.s
-.PHONY : tests/unitTests/singleThreadTest.cpp.s
+tests/unitTests/SingleThreadTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/SingleThreadTest.cpp.s
+.PHONY : tests/unitTests/SingleThreadTest.cpp.s
+
+tests/unitTests/inMemoryStoreTest/MemcachedTest.o: tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o
+
+.PHONY : tests/unitTests/inMemoryStoreTest/MemcachedTest.o
+
+# target to build an object file
+tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o
+.PHONY : tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.o
+
+tests/unitTests/inMemoryStoreTest/MemcachedTest.i: tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i
+
+.PHONY : tests/unitTests/inMemoryStoreTest/MemcachedTest.i
+
+# target to preprocess a source file
+tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i
+.PHONY : tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.i
+
+tests/unitTests/inMemoryStoreTest/MemcachedTest.s: tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s
+
+.PHONY : tests/unitTests/inMemoryStoreTest/MemcachedTest.s
+
+# target to generate assembly for a file
+tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s
+.PHONY : tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp.s
+
+tests/unitTests/inMemoryStoreTest/RedisTest.o: tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o
+
+.PHONY : tests/unitTests/inMemoryStoreTest/RedisTest.o
+
+# target to build an object file
+tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o
+.PHONY : tests/unitTests/inMemoryStoreTest/RedisTest.cpp.o
+
+tests/unitTests/inMemoryStoreTest/RedisTest.i: tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i
+
+.PHONY : tests/unitTests/inMemoryStoreTest/RedisTest.i
+
+# target to preprocess a source file
+tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i
+.PHONY : tests/unitTests/inMemoryStoreTest/RedisTest.cpp.i
+
+tests/unitTests/inMemoryStoreTest/RedisTest.s: tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s
+
+.PHONY : tests/unitTests/inMemoryStoreTest/RedisTest.s
+
+# target to generate assembly for a file
+tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s
+.PHONY : tests/unitTests/inMemoryStoreTest/RedisTest.cpp.s
 
 # Help Target
 help:
@@ -956,39 +926,33 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... include/Computer.o"
-	@echo "... include/Computer.i"
-	@echo "... include/Computer.s"
-	@echo "... include/Generator.o"
-	@echo "... include/Generator.i"
-	@echo "... include/Generator.s"
-	@echo "... include/PthreadComputer.o"
-	@echo "... include/PthreadComputer.i"
-	@echo "... include/PthreadComputer.s"
+	@echo "... src/Computer/OpenMPComputer.o"
+	@echo "... src/Computer/OpenMPComputer.i"
+	@echo "... src/Computer/OpenMPComputer.s"
+	@echo "... src/Computer/PthreadComputer.o"
+	@echo "... src/Computer/PthreadComputer.i"
+	@echo "... src/Computer/PthreadComputer.s"
+	@echo "... src/Computer/SingleThreadComputer.o"
+	@echo "... src/Computer/SingleThreadComputer.i"
+	@echo "... src/Computer/SingleThreadComputer.s"
+	@echo "... src/Computer/StdThreadComputer.o"
+	@echo "... src/Computer/StdThreadComputer.i"
+	@echo "... src/Computer/StdThreadComputer.s"
 	@echo "... src/FileLoader.o"
 	@echo "... src/FileLoader.i"
 	@echo "... src/FileLoader.s"
+	@echo "... src/Generator.o"
+	@echo "... src/Generator.i"
+	@echo "... src/Generator.s"
 	@echo "... src/LSH.o"
 	@echo "... src/LSH.i"
 	@echo "... src/LSH.s"
-	@echo "... src/compute/MTCompute/computeMt-openMP.o"
-	@echo "... src/compute/MTCompute/computeMt-openMP.i"
-	@echo "... src/compute/MTCompute/computeMt-openMP.s"
-	@echo "... src/compute/MTCompute/computeMt-pthread.o"
-	@echo "... src/compute/MTCompute/computeMt-pthread.i"
-	@echo "... src/compute/MTCompute/computeMt-pthread.s"
-	@echo "... src/compute/MTCompute/computeMt-stdthread.o"
-	@echo "... src/compute/MTCompute/computeMt-stdthread.i"
-	@echo "... src/compute/MTCompute/computeMt-stdthread.s"
-	@echo "... src/compute/clusterCompute/boostmpiCompute.o"
-	@echo "... src/compute/clusterCompute/boostmpiCompute.i"
-	@echo "... src/compute/clusterCompute/boostmpiCompute.s"
-	@echo "... src/compute/clusterCompute/mpiCompute.o"
-	@echo "... src/compute/clusterCompute/mpiCompute.i"
-	@echo "... src/compute/clusterCompute/mpiCompute.s"
-	@echo "... src/compute/compute.o"
-	@echo "... src/compute/compute.i"
-	@echo "... src/compute/compute.s"
+	@echo "... src/clusterCompute/boostmpiCompute.o"
+	@echo "... src/clusterCompute/boostmpiCompute.i"
+	@echo "... src/clusterCompute/boostmpiCompute.s"
+	@echo "... src/clusterCompute/mpiCompute.o"
+	@echo "... src/clusterCompute/mpiCompute.i"
+	@echo "... src/clusterCompute/mpiCompute.s"
 	@echo "... src/inMemoryStore/memcached.o"
 	@echo "... src/inMemoryStore/memcached.i"
 	@echo "... src/inMemoryStore/memcached.s"
@@ -1004,33 +968,36 @@ help:
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"
-	@echo "... tests/unitTests/MTTests/mt-OpenMPTest.o"
-	@echo "... tests/unitTests/MTTests/mt-OpenMPTest.i"
-	@echo "... tests/unitTests/MTTests/mt-OpenMPTest.s"
-	@echo "... tests/unitTests/MTTests/mt-pthreadTest.o"
-	@echo "... tests/unitTests/MTTests/mt-pthreadTest.i"
-	@echo "... tests/unitTests/MTTests/mt-pthreadTest.s"
-	@echo "... tests/unitTests/MTTests/mt-stdthreadTest.o"
-	@echo "... tests/unitTests/MTTests/mt-stdthreadTest.i"
-	@echo "... tests/unitTests/MTTests/mt-stdthreadTest.s"
-	@echo "... tests/unitTests/computerTest.o"
-	@echo "... tests/unitTests/computerTest.i"
-	@echo "... tests/unitTests/computerTest.s"
-	@echo "... tests/unitTests/hdfsTest.o"
-	@echo "... tests/unitTests/hdfsTest.i"
-	@echo "... tests/unitTests/hdfsTest.s"
-	@echo "... tests/unitTests/inMemoryStoreTest/memcachedTest.o"
-	@echo "... tests/unitTests/inMemoryStoreTest/memcachedTest.i"
-	@echo "... tests/unitTests/inMemoryStoreTest/memcachedTest.s"
-	@echo "... tests/unitTests/inMemoryStoreTest/redisTest.o"
-	@echo "... tests/unitTests/inMemoryStoreTest/redisTest.i"
-	@echo "... tests/unitTests/inMemoryStoreTest/redisTest.s"
-	@echo "... tests/unitTests/metaTest.o"
-	@echo "... tests/unitTests/metaTest.i"
-	@echo "... tests/unitTests/metaTest.s"
-	@echo "... tests/unitTests/singleThreadTest.o"
-	@echo "... tests/unitTests/singleThreadTest.i"
-	@echo "... tests/unitTests/singleThreadTest.s"
+	@echo "... tests/unitTests/ComputerTest.o"
+	@echo "... tests/unitTests/ComputerTest.i"
+	@echo "... tests/unitTests/ComputerTest.s"
+	@echo "... tests/unitTests/GeneratorTest.o"
+	@echo "... tests/unitTests/GeneratorTest.i"
+	@echo "... tests/unitTests/GeneratorTest.s"
+	@echo "... tests/unitTests/HdfsTest.o"
+	@echo "... tests/unitTests/HdfsTest.i"
+	@echo "... tests/unitTests/HdfsTest.s"
+	@echo "... tests/unitTests/MTTests/OpenMPTest.o"
+	@echo "... tests/unitTests/MTTests/OpenMPTest.i"
+	@echo "... tests/unitTests/MTTests/OpenMPTest.s"
+	@echo "... tests/unitTests/MTTests/PthreadTest.o"
+	@echo "... tests/unitTests/MTTests/PthreadTest.i"
+	@echo "... tests/unitTests/MTTests/PthreadTest.s"
+	@echo "... tests/unitTests/MTTests/StdthreadTest.o"
+	@echo "... tests/unitTests/MTTests/StdthreadTest.i"
+	@echo "... tests/unitTests/MTTests/StdthreadTest.s"
+	@echo "... tests/unitTests/MetaTest.o"
+	@echo "... tests/unitTests/MetaTest.i"
+	@echo "... tests/unitTests/MetaTest.s"
+	@echo "... tests/unitTests/SingleThreadTest.o"
+	@echo "... tests/unitTests/SingleThreadTest.i"
+	@echo "... tests/unitTests/SingleThreadTest.s"
+	@echo "... tests/unitTests/inMemoryStoreTest/MemcachedTest.o"
+	@echo "... tests/unitTests/inMemoryStoreTest/MemcachedTest.i"
+	@echo "... tests/unitTests/inMemoryStoreTest/MemcachedTest.s"
+	@echo "... tests/unitTests/inMemoryStoreTest/RedisTest.o"
+	@echo "... tests/unitTests/inMemoryStoreTest/RedisTest.i"
+	@echo "... tests/unitTests/inMemoryStoreTest/RedisTest.s"
 .PHONY : help
 
 

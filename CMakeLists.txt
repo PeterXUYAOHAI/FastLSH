@@ -71,21 +71,19 @@ include_directories( ${HDFS_INCLUDE_DIRS} )
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        README.md tests/driver.cpp include/LSH.h src/LSH.cpp src/compute/MTCompute/computeMt-openMP.cpp
-        src/compute/MTCompute/computeMt-stdthread.cpp
-        src/compute/MTCompute/computeMt-pthread.cpp
-        src/compute/compute.cpp tests/unitTests/MTTests/mt-OpenMPTest.cpp
-        tests/unitTests/hdfsTest.cpp tests/unitTests/metaTest.cpp tests/unitTests/MTTests/mt-stdthreadTest.cpp
-        tests/unitTests/MTTests/mt-pthreadTest.cpp src/inMemoryStore/memcached.cpp
-        tests/unitTests/inMemoryStoreTest/memcachedTest.cpp
-        src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp
-        src/normalization.cpp tests/unitTests/singleThreadTest.cpp
-        src/FileLoader.cpp include/FileLoader.h
-        include/Computer.cpp include/Computer.h tests/unitTests/computerTest.cpp include/ParameterHolder.h
-        include/Generator.h include/Generator.cpp include/PthreadComputer.cpp)
+        README.md tests/driver.cpp include/LSH.h src/LSH.cpp
+        tests/unitTests/HdfsTest.cpp tests/unitTests/MetaTest.cpp tests/unitTests/MTTests/StdthreadTest.cpp
+        tests/unitTests/MTTests/PthreadTest.cpp src/inMemoryStore/memcached.cpp
+        tests/unitTests/MTTests/OpenMPTest.cpp
+        tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp
+        src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/RedisTest.cpp
+        src/normalization.cpp tests/unitTests/SingleThreadTest.cpp
+        src/FileLoader.cpp include/otherClasses/FileLoader.h
+        include/otherClasses/Computer.h tests/unitTests/ComputerTest.cpp include/otherClasses/ParameterHolder.h
+        include/otherClasses/Generator.h src/Generator.cpp src/Computer/PthreadComputer.cpp tests/unitTests/GeneratorTest.cpp src/Computer/SingleThreadComputer.cpp src/Computer/OpenMPComputer.cpp src/Computer/StdThreadComputer.cpp)
 
-set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
-set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp include/Computer.cpp include/Computer.h)
+set(MPI_FILES src/clusterCompute/mpiCompute.cpp)
+set(BoostMPI_FILES src/clusterCompute/boostmpiCompute.cpp include/otherClasses/Computer.h)
 set(Paragen_FILES src/paragen.cpp)
 
 #find boost library

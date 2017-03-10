@@ -208,7 +208,7 @@ TEST(IteratorTest, ParamIteratorConformsToForwardIteratorConcept) {
 
   // Verifies that the result of the postfix operator++ points to the value
   // pointed to by the original iterator.
-  int original_value = *it;  // Have to compute it outside of macro call to be
+  int original_value = *it;  // Have to Computer it outside of macro call to be
                              // unaffected by the parameter evaluation order.
   EXPECT_EQ(original_value, *(it++));
 

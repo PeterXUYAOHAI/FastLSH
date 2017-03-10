@@ -61,7 +61,8 @@ int main (int argc, char **argv){
     if(input=="Y") {
         //run the registered tests
         ::testing::InitGoogleTest(&argc, argv);
-//        ::testing::GTEST_FLAG(filter) = "computerTest*";
+//        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
+//        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
         return RUN_ALL_TESTS();
     }
     else{
