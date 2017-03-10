@@ -39,11 +39,11 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
     fprintf(stderr, "Start to pip file into memcache\n");
 
 
-    for (int i = 0; i < N; ++i) {
+    for (int i = 0; i < ph.N; ++i) {
         std::string keyString = (runID+"HaN"+std::to_string(i));
         std::string valueString = "";
-        for (int j = 0; j < L; ++j) {
-            if (j<(L-1))
+        for (int j = 0; j < ph.L; ++j) {
+            if (j<(ph.L-1))
                 valueString += (std::to_string(hashMatrixN[i][j])+","); // the value won't be exactly the same, because it is double
             else
                 valueString += (std::to_string(hashMatrixN[i][j])+"\n");
@@ -90,8 +90,8 @@ void LSH::readHashNFromMemc(const char* server, in_port_t port,std::string srunI
 
     vector2D data;
 
-    for (int i = 0; i < N; i++) {
-        std::vector<double> temp(L, 0);
+    for (int i = 0; i < ph.N; i++) {
+        std::vector<double> temp(ph.L, 0);
         std::string keyString = (srunId+"HaN"+std::to_string(i));
         char *retrieved_value;
         std::stringstream ss;
@@ -100,8 +100,8 @@ void LSH::readHashNFromMemc(const char* server, in_port_t port,std::string srunI
         ss<< retrieved_value;
         free(retrieved_value);
 
-        for (int j = 0; j<L; j++) {
-            if (j != L - 1)
+        for (int j = 0; j<ph.L; j++) {
+            if (j != ph.L - 1)
                 getline(ss, value, ',');
             else
                 getline(ss, value, '\n');

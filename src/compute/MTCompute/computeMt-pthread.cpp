@@ -89,17 +89,17 @@ void* computeHashPthreadFuc(void *loopPara)
             // (optional) make output critical
             double hashFinalValue = 0;
             //loop through the inner of a hash function group
-            for (int k = 0; k < mlsh->K; ++k) {
+            for (int k = 0; k < mlsh->ph.K; ++k) {
                 double dTemp = 0;
                 //loop through all the dimensions
-                for (int d = 0; d < mlsh->D; ++d) {
+                for (int d = 0; d < mlsh->ph.D; ++d) {
                     //vector(math) multiply to make projection
-                    dTemp += (*(my_data->dataset))[n][d]*mlsh->randomLine[l][k][d];
+                    dTemp += (*(my_data->dataset))[n][d]*mlsh->ph.randomLine[l][k][d];
                 }
                 //assign hashvalue into bucket
-                double hashvalue = floor(dTemp/mlsh->W);
+                double hashvalue = floor(dTemp/mlsh->ph.W);
                 //merge hash group results **see documentation
-                hashFinalValue = hashvalue*mlsh->randomVector[k] + hashFinalValue;
+                hashFinalValue = hashvalue*mlsh->ph.randomVector[k] + hashFinalValue;
             }
             (*(my_data->hashMatrix))[n][l] = hashFinalValue;
 
@@ -127,7 +127,7 @@ void* computeCollisionPthreadFuc(void *loopPara)
         {
             int q = i/inloop;
             int n = i%inloop;
-            for (int hash_id = 0; hash_id < mlsh->L; ++hash_id) {
+            for (int hash_id = 0; hash_id < mlsh->ph.L; ++hash_id) {
                 if ((*my_data->hMatrixN)[n][hash_id] == (*my_data->hMatrixQ)[q][hash_id])
                     (*my_data->collisionMatrix)[q][n]++;
             }
@@ -153,8 +153,8 @@ void* computeCandidateNormalPthreadFuc(void *loopPara)
         // inner loop
         {
             vector1D candidates;
-            for (int j = 0; j < mlsh->N; ++j) {
-                if(mlsh->collisionMatrix[i][j]>=mlsh->T)
+            for (int j = 0; j < mlsh->ph.N; ++j) {
+                if(mlsh->collisionMatrix[i][j]>=mlsh->ph.T)
                     candidates.push_back((double &&) j);
             }
             (*my_data->candidateSet)[i] = candidates;
@@ -180,12 +180,12 @@ void* computeCandidatesQuickPthreadFuc(void *loopPara)
         // inner loop
         {
             vector1D singleRow(0, 0);
-            for (int n = 0; n <mlsh->N ; ++n){
+            for (int n = 0; n <mlsh->ph.N ; ++n){
                 int colliNum = 0;
-                for (int hash_id = 0; hash_id < mlsh->L; ++hash_id) {
+                for (int hash_id = 0; hash_id < mlsh->ph.L; ++hash_id) {
                     if (mlsh->hashMatrixN[n][hash_id] == mlsh->hashMatrixQ[i][hash_id]) {
                         colliNum++;
-                        if(colliNum>=mlsh->T){
+                        if(colliNum>=mlsh->ph.T){
                             singleRow.push_back((double &&) n);
                             break;
                         }
@@ -204,14 +204,14 @@ vector2D LSH::computeHash_pthread(vector2D dataset, size_t pointNum){
     vector2D hashMatrix;
 
     for (int i = 0; i < pointNum; ++i) {
-        vector1D vL(L,0);
+        vector1D vL(ph.L,0);
         hashMatrix.push_back(vL);
     }
 
     // it is a implementation of nested loop to stdthread
     const size_t nthreads = getNumOfCores();
     const size_t outloop = pointNum;
-    const size_t inloop = L;
+    const size_t inloop = ph.L;
     const size_t nloop = outloop*inloop;
 
 
@@ -243,14 +243,14 @@ vector2D LSH::computeHash_pthread(vector2D dataset, size_t pointNum){
 
 vector2D LSH::computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ){
     vector2D collisionMatrix;
-    for (int i = 0; i < Q ; ++i) {
-        vector1D singleLine(N, 0);
+    for (int i = 0; i < ph.Q ; ++i) {
+        vector1D singleLine(ph.N, 0);
         collisionMatrix.push_back(singleLine);
     }
 
     const size_t nthreads = getNumOfCores();
-    const size_t outloop = Q;
-    const size_t inloop = N;
+    const size_t outloop = ph.Q;
+    const size_t inloop = ph.N;
     const size_t nloop = outloop*inloop;
 
     std::vector<pthread_t> threads(nthreads);
@@ -283,13 +283,13 @@ vector2D LSH::computeCollision_pthread(vector2D hMatrixN, vector2D hMatrixQ){
 
 vector2D LSH::computeCandidateNormal_pthread(){
     vector2D candidateSet;
-    for (int i = 0; i < Q; ++i) {
+    for (int i = 0; i < ph.Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
     }
 
     const size_t nthreads = getNumOfCores();
-    const size_t nloop = Q;
+    const size_t nloop = ph.Q;
 
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopCandidatePara> thread_args(nthreads);
@@ -319,13 +319,13 @@ vector2D LSH::computeCandidateNormal_pthread(){
 vector2D LSH::computeCandidateQuick_pthread(vector2D hMatrixN, vector2D hMatrixQ, size_t T){
     vector2D candidateSet;
     //Prepare set to store candidates
-    for (int i = 0; i < Q; ++i) {
+    for (int i = 0; i < ph.Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
     }
 
     const size_t nthreads = getNumOfCores();
-    const size_t nloop = Q;
+    const size_t nloop = ph.Q;
 
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopCandidatePara> thread_args(nthreads);

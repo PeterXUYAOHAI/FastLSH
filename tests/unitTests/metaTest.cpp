@@ -21,11 +21,11 @@ TEST_F(metaTest, randGeneTest){
 
     mlsh.generateRandomLine();
 
-    ASSERT_EQ(mlsh.randomLine.size(), mlsh.L);
+    ASSERT_EQ(mlsh.ph.randomLine.size(), mlsh.ph.L);
 
-    ASSERT_EQ(mlsh.randomLine[0].size(), mlsh.K);
+    ASSERT_EQ(mlsh.ph.randomLine[0].size(), mlsh.ph.K);
 
-    ASSERT_EQ(mlsh.randomLine[0][0].size(), mlsh.D);
+    ASSERT_EQ(mlsh.ph.randomLine[0][0].size(), mlsh.ph.D);
 
 
     vector1D randVec = mlsh.generateUniformRandomVector(7, 10);
@@ -65,8 +65,8 @@ TEST_F(metaTest, clearCollisionMatrixTest){
 
     mlsh.getCollisionMatrix();
 
-    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.Q);
-    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.N);
+    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.ph.Q);
+    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.ph.N);
 
     mlsh.clearCollisionMatrix();
 
@@ -82,7 +82,7 @@ TEST_F(metaTest, clearCandidateSetTest){
 
     mlsh.getCandidateSet();
 
-    ASSERT_EQ(mlsh.candidateSet.size(),mlsh.Q);
+    ASSERT_EQ(mlsh.candidateSet.size(),mlsh.ph.Q);
 
     mlsh.clearCandidateSet();
 

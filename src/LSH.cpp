@@ -9,11 +9,20 @@
 LSH::LSH() {
 }
 
-LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T):
-        N(N),D(D),L(L),K(K),W(W),Q(Q),T(T) {
+LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T)
+//        : N(N),D(D),L(L),K(K),W(W),Q(Q),T(T)
+{
+    ph.N = N;
+    ph.D = D;
+    ph.L = L;
+
+    ph.K = K;
+    ph.W = W;
+    ph.Q = Q;
+    ph.T = T;
     computeMode = 0;
-    randomLine = generateRandomLine();
-    randomVector = generateUniformRandomVector(K,W);
+    ph.randomLine = generateRandomLine();
+    ph.randomVector = generateUniformRandomVector(K,W);
     runID = generateRunId();
     this->theFileLoader = new LfsLoader();
     std::cout<<"This runId is "<<runID<<std::endl;
@@ -21,11 +30,11 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T):
 
 
 void LSH::loadSetN(char* filePath, int fileSize){
-    setN = theFileLoader->loadFile(filePath,N,D);
+    setN = theFileLoader->loadFile(filePath,ph.N,ph.D);
 }
 
 void LSH::loadSetQ(char* filePath, int fileSize){
-    setQ = theFileLoader->loadFile(filePath,Q,D);
+    setQ = theFileLoader->loadFile(filePath,ph.Q,ph.D);
 }
 
 vector3D LSH::generateRandomLine(){
@@ -33,13 +42,13 @@ vector3D LSH::generateRandomLine(){
     std::random_device rd;
     std::mt19937 gen(rd());
     vector3D randomLine;
-    for (int i = 0; i < L; i++) {
+    for (int i = 0; i < ph.L; i++) {
         vector2D vK;
-        for (int j = 0; j < K; ++j) {
+        for (int j = 0; j < ph.K; ++j) {
             //generate random according normal distribution
             std::normal_distribution<double> distribution(0.5,0.5);
             std::vector<double> vD;
-            for (int k = 0; k < D; ++k) {
+            for (int k = 0; k < ph.D; ++k) {
                 vD.push_back(distribution(gen));
             }
             vK.push_back(vD);
@@ -72,21 +81,21 @@ void LSH::generateHashMatrixes(){
 
     //get Hash Matrix
     if (!useMultiThread) {
-        hashMatrixN = computeHash(setNNorm, N);
-        hashMatrixQ = computeHash(setQNorm, Q);
+        hashMatrixN = computeHash(setNNorm, ph.N);
+        hashMatrixQ = computeHash(setQNorm, ph.Q);
     }
     else{
         if (multiThreadMode == 0) {
-            hashMatrixN = computeHash_openmp(setNNorm, N);
-            hashMatrixQ = computeHash_openmp(setQNorm, Q);
+            hashMatrixN = computeHash_openmp(setNNorm, ph.N);
+            hashMatrixQ = computeHash_openmp(setQNorm, ph.Q);
         }
         else if(multiThreadMode==1){
-            hashMatrixN = computeHash_stdthread(setNNorm, N);
-            hashMatrixQ = computeHash_stdthread(setQNorm, Q);
+            hashMatrixN = computeHash_stdthread(setNNorm, ph.N);
+            hashMatrixQ = computeHash_stdthread(setQNorm, ph.Q);
         }
         else if(multiThreadMode ==2){
-            hashMatrixN = computeHash_pthread(setNNorm, N);
-            hashMatrixQ = computeHash_pthread(setQNorm, Q);
+            hashMatrixN = computeHash_pthread(setNNorm, ph.N);
+            hashMatrixQ = computeHash_pthread(setQNorm, ph.Q);
         }
     }
 
@@ -120,7 +129,7 @@ void LSH::generateCollisionMatrix(){
 
 void LSH::generateCandidatesNormal(){
     //TODO here only use the size to check if collisionMatrix exists, may find a better way
-    if(collisionMatrix.size()!=Q || collisionMatrix[0].size()!=N)
+    if(collisionMatrix.size()!=ph.Q || collisionMatrix[0].size()!=ph.N)
         generateCollisionMatrix();
 
     vector2D candidateSet;
@@ -146,14 +155,14 @@ void LSH::generateCandidatesQuick(){
     //compute collision matrix
     vector2D candidateSet;
     if(!useMultiThread)
-        candidateSet = computeCandidatesQuick(hashMatrixN, hashMatrixQ, T);
+        candidateSet = computeCandidatesQuick(hashMatrixN, hashMatrixQ, ph.T);
     else {
         if (multiThreadMode == 0)
-            candidateSet = computeCandidatesQuick_openmp(hashMatrixN, hashMatrixQ,T);
+            candidateSet = computeCandidatesQuick_openmp(hashMatrixN, hashMatrixQ,ph.T);
         else if(multiThreadMode ==1)
-            candidateSet = computeCandidatesQuick_stdthread(hashMatrixN, hashMatrixQ,T);
+            candidateSet = computeCandidatesQuick_stdthread(hashMatrixN, hashMatrixQ,ph.T);
         else if(multiThreadMode ==2)
-            candidateSet = computeCandidateQuick_pthread(hashMatrixN,hashMatrixQ,T);
+            candidateSet = computeCandidateQuick_pthread(hashMatrixN,hashMatrixQ,ph.T);
     }
 
     //TODO this need to be modified, duplication exists

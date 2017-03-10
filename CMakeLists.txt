@@ -81,7 +81,8 @@ set(SOURCE_FILES
         src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/redisTest.cpp
         src/normalization.cpp tests/unitTests/singleThreadTest.cpp
         src/FileLoader.cpp include/FileLoader.h
-        include/Computer.cpp include/Computer.h tests/unitTests/computerTest.cpp)
+        include/Computer.cpp include/Computer.h tests/unitTests/computerTest.cpp include/ParameterHolder.h
+        include/Generator.h)
 
 set(MPI_FILES src/compute/clusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/compute/clusterCompute/boostmpiCompute.cpp include/Computer.cpp include/Computer.h)

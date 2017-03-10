@@ -17,29 +17,29 @@ protected:
         mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
         mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
 
-
-//            mlsh.loadSetN("/home/peter/FYP/dataset300000NoIndex.csv", 0);
-//            mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
     }
     LSH mlsh;
     Computer *theNormalComputer;
     Computer *theQuickComputer;
+    Computer *theNormalComputerOP;
+    Computer *theQuickComputerOP;
 
 };
 
-TEST_F(computerTest, valueTest){
+TEST_F(computerTest, singleThreadTest){
 
 
-    theNormalComputer = new ComputerSingleThreadNormal(mlsh.N,mlsh.D,mlsh.L,mlsh.K,mlsh.W,mlsh.Q,mlsh.T ,mlsh.randomLine,mlsh.randomVector);
-    theQuickComputer = new ComputerSingleThreadQuick(mlsh.N,mlsh.D,mlsh.L,mlsh.K,mlsh.W,mlsh.Q,mlsh.T ,mlsh.randomLine,mlsh.randomVector);
+    theNormalComputer = new ComputerSingleThreadNormal(mlsh.ph);
+    theQuickComputer = new ComputerSingleThreadQuick(mlsh.ph);
 
-    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.Q);
-    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.N);
 
-    vector2D hashQComputer = theNormalComputer->computeHash(mlsh.setQ,mlsh.Q);
-    vector2D hashNComputer = theNormalComputer->computeHash(mlsh.setN,mlsh.N);
+    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.ph.N);
 
-    vector2D hashNQuickComputer = theQuickComputer->computeHash(mlsh.setN,mlsh.N);
+    vector2D hashQComputer = theNormalComputer->computeHash(mlsh.setQ,mlsh.ph.Q);
+    vector2D hashNComputer = theNormalComputer->computeHash(mlsh.setN,mlsh.ph.N);
+
+    vector2D hashNQuickComputer = theQuickComputer->computeHash(mlsh.setN,mlsh.ph.N);
 
     vector2D resultOrigin = mlsh.getCollisionMatrix();
     vector2D resultNormal = theNormalComputer->computeCollision(mlsh.hashMatrixQ,mlsh.hashMatrixN);
@@ -48,7 +48,10 @@ TEST_F(computerTest, valueTest){
 
     vector2D candidateOrigin = mlsh.getCandidateSet();
     vector2D candidateNormal = theNormalComputer->computeCandidate(resultOrigin);
-    vector2D candidateQuick = theQuickComputer->computeCandidate(mlsh.hashMatrixQ,mlsh.hashMatrixN,mlsh.T);
+    vector2D candidateQuick = theQuickComputer->computeCandidate(mlsh.hashMatrixQ,mlsh.hashMatrixN);
+
+    delete theNormalComputer;
+    delete theQuickComputer;
 
     std::cout<<"yes";
     //compare if two hash result are same
@@ -60,7 +63,75 @@ TEST_F(computerTest, valueTest){
     ASSERT_EQ(candidateOrigin, candidateQuick);
 }
 
+TEST_F(computerTest, openMPTest){
 
+    theNormalComputer = new ComputerOpenMPNormal(mlsh.ph);
+    theQuickComputer = new ComputerOpenMPQuick(mlsh.ph);
+
+    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.ph.N);
+
+    vector2D hashQComputer = theNormalComputer->computeHash(mlsh.setQ,mlsh.ph.Q);
+    vector2D hashNComputer = theNormalComputer->computeHash(mlsh.setN,mlsh.ph.N);
+
+    vector2D hashNQuickComputer = theQuickComputer->computeHash(mlsh.setN,mlsh.ph.N);
+
+    vector2D resultOrigin = mlsh.getCollisionMatrix();
+    vector2D resultNormal = theNormalComputer->computeCollision(mlsh.hashMatrixQ,mlsh.hashMatrixN);
+
+
+
+    vector2D candidateOrigin = mlsh.getCandidateSet();
+    vector2D candidateNormal = theNormalComputer->computeCandidate(resultOrigin);
+    vector2D candidateQuick = theQuickComputer->computeCandidate(mlsh.hashMatrixQ,mlsh.hashMatrixN);
+
+    delete theNormalComputer;
+    delete theQuickComputer;
+
+    std::cout<<"yes";
+    //compare if two hash result are same
+    ASSERT_EQ(hashQ,hashQComputer);
+    ASSERT_EQ(hashN, hashNComputer);
+    ASSERT_EQ(hashN, hashNQuickComputer);
+    ASSERT_EQ(resultOrigin, resultNormal);
+    ASSERT_EQ(candidateOrigin, candidateNormal);
+    ASSERT_EQ(candidateOrigin, candidateQuick);
+}
+
+TEST_F(computerTest, StdThreadTest){
+
+    theNormalComputer = new ComputerStdThreadNormal(mlsh.ph);
+    theQuickComputer = new ComputerStdThreadQuick(mlsh.ph);
+
+    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.ph.N);
+
+    vector2D hashQComputer = theNormalComputer->computeHash(mlsh.setQ,mlsh.ph.Q);
+    vector2D hashNComputer = theNormalComputer->computeHash(mlsh.setN,mlsh.ph.N);
+
+    vector2D hashNQuickComputer = theQuickComputer->computeHash(mlsh.setN,mlsh.ph.N);
+
+    vector2D resultOrigin = mlsh.getCollisionMatrix();
+    vector2D resultNormal = theNormalComputer->computeCollision(mlsh.hashMatrixQ,mlsh.hashMatrixN);
+
+
+
+    vector2D candidateOrigin = mlsh.getCandidateSet();
+    vector2D candidateNormal = theNormalComputer->computeCandidate(resultOrigin);
+    vector2D candidateQuick = theQuickComputer->computeCandidate(mlsh.hashMatrixQ,mlsh.hashMatrixN);
+
+    delete theNormalComputer;
+    delete theQuickComputer;
+
+    std::cout<<"yes";
+    //compare if two hash result are same
+    ASSERT_EQ(hashQ,hashQComputer);
+    ASSERT_EQ(hashN, hashNComputer);
+    ASSERT_EQ(hashN, hashNQuickComputer);
+    ASSERT_EQ(resultOrigin, resultNormal);
+    ASSERT_EQ(candidateOrigin, candidateNormal);
+    ASSERT_EQ(candidateOrigin, candidateQuick);
+}
 
 //TEST_F(computerTest, resultTest) {
 //    vector2D singleThreadResult;

@@ -39,8 +39,8 @@ TEST_F(singleThreadTest, collisionMatrixGenTest){
     mlsh.getCollisionMatrix();
 
     //check size -- here we only checked size, more checking is needed in the future
-    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.Q);
-    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.N);
+    ASSERT_EQ(mlsh.collisionMatrix.size(),mlsh.ph.Q);
+    ASSERT_EQ(mlsh.collisionMatrix[0].size(),mlsh.ph.N);
 
 }
 

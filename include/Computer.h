@@ -8,6 +8,7 @@
 #include <vector>
 #include <cstdio>
 #include <sstream>
+#include "ParameterHolder.h"
 
 typedef std::vector<std::vector<std::vector < double>>> vector3D;
 typedef std::vector<std::vector<double>> vector2D;
@@ -17,32 +18,22 @@ class Computer{
 
 public:
     Computer(){};
-    Computer(size_t &N, size_t &D, size_t &L, size_t &K, double &W, size_t &Q, size_t &T, vector3D &randomLine, vector1D &randomVector
-    ): L(L),K(K),D(D),W(W), Q(Q), N(N), T(T), randomLine(randomLine), randomVector(randomVector) {};
+    Computer(ParameterHolder &ph) : ph(&ph) {};
     virtual vector2D computeHash(vector2D dataset, size_t pNum)=0;
     virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ){};
     virtual vector2D computeCandidate(vector2D collisionMatrix){};
-    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ, size_t T){};
+    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ){};
 
-//protected:
-    size_t L;
-    size_t K;
-    size_t D;
-    size_t Q;
-    size_t N;
-    size_t T;
-    double W;
-    vector3D randomLine;
-    vector1D randomVector;
+protected:
+    ParameterHolder *ph;
 };
 
 
 class ComputerSingleThread: public Computer{
 
 public:
-    ComputerSingleThread(size_t &N, size_t &D, size_t &L, size_t &K, double &W, size_t &Q, size_t &T,
-                         vector3D &randomLine, vector1D &randomVector):
-            Computer(N,D,L,K,W,Q,T,randomLine,randomVector){};
+    ComputerSingleThread(ParameterHolder &ph):
+            Computer(ph){};
 
     virtual vector2D computeHash(vector2D dataset, size_t pNum);
 
@@ -52,9 +43,8 @@ public:
 class ComputerSingleThreadNormal: public  ComputerSingleThread{
 
 public:
-    ComputerSingleThreadNormal(size_t &N, size_t &D, size_t &L, size_t &K, double &W, size_t &Q, size_t &T,
-                               vector3D &randomLine, vector1D &randomVector):
-            ComputerSingleThread(N,D,L,K,W,Q,T,randomLine,randomVector){};
+    ComputerSingleThreadNormal(ParameterHolder &ph):
+            ComputerSingleThread(ph){};
 
     virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
     virtual vector2D computeCandidate(vector2D collisionMatrix);
@@ -64,80 +54,85 @@ public:
 class ComputerSingleThreadQuick: public  ComputerSingleThread{
 
 public:
-    ComputerSingleThreadQuick(size_t &N, size_t &D, size_t &L, size_t &K, double &W, size_t &Q, size_t &T,
-                              vector3D &randomLine, vector1D &randomVector):
-            ComputerSingleThread(N,D,L,K,W,Q,T,randomLine,randomVector){};
+    ComputerSingleThreadQuick(ParameterHolder &ph):
+            ComputerSingleThread(ph){};
 
-    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ, size_t T);
+    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
 };
 
 
 
-//class ComputerOpenMP: public Computer{
+class ComputerOpenMP: public Computer{
+
+public:
+    ComputerOpenMP(ParameterHolder &ph):Computer(ph){};
+    virtual vector2D computeHash(vector2D dataset, size_t pNum);
+};
+
+class ComputerOpenMPNormal: public ComputerOpenMP{
+
+public:
+    ComputerOpenMPNormal(ParameterHolder &ph): ComputerOpenMP(ph){};
+    virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
+    virtual vector2D computeCandidate(vector2D collisionMatrix);
+};
+
+class ComputerOpenMPQuick: public ComputerOpenMP{
+
+public:
+    ComputerOpenMPQuick(ParameterHolder &ph): ComputerOpenMP(ph){};
+    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
+};
+
+
+class ComputerStdThread: public Computer{
+
+public:
+    ComputerStdThread(ParameterHolder &ph):Computer(ph){};
+    virtual vector2D computeHash(vector2D dataset, size_t pNum);
+};
+
+class ComputerStdThreadNormal: public ComputerStdThread{
+
+public:
+    ComputerStdThreadNormal(ParameterHolder &ph): ComputerStdThread(ph){};
+    virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
+    virtual vector2D computeCandidate(vector2D collisionMatrix);
+};
+
+class ComputerStdThreadQuick: public ComputerStdThread{
+
+public:
+    ComputerStdThreadQuick(ParameterHolder &ph): ComputerStdThread(ph){};
+    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
+};
+
+//
+//class ComputerPthread: public Computer{
 //
 //public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
+//    ComputerPthread(ParameterHolder &ph):Computer(ph){};
+//    virtual vector2D computeHash(vector2D dataset, size_t pNum);
 //};
 //
-//
-//class ComputerStdThread: public  Computer{
+//class ComputerPthreadNormal: public ComputerPthread{
 //
 //public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
+//    ComputerPthreadNormal(ParameterHolder &ph): ComputerPthread(ph){};
+//    virtual vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ);
+//    virtual vector2D computeCandidate(vector2D collisionMatrix);
 //};
 //
-//class ComputerPthread: public  Computer{
+//class ComputerPthreadQuick: public ComputerPthread{
 //
 //public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
+//    ComputerPthreadQuick(ParameterHolder &ph): ComputerPthread(ph){};
+//    virtual vector2D computeCandidate(vector2D hMatrixN, vector2D hMatrixQ);
 //};
-//
-//
-//
-//class ComputerOpenMPNormal: public ComputerOpenMP{
-//
-//public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
-//};
-//
-//class ComputerOpenMPQuick: public ComputerOpenMP{
-//
-//public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
-//};
-//
-//
-//class ComputerStdThreadNormal: public  ComputerStdThread{
-//
-//public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
-//};
-//
-//class ComputerStdThreadQuick: public  ComputerStdThread{
-//
-//public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
-//};
-//
-//class ComputerPthreadNormal: public  ComputerPthread{
-//
-//public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
-//};
-//
-//class ComputerPthreadQuick: public  ComputerPthread{
-//
-//public:
-//    vector2D computeHash();
-//    virtual vector2D computeCandidate()=0;
-//};
+
+
+
+
+
 
 #endif //FASTLSH_COMPUTER_H

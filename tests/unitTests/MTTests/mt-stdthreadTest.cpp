@@ -34,13 +34,13 @@ TEST_F(stdthreadTest, hashValueTest){
 
 
     t1 = now();
-    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.Q);
+    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
     t2 = now();
     auto duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashQ_singeThread\n";
 
     t1 = now();
-    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.N);
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.ph.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_singeThread\n";
@@ -50,14 +50,14 @@ TEST_F(stdthreadTest, hashValueTest){
     mlsh.setMultiThreadMode(1);
 
     t1 = now();
-    vector2D hashQ_mt = mlsh.computeHash_stdthread(mlsh.setQ, mlsh.Q);
+    vector2D hashQ_mt = mlsh.computeHash_stdthread(mlsh.setQ, mlsh.ph.Q);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashQ_stdthread\n";
 
 
     t1 = now();
-    vector2D hashN_mt = mlsh.computeHash_stdthread(mlsh.setN, mlsh.N);
+    vector2D hashN_mt = mlsh.computeHash_stdthread(mlsh.setN, mlsh.ph.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_stdthread\n";

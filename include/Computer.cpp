@@ -3,6 +3,8 @@
 //
 
 #include <cmath>
+#include <thread>
+#include <algorithm>
 #include "Computer.h"
 
 vector2D ComputerSingleThread::computeHash(vector2D dataset, size_t pNum){
@@ -13,20 +15,20 @@ vector2D ComputerSingleThread::computeHash(vector2D dataset, size_t pNum){
     for (int n = 0; n < pNum; ++n) {
         //loop through # of hash function group
         vector1D vL;
-        for (int l = 0; l < L; ++l) {
+        for (int l = 0; l < ph->L; ++l) {
             double hashFinalValue = 0;
             //loop through the inner of a hash function group
-            for (int k = 0; k < K; ++k) {
+            for (int k = 0; k < ph->K; ++k) {
                 double dTemp = 0;
                 //loop through all the dimensions
-                for (int d = 0; d < D; ++d) {
+                for (int d = 0; d < ph->D; ++d) {
                     //vector(math) multiply to make projection
-                    dTemp += dataset[n][d]*randomLine[l][k][d];
+                    dTemp += dataset[n][d]*ph->randomLine[l][k][d];
                 }
                 //assign hashvalue into bucket
-                double hashvalue = floor(dTemp/W);
+                double hashvalue = floor(dTemp/ph->W);
                 //merge hash group results **see documentation
-                hashFinalValue = hashvalue*randomVector[k] + hashFinalValue;
+                hashFinalValue = hashvalue*ph->randomVector[k] + hashFinalValue;
             }
             vL.push_back(hashFinalValue);
         }
@@ -37,10 +39,10 @@ vector2D ComputerSingleThread::computeHash(vector2D dataset, size_t pNum){
 
 vector2D ComputerSingleThreadNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
     vector2D collisionMatrix;
-    for (int q = 0; q <Q ; ++q) {
-        vector1D singleLine(N, 0);
-        for (int n = 0; n <N ; ++n){
-            for (int hash_id = 0; hash_id < L; ++hash_id) {
+    for (int q = 0; q <ph->Q ; ++q) {
+        vector1D singleLine(ph->N, 0);
+        for (int n = 0; n <ph->N ; ++n){
+            for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
                 //cast to int for comparision, reduce double compare risk
                 if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
                     singleLine[n]++;
@@ -55,15 +57,15 @@ vector2D ComputerSingleThreadNormal::computeCollision(vector2D hMatrixN, vector2
 
 vector2D ComputerSingleThreadNormal::computeCandidate(vector2D collisionMatrix){
     vector2D candidateSet;
-    for (int i = 0; i < Q; ++i) {
+    for (int i = 0; i < ph->Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
     }
 
-    for (int i = 0; i < Q; ++i) {
+    for (int i = 0; i < ph->Q; ++i) {
         vector1D candidates;
-        for (int j = 0; j < N; ++j) {
-            if(collisionMatrix[i][j]>=T)
+        for (int j = 0; j < ph->N; ++j) {
+            if(collisionMatrix[i][j]>=ph->T)
                 candidates.push_back((double &&) j);
         }
         candidateSet[i] = candidates;
@@ -73,21 +75,21 @@ vector2D ComputerSingleThreadNormal::computeCandidate(vector2D collisionMatrix){
 
 
 //by quick mode, it means get candidateset directly, skip the collision table
-vector2D ComputerSingleThreadQuick::computeCandidate(vector2D hMatrixN, vector2D hMatrixQ, size_t T){
+vector2D ComputerSingleThreadQuick::computeCandidate(vector2D hMatrixN, vector2D hMatrixQ){
     vector2D candidateSet;
     //Prepare set to store candidates
-    for (int i = 0; i < Q; ++i) {
+    for (int i = 0; i < ph->Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
     }
-    for (int q = 0; q <Q ; ++q) {
+    for (int q = 0; q <ph->Q ; ++q) {
         vector1D singleRow(0, 0);
-        for (int n = 0; n <N ; ++n){
+        for (int n = 0; n <ph->N ; ++n){
             int colliNum = 0;
-            for (int hash_id = 0; hash_id < L; ++hash_id) {
+            for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
                 if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id]) {
                     colliNum++;
-                    if(colliNum>=T){
+                    if(colliNum>=ph->T){
                         singleRow.push_back((double &&) n);
                         break;
                     }
@@ -100,3 +102,297 @@ vector2D ComputerSingleThreadQuick::computeCandidate(vector2D hMatrixN, vector2D
 
     return candidateSet;
 }
+
+
+vector2D ComputerOpenMP::computeHash(vector2D dataset, size_t pointNum){
+    vector2D hashMatrix;
+
+    for (int i = 0; i < pointNum; ++i) {
+        vector1D vL(ph->L,0);
+        hashMatrix.push_back(vL);
+    }
+
+    //loop through # of data point
+#pragma omp parallel for collapse(2)
+    for (int n = 0; n < pointNum; ++n) {
+        //loop through # of hash function group
+        for (int l = 0; l < ph->L; ++l) {
+            double hashFinalValue = 0;
+            //loop through the inner of a hash function group
+            for (int k = 0; k < ph->K; ++k) {
+                double dTemp = 0;
+                //loop through all the dimensions
+                for (int d = 0; d < ph->D; ++d) {
+                    //vector(math) multiply to make projection
+                    dTemp += dataset[n][d]*ph->randomLine[l][k][d];
+                }
+                //assign hashvalue into bucket
+                double hashvalue = floor(dTemp/ph->W);
+                //merge hash group results **see documentation
+                hashFinalValue = hashvalue*ph->randomVector[k] + hashFinalValue;
+            }
+            hashMatrix[n][l] = hashFinalValue;
+        }
+    }
+    return hashMatrix;
+}
+
+vector2D ComputerOpenMPNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
+    vector2D collisionMatrix;
+    for (int i = 0; i < ph->Q ; ++i) {
+        vector1D singleLine(ph->N, 0);
+        collisionMatrix.push_back(singleLine);
+    }
+
+#pragma omp parallel for collapse(2)
+    for (int q = 0; q <ph->Q ; ++q) {
+        for (int n = 0; n <ph->N ; ++n){
+            for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
+                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
+                    collisionMatrix[q][n]++;
+            }
+        }
+    }
+    return collisionMatrix;
+}
+
+vector2D ComputerOpenMPNormal::computeCandidate(vector2D collisionMatrix){
+
+    vector2D candidateSet;
+    for (int i = 0; i < ph->Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+#pragma omp parallel for
+    for (int i = 0; i < ph->Q; ++i) {
+        vector1D candidates;
+        for (int j = 0; j < ph->N; ++j) {
+            if(collisionMatrix[i][j]>=ph->T)
+                candidates.push_back((double &&) j);
+        }
+        candidateSet[i] = candidates;
+    }
+
+    return candidateSet;
+}
+
+
+
+
+//by quick mode, it means get candidateset directly, skip the collision table
+vector2D ComputerOpenMPQuick::computeCandidate(vector2D hMatrixN, vector2D hMatrixQ){
+    vector2D candidateSet;
+    //Prepare set to store candidates
+    for (int i = 0; i < ph->Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+#pragma omp parallel for
+    for (int q = 0; q <ph->Q ; ++q) {
+        vector1D singleRow(0, 0);
+        for (int n = 0; n <ph->N ; ++n){
+            int colliNum = 0;
+            for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
+                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id]) {
+                    colliNum++;
+                    if(colliNum>=ph->T){
+                        singleRow.push_back((double &&) n);
+                        break;
+                    }
+                }
+            }
+        }
+        candidateSet[q] = singleRow;
+    }
+
+    return candidateSet;
+}
+
+
+vector2D ComputerStdThread::computeHash(vector2D dataset, size_t pointNum){
+    vector2D hashMatrix;
+
+    for (int i = 0; i < pointNum; ++i) {
+        vector1D vL(ph->L,0);
+        hashMatrix.push_back(vL);
+    }
+
+    // it is a implementation of nested loop to stdthread
+    const size_t nthreads = std::thread::hardware_concurrency();
+    const size_t outloop = pointNum;
+    const size_t inloop = ph->L;
+    const size_t nloop = outloop*inloop;
+
+
+    std::vector<std::thread> threads(nthreads);
+    for(int t = 0;t<nthreads;t++)
+    {
+        threads[t] = std::thread(std::bind(
+                [&](const int bi, const int ei, const int t)
+                {
+                    // loop over all items
+                    for(int i = bi;i<ei;i++)
+                    {
+                        // inner loop
+                        {
+                            int n = i/inloop; //retrive outer loop index
+                            int l = i%inloop; //retrive inner loop index
+                            // (optional) make output critical
+                            double hashFinalValue = 0;
+                            //loop through the inner of a hash function group
+                            for (int k = 0; k < ph->K; ++k) {
+                                double dTemp = 0;
+                                //loop through all the dimensions
+                                for (int d = 0; d < ph->D; ++d) {
+                                    //vector(math) multiply to make projection
+                                    dTemp += dataset[n][d]*ph->randomLine[l][k][d];
+                                }
+                                //assign hashvalue into bucket
+                                double hashvalue = floor(dTemp/ph->W);
+                                //merge hash group results **see documentation
+                                hashFinalValue = hashvalue*ph->randomVector[k] + hashFinalValue;
+                            }
+                            hashMatrix[n][l] = hashFinalValue;
+
+                        }
+                    }
+                },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
+    }
+
+    //lambda to start threads
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+
+    return hashMatrix;
+}
+
+
+
+
+
+
+
+vector2D ComputerStdThreadNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
+    vector2D collisionMatrix;
+    for (int i = 0; i < ph->Q ; ++i) {
+        vector1D singleLine(ph->N, 0);
+        collisionMatrix.push_back(singleLine);
+    }
+
+    const size_t nthreads = std::thread::hardware_concurrency();
+    const size_t outloop = ph->Q;
+    const size_t inloop = ph->N;
+    const size_t nloop = outloop*inloop;
+    std::vector<std::thread> threads(nthreads);
+    for(int t = 0;t<nthreads;t++)
+    {
+        threads[t] = std::thread(std::bind(
+                [&](const int bi, const int ei, const int t)
+                {
+                    // loop over all items
+                    for(int i = bi;i<ei;i++)
+                    {
+                        // inner loop
+                        {
+                            // (optional) make output critical
+                            int q = i/inloop;
+                            int n = i%inloop;
+                            for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
+                                //cast to int for comparision, reduce double compare risk
+                                if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
+                                    collisionMatrix[q][n]++;
+                            }
+
+
+                        }
+                    }
+                },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
+    }
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+    return collisionMatrix;
+}
+
+
+
+vector2D ComputerStdThreadNormal::computeCandidate(vector2D collisionMatrix){
+
+    vector2D candidateSet;
+    for (int i = 0; i < ph->Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    const size_t nthreads = std::thread::hardware_concurrency();
+    const size_t nloop = ph->Q;
+    std::vector<std::thread> threads(nthreads);
+
+    for(int t = 0;t<nthreads;t++)
+    {
+        threads[t] = std::thread(std::bind(
+                [&](const int bi, const int ei, const int t)
+                {
+                    // loop over all items
+                    for(int i = bi;i<ei;i++)
+                    {
+                        vector1D candidates;
+                        for (int j = 0; j < ph->N; ++j) {
+                            if(collisionMatrix[i][j]>=ph->T)
+                                candidates.push_back((double &&) j);
+                        }
+                        candidateSet[i] = candidates;
+                    }
+                },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
+    }
+
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+    return candidateSet;
+}
+
+
+
+
+//by quick mode, it means get candidateset directly, skip the collision table
+vector2D ComputerStdThreadQuick::computeCandidate(vector2D hMatrixN, vector2D hMatrixQ){
+    vector2D candidateSet;
+    //Prepare set to store candidates
+    for (int i = 0; i < ph->Q; ++i) {
+        vector1D temp(0,0);
+        candidateSet.push_back(temp);
+    }
+
+    const size_t nthreads = std::thread::hardware_concurrency();
+    const size_t nloop = ph->Q;
+    std::vector<std::thread> threads(nthreads);
+
+    for(int t = 0;t<nthreads;t++)
+    {
+        threads[t] = std::thread(std::bind(
+                [&](const int bi, const int ei, const int t)
+                {
+                    // loop over all items
+                    for(int i = bi;i<ei;i++)
+                    {
+                        vector1D singleRow(0, 0);
+                        for (int n = 0; n <ph->N ; ++n){
+                            int colliNum = 0;
+                            for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
+                                if (hMatrixN[n][hash_id] == hMatrixQ[i][hash_id]) {
+                                    colliNum++;
+                                    if(colliNum>=ph->T){
+                                        singleRow.push_back((double &&) n);
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                        candidateSet[i] = singleRow;
+                    }
+                },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
+    }
+
+    std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
+    return candidateSet;
+}
+
+

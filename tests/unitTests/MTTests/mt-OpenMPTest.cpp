@@ -35,13 +35,13 @@ TEST_F(openMPTest, hashValueTest){
     vector2D openMPResult;
 
     t1 = now();
-    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.Q);
+    vector2D hashQ = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
     t2 = now();
     auto duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashQ_singeThread\n";
 
     t1 = now();
-    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.N);
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.ph.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_singeThread\n";
@@ -49,14 +49,14 @@ TEST_F(openMPTest, hashValueTest){
     mlsh.setUseMultiThread(true);
 
     t1 = now();
-    vector2D hashQ_mt = mlsh.computeHash(mlsh.setQ, mlsh.Q);
+    vector2D hashQ_mt = mlsh.computeHash(mlsh.setQ, mlsh.ph.Q);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashQ_openMP\n";
 
 
     t1 = now();
-    vector2D hashN_mt = mlsh.computeHash_openmp(mlsh.setN, mlsh.N);
+    vector2D hashN_mt = mlsh.computeHash_openmp(mlsh.setN, mlsh.ph.N);
     t2 = now();
     duration = dcast( t2 - t1 ).count();
     std::cout <<duration << " μs computeHashN_openMP\n";

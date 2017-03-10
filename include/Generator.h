@@ -5,10 +5,11 @@
 #ifndef FASTLSH_GENERATOR_H
 #define FASTLSH_GENERATOR_H
 
+#include "Computer.h"
+
 class Generator{
 
 public:
-    Generator(Computer theComputer):theComputer(theComputer){};
 
 private:
     Computer *theComputer;

@@ -35,7 +35,7 @@ TEST_F(redisTest, noExistTest){
 
 TEST_F(redisTest, resultTest){
 
-    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.N);
+    vector2D hashN = mlsh.computeHash(mlsh.setN, mlsh.ph.N);
 
     mlsh.hashMatrixN = hashN;
 
@@ -61,8 +61,8 @@ TEST_F(redisTest, resultTest){
 
     ASSERT_EQ(hashN[0].size(), mlsh.hashMatrixN[0].size());
 
-    for (int i = 0; i < mlsh.N; ++i) {
-        for (int j = 0; j < mlsh.L; ++j) {
+    for (int i = 0; i < mlsh.ph.N; ++i) {
+        for (int j = 0; j < mlsh.ph.L; ++j) {
             ASSERT_NEAR(hashN[i][j], mlsh.hashMatrixN[i][j],0.5);
         }
     }
