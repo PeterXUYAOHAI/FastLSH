@@ -258,6 +258,60 @@ gtest/fast:
 	$(MAKE) -f lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build.make lib/googletest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/ClusterCompute/boostmpiCompute.o: src/ClusterCompute/boostmpiCompute.cpp.o
+
+.PHONY : src/ClusterCompute/boostmpiCompute.o
+
+# target to build an object file
+src/ClusterCompute/boostmpiCompute.cpp.o:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/ClusterCompute/boostmpiCompute.cpp.o
+.PHONY : src/ClusterCompute/boostmpiCompute.cpp.o
+
+src/ClusterCompute/boostmpiCompute.i: src/ClusterCompute/boostmpiCompute.cpp.i
+
+.PHONY : src/ClusterCompute/boostmpiCompute.i
+
+# target to preprocess a source file
+src/ClusterCompute/boostmpiCompute.cpp.i:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/ClusterCompute/boostmpiCompute.cpp.i
+.PHONY : src/ClusterCompute/boostmpiCompute.cpp.i
+
+src/ClusterCompute/boostmpiCompute.s: src/ClusterCompute/boostmpiCompute.cpp.s
+
+.PHONY : src/ClusterCompute/boostmpiCompute.s
+
+# target to generate assembly for a file
+src/ClusterCompute/boostmpiCompute.cpp.s:
+	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/ClusterCompute/boostmpiCompute.cpp.s
+.PHONY : src/ClusterCompute/boostmpiCompute.cpp.s
+
+src/ClusterCompute/mpiCompute.o: src/ClusterCompute/mpiCompute.cpp.o
+
+.PHONY : src/ClusterCompute/mpiCompute.o
+
+# target to build an object file
+src/ClusterCompute/mpiCompute.cpp.o:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/ClusterCompute/mpiCompute.cpp.o
+.PHONY : src/ClusterCompute/mpiCompute.cpp.o
+
+src/ClusterCompute/mpiCompute.i: src/ClusterCompute/mpiCompute.cpp.i
+
+.PHONY : src/ClusterCompute/mpiCompute.i
+
+# target to preprocess a source file
+src/ClusterCompute/mpiCompute.cpp.i:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/ClusterCompute/mpiCompute.cpp.i
+.PHONY : src/ClusterCompute/mpiCompute.cpp.i
+
+src/ClusterCompute/mpiCompute.s: src/ClusterCompute/mpiCompute.cpp.s
+
+.PHONY : src/ClusterCompute/mpiCompute.s
+
+# target to generate assembly for a file
+src/ClusterCompute/mpiCompute.cpp.s:
+	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/ClusterCompute/mpiCompute.cpp.s
+.PHONY : src/ClusterCompute/mpiCompute.cpp.s
+
 src/Computer/OpenMPComputer.o: src/Computer/OpenMPComputer.cpp.o
 
 .PHONY : src/Computer/OpenMPComputer.o
@@ -366,32 +420,86 @@ src/Computer/StdThreadComputer.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Computer/StdThreadComputer.cpp.s
 .PHONY : src/Computer/StdThreadComputer.cpp.s
 
-src/FileLoader.o: src/FileLoader.cpp.o
+src/FileLoader/FileLoader.o: src/FileLoader/FileLoader.cpp.o
 
-.PHONY : src/FileLoader.o
+.PHONY : src/FileLoader/FileLoader.o
 
 # target to build an object file
-src/FileLoader.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader.cpp.o
-.PHONY : src/FileLoader.cpp.o
+src/FileLoader/FileLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/FileLoader.cpp.o
+.PHONY : src/FileLoader/FileLoader.cpp.o
 
-src/FileLoader.i: src/FileLoader.cpp.i
+src/FileLoader/FileLoader.i: src/FileLoader/FileLoader.cpp.i
 
-.PHONY : src/FileLoader.i
+.PHONY : src/FileLoader/FileLoader.i
 
 # target to preprocess a source file
-src/FileLoader.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader.cpp.i
-.PHONY : src/FileLoader.cpp.i
+src/FileLoader/FileLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/FileLoader.cpp.i
+.PHONY : src/FileLoader/FileLoader.cpp.i
 
-src/FileLoader.s: src/FileLoader.cpp.s
+src/FileLoader/FileLoader.s: src/FileLoader/FileLoader.cpp.s
 
-.PHONY : src/FileLoader.s
+.PHONY : src/FileLoader/FileLoader.s
 
 # target to generate assembly for a file
-src/FileLoader.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader.cpp.s
-.PHONY : src/FileLoader.cpp.s
+src/FileLoader/FileLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/FileLoader.cpp.s
+.PHONY : src/FileLoader/FileLoader.cpp.s
+
+src/FileLoader/HdfsLoader.o: src/FileLoader/HdfsLoader.cpp.o
+
+.PHONY : src/FileLoader/HdfsLoader.o
+
+# target to build an object file
+src/FileLoader/HdfsLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/HdfsLoader.cpp.o
+.PHONY : src/FileLoader/HdfsLoader.cpp.o
+
+src/FileLoader/HdfsLoader.i: src/FileLoader/HdfsLoader.cpp.i
+
+.PHONY : src/FileLoader/HdfsLoader.i
+
+# target to preprocess a source file
+src/FileLoader/HdfsLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/HdfsLoader.cpp.i
+.PHONY : src/FileLoader/HdfsLoader.cpp.i
+
+src/FileLoader/HdfsLoader.s: src/FileLoader/HdfsLoader.cpp.s
+
+.PHONY : src/FileLoader/HdfsLoader.s
+
+# target to generate assembly for a file
+src/FileLoader/HdfsLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/HdfsLoader.cpp.s
+.PHONY : src/FileLoader/HdfsLoader.cpp.s
+
+src/FileLoader/LfsLoader.o: src/FileLoader/LfsLoader.cpp.o
+
+.PHONY : src/FileLoader/LfsLoader.o
+
+# target to build an object file
+src/FileLoader/LfsLoader.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/LfsLoader.cpp.o
+.PHONY : src/FileLoader/LfsLoader.cpp.o
+
+src/FileLoader/LfsLoader.i: src/FileLoader/LfsLoader.cpp.i
+
+.PHONY : src/FileLoader/LfsLoader.i
+
+# target to preprocess a source file
+src/FileLoader/LfsLoader.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/LfsLoader.cpp.i
+.PHONY : src/FileLoader/LfsLoader.cpp.i
+
+src/FileLoader/LfsLoader.s: src/FileLoader/LfsLoader.cpp.s
+
+.PHONY : src/FileLoader/LfsLoader.s
+
+# target to generate assembly for a file
+src/FileLoader/LfsLoader.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/FileLoader/LfsLoader.cpp.s
+.PHONY : src/FileLoader/LfsLoader.cpp.s
 
 src/Generator.o: src/Generator.cpp.o
 
@@ -420,6 +528,60 @@ src/Generator.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Generator.cpp.s
 .PHONY : src/Generator.cpp.s
 
+src/InMemoryStore/memcached.o: src/InMemoryStore/memcached.cpp.o
+
+.PHONY : src/InMemoryStore/memcached.o
+
+# target to build an object file
+src/InMemoryStore/memcached.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/InMemoryStore/memcached.cpp.o
+.PHONY : src/InMemoryStore/memcached.cpp.o
+
+src/InMemoryStore/memcached.i: src/InMemoryStore/memcached.cpp.i
+
+.PHONY : src/InMemoryStore/memcached.i
+
+# target to preprocess a source file
+src/InMemoryStore/memcached.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/InMemoryStore/memcached.cpp.i
+.PHONY : src/InMemoryStore/memcached.cpp.i
+
+src/InMemoryStore/memcached.s: src/InMemoryStore/memcached.cpp.s
+
+.PHONY : src/InMemoryStore/memcached.s
+
+# target to generate assembly for a file
+src/InMemoryStore/memcached.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/InMemoryStore/memcached.cpp.s
+.PHONY : src/InMemoryStore/memcached.cpp.s
+
+src/InMemoryStore/redis.o: src/InMemoryStore/redis.cpp.o
+
+.PHONY : src/InMemoryStore/redis.o
+
+# target to build an object file
+src/InMemoryStore/redis.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/InMemoryStore/redis.cpp.o
+.PHONY : src/InMemoryStore/redis.cpp.o
+
+src/InMemoryStore/redis.i: src/InMemoryStore/redis.cpp.i
+
+.PHONY : src/InMemoryStore/redis.i
+
+# target to preprocess a source file
+src/InMemoryStore/redis.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/InMemoryStore/redis.cpp.i
+.PHONY : src/InMemoryStore/redis.cpp.i
+
+src/InMemoryStore/redis.s: src/InMemoryStore/redis.cpp.s
+
+.PHONY : src/InMemoryStore/redis.s
+
+# target to generate assembly for a file
+src/InMemoryStore/redis.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/InMemoryStore/redis.cpp.s
+.PHONY : src/InMemoryStore/redis.cpp.s
+
 src/LSH.o: src/LSH.cpp.o
 
 .PHONY : src/LSH.o
@@ -447,140 +609,32 @@ src/LSH.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/LSH.cpp.s
 .PHONY : src/LSH.cpp.s
 
-src/clusterCompute/boostmpiCompute.o: src/clusterCompute/boostmpiCompute.cpp.o
+src/Normalizer.o: src/Normalizer.cpp.o
 
-.PHONY : src/clusterCompute/boostmpiCompute.o
-
-# target to build an object file
-src/clusterCompute/boostmpiCompute.cpp.o:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.o
-.PHONY : src/clusterCompute/boostmpiCompute.cpp.o
-
-src/clusterCompute/boostmpiCompute.i: src/clusterCompute/boostmpiCompute.cpp.i
-
-.PHONY : src/clusterCompute/boostmpiCompute.i
-
-# target to preprocess a source file
-src/clusterCompute/boostmpiCompute.cpp.i:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.i
-.PHONY : src/clusterCompute/boostmpiCompute.cpp.i
-
-src/clusterCompute/boostmpiCompute.s: src/clusterCompute/boostmpiCompute.cpp.s
-
-.PHONY : src/clusterCompute/boostmpiCompute.s
-
-# target to generate assembly for a file
-src/clusterCompute/boostmpiCompute.cpp.s:
-	$(MAKE) -f CMakeFiles/boostmpiLSH.dir/build.make CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.s
-.PHONY : src/clusterCompute/boostmpiCompute.cpp.s
-
-src/clusterCompute/mpiCompute.o: src/clusterCompute/mpiCompute.cpp.o
-
-.PHONY : src/clusterCompute/mpiCompute.o
+.PHONY : src/Normalizer.o
 
 # target to build an object file
-src/clusterCompute/mpiCompute.cpp.o:
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o
-.PHONY : src/clusterCompute/mpiCompute.cpp.o
+src/Normalizer.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Normalizer.cpp.o
+.PHONY : src/Normalizer.cpp.o
 
-src/clusterCompute/mpiCompute.i: src/clusterCompute/mpiCompute.cpp.i
+src/Normalizer.i: src/Normalizer.cpp.i
 
-.PHONY : src/clusterCompute/mpiCompute.i
-
-# target to preprocess a source file
-src/clusterCompute/mpiCompute.cpp.i:
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.i
-.PHONY : src/clusterCompute/mpiCompute.cpp.i
-
-src/clusterCompute/mpiCompute.s: src/clusterCompute/mpiCompute.cpp.s
-
-.PHONY : src/clusterCompute/mpiCompute.s
-
-# target to generate assembly for a file
-src/clusterCompute/mpiCompute.cpp.s:
-	$(MAKE) -f CMakeFiles/mpiLSH.dir/build.make CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.s
-.PHONY : src/clusterCompute/mpiCompute.cpp.s
-
-src/inMemoryStore/memcached.o: src/inMemoryStore/memcached.cpp.o
-
-.PHONY : src/inMemoryStore/memcached.o
-
-# target to build an object file
-src/inMemoryStore/memcached.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.o
-.PHONY : src/inMemoryStore/memcached.cpp.o
-
-src/inMemoryStore/memcached.i: src/inMemoryStore/memcached.cpp.i
-
-.PHONY : src/inMemoryStore/memcached.i
+.PHONY : src/Normalizer.i
 
 # target to preprocess a source file
-src/inMemoryStore/memcached.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.i
-.PHONY : src/inMemoryStore/memcached.cpp.i
+src/Normalizer.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Normalizer.cpp.i
+.PHONY : src/Normalizer.cpp.i
 
-src/inMemoryStore/memcached.s: src/inMemoryStore/memcached.cpp.s
+src/Normalizer.s: src/Normalizer.cpp.s
 
-.PHONY : src/inMemoryStore/memcached.s
-
-# target to generate assembly for a file
-src/inMemoryStore/memcached.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/memcached.cpp.s
-.PHONY : src/inMemoryStore/memcached.cpp.s
-
-src/inMemoryStore/redis.o: src/inMemoryStore/redis.cpp.o
-
-.PHONY : src/inMemoryStore/redis.o
-
-# target to build an object file
-src/inMemoryStore/redis.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.o
-.PHONY : src/inMemoryStore/redis.cpp.o
-
-src/inMemoryStore/redis.i: src/inMemoryStore/redis.cpp.i
-
-.PHONY : src/inMemoryStore/redis.i
-
-# target to preprocess a source file
-src/inMemoryStore/redis.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.i
-.PHONY : src/inMemoryStore/redis.cpp.i
-
-src/inMemoryStore/redis.s: src/inMemoryStore/redis.cpp.s
-
-.PHONY : src/inMemoryStore/redis.s
+.PHONY : src/Normalizer.s
 
 # target to generate assembly for a file
-src/inMemoryStore/redis.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/inMemoryStore/redis.cpp.s
-.PHONY : src/inMemoryStore/redis.cpp.s
-
-src/normalization.o: src/normalization.cpp.o
-
-.PHONY : src/normalization.o
-
-# target to build an object file
-src/normalization.cpp.o:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.o
-.PHONY : src/normalization.cpp.o
-
-src/normalization.i: src/normalization.cpp.i
-
-.PHONY : src/normalization.i
-
-# target to preprocess a source file
-src/normalization.cpp.i:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.i
-.PHONY : src/normalization.cpp.i
-
-src/normalization.s: src/normalization.cpp.s
-
-.PHONY : src/normalization.s
-
-# target to generate assembly for a file
-src/normalization.cpp.s:
-	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/normalization.cpp.s
-.PHONY : src/normalization.cpp.s
+src/Normalizer.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/src/Normalizer.cpp.s
+.PHONY : src/Normalizer.cpp.s
 
 src/paragen.o: src/paragen.cpp.o
 
@@ -926,6 +980,12 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/ClusterCompute/boostmpiCompute.o"
+	@echo "... src/ClusterCompute/boostmpiCompute.i"
+	@echo "... src/ClusterCompute/boostmpiCompute.s"
+	@echo "... src/ClusterCompute/mpiCompute.o"
+	@echo "... src/ClusterCompute/mpiCompute.i"
+	@echo "... src/ClusterCompute/mpiCompute.s"
 	@echo "... src/Computer/OpenMPComputer.o"
 	@echo "... src/Computer/OpenMPComputer.i"
 	@echo "... src/Computer/OpenMPComputer.s"
@@ -938,30 +998,30 @@ help:
 	@echo "... src/Computer/StdThreadComputer.o"
 	@echo "... src/Computer/StdThreadComputer.i"
 	@echo "... src/Computer/StdThreadComputer.s"
-	@echo "... src/FileLoader.o"
-	@echo "... src/FileLoader.i"
-	@echo "... src/FileLoader.s"
+	@echo "... src/FileLoader/FileLoader.o"
+	@echo "... src/FileLoader/FileLoader.i"
+	@echo "... src/FileLoader/FileLoader.s"
+	@echo "... src/FileLoader/HdfsLoader.o"
+	@echo "... src/FileLoader/HdfsLoader.i"
+	@echo "... src/FileLoader/HdfsLoader.s"
+	@echo "... src/FileLoader/LfsLoader.o"
+	@echo "... src/FileLoader/LfsLoader.i"
+	@echo "... src/FileLoader/LfsLoader.s"
 	@echo "... src/Generator.o"
 	@echo "... src/Generator.i"
 	@echo "... src/Generator.s"
+	@echo "... src/InMemoryStore/memcached.o"
+	@echo "... src/InMemoryStore/memcached.i"
+	@echo "... src/InMemoryStore/memcached.s"
+	@echo "... src/InMemoryStore/redis.o"
+	@echo "... src/InMemoryStore/redis.i"
+	@echo "... src/InMemoryStore/redis.s"
 	@echo "... src/LSH.o"
 	@echo "... src/LSH.i"
 	@echo "... src/LSH.s"
-	@echo "... src/clusterCompute/boostmpiCompute.o"
-	@echo "... src/clusterCompute/boostmpiCompute.i"
-	@echo "... src/clusterCompute/boostmpiCompute.s"
-	@echo "... src/clusterCompute/mpiCompute.o"
-	@echo "... src/clusterCompute/mpiCompute.i"
-	@echo "... src/clusterCompute/mpiCompute.s"
-	@echo "... src/inMemoryStore/memcached.o"
-	@echo "... src/inMemoryStore/memcached.i"
-	@echo "... src/inMemoryStore/memcached.s"
-	@echo "... src/inMemoryStore/redis.o"
-	@echo "... src/inMemoryStore/redis.i"
-	@echo "... src/inMemoryStore/redis.s"
-	@echo "... src/normalization.o"
-	@echo "... src/normalization.i"
-	@echo "... src/normalization.s"
+	@echo "... src/Normalizer.o"
+	@echo "... src/Normalizer.i"
+	@echo "... src/Normalizer.s"
 	@echo "... src/paragen.o"
 	@echo "... src/paragen.i"
 	@echo "... src/paragen.s"

@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/peter/FYP/FastLSH/src/clusterCompute/mpiCompute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/mpiLSH.dir/src/clusterCompute/mpiCompute.cpp.o"
+  "/home/peter/FYP/FastLSH/src/ClusterCompute/mpiCompute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/mpiLSH.dir/src/ClusterCompute/mpiCompute.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

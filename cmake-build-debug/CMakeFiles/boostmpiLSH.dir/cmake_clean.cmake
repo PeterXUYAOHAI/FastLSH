@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.o"
+  "CMakeFiles/boostmpiLSH.dir/src/ClusterCompute/boostmpiCompute.cpp.o"
   "boostmpiLSH.pdb"
   "boostmpiLSH"
 )

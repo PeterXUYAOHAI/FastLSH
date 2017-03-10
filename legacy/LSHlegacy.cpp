@@ -8,7 +8,7 @@
 
 LSH::LSH() {
 //    theGenerator = new Generator(ph);
-//    theFileLoader = new LfsLoader();
+//    theFileLoader = new FileLoader();
 }
 
 LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T)

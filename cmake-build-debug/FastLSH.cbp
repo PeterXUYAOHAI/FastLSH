@@ -568,6 +568,12 @@
 		<Unit filename="/home/peter/FYP/FastLSH/lib/googletest/googletest/src/gtest_main.cc">
 			<Option target="gtest_main"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/ClusterCompute/boostmpiCompute.cpp">
+			<Option target="boostmpiLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/ClusterCompute/mpiCompute.cpp">
+			<Option target="mpiLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/Computer/OpenMPComputer.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
@@ -580,28 +586,28 @@
 		<Unit filename="/home/peter/FYP/FastLSH/src/Computer/StdThreadComputer.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/FileLoader.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/FileLoader/FileLoader.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/FileLoader/HdfsLoader.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/FileLoader/LfsLoader.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/Generator.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/InMemoryStore/memcached.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/src/InMemoryStore/redis.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/LSH.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/clusterCompute/boostmpiCompute.cpp">
-			<Option target="boostmpiLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/clusterCompute/mpiCompute.cpp">
-			<Option target="mpiLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/inMemoryStore/memcached.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/inMemoryStore/redis.cpp">
-			<Option target="FastLSH"/>
-		</Unit>
-		<Unit filename="/home/peter/FYP/FastLSH/src/normalization.cpp">
+		<Unit filename="/home/peter/FYP/FastLSH/src/Normalizer.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/src/paragen.cpp">

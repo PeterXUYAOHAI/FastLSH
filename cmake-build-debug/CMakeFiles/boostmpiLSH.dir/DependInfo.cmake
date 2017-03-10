@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/peter/FYP/FastLSH/src/clusterCompute/boostmpiCompute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/boostmpiLSH.dir/src/clusterCompute/boostmpiCompute.cpp.o"
+  "/home/peter/FYP/FastLSH/src/ClusterCompute/boostmpiCompute.cpp" "/home/peter/FYP/FastLSH/cmake-build-debug/CMakeFiles/boostmpiLSH.dir/src/ClusterCompute/boostmpiCompute.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

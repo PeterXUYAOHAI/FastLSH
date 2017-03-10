@@ -73,17 +73,17 @@ set(CMAKE_CXX_STANDARD 11)
 set(SOURCE_FILES
         README.md tests/driver.cpp include/LSH.h src/LSH.cpp
         tests/unitTests/HdfsTest.cpp tests/unitTests/MetaTest.cpp tests/unitTests/MTTests/StdthreadTest.cpp
-        tests/unitTests/MTTests/PthreadTest.cpp src/inMemoryStore/memcached.cpp
+        tests/unitTests/MTTests/PthreadTest.cpp src/InMemoryStore/memcached.cpp
         tests/unitTests/MTTests/OpenMPTest.cpp
         tests/unitTests/inMemoryStoreTest/MemcachedTest.cpp
-        src/inMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/RedisTest.cpp
-        src/normalization.cpp tests/unitTests/SingleThreadTest.cpp
-        src/FileLoader.cpp include/otherClasses/FileLoader.h
+        src/InMemoryStore/redis.cpp tests/unitTests/inMemoryStoreTest/RedisTest.cpp
+        src/Normalizer.cpp tests/unitTests/SingleThreadTest.cpp
+        include/otherClasses/FileLoader.h
         include/otherClasses/Computer.h tests/unitTests/ComputerTest.cpp include/otherClasses/ParameterHolder.h
-        include/otherClasses/Generator.h src/Generator.cpp src/Computer/PthreadComputer.cpp tests/unitTests/GeneratorTest.cpp src/Computer/SingleThreadComputer.cpp src/Computer/OpenMPComputer.cpp src/Computer/StdThreadComputer.cpp)
+        include/otherClasses/Generator.h src/Generator.cpp src/Computer/PthreadComputer.cpp tests/unitTests/GeneratorTest.cpp src/Computer/SingleThreadComputer.cpp src/Computer/OpenMPComputer.cpp src/Computer/StdThreadComputer.cpp src/FileLoader/LfsLoader.cpp src/FileLoader/FileLoader.cpp src/FileLoader/HdfsLoader.cpp)
 
-set(MPI_FILES src/clusterCompute/mpiCompute.cpp)
-set(BoostMPI_FILES src/clusterCompute/boostmpiCompute.cpp include/otherClasses/Computer.h)
+set(MPI_FILES src/ClusterCompute/mpiCompute.cpp)
+set(BoostMPI_FILES src/ClusterCompute/boostmpiCompute.cpp include/otherClasses/Computer.h)
 set(Paragen_FILES src/paragen.cpp)
 
 #find boost library
