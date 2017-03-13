@@ -483,6 +483,8 @@ fstream
 -
 vector
 -
+sstream
+-
 
 /home/peter/FYP/FastLSH/tests/unitTests/ComputerTest.cpp
 gtest/gtest.h

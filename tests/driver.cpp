@@ -64,32 +64,31 @@ int main (int argc, char **argv){
         ::testing::InitGoogleTest(&argc, argv);
 //        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
 //        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
-        return RUN_ALL_TESTS();
+        RUN_ALL_TESTS();
     }
-    else if(input=="N"){
-
-    }
-    else{
+    else if(input!="N"){
         exit(0);
     }
+    system("cls");
+    std::cout<<"All test passed\n";
 
     args theArgs;
     if(is_file_exist("./FastLSHargs")){
-        std::cout<<"FastLSHargs FOUND, would you like use the parameters in the file or input by yourself? (Y/N)\n";
+        std::cout<<"FastLSHargs FOUND, would you like use the parameters in the file? (Y/N)\n";
         std::cin>>input;
         if (input=="Y"){
             std::vector<std::string> argus=  argumentReader("./FastLSHargs");
             theArgs = arguParser(argus);
         }
         else if(input=="N"){
-
+               theArgs=readArguFromConsole();
         }
     }
     else{
         std::cout<<"FastLSHargs NOT FOUND, would you like to input the parameters by yourself? (Y/N)\n";
         std::cin>>input;
         if(input=="Y"){
-
+            theArgs = readArguFromConsole();
         }
         else{
             exit(0);
@@ -105,19 +104,31 @@ int main (int argc, char **argv){
     mlsh.setThreadMode(theArgs.threadMode);
     mlsh.setUseHdfs(theArgs.useHdfs);
     mlsh.reportStatus();
+    std::cout<<"InputN Path "<<theArgs.inputPathN<<"\n";
+    std::cout<<"InputQ Path "<<theArgs.inputPathQ<<"\n";
+    std::cout<<"Output Path "<<theArgs.outputPath<<"\n";
 
+    std::cout<<"Would you like to continue? (Y/N)";
+    std::cin>>input;
 
+    if(input!="Y")
+        exit(0);
+
+    std::cout<<"Loading DataSet.....\n";
     mlsh.loadSetN(theArgs.inputPathN.c_str(),0);
     mlsh.loadSetQ(theArgs.inputPathQ.c_str(),0);
 
     mlsh.reportStatus();
 
+    std::cout<<"Calculating.....\n";
     mlsh.getCandidateSet();
 
     mlsh.reportStatus();
 
+    std::cout<<"Saving.....\n";
     mlsh.saveCandidateSet(theArgs.outputPath.c_str());
 
+    std::cout<<"Done!\n";
 
 
 }

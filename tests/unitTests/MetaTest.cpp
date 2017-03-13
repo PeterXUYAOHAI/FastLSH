@@ -10,7 +10,7 @@ class MetaTest:public ::testing::Test{
 
 protected:
     virtual void SetUp() {
-        mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
+        mlsh = LSH(1000, 1000, 57, 200, 1, 1.2,  100);
     }
 
     LSH mlsh;

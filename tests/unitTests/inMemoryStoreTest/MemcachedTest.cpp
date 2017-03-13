@@ -14,7 +14,7 @@ class MemcachedTest:public ::testing::Test{
 protected:
     virtual void SetUp() {
         //preload data
-        mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
+        mlsh = LSH(1000, 1000, 57, 200, 1, 1.2,  100);
         mlsh.loadSetN("../tests/dataset/dataset1000NoIndex.csv", 0);
         mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
     }

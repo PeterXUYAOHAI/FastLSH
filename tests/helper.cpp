@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <sstream>
 
 
 struct args{
@@ -67,6 +68,150 @@ static args arguParser(std::vector<std::string> argus){
 
     return theArgs;
 };
+
+static args readArguFromConsole(){
+    args theArgs;
+    std::string input;
+    std::cout<<"Please input the following Parameters\n";
+
+
+    std::cout<< "N<int>: number of points(lines,rows) in the dataset [default=1000]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.N;
+    }
+    else{
+        theArgs.N = 1;
+    }
+
+    std::cout<< "Q<int>: number of points(lines,rows) in the queryset [default=1000]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.Q;
+    }
+    else{
+        theArgs.Q = 1000;
+    }
+
+    std::cout<< "D<int>: number of dimensions (columns) [default=56]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.D;
+    }
+    else{
+        theArgs.D = 56;
+    }
+
+    std::cout<< "L<int>: number of group hash [default=200]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.L;
+    }
+    else{
+        theArgs.L = 200;
+    }
+
+    std::cout<< "K<int>: number of hash functions in each group hash [default=1]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.K;
+    }
+    else{
+        theArgs.K = 1;
+    }
+
+
+    std::cout<< "W<double>: bucket width [default=1.2]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.W;
+    }
+    else{
+        theArgs.W = 1.2;
+    }
+
+    std::cout<< "T<int>: threshold [default=100]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.T;
+    }
+    else{
+        theArgs.T = 1;
+    }
+
+    std::cout<< "Compute Mode(0/1): 0-normal((g-collisionmatrix-> candidate)need more memory) "
+            " 1-quickMode(need less memory, the collision matrix won't be generated [default=0]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.computeMode;
+    }
+    else{
+        theArgs.computeMode = 0;
+    }
+
+    std::cout<< "Thread Mode (0-3): 0-singleThread 1-openMP, 2-stdthread 3-pthread [default=0]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.threadMode;
+    }
+    else{
+        theArgs.threadMode = 0;
+    }
+
+    std::cout<< "useHDFS (Y/N): Whether to load from HDFS [default=N]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.useHdfs;
+    }
+    else{
+        theArgs.useHdfs = false;
+    }
+
+    std::cout<< "Input Path for datasetN:  the file path to load datasetN from, "
+            "if use HDFS, use the HDFS path. [default=../tests/dataset/dataset1000NoIndex.csv]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.inputPathN;
+    }
+    else{
+        theArgs.inputPathN = "../tests/dataset/dataset1000NoIndex.csv";
+    }
+
+    std::cout<< "Input Path for datasetQ:  the file path to load datasetQ from, if use HDFS, "
+            "use the HDFS path. [default=../tests/dataset/dataset1000NoIndex.csv]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.inputPathQ;
+    }
+    else{
+        theArgs.inputPathQ = "../tests/dataset/dataset1000NoIndex.csv";
+    }
+
+    std::cout<< "Output Path: the file path to save the candidateSet to [default=1000]: ";
+    std::getline(std::cin, input);
+    if(!input.empty()){
+        std::istringstream stream(input);
+        stream >> theArgs.outputPath;
+    }
+    else{
+        theArgs.outputPath = "../tests/dataset/candidate.csv";
+    }
+
+    return theArgs;
+}
+
 
 static bool is_file_exist(const char *fileName)
 {
