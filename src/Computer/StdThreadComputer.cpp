@@ -5,6 +5,7 @@
 #include <cmath>
 #include <thread>
 #include <algorithm>
+#include <iostream>
 #include "../../include/otherClasses/Computer.h"
 
 vector2D ComputerStdThread::computeHash(vector2D dataset, size_t pointNum){
@@ -64,9 +65,15 @@ vector2D ComputerStdThread::computeHash(vector2D dataset, size_t pointNum){
 }
 
 
-
-
-
+void ComputerStdThread::printThreadMode(){
+    std::cout<< "Pthread";
+}
+void ComputerStdThreadNormal::printComputeMode(){
+    std::cout<< "Normal";
+}
+void ComputerStdThreadQuick::printComputeMode(){
+    std::cout<< "Quick";
+}
 
 
 vector2D ComputerStdThreadNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){

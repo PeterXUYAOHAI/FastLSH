@@ -44,30 +44,66 @@ int main (int argc, char **argv){
 //    std::cout <<duration << " μs to to calculate quick mode\n";
 
     //http://www.kammerl.de/ascii/AsciiSignature.php
-    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
-            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
-            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
-            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
-            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
-            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
+//    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
+//            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
+//            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
+//            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
+//            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
+//            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
+//
+//    std::cout<<"Would you like to run the test(Y/N)\n";
+//
+//    std::string input;
+//    std::cin>>input;
+//
+//////    //TODO add fed query set style
+//////    //TODO finish cmd line style
+//    if(input=="Y") {
+//        //run the registered tests
+//        ::testing::InitGoogleTest(&argc, argv);
+////        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
+////        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
+//        return RUN_ALL_TESTS();
+//    }
+//    else{
+//        exit(0);
+//    }
 
-    std::cout<<"Would you like to run the test(Y/N)\n";
 
-    std::string input;
-    std::cin>>input;
+    std::cout<<" __             __   \n"
+            "|_  _  _ _|_|  (_ |_|\n"
+            "|  (_|_>  |_|____)| |\n";
 
-////    //TODO add fed query set style
-////    //TODO finish cmd line style
-    if(input=="Y") {
-        //run the registered tests
-        ::testing::InitGoogleTest(&argc, argv);
-//        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
-//        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
-        return RUN_ALL_TESTS();
-    }
-    else{
-        exit(0);
-    }
+    std::cout<<"Current RunID: \n";
+    std::cout<<"Compute Mode: \n";
+    std::cout<<"Thread Mode: \n\n";
 
+    printf("Parameters: \n");
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "N", "2", "Q", "2");
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "D", "2", "L", "2");
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "K", "2", "W", "2");
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "Q", "2", "T", "2");
+    printf("  --------------------------------\n");
+
+
+
+    std::cout<<"Variables Exists: \n";
+    std::cout<<"  RandomLine: \n";
+    std::cout<<"  RandomVector: \n";
+    std::cout<<"  SetN: \n";
+    std::cout<<"  SetQ: \n";
+    std::cout<<"  hashMatrixN: \n";
+    std::cout<<"  hashMatrixQ: \n";
+    std::cout<<"  collisionMatrix: \n";
+    std::cout<<"  candidateSet: \n";
+
+
+    LSH mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
+
+    mlsh.reportStatus();
 
 }

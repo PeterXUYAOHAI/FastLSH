@@ -5,6 +5,7 @@
 #include <cmath>
 #include <thread>
 #include <algorithm>
+#include <iostream>
 #include "../../include/otherClasses/Computer.h"
 
 vector2D ComputerOpenMP::computeHash(vector2D dataset, size_t pointNum){
@@ -38,6 +39,16 @@ vector2D ComputerOpenMP::computeHash(vector2D dataset, size_t pointNum){
         }
     }
     return hashMatrix;
+}
+
+void ComputerOpenMP::printThreadMode(){
+    std::cout<< "OpenMP";
+}
+void ComputerOpenMPNormal::printComputeMode(){
+    std::cout<< "Normal";
+}
+void ComputerOpenMPQuick::printComputeMode(){
+    std::cout<< "Quick";
 }
 
 vector2D ComputerOpenMPNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){

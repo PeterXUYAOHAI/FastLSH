@@ -15,6 +15,14 @@ Generator::Generator(ParameterHolder ph):ph(ph){
 //   // delete theComputer;
 //}
 
+void Generator::printComputeMode(){
+    theComputer->printComputeMode();
+}
+
+void Generator::printThreadMode(){
+    theComputer->printThreadMode();
+}
+
 void Generator::changeComputer(int threadMode, int computeMode){
 
     delete theComputer;

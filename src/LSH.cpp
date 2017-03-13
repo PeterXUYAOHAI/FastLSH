@@ -191,6 +191,75 @@ void LSH::clear() {
 }
 
 
+void LSH::reportStatus() {
 
+    std::cout<<" __             __   \n"
+            "|_  _  _ _|_|  (_ |_|\n"
+            "|  (_|_>  |_|____)| |\n";
+
+    std::cout<<"Current RunID: "<<runID<<"\n";
+
+    std::cout<<"Compute Mode: ("<<computeMode<<")";
+    theGenerator->printComputeMode();
+    std::cout<<"\n";
+    std::cout<<"Thread Mode: ("<<threadMode<<")";
+    theGenerator->printThreadMode();
+    std::cout<<"\n";
+
+    printf("Parameters: \n");
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "N", std::to_string((int)ph.N), "Q", std::to_string((int)ph.Q));
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "D", std::to_string((int)ph.D), "L", std::to_string((int)ph.L));
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "K", std::to_string((int)ph.K), "W", std::to_string(ph.W));
+    printf("  --------------------------------\n");
+    printf("  |%3s|%10s||%3s|%10s|\n", "Q", std::to_string((int)ph.Q), "T", std::to_string((int)ph.T));
+    printf("  --------------------------------\n");
+
+
+
+    std::cout<<"Variables Exists: \n";
+    std::cout<<"  RandomLine: ";
+    if(ph.randomLine.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  RandomVector: \n";
+    if(ph.randomVector.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  SetN: \n";
+    if(setN.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  SetQ: \n";
+    if(setQ.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  hashMatrixN: \n";
+    if(hashMatrixN.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  hashMatrixQ: \n";
+    if(hashMatrixQ.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  collisionMatrix: \n";
+    if(collisionMatrix.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+    std::cout<<"  candidateSet: \n";
+    if(candidateSet.size()!=0)
+        std::cout<<"Y\n";
+    else
+        std::cout<<"N\n";
+}
 
 
