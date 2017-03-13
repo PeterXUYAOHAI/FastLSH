@@ -690,6 +690,33 @@ tests/driver.cpp.s:
 	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/driver.cpp.s
 .PHONY : tests/driver.cpp.s
 
+tests/helper.o: tests/helper.cpp.o
+
+.PHONY : tests/helper.o
+
+# target to build an object file
+tests/helper.cpp.o:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/helper.cpp.o
+.PHONY : tests/helper.cpp.o
+
+tests/helper.i: tests/helper.cpp.i
+
+.PHONY : tests/helper.i
+
+# target to preprocess a source file
+tests/helper.cpp.i:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/helper.cpp.i
+.PHONY : tests/helper.cpp.i
+
+tests/helper.s: tests/helper.cpp.s
+
+.PHONY : tests/helper.s
+
+# target to generate assembly for a file
+tests/helper.cpp.s:
+	$(MAKE) -f CMakeFiles/FastLSH.dir/build.make CMakeFiles/FastLSH.dir/tests/helper.cpp.s
+.PHONY : tests/helper.cpp.s
+
 tests/unitTests/ComputerTest.o: tests/unitTests/ComputerTest.cpp.o
 
 .PHONY : tests/unitTests/ComputerTest.o
@@ -1028,6 +1055,9 @@ help:
 	@echo "... tests/driver.o"
 	@echo "... tests/driver.i"
 	@echo "... tests/driver.s"
+	@echo "... tests/helper.o"
+	@echo "... tests/helper.i"
+	@echo "... tests/helper.s"
 	@echo "... tests/unitTests/ComputerTest.o"
 	@echo "... tests/unitTests/ComputerTest.i"
 	@echo "... tests/unitTests/ComputerTest.s"

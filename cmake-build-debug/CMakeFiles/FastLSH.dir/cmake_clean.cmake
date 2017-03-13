@@ -22,6 +22,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/FastLSH.dir/src/FileLoader/LfsLoader.cpp.o"
   "CMakeFiles/FastLSH.dir/src/FileLoader/FileLoader.cpp.o"
   "CMakeFiles/FastLSH.dir/src/FileLoader/HdfsLoader.cpp.o"
+  "CMakeFiles/FastLSH.dir/tests/helper.cpp.o"
   "FastLSH.pdb"
   "FastLSH"
 )

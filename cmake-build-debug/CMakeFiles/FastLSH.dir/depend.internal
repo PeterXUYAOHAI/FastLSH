@@ -93,7 +93,10 @@ CMakeFiles/FastLSH.dir/tests/driver.cpp.o
  /home/peter/FYP/FastLSH/include/otherClasses/Generator.h
  /home/peter/FYP/FastLSH/include/otherClasses/ParameterHolder.h
  /home/peter/FYP/FastLSH/tests/driver.cpp
+ /home/peter/FYP/FastLSH/tests/helper.cpp
  /usr/local/hadoop/include/hdfs.h
+CMakeFiles/FastLSH.dir/tests/helper.cpp.o
+ /home/peter/FYP/FastLSH/tests/helper.cpp
 CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o
  ../lib/googletest/googletest/include/gtest/gtest-death-test.h
  ../lib/googletest/googletest/include/gtest/gtest-message.h

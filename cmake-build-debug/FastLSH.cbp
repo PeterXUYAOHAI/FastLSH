@@ -616,6 +616,9 @@
 		<Unit filename="/home/peter/FYP/FastLSH/tests/driver.cpp">
 			<Option target="FastLSH"/>
 		</Unit>
+		<Unit filename="/home/peter/FYP/FastLSH/tests/helper.cpp">
+			<Option target="FastLSH"/>
+		</Unit>
 		<Unit filename="/home/peter/FYP/FastLSH/tests/unitTests/ComputerTest.cpp">
 			<Option target="FastLSH"/>
 		</Unit>

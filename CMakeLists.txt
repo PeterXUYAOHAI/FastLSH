@@ -80,7 +80,7 @@ set(SOURCE_FILES
         src/Normalizer.cpp tests/unitTests/SingleThreadTest.cpp
         include/otherClasses/FileLoader.h
         include/otherClasses/Computer.h tests/unitTests/ComputerTest.cpp include/otherClasses/ParameterHolder.h
-        include/otherClasses/Generator.h src/Generator.cpp src/Computer/PthreadComputer.cpp tests/unitTests/GeneratorTest.cpp src/Computer/SingleThreadComputer.cpp src/Computer/OpenMPComputer.cpp src/Computer/StdThreadComputer.cpp src/FileLoader/LfsLoader.cpp src/FileLoader/FileLoader.cpp src/FileLoader/HdfsLoader.cpp)
+        include/otherClasses/Generator.h src/Generator.cpp src/Computer/PthreadComputer.cpp tests/unitTests/GeneratorTest.cpp src/Computer/SingleThreadComputer.cpp src/Computer/OpenMPComputer.cpp src/Computer/StdThreadComputer.cpp src/FileLoader/LfsLoader.cpp src/FileLoader/FileLoader.cpp src/FileLoader/HdfsLoader.cpp tests/helper.cpp)
 
 set(MPI_FILES src/ClusterCompute/mpiCompute.cpp)
 set(BoostMPI_FILES src/ClusterCompute/boostmpiCompute.cpp include/otherClasses/Computer.h)

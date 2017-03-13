@@ -24,13 +24,15 @@ class LSH{
 
     LSH();
 
-    LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T);
+    LSH(size_t N, size_t Q, size_t D, size_t L, size_t K, double W,  size_t T);
 
    // ~LSH();
 
-    void loadSetQ(char *filePath, int fileSize);
+    void loadSetQ(const char *filePath, int fileSize);
 
-    void loadSetN(char *filePath, int fileSize);
+    void loadSetN(const char *filePath, int fileSize);
+
+    void saveCandidateSet(const char *filePath);
 
     bool setUseHdfs(bool useHdfs);
 
@@ -64,6 +66,18 @@ class LSH{
 
     int reset();
 
+    const vector2D &getSetN() const;
+
+    void setSetN(const vector2D &setN);
+
+    const vector2D &getSetQ() const;
+
+    void setSetQ(const vector2D &setQ);
+
+    const vector2D &getHashMatrixN() const;
+
+    const vector2D &getHashMatrixQ() const;
+
 
 
 private:
@@ -75,6 +89,7 @@ private:
     FileLoader *theFileLoader;
     Generator *theGenerator;
     ParameterHolder ph;
+
 
     vector2D setN; // original data set of N
     vector2D setQ; // original data set of Q

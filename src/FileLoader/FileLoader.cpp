@@ -32,7 +32,7 @@ vector2D FileLoader::ssToVector(size_t row, size_t col) {
     return data;
 }
 
-vector2D FileLoader::loadFile(char* filePath, size_t row, size_t col){
+vector2D FileLoader::loadFile(const char* filePath, size_t row, size_t col){
     loadToSS(filePath);
     return ssToVector(row, col);
 }

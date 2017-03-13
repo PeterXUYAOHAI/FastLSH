@@ -92,7 +92,10 @@ CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../include/otherClasses/FileLoader.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../include/otherClasses/Generator.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../include/otherClasses/ParameterHolder.h
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../tests/driver.cpp
+CMakeFiles/FastLSH.dir/tests/driver.cpp.o: ../tests/helper.cpp
 CMakeFiles/FastLSH.dir/tests/driver.cpp.o: /usr/local/hadoop/include/hdfs.h
+
+CMakeFiles/FastLSH.dir/tests/helper.cpp.o: ../tests/helper.cpp
 
 CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
 CMakeFiles/FastLSH.dir/tests/unitTests/ComputerTest.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-message.h

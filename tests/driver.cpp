@@ -5,6 +5,7 @@
 
 
 #include "../include/LSH.h"
+#include "helper.cpp"
 #include "hdfs.h"
 #include <gtest/gtest.h>
 #include <thread>
@@ -44,66 +45,79 @@ int main (int argc, char **argv){
 //    std::cout <<duration << " μs to to calculate quick mode\n";
 
     //http://www.kammerl.de/ascii/AsciiSignature.php
-//    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
-//            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
-//            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
-//            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
-//            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
-//            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
+    std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
+            "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
+            "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
+            "|   __|  /  /_\\  \\       \\   \\       |  |     |  |        \\   \\    |   __   |\n"
+            "|  |    /  _____  \\  .----)   |      |  |     |  `----.----)   |   |  |  |  |\n"
+            "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
+
+    std::cout<<"Would you like to run the test(Y/N)\n";
+
+    std::string input;
+    std::cin>>input;
+
+////    //TODO add fed query set style
+////    //TODO finish cmd line style
+    if(input=="Y") {
+        //run the registered tests
+        ::testing::InitGoogleTest(&argc, argv);
+//        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
+//        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
+        return RUN_ALL_TESTS();
+    }
+    else if(input=="N"){
+
+    }
+    else{
+        exit(0);
+    }
+
+    args theArgs;
+    if(is_file_exist("./FastLSHargs")){
+        std::cout<<"FastLSHargs FOUND, would you like use the parameters in the file or input by yourself? (Y/N)\n";
+        std::cin>>input;
+        if (input=="Y"){
+            std::vector<std::string> argus=  argumentReader("./FastLSHargs");
+            theArgs = arguParser(argus);
+        }
+        else if(input=="N"){
+
+        }
+    }
+    else{
+        std::cout<<"FastLSHargs NOT FOUND, would you like to input the parameters by yourself? (Y/N)\n";
+        std::cin>>input;
+        if(input=="Y"){
+
+        }
+        else{
+            exit(0);
+        }
+
+    }
+
+
+
+    LSH mlsh = LSH(theArgs.N, theArgs.Q, theArgs.D, theArgs.L, theArgs.K, theArgs.W, theArgs.T);
 //
-//    std::cout<<"Would you like to run the test(Y/N)\n";
-//
-//    std::string input;
-//    std::cin>>input;
-//
-//////    //TODO add fed query set style
-//////    //TODO finish cmd line style
-//    if(input=="Y") {
-//        //run the registered tests
-//        ::testing::InitGoogleTest(&argc, argv);
-////        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
-////        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
-//        return RUN_ALL_TESTS();
-//    }
-//    else{
-//        exit(0);
-//    }
+    mlsh.setComputeMode(theArgs.computeMode);
+    mlsh.setThreadMode(theArgs.threadMode);
+    mlsh.setUseHdfs(theArgs.useHdfs);
+    mlsh.reportStatus();
 
 
-    std::cout<<" __             __   \n"
-            "|_  _  _ _|_|  (_ |_|\n"
-            "|  (_|_>  |_|____)| |\n";
-
-    std::cout<<"Current RunID: \n";
-    std::cout<<"Compute Mode: \n";
-    std::cout<<"Thread Mode: \n\n";
-
-    printf("Parameters: \n");
-    printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "N", "2", "Q", "2");
-    printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "D", "2", "L", "2");
-    printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "K", "2", "W", "2");
-    printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "Q", "2", "T", "2");
-    printf("  --------------------------------\n");
-
-
-
-    std::cout<<"Variables Exists: \n";
-    std::cout<<"  RandomLine: \n";
-    std::cout<<"  RandomVector: \n";
-    std::cout<<"  SetN: \n";
-    std::cout<<"  SetQ: \n";
-    std::cout<<"  hashMatrixN: \n";
-    std::cout<<"  hashMatrixQ: \n";
-    std::cout<<"  collisionMatrix: \n";
-    std::cout<<"  candidateSet: \n";
-
-
-    LSH mlsh = LSH(1000, 57, 200, 1, 1.2, 1000, 100);
+    mlsh.loadSetN(theArgs.inputPathN.c_str(),0);
+    mlsh.loadSetQ(theArgs.inputPathQ.c_str(),0);
 
     mlsh.reportStatus();
+
+    mlsh.getCandidateSet();
+
+    mlsh.reportStatus();
+
+    mlsh.saveCandidateSet(theArgs.outputPath.c_str());
+
+
 
 }

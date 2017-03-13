@@ -11,7 +11,7 @@ LSH::LSH() {
 //    theFileLoader = new FileLoader();
 }
 
-LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T)
+LSH::LSH(size_t N, size_t Q, size_t D, size_t L, size_t K, double W,  size_t T)
 {
     ph.N = N;
     ph.D = D;
@@ -36,13 +36,25 @@ LSH::LSH(size_t N, size_t D, size_t L, size_t K, double W, size_t Q, size_t T)
 //}
 
 
-void LSH::loadSetN(char* filePath, int fileSize){
+void LSH::loadSetN(const char* filePath, int fileSize){
     setN = theFileLoader->loadFile(filePath,ph.N,ph.D);
 }
 
-void LSH::loadSetQ(char* filePath, int fileSize){
+void LSH::loadSetQ(const char* filePath, int fileSize){
     setQ = theFileLoader->loadFile(filePath,ph.Q,ph.D);
 }
+
+
+void LSH::saveCandidateSet(const char *filePath){
+    std::ofstream out(filePath);
+    for (int i = 0; i < candidateSet.size(); ++i) {
+        for (int j = 0; j < candidateSet[i].size(); ++j) {
+            out << candidateSet[i][j] << ',';
+        }
+        out<<'\n';
+    }
+}
+
 
 vector3D LSH::generateRandomLine(){
 
@@ -198,7 +210,9 @@ void LSH::reportStatus() {
             "|  (_|_>  |_|____)| |\n";
 
     std::cout<<"Current RunID: "<<runID<<"\n";
-
+    std::cout<<"Load Mode: ";
+    theFileLoader->printLoadMode();
+    std::cout<<"\n";
     std::cout<<"Compute Mode: ("<<computeMode<<")";
     theGenerator->printComputeMode();
     std::cout<<"\n";
@@ -208,58 +222,82 @@ void LSH::reportStatus() {
 
     printf("Parameters: \n");
     printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "N", std::to_string((int)ph.N), "Q", std::to_string((int)ph.Q));
+    printf("  |%3s|%10i||%3s|%10i|\n", "N", static_cast<int>(ph.N), "Q", static_cast<int>(ph.Q));
     printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "D", std::to_string((int)ph.D), "L", std::to_string((int)ph.L));
+    printf("  |%3s|%10i||%3s|%10i|\n", "D", static_cast<int>(ph.D), "L", static_cast<int>(ph.L));
     printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "K", std::to_string((int)ph.K), "W", std::to_string(ph.W));
+    printf("  |%3s|%10i||%3s|%10lf|\n", "K",static_cast<int>(ph.K), "W", ph.W);
     printf("  --------------------------------\n");
-    printf("  |%3s|%10s||%3s|%10s|\n", "Q", std::to_string((int)ph.Q), "T", std::to_string((int)ph.T));
+    printf("  |%3s|%10i||%3s|%10i|\n", "Q", static_cast<int>(ph.Q), "T", static_cast<int>(ph.T));
     printf("  --------------------------------\n");
 
 
 
-    std::cout<<"Variables Exists: \n";
+    std::cout<<"Variables Existence (Y/N): \n";
     std::cout<<"  RandomLine: ";
     if(ph.randomLine.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  RandomVector: \n";
+    std::cout<<"  RandomVector: ";
     if(ph.randomVector.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  SetN: \n";
+    std::cout<<"  SetN: ";
     if(setN.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  SetQ: \n";
+    std::cout<<"  SetQ: ";
     if(setQ.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  hashMatrixN: \n";
+    std::cout<<"  hashMatrixN: ";
     if(hashMatrixN.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  hashMatrixQ: \n";
+    std::cout<<"  hashMatrixQ: ";
     if(hashMatrixQ.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  collisionMatrix: \n";
+    std::cout<<"  collisionMatrix: ";
     if(collisionMatrix.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
-    std::cout<<"  candidateSet: \n";
+    std::cout<<"  candidateSet: ";
     if(candidateSet.size()!=0)
         std::cout<<"Y\n";
     else
         std::cout<<"N\n";
+}
+
+const vector2D &LSH::getSetN() const {
+    return setN;
+}
+
+void LSH::setSetN(const vector2D &setN) {
+    LSH::setN = setN;
+}
+
+const vector2D &LSH::getSetQ() const {
+    return setQ;
+}
+
+void LSH::setSetQ(const vector2D &setQ) {
+    LSH::setQ = setQ;
+}
+
+const vector2D &LSH::getHashMatrixN() const {
+    return hashMatrixN;
+}
+
+const vector2D &LSH::getHashMatrixQ() const {
+    return hashMatrixQ;
 }
 
 

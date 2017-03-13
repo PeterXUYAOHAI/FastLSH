@@ -7,7 +7,7 @@
 #include <iostream>
 #include "../../include/otherClasses/FileLoader.h"
 
-void HdfsLoader::loadToSS(char* filePath) {
+void HdfsLoader::loadToSS(const char* filePath) {
 
     int exists; //file exist flag
     char* buffer; //buffer store file read from hdfs
@@ -62,4 +62,8 @@ void HdfsLoader::loadToSS(char* filePath) {
     hdfsCloseFile(fs, readFile);
     hdfsDisconnect(fs);
 
+}
+
+void HdfsLoader::printLoadMode() {
+    std::cout<<"HDFS (Hadoop File System)";
 }
