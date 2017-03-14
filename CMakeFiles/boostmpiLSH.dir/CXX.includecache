@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/peter/FYP/FastLSH/src/ClusterCompute/boostmpiCompute.cpp
+iostream
+-
+vector
+-
+fstream
+-
+chrono
+-
+random
+-
+boost/mpi.hpp
+-
+boost/serialization/vector.hpp
+-
+

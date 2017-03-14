@@ -217,8 +217,14 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Dependencies for the target
+FastLSHLib_LIB_DEPENDS:STATIC=general;/usr/local/hadoop/lib/native/libhdfs.so;general;/usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so;general;/usr/lib/jvm/default-java/jre/lib/amd64/server/libjvm.so;general;gtest;general;memcached;general;hiredis;general;mpi;
+
 //Value Computed by CMake
 FastLSH_BINARY_DIR:STATIC=/home/peter/FYP/FastLSH/cmake-build-debug
+
+//Dependencies for the target
+FastLSH_LIB_DEPENDS:STATIC=general;/usr/local/hadoop/lib/native/libhdfs.so;general;/usr/lib/jvm/default-java/jre/lib/amd64/libjawt.so;general;/usr/lib/jvm/default-java/jre/lib/amd64/server/libjvm.so;general;gtest;general;memcached;general;hiredis;general;mpi;
 
 //Value Computed by CMake
 FastLSH_SOURCE_DIR:STATIC=/home/peter/FYP/FastLSH
@@ -363,6 +369,9 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
+
+//Dependencies for target
+target_name_LIB_DEPENDS:STATIC=
 
 
 ########################

@@ -1,0 +1,1 @@
+/usr/bin/c++    -fopenmp   CMakeFiles/mpiLSH.dir/src/ClusterCompute/mpiCompute.cpp.o  -o mpiLSH -rdynamic 

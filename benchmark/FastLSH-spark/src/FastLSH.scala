@@ -1,5 +1,6 @@
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
+import java.io._
 
 /**
   * Created by peter on 17-3-1.
@@ -19,7 +20,11 @@ object FastLSH {
     val Q = 1000
     val W = 1.2
     val T = 100
+    val setQPath = "/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv"
+    val setNPath = "/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv"
+    val outputPath = "./result"
     val r = scala.util.Random
+
 
     val sparkSession = SparkSession.builder.master("local")
       .appName("FastLSH")
@@ -35,10 +40,10 @@ object FastLSH {
 
     //read in data
     val dfq = sparkSession.read.option("header","false").
-      csv("/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv")
+      csv(setQPath)
 
     val dfn = sparkSession.read.option("header","false").
-      csv("/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv")
+      csv(setNPath)
 
     //convert string to double
     var datasetQ = dfq.rdd.map(r=>(0 until D).map(r.getString(_).toDouble).toList)
@@ -100,7 +105,17 @@ object FastLSH {
 
     //filter out candidate set
     var candidateSet = collisionMatrix.map(h=>(0 until N).filter(n=>(h(n)>T)))
-    candidateSet.collect()
+
+    val result = candidateSet.collect()
+
+    val text = result.map(_.mkString(",")).mkString("\n")
+
+
+    val file = new File(outputPath)
+    val bw = new BufferedWriter(new FileWriter(file))
+    bw.write(text)
+    bw.close()
+
 
   }
 }

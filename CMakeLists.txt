@@ -107,6 +107,8 @@ add_executable(mpiLSH ${MPI_FILES})
 add_executable(FastLSH ${SOURCE_FILES})
 add_executable(boostmpiLSH ${BoostMPI_FILES})
 add_executable(paraGen ${Paragen_FILES})
+#add_library(FastLSH ${SOURCE_FILES})
+
 
 target_link_libraries (FastLSH ${HDFS_LIBRARIES} gtest memcached hiredis mpi)
 #target_link_libraries(mpiLSH ${MPI_LIBRARIES})
