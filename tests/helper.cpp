@@ -199,7 +199,7 @@ static args readArguFromConsole(){
         theArgs.inputPathQ = "../tests/dataset/dataset1000NoIndex.csv";
     }
 
-    std::cout<< "Output Path: the file path to save the candidateSet to [default=1000]: ";
+    std::cout<< "Output Path: the file path to save the candidateSet to [default=../tests/dataset/candidate.csv]: ";
     std::getline(std::cin, input);
     if(!input.empty()){
         std::istringstream stream(input);

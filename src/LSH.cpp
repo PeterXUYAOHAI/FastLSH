@@ -47,12 +47,20 @@ void LSH::loadSetQ(const char* filePath, int fileSize){
 
 void LSH::saveCandidateSet(const char *filePath){
     std::ofstream out(filePath);
+    if (! out.is_open())
+    {
+        std::cout << "error opening output file";
+        exit (1);
+        // or whatever handling you want to do....
+    }
+
     for (int i = 0; i < candidateSet.size(); ++i) {
         for (int j = 0; j < candidateSet[i].size(); ++j) {
             out << candidateSet[i][j] << ',';
         }
         out<<'\n';
     }
+    out.close();
 }
 
 

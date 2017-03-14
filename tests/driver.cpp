@@ -69,7 +69,7 @@ int main (int argc, char **argv){
     else if(input!="N"){
         exit(0);
     }
-    system("cls");
+    system("clear");
     std::cout<<"All test passed\n";
 
     args theArgs;
@@ -114,11 +114,13 @@ int main (int argc, char **argv){
     if(input!="Y")
         exit(0);
 
+    system("clear");
+
     std::cout<<"Loading DataSet.....\n";
     mlsh.loadSetN(theArgs.inputPathN.c_str(),0);
     mlsh.loadSetQ(theArgs.inputPathQ.c_str(),0);
 
-    mlsh.reportStatus();
+//    mlsh.reportStatus();
 
     std::cout<<"Calculating.....\n";
     mlsh.getCandidateSet();
