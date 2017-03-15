@@ -96,7 +96,7 @@ int main (int argc, char **argv){
 
     }
 
-
+    std::vector<std::string> argus=  argumentReader("./FastLSHargs");
 
     LSH mlsh = LSH(theArgs.N, theArgs.Q, theArgs.D, theArgs.L, theArgs.K, theArgs.W, theArgs.T);
 //
@@ -120,7 +120,7 @@ int main (int argc, char **argv){
     mlsh.loadSetN(theArgs.inputPathN.c_str(),0);
     mlsh.loadSetQ(theArgs.inputPathQ.c_str(),0);
 
-//    mlsh.reportStatus();
+    mlsh.reportStatus();
 
     std::cout<<"Calculating.....\n";
     mlsh.getCandidateSet();
