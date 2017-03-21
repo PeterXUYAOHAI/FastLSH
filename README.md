@@ -1,5 +1,5 @@
-[//]: <> (![FastLSH_LOGO](https://cloud.githubusercontent.com/assets/11495951/23857476/65d20c38-0838-11e7-9ab4-b73fdaa52911.png))
-
+<!---![FastLSH_LOGO](https://cloud.githubusercontent.com/assets/11495951/23857476/65d20c38-0838-11e7-9ab4-b73fdaa52911.png))
+-->
 [![Build Status](https://travis-ci.org/PeterXUYAOHAI/FastLSH.svg?branch=master)](https://travis-ci.org/PeterXUYAOHAI/FastLSH)
 
 This is a C++ implementation of E2LSH and C2LSH. More detail to come.
