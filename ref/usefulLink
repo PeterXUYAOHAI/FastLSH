@@ -11,3 +11,6 @@ http://www.powerxing.com/install-hadoop/
 
 #submit pypi
 http://peterdowns.com/posts/first-time-with-pypi.html
+
+#build mpi cluster
+http://mpitutorial.com/tutorials/running-an-mpi-cluster-within-a-lan/
