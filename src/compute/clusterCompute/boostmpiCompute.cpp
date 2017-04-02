@@ -16,6 +16,7 @@ typedef std::vector<std::vector<std::vector<double> > > vector3D;
 typedef std::vector<std::vector<double> > vector2D;
 typedef std::vector<double> vector1D;
 
+//mpiexec -np 3 -host prj67,prj68,prj70 -mca btl ^openib ./boostmpiLSH
 
 //  sudo apt-get install libboost-all-dev
 // example cmd to run-- mpirun -np 10 --hosts slave1 ./boostmpiCompute
@@ -81,8 +82,8 @@ int main (int argc, char **argv) {
 
     std::cout<<"My name is "<<env.processor_name()<<" processor id "<<world.rank()<<"\n";
     //hardcode the paremeters
-    size_t N = 1000; //# of vectors in the dataset
-    size_t Q = 1000; //# of vertors in the queryset
+    size_t N = 4259934; //# of vectors in the dataset
+    size_t Q = 100; //# of vertors in the queryset
     size_t D = 57; //# of dimensions
     size_t L = 200; //# of group hash
     size_t K = 1; //# the number of hash functions in each group hash
@@ -140,7 +141,7 @@ std::cout<<"start to cal random \n";
         }
 
         //read in setQ
-        setQ = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", Q, D);
+        setQ = loadDataFromLinuxSystem("/home/mpiuser/cloud/dataset100NoIndex.csv", Q, D);
 
         setQNorm = normalize(setQ);
         //flatten setQ for transmission
@@ -165,8 +166,12 @@ std::cout<<"start to cal random \n";
     if (world.rank()==root_process){
         vector2D setN;
         vector2D setNNorm;
-        setN = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", N, D);
+        setN = loadDataFromLinuxSystem("/home/mpiuser/cloud/dataset4259934NoIndex.csv", N, D);
         setNNorm = normalize(setN);
+       {
+            vector2D temp;
+    setN.swap(temp);
+}
         //deal with send part of N
         {
 
@@ -190,7 +195,10 @@ std::cout<<"start to cal random \n";
                     partialSetN = newVec;
                 }
             }
-        }
+{
+    vector2D temp;
+    setNNorm.swap(temp);
+ }       }
     
 t4=now();
 auto duration2 = dcast( t4 - t3 ).count();
@@ -372,10 +380,15 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
                      size_t D, size_t W){
     vector2D hashMatrix;
 
+    for (int i = 0; i < pNum; ++i) {
+        vector1D vL(L,0);
+        hashMatrix.push_back(vL);
+    }
+
     //loop through # of data point
+    #pragma omp parallel for collapse(2)
     for (int n = 0; n < pNum; ++n) {
         //loop through # of hash function group
-        vector1D vL;
         for (int l = 0; l < L; ++l) {
             double hashFinalValue = 0;
             //loop through the inner of a hash function group
@@ -391,9 +404,9 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
                 //merge hash group results **see documentation
                 hashFinalValue = hashvalue*randomVector[k] + hashFinalValue;
             }
-            vL.push_back(hashFinalValue);
+           hashMatrix[n][l]=hashFinalValue; 
         }
-        hashMatrix.push_back(vL);
+        
     }
     return hashMatrix;
 }
@@ -401,15 +414,20 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
 
 vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t N, size_t L){
     vector2D collisionMatrix;
-    for (int q = 0; q <Q ; ++q) {
+
+    for (int i = 0; i < Q ; ++i) {
         vector1D singleLine(N, 0);
+        collisionMatrix.push_back(singleLine);
+    }
+
+    #pragma omp parallel for collapse(2)
+    for (int q = 0; q <Q ; ++q) {
         for (int n = 0; n <N ; ++n){
             for (int hash_id = 0; hash_id < L; ++hash_id) {
                 if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
-                    singleLine[n]++;
+                    collisionMatrix[q][n]++;
             }
         }
-        collisionMatrix.push_back(singleLine);
     }
     return collisionMatrix;
 }
@@ -452,6 +470,7 @@ vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collision
         candidateSet.push_back(temp);
     }
 
+    #pragma omp parallel for
     for (int i = 0; i < Q; ++i) {
         vector1D candidates;
         for (int j = 0; j < N; ++j) {
