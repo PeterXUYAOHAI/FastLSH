@@ -55,7 +55,7 @@ protected:
  */
 TEST_F(MemcachedTest, noExistTest){
 
-    ASSERT_EQ(mlsh.saveHashNToMemc("localhost", 11211, 0), 1);
+    ASSERT_EQ(mlsh.saveHashNToMemcached("localhost", 11211, 0), 1);
 }
 
 /**
@@ -69,7 +69,7 @@ TEST_F(MemcachedTest, resultTest){
 
 
     t1 = now();
-    ASSERT_EQ(mlsh.saveHashNToMemc("localhost", 11211, 0), 0);
+    ASSERT_EQ(mlsh.saveHashNToMemcached("localhost", 11211, 0), 0);
     t2 = now();
 
     auto duration = dcast( t2 - t1 ).count();
@@ -77,7 +77,7 @@ TEST_F(MemcachedTest, resultTest){
     std::cout <<duration << " μs for saving to memcache\n";
 
     t1 = now();
-    mlsh.readHashNFromMemc("localhost", 11211, mlsh.runID);
+    mlsh.readHashNFromMemcached("localhost", 11211, mlsh.runID);
     t2 = now();
 
     duration = dcast( t2 - t1 ).count();

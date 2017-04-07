@@ -15,7 +15,7 @@
 
 
 //server--server address, port--port number, exp--exprition time(how long it gonna stay in memory (0 for forever)
-int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
+int LSH::saveHashNToMemcached(const char *server, in_port_t port, time_t exp){
 
     //check if hashMatrixAlreadyExist
     if (hashMatrixN.size()<=0){
@@ -64,7 +64,7 @@ int LSH::saveHashNToMemc(const char* server, in_port_t port, time_t exp){
 
 
 //srunId--the specific runId of the hashmatrix
-void LSH::readHashNFromMemc(const char* server, in_port_t port,std::string srunId){
+void LSH::readHashNFromMemcached(const char *server, in_port_t port, std::string srunId){
 
     // disabled for the gtest
 //    if (hashMatrixN.size()>0){

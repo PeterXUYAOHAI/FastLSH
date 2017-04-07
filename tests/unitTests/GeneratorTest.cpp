@@ -26,15 +26,9 @@ limitations under the License.
 #include <gtest/gtest.h>
 #include "../../include/LSH.h"
 
-
 //marco to clean the code
 #define now() std::chrono::high_resolution_clock::now()
 #define dcast std::chrono::duration_cast<std::chrono::microseconds>
-
-#include <gtest/gtest.h>
-#include "../../include/LSH.h"
-#include "../../include/otherClasses/Computer.h"
-
 
 class GeneratorTest:public ::testing::Test{
 

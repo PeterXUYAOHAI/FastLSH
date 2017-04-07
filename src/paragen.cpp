@@ -1,6 +1,28 @@
-//
-// Created by peter on 17-2-20.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    paragen.cpp
+    Purpose: This is a standalone program to generate parameter for LSH
+    PS: you might refer the report and the reference to understand the detail math behind
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
 
 
 #include <iostream>
@@ -9,8 +31,14 @@
 #include <math.h>
 #include <sstream>
 
+/**
+ * calculate ps Value
+ * @param t
+ * @param S
+ * @param W
+ * @return
+ */
 double psFunction(double t, double S, double W){
-
     //separate the function for clear representation
     double part1 = (1/S);
     double part2_1 = (2/(sqrt(2*M_PI)));
@@ -21,8 +49,13 @@ double psFunction(double t, double S, double W){
     return result;
 }
 
-
-
+/**
+ * Simulate Integral calculation
+ * @param numOfSlice the number of splits for simulate integral
+ * @param W
+ * @param S
+ * @return the integral result
+ */
 double pIntegralGenerator(int numOfSlice, double W, double S){
     double lenOfSlice;
     lenOfSlice = W/numOfSlice;
@@ -31,22 +64,40 @@ double pIntegralGenerator(int numOfSlice, double W, double S){
     for (int i = 0; i < numOfSlice; ++i) {
         integral += psFunction(lenOfSlice*(i+i+1)/2,S,W)*lenOfSlice;
     }
-
     return integral;
-
 }
 
+/**
+ * calculate Z value
+ * @param Theta
+ * @param Delta
+ * @return Z
+ */
 double getZ(double Theta,double Delta){
     double Z = sqrt(log(2/Theta)/log(1/Delta));
     return Z;
 }
 
-
+/**
+ * calculate Alpha value
+ * @param Z
+ * @param P1
+ * @param P2
+ * @return Alpha
+ */
 double getAlpha(double Z, double P1, double P2){
     double Alpha = (Z*P1+P2)/(1+Z);
     return Alpha;
 }
 
+/**
+ * calculate L value
+ * @param Delta
+ * @param P1
+ * @param P2
+ * @param Z
+ * @return L
+ */
 double getL(double Delta, double P1, double P2, double Z){
 
     double part1_up = log(1/Delta);
@@ -59,8 +110,6 @@ double getL(double Delta, double P1, double P2, double Z){
 
 
 int main (int argc, char **argv) {
-
-
 
     double W; //bucket width
     double R; //query range
@@ -78,8 +127,7 @@ int main (int argc, char **argv) {
     double P2;
     double Z;
 
-
-
+    //display funciton logo
     std::cout<<".______      ___      .______          ___      .___  ___.  _______ .___________. _______ .______      \n"
             "|   _  \\    /   \\     |   _  \\        /   \\     |   \\/   | |   ____||           ||   ____||   _  \\     \n"
             "|  |_)  |  /  ^  \\    |  |_)  |      /  ^  \\    |  \\  /  | |  |__   `---|  |----`|  |__   |  |_)  |    \n"
@@ -96,6 +144,7 @@ int main (int argc, char **argv) {
 
     std::cout<< "Please input the following parameters \n";
 
+    //read user input settings, if empty use default
     std::cout<< "bucket width(W) [default=1]: ";
     std::string input;
     std::getline(std::cin, input);
