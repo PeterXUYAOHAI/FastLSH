@@ -1,18 +1,43 @@
-//
-// Created by peter on 17-2-15.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    memcached.cpp
+    Purpose: This is the source file for memcached functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
+
+
+/**
+ * remember to start the server:
+ * >>memcached -p 11211 -m 64m -d
+ *
+ * check if server is on
+ * telnet 127.0.0.1 11211
+ */
+
+
 #include <libmemcached/memcached.h>
 #include <iostream>
 #include <sstream>
 #include "../../include/LSH.h"
-
-
-//remember to start the server:
-// >>memcached -p 11211 -m 64m -d
-
-// check if server is on
-// telnet 127.0.0.1 11211
-
 
 //server--server address, port--port number, exp--exprition time(how long it gonna stay in memory (0 for forever)
 int LSH::saveHashNToMemcached(const char *server, in_port_t port, time_t exp){
@@ -23,6 +48,7 @@ int LSH::saveHashNToMemcached(const char *server, in_port_t port, time_t exp){
         return 1;
     }
 
+    //connect to memcached
     memcached_server_st *servers = NULL;
     memcached_st *memc;
     memcached_return rc;
@@ -39,6 +65,7 @@ int LSH::saveHashNToMemcached(const char *server, in_port_t port, time_t exp){
     fprintf(stderr, "Start to pip file into memcache\n");
 
 
+    // construct the string for storage
     for (int i = 0; i < ph.N; ++i) {
         std::string keyString = (runID+"HaN"+std::to_string(i));
         std::string valueString = "";
@@ -66,15 +93,17 @@ int LSH::saveHashNToMemcached(const char *server, in_port_t port, time_t exp){
 //srunId--the specific runId of the hashmatrix
 void LSH::readHashNFromMemcached(const char *server, in_port_t port, std::string srunId){
 
-    // disabled for the gtest
-//    if (hashMatrixN.size()>0){
-//        fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
-//        char answ;
-//        std::cin>>answ;
-//        if(answ =='N')
-//            return ;
-//    }
-
+/*
+     disabled for the gtest
+    if (hashMatrixN.size()>0){
+        fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
+        char answ;
+        std::cin>>answ;
+        if(answ =='N')
+            return ;
+    }
+*/
+    //connect the memcached server
     memcached_server_st *servers = NULL;
     memcached_st *memc;
     memcached_return rc;
@@ -90,6 +119,7 @@ void LSH::readHashNFromMemcached(const char *server, in_port_t port, std::string
 
     vector2D data;
 
+    //read from memcached server, parse and reconstruct it into hashN vector
     for (int i = 0; i < ph.N; i++) {
         std::vector<double> temp(ph.L, 0);
         std::string keyString = (srunId+"HaN"+std::to_string(i));

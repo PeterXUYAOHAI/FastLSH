@@ -1,15 +1,37 @@
-//
-// Created by peter on 17-2-15.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    redis.cpp
+    Purpose: This is the source file for redis functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
+
+
 #include <libmemcached/memcached.h>
 #include <iostream>
 #include <sstream>
 #include "../../include/LSH.h"
 #include <hiredis/hiredis.h>
 
-
-
-//server--server address, port--port number, exp--exprition time(how long it gonna stay in memory (0 for forever)
+//server--server address, port--port number
 int LSH::saveHashNToRedis(const char* server, in_port_t port){
 
     //check if hashMatrixAlreadyExist
@@ -18,6 +40,7 @@ int LSH::saveHashNToRedis(const char* server, in_port_t port){
         return 1;
     }
 
+    //connect the redis server
     redisReply *reply;
     redisContext *c = redisConnect(server, port);
 
@@ -32,7 +55,7 @@ int LSH::saveHashNToRedis(const char* server, in_port_t port){
 
     fprintf(stderr, "Start to pip file into redis\n");
 
-
+    // construct the string for storage //
     for (int i = 0; i < ph.N; ++i) {
         std::string keyString = (runID+"HaN"+std::to_string(i));
         std::string valueString = "";
@@ -76,7 +99,7 @@ int LSH::readHashNFromRedis(const char* server, in_port_t port, std::string srun
 //            return ;
 //    }
 
-
+    //connect the redis server
     redisReply *reply;
     redisContext *c = redisConnect(server, port);
 
@@ -95,6 +118,7 @@ int LSH::readHashNFromRedis(const char* server, in_port_t port, std::string srun
 
     vector2D data;
 
+    //read from redis server, parse and reconstruct it into hashN vector
     for (int i = 0; i < ph.N; i++) {
         std::vector<double> temp(ph.L, 0);
         std::string keyStringCmd = "GET "+(srunId+"HaN"+std::to_string(i));

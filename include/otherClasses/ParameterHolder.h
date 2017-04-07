@@ -1,6 +1,28 @@
-//
-// Created by peter on 17-3-10.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    ParameterHolder.h
+    Purpose: This is the header file of ParameterHolder struct
+    ParameterHolder is response for holding the LSH parameters to let it pass around during runtime
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
 
 #ifndef FASTLSH_PARAMETERHOLDER_H
 #define FASTLSH_PARAMETERHOLDER_H
@@ -13,6 +35,9 @@ typedef std::vector<std::vector<std::vector<double>>> vector3D;
 typedef std::vector<std::vector<double>> vector2D;
 typedef std::vector<double> vector1D;
 
+/**
+ * holder of the parameters
+ */
 struct ParameterHolder{
     size_t N; //# of vectors in the dataset
     size_t Q; //# of vertors in the queryset
@@ -41,7 +66,6 @@ struct DataSetHolder{
     vector2D candidateSet; //Qx--, candidate set
 
 };
-
 
 
 

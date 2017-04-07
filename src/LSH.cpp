@@ -1,6 +1,27 @@
-//
-// Created by peter on 17-2-4.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    LSH.cpp
+    Purpose: This is the source file of LSH class
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
 #include "../include/LSH.h"
 #include <fstream>
 #include <iostream>
@@ -20,6 +41,8 @@ LSH::LSH(size_t N, size_t Q, size_t D, size_t L, size_t K, double W,  size_t T)
     ph.W = W;
     ph.Q = Q;
     ph.T = T;
+
+    // do the default setting
     computeMode = 0;
     threadMode = 0;
     ph.randomLine = generateRandomLine();
@@ -29,12 +52,6 @@ LSH::LSH(size_t N, size_t Q, size_t D, size_t L, size_t K, double W,  size_t T)
     theFileLoader = new LfsLoader();
     std::cout<<"This runId is "<<runID<<std::endl;
 }
-
-//LSH::~LSH() {
-////    delete theFileLoader;
-////    delete theGenerator;
-//}
-
 
 void LSH::loadSetN(const char* filePath, int fileSize){
     setN = theFileLoader->loadFile(filePath,ph.N,ph.D);
@@ -46,12 +63,12 @@ void LSH::loadSetQ(const char* filePath, int fileSize){
 
 
 void LSH::saveCandidateSet(const char *filePath){
+    //check if the filePath work
     std::ofstream out(filePath);
     if (! out.is_open())
     {
         std::cout << "error opening output file";
         exit (1);
-        // or whatever handling you want to do....
     }
 
     for (int i = 0; i < candidateSet.size(); ++i) {
@@ -99,7 +116,6 @@ vector1D LSH::generateUniformRandomVector(size_t number, double maxium){
     return UniformRandomVector;
 }
 
-//use timestamp as run id
 std::string LSH::generateRunId(){
     std::string runId = "";
     time_t t = time(0);
@@ -117,13 +133,18 @@ std::string LSH::generateRunId(){
 
 
 vector2D LSH::getCollisionMatrix() {
+
+    //if it is quick mode then refuse to generate, quick mode cannot generate collisionMatrix
     if(computeMode==1){
         std::cout<<"CollisionMatrix won't be generated in quick mode, Set to Normal Mode and Retry\n";
         return collisionMatrix;
     }
 
+    // if collisionMatrix hasn't been generated then compute the collisionMatrix
     if(collisionMatrix.size()==0) {
+        // if hashMatrixes haven't been generated then compute the hashMatrix
         if(hashMatrixN.size()==0||hashMatrixQ.size()==0) {
+            // normalize before do the computation
             setQ =normalize(setQ);
             setN =normalize(setN);
             hashMatrixN = theGenerator->generateHash(setN,ph.N);
@@ -139,15 +160,18 @@ vector2D LSH::getCandidateSet(){
     if(candidateSet.size()==0){
         //if hash matrix not calculated
         if(hashMatrixN.size()==0||hashMatrixQ.size()==0) {
+            // normalize before do the computation
             setQ =normalize(setQ);
             setN =normalize(setN);
             hashMatrixN = theGenerator->generateHash(setN,ph.N);
             hashMatrixQ = theGenerator->generateHash(setQ,ph.Q);
         }
+        // if it is normal mode, use normal mode workflow
         if(computeMode==0){
             collisionMatrix = theGenerator->generateCollision(hashMatrixN,hashMatrixQ);
             candidateSet = theGenerator->generateCandidate(collisionMatrix);
         }
+        // if it is quick mode, use quick mode workflow
         else if(computeMode==1){
             candidateSet = theGenerator->generateCandidate(hashMatrixN,hashMatrixQ);
         }
@@ -157,6 +181,7 @@ vector2D LSH::getCandidateSet(){
 
 
 void LSH::clearHashMatrix(){
+    //this is a trick to release vector memory
     vector2D temp1;
     vector2D temp2;
     hashMatrixQ.swap(temp1);
@@ -165,17 +190,20 @@ void LSH::clearHashMatrix(){
 
 
 void LSH::clearCollisionMatrix(){
+    // a trick to release vector memory
     vector2D temp;
     collisionMatrix.swap(temp);
 }
 
 void LSH::clearCandidateSet(){
+    // a trick to release vector memory
     vector2D temp;
     candidateSet.swap(temp);
 }
 
 bool LSH::setThreadMode(int multiMode){
     threadMode = multiMode;
+    // let generator recreate computer
     theGenerator->changeComputer(threadMode,computeMode);
     return true;
 }
@@ -184,7 +212,6 @@ bool LSH::setDefault(){
 //    useHdfs = false;
     delete theFileLoader;
     theFileLoader = new LfsLoader();
-
     threadMode = 0;
     computeMode = 0;
     return true;
@@ -238,8 +265,6 @@ void LSH::reportStatus() {
     printf("  --------------------------------\n");
     printf("  |%3s|%10i||%3s|%10i|\n", "Q", static_cast<int>(ph.Q), "T", static_cast<int>(ph.T));
     printf("  --------------------------------\n");
-
-
 
     std::cout<<"Variables Existence (Y/N): \n";
     std::cout<<"  RandomLine: ";

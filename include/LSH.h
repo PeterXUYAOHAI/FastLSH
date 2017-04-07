@@ -100,7 +100,7 @@ class LSH{
      * save hash N to memcached
      * @param server the memcached server IP
      * @param port the memcached port number
-     * @param exp expiration time
+     * @param exp how long it gonna stay in memory (0 for forever)
      * @return 0-not success 1-success
      */
     int saveHashNToMemcached(const char *server, unsigned short port, time_t exp);
@@ -243,13 +243,13 @@ private:
     vector2D normalize(vector2D dataset);
 
     /**
-     * This function generates the random projected lines
+     * This function generates the random projected lines, it uses normal distribution
      * @return the 3D vector of randomLine generated
      */
     vector3D generateRandomLine();
 
     /**
-     * This funciton generates k number of random vectors
+     * This funciton generates k number of random vectors, it uses uniform random generator
      * @param number number of randomNumber, usually = K
      * @param maxium the max value for the random generation
      * @return 1D vector of random numbers
@@ -258,7 +258,7 @@ private:
 
     /**
      * generate the RunId for this object, can be used for retrieving data from in-memory storage
-     * @return the string of the RunID
+     * @return the string of the RunID, it is derived from the runtime timestamp
      */
     std::string generateRunId();
 
