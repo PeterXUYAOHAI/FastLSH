@@ -7,7 +7,14 @@
 
 #include "../include/LSH.h"
 
+
+
 //this normalization is do normalize along the column on 2d dataset. the algorithm may have chance to be optimized
+/**
+ *
+ * @param dataset
+ * @return
+ */
 vector2D LSH::normalize(vector2D dataset){
     size_t row = dataset.size();
     size_t col = dataset[0].size();

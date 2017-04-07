@@ -1,50 +1,45 @@
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    driver.cpp
+    Purpose: This file is to main function file to call google test
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <sstream>
 #include <fstream>
-
-
 #include "../include/LSH.h"
 #include "helper.cpp"
-#include "hdfs.h"
 #include <gtest/gtest.h>
 #include <thread>
 #include <mutex>
-#include <chrono>
 
 #define now() std::chrono::high_resolution_clock::now()
 #define dcast std::chrono::duration_cast<std::chrono::microseconds>
 
 int main (int argc, char **argv){
-
-//    LSH mlsh = LSH(100000, 57, 200, 1, 1.2, 100, 100);
-//    std::chrono::high_resolution_clock::time_point t1;
-//    std::chrono::high_resolution_clock::time_point t2;
-//
-//    mlsh.loadSetN("/home/mpiuser/dataset100000NoIndex.csv",0);
-//    mlsh.loadSetQ("/home/mpiuser/dataset100NoIndex.csv", 0);
-//
-//    t1 = now();
-//    mlsh.getCandidateSet();
-//    t2 = now();
-//    auto duration = dcast( t2 - t1 ).count();
-//    std::cout <<duration << " μs to calculate normal mode\n";
-//
-//    mlsh.clearCandidateSet();
-//    mlsh.clearCollisionMatrix();
-//    mlsh.clearHashMatrix();
-//
-//    mlsh.setUseMultiThread(true);
-//    mlsh.setComputeMode(1);
-//
-//    t1 = now();
-//    mlsh.getCandidateSet();
-//    t2 = now();
-//
-//    duration = dcast( t2 - t1 ).count();
-//    std::cout <<duration << " μs to to calculate quick mode\n";
-
     //http://www.kammerl.de/ascii/AsciiSignature.php
+    //display logo
     std::cout<<" _______    ___           _______.___________. __          _______. __    __ \n"
             "|   ____|  /   \\         /       |           ||  |        /       ||  |  |  |\n"
             "|  |__    /  ^  \\       |   (----`---|  |----`|  |       |   (----`|  |__|  |\n"
@@ -53,18 +48,15 @@ int main (int argc, char **argv){
             "|__|   /__/     \\__\\ |_______/       |__|     |_______|_______/    |__|  |__|\n";
 
     std::cout<<"Would you like to run the test(Y/N)\n";
-
     std::string input;
     std::cin>>input;
 
-////    //TODO add fed query set style
-////    //TODO finish cmd line style
     if(input=="Y") {
         //run the registered tests
         ::testing::InitGoogleTest(&argc, argv);
-//        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
-//        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
         RUN_ALL_TESTS();
+        //        ::testing::GTEST_FLAG(filter) = "ComputerTest*";
+        //        ::testing::GTEST_FLAG(filter) = "GeneratorTest*";
     }
     else if(input!="N"){
         exit(0);
@@ -72,7 +64,10 @@ int main (int argc, char **argv){
     system("clear");
     std::cout<<"All test passed\n";
 
+
+    //FastLSH-ESS content, read config files and run the engine.
     args theArgs;
+    //read in files
     if(is_file_exist("./FastLSHargs")){
         std::cout<<"FastLSHargs FOUND, would you like use the parameters in the file? (Y/N)\n";
         std::cin>>input;
@@ -98,8 +93,8 @@ int main (int argc, char **argv){
 
     std::vector<std::string> argus=  argumentReader("./FastLSHargs");
 
+    //start basic LSH flow according to the input parameters
     LSH mlsh = LSH(theArgs.N, theArgs.Q, theArgs.D, theArgs.L, theArgs.K, theArgs.W, theArgs.T);
-//
     mlsh.setComputeMode(theArgs.computeMode);
     mlsh.setThreadMode(theArgs.threadMode);
     mlsh.setUseHdfs(theArgs.useHdfs);
@@ -131,6 +126,5 @@ int main (int argc, char **argv){
     mlsh.saveCandidateSet(theArgs.outputPath.c_str());
 
     std::cout<<"Done!\n";
-
 
 }

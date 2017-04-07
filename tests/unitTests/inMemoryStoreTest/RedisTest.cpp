@@ -1,6 +1,29 @@
-//
-// Created by peter on 17-2-15.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    RedisTest.cpp
+    Purpose: This file is the Google test tests the Redis functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
+
 #include <gtest/gtest.h>
 #include "../../../include/LSH.h"
 #include <chrono>
@@ -19,7 +42,6 @@ protected:
         mlsh.loadSetQ("../tests/dataset/dataset1000NoIndex.csv", 0);
     }
     LSH mlsh;
-
     // prepare timer
     std::chrono::high_resolution_clock::time_point t1;
     std::chrono::high_resolution_clock::time_point t2;
@@ -27,12 +49,17 @@ protected:
 
 };
 
+/**
+ * check if system give right response when the memcached program is not exist
+ */
 TEST_F(RedisTest, noExistTest){
 
     ASSERT_EQ(mlsh.saveHashNToRedis("127.0.0.1", 6379), 1);
 }
 
-
+/**
+ * check if the data from Redis is in consistant with the origin data
+ */
 TEST_F(RedisTest, resultTest){
 
     mlsh.getCandidateSet();

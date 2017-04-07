@@ -1,6 +1,28 @@
-//
-// Created by peter on 17-2-8.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    StdthreadTest.cpp
+    Purpose: This file is the Google test tests the stdthread functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
 
 #include <gtest/gtest.h>
 #include "../../../include/LSH.h"
@@ -28,7 +50,9 @@ protected:
 
 };
 
-
+/**
+ * check if the stdthread result is the same as singleThread mode
+ */
 TEST_F(stdthreadTest, resultTest){
     vector2D singleThreadResult;
     vector2D stdthreadResult;
@@ -62,6 +86,9 @@ TEST_F(stdthreadTest, resultTest){
 
 }
 
+/**
+ * check the stdthread version of Normal Mode result is same as singleThread
+ */
 TEST_F(stdthreadTest, candidateSetNormalModeTest){
 
     vector2D candidateSetSingleThread;
@@ -86,7 +113,9 @@ TEST_F(stdthreadTest, candidateSetNormalModeTest){
 
 }
 
-
+/**
+ * check the stdthread version of Quick Mode result is same as singleThread
+ */
 TEST_F(stdthreadTest, candidateSetQuickModeTest){
 
     vector2D candidateSetSingleThread;

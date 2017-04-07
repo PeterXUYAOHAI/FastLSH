@@ -1,6 +1,28 @@
-//
-// Created by peter on 17-3-13.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    helper.cpp
+    Purpose: This file is to the helper functions for FastLSH-ESS
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
 
 #include <cstdio>
 #include <string>
@@ -10,6 +32,9 @@
 #include <sstream>
 
 
+/**
+ *  This struct holds the user input parameters
+ */
 struct args{
     size_t N; //# of vectors in the dataset
     size_t Q; //# of vertors in the queryset
@@ -18,21 +43,29 @@ struct args{
     size_t K; //# the number of hash functions in each group hash
     double W; //bucket width
     size_t T; // threshold
-    int computeMode;
-    int threadMode;
-    bool useHdfs;
-    std::string inputPathN;
-    std::string inputPathQ;
-    std::string outputPath;
+    int computeMode; //default 0-normal((g-collisionmatrix-> candidate)need more memory)   1-quickMode(need less memory, the collision matrix won't be generated
+    int threadMode; //default 0-singleThread 1-openMP, 2-stdthread 3-pthread
+    bool useHdfs; // 0- not use, 1-use
+    std::string inputPathN; // input path of N set
+    std::string inputPathQ; // input path of Q set
+    std::string outputPath; // output path of candidate set
 
 };
 
+/**
+ * Read config file and return a list of parameter settings
+ *
+ * @param filePath
+ * @return the struct args that holds all the parameters
+ */
 static std::vector<std::string> argumentReader(char* filePath){
     std::ifstream file;
     file.open(filePath);
     std::string line;
     std::vector<std::string> argus(20);
     int arguCount = 0;
+
+    //skip the comment--start with "#" lines
     while(std::getline(file, line)){
         if (line[0] != '#' && !line.empty()){
             argus[arguCount] = line;
@@ -40,13 +73,14 @@ static std::vector<std::string> argumentReader(char* filePath){
         }
     }
 
-//    for (int i = 0; i < 13; ++i) {
-//        std::cout<<argus[i]<<"\n";
-//    }
-
     return argus;
 }
 
+/**
+ * Parse the string of configs into args struct
+ * @param argus the list of config lines
+ * @return sturct args which holds all the arguments from config file
+ */
 static args arguParser(std::vector<std::string> argus){
     args theArgs;
     theArgs.N =(size_t)std::stoi(argus[0]);
@@ -69,6 +103,10 @@ static args arguParser(std::vector<std::string> argus){
     return theArgs;
 };
 
+/**
+ * Interactive function to read the parameters from user input from console
+ * @return struct args that holds the parameters
+ */
 static args readArguFromConsole(){
     args theArgs;
     std::string input;
@@ -212,7 +250,11 @@ static args readArguFromConsole(){
     return theArgs;
 }
 
-
+/**
+ * check if file exist in the file path
+ * @param fileName
+ * @return true- exist false - not exist
+ */
 static bool is_file_exist(const char *fileName)
 {
     std::ifstream infile(fileName);
