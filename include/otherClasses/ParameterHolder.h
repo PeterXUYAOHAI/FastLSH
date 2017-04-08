@@ -40,7 +40,7 @@ typedef std::vector<double> vector1D;
  */
 struct ParameterHolder{
     size_t N; //# of vectors in the dataset
-    size_t Q; //# of vertors in the queryset
+    size_t Q; //# of vectors in the queryset
     size_t D; //# of dimensions
     size_t L; //# of group hash
     size_t K; //# the number of hash functions in each group hash

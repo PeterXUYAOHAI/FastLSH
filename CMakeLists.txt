@@ -26,7 +26,6 @@ if (JNI_FOUND)
     message (STATUS "JNI_LIBRARIES=${JNI_LIBRARIES}")
 endif()
 
-
 if(JAVA_INCLUDE_PATH)
 
     find_path( HDFS_INCLUDE_PATH NAMES hdfs.h PATHS /usr/local/hadoop/include )
@@ -59,12 +58,6 @@ if (MPI_FOUND)
 else (MPI_FOUND)
     message(SEND_ERROR "This application cannot compile without MPI")
 endif (MPI_FOUND)
-
-#message(${HDFS_LIBRARIES})
-#
-#message($ENV{CLASSPATH})
-#
-#message($ENV{test})
 
 include_directories( ${HDFS_INCLUDE_DIRS} )
 

@@ -1,6 +1,48 @@
-//
-// Created by peter on 17-2-17.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    boostmpiCompute.cpp
+    Purpose: This is the source file for FastLSH-MPI
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
+/**
+ * Execution command
+ * mpiexec -np 4 -host prj67,prj68,prj69,prj70 -mca btl ^openib ./boostmpiLSH
+
+ * boost install command
+ * sudo apt-get install libboost-all-dev
+ * example cmd to run--
+ * mpirun -np 10 --hosts slave1 ./boostmpiCompute
+
+ * compliaiton cmd
+ * mpic++ -std=c++11 -L/usr/lib -I/usr/include/boost/mpi -lboost_filesystem -lboost_system -lboost_mpi boostmpiCompute.cpp
+
+ * send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
+ * might drag down the speed.
+ * this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
+
+ * mpiexec -np 2 -host --allow-run-as-root -mca btl ^openib ./boostmpiLSH
+ * mpiexec -np 8 --allow-run-as-root -host -mca btl ^openib ./boostmpiLSH
+ */
+
 
 #include <iostream>
 #include <vector>
@@ -16,80 +58,139 @@ typedef std::vector<std::vector<std::vector<double> > > vector3D;
 typedef std::vector<std::vector<double> > vector2D;
 typedef std::vector<double> vector1D;
 
-
-//  sudo apt-get install libboost-all-dev
-// example cmd to run-- mpirun -np 10 --hosts slave1 ./boostmpiCompute
-
-//mpic++ -std=c++11 -L/usr/lib -I/usr/include/boost/mpi -lboost_filesystem -lboost_system -lboost_mpi boostmpiCompute.cpp
-
-
-
-/*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
- might drag down the speed.
-
- this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
- ***/
-
-/*** send multi dimensional vector needs serialization, I will flaten the multidimwnsional vector and send them first, it
- might drag down the speed.
- this program stop at when the collision table finishs calculation on each process, but not gather in the mater node.
- ***/
-
-//mpiexec -np 2 -host --allow-run-as-root -mca btl ^openib ./boostmpiLSH
-//mpiexec -np 8 --allow-run-as-root -host -mca btl ^openib ./boostmpiLSH
-//mpiexec -np 4 -mca btl ^openib ./boostmpiLSH
-
 #define now() std::chrono::high_resolution_clock::now()
 #define dcast std::chrono::duration_cast<std::chrono::microseconds>
 
-
+/**
+ * load file from Linux File System
+ * @param filePath
+ * @param row number of rows
+ * @param col number of columns
+ * @return 2D vector<double> dataset from csv
+ */
 vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col);
 
+/**
+ * flat a 2D vector into 1D vector
+ * @param origVec the original 2D vector
+ * @return 1D vector<double> of flatted vector
+ */
 vector1D flat2D(vector2D origVec);
 
-vector1D flat2DCandidate(vector2D origCandida);
+/**
+ * flat a 2D vector of candidate set (different length of each row)
+ * @param origCandidate original candidate set
+ * @return 1D vector<double> of flatted vector
+ */
+vector1D flat2DCandidate(vector2D origCandidate);
 
+/**
+ * flat a 3D vector into 1D vector
+ * @param origVec original 3D vector
+ * @return 1D vector of the flatten vector
+ */
 vector1D flat3D(vector3D origVec);
 
+/**
+ * reconstruct 1D vector to 2D vector
+ * @param origVec the 1D VECTOR
+ * @param d1 the length of first dimension
+ * @param d2 the length of second dimension
+ * @return 2D vector<double> of recontructed 2D vector
+ */
 vector2D reconstr2D(vector1D origVec, int d1, int d2);
 
+/**
+ * reconstruct 2D vector of candidate set (different length of each row)
+ * @param candidateRecv the 1D vector
+ * @param lineNum the number of lines
+ * @return 2D reconstructed vector<double>
+ */
 vector2D reconstr2DCandidate(vector1D candidateRecv, int lineNum);
 
+/**
+ * reconstruct 3D vector
+ * @param origVec the 3D vector
+ * @param d1 number of index of first dimension
+ * @param d2 number of index of second dimension
+ * @param d3 number of index of third dimension
+ * @return 3D vector<double>
+ */
 vector3D reconstr3D(vector1D origVec, int d1, int d2, int d3);
 
+/**
+ * compute the hash value
+ * @param dataset the original dataset
+ * @param randomLine random Lines generated
+ * @param randomVector random numbers generated
+ * @param pNum number of points
+ * @param L # of group hash
+ * @param K # the number of hash functions in each group hash
+ * @param D # of dimensions
+ * @param W bucket width
+ * @return the 2D vector hash value
+ */
 vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVector, size_t pNum, size_t L, size_t K,
                      size_t D, size_t W);
 
+/**
+ * compute the collision matrix
+ * @param hMatrixN 2D hash matrix N
+ * @param hMatrixQ 2D hash matrix Q
+ * @param Q # of vectors in the queryset
+ * @param N # of vectors in the dataset
+ * @param L # of group hash
+ * @return 2D vector collision table
+ */
 vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t N, size_t L);
 
+/**
+ * max-min normalization
+ * @param dataset original dataset
+ * @return 2D vector of normalized dataset
+ */
 vector2D normalize(vector2D dataset);
 
+/**
+ * compute the candidate set in normal style
+ * @param Q # of vectors in the queryset
+ * @param N # of vectors in the dataset
+ * @param T threshold
+ * @param collisionMatrix the collision matrixes
+ * @return 2D vector<double> of candidate set
+ */
 vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collisionMatrix);
 
 int main (int argc, char **argv) {
 
+    //prepare timer
     std::chrono::high_resolution_clock::time_point t1;
     std::chrono::high_resolution_clock::time_point t2;
     std::chrono::high_resolution_clock::time_point t3;
     std::chrono::high_resolution_clock::time_point t4;
 
+    //start first timing
     t1 = now();
- 
- 
+
     // initialize the mpi environment
     mpi::environment env;
     mpi::communicator world;
 
-    std::cout<<"My name is "<<env.processor_name()<<" processor id "<<world.rank()<<"\n";
-    //hardcode the paremeters
-    size_t N = 1000; //# of vectors in the dataset
-    size_t Q = 1000; //# of vertors in the queryset
+    //print identity to the screen
+    std::cout<<"My name is "<<env.processor_name()<<" Processor id "<<world.rank()<<"\n";
+
+    //parameter sets
+    size_t N = 1000000; //# of vectors in the dataset
+    size_t Q = 100; //# of vertors in the queryset
     size_t D = 57; //# of dimensions
     size_t L = 200; //# of group hash
     size_t K = 1; //# the number of hash functions in each group hash
     double W = 1.2; //bucket width
-    size_t  T = 100;
+    size_t  T = 100; // threshold
     int root_process = 0;
+    char * inputPathSetN = "/home/mpiuser/cloud/dataset4259934NoIndex.csv" ;
+    char * inputPathSetQ = "/home/mpiuser/cloud/dataset100NoIndex.csv";
+    char * outputPath;
 
     //1d structure for communication between process
     vector1D setQ1d;
@@ -103,7 +204,7 @@ int main (int argc, char **argv) {
     vector2D setQNorm;
     vector2D hashValueQ;
 
-    //the part of N for each thread
+    //the splited part of N for each thread
     vector2D partialSetN;
     vector2D partialHashValueN;
     vector2D partialCollisionTable;
@@ -113,7 +214,7 @@ int main (int argc, char **argv) {
     int numNperSlave;
     numNperSlave = ceil(N/(double)world.size());
 
-std::cout<<"start to cal random \n";
+    std::cout<<"start to calculate random \n";
     //the master node do the preparation
     if(world.rank() == root_process) {
         //generate random line
@@ -141,7 +242,7 @@ std::cout<<"start to cal random \n";
         }
 
         //read in setQ
-        setQ = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", Q, D);
+        setQ = loadDataFromLinuxSystem(inputPathSetQ, Q, D);
 
         setQNorm = normalize(setQ);
         //flatten setQ for transmission
@@ -156,7 +257,7 @@ std::cout<<"start to cal random \n";
     broadcast(world, UniformRandomVector, 0);
 
 
-    //let slaves reconstruct the multi dimensional vector
+    //let slaves reconstruct the multi-dimensional vector
     if(world.rank()!=root_process) {
         randomLine = reconstr3D(randomLine1d, L, K, D);
         setQNorm = reconstr2D(setQ1d,Q,D);
@@ -166,9 +267,13 @@ std::cout<<"start to cal random \n";
     if (world.rank()==root_process){
         vector2D setN;
         vector2D setNNorm;
-        setN = loadDataFromLinuxSystem("../tests/dataset/dataset1000NoIndex.csv", N, D);
+        setN = loadDataFromLinuxSystem(inputPathSetN, N, D);
         setNNorm = normalize(setN);
-        //deal with send part of N
+        {
+            vector2D temp;
+            setN.swap(temp);
+        }
+        //deal with sending splited parts of N
         {
 
             //the last part of N will be done by master node(it contains least num of N)
@@ -183,7 +288,7 @@ std::cout<<"start to cal random \n";
                     world.send(i + 1, 0, vecToSend);
                 }
 
-                    // master node get last part of the job
+                    // master node get last part of the job (usually less than other parts
                 else{
                     vector2D::const_iterator first = setNNorm.begin() +  numNperSlave * i;
                     vector2D::const_iterator last = setNNorm.begin() + N;
@@ -191,20 +296,25 @@ std::cout<<"start to cal random \n";
                     partialSetN = newVec;
                 }
             }
-        }
+            {
+                vector2D temp;
+                setNNorm.swap(temp);
+            }       }
+
+        t4=now();
+        auto duration2 = dcast( t4 - t3 ).count();
+        std::cout <<duration2 << " μ send out N set\n";
     }
-t4=now();
-auto duration2 = dcast( t4 - t3 ).count();
-std::cout <<duration2 << " μ send out N set\n";
-    //slave nodes receive N
+        //slave nodes receive N
     else{
         world.recv(0, 0, partialSetN1d);
         partialSetN = reconstr2D(partialSetN1d, numNperSlave, D);
     }
 
 
-    // calculate the hash and collision (separate master and slave operation because their num of N might be different
+    // calculate the hash and collision (separate master and slave operation because their num of N might be different)
     if(world.rank()==root_process){
+        // FastLSH execution flow
         vector2D gatheredCandidateSet;
         hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector,
@@ -227,6 +337,7 @@ std::cout <<duration2 << " μ send out N set\n";
     }
 
     else{
+        // FastLSH execution flow
         hashValueQ = computeHash(setQNorm, randomLine, UniformRandomVector, Q, L, K, D ,W );
         partialHashValueN = computeHash(partialSetN, randomLine, UniformRandomVector, numNperSlave, L, K, D, W);
         partialCollisionTable = computeCollision(partialHashValueN,hashValueQ,Q,numNperSlave,L);
@@ -237,13 +348,13 @@ std::cout <<duration2 << " μ send out N set\n";
     }
 
     //leave them for testing
-    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][0]<<"\n";
-    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
-    std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
- 
+//    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][0]<<"\n";
+//    std::cout<<"v1Process # " << world.rank() <<" "<<partialCollisionTable[0][4]<<"\n";
+//    std::cout<<"v2Process # " << world.rank() <<" "<<partialCollisionTable[0][5]<<"\n";
+
     t2 = now();
     auto duration = dcast( t2 - t1 ).count();
-    std::cout <<"processor "<<world.rank()<< " "<<duration << " μsto Computer\n";
+    std::cout <<"processor "<<world.rank()<< " uses "<<duration << " μs to compute\n";
 
 
     // use this to pause in IDE
@@ -263,6 +374,7 @@ vector2D loadDataFromLinuxSystem(char* filePath, size_t row, size_t col) {
     }
     std::string value;
     std::string num;
+    //parse csv file
     for (int i = 0; i<row; i++) {
         for (int j = 0; j<col; j++) {
             if (j!=col-1)
@@ -289,12 +401,12 @@ vector1D flat2D(vector2D origVec){
     return result;
 }
 
-vector1D flat2DCandidate(vector2D origCandida){
+vector1D flat2DCandidate(vector2D origCandidate){
     vector1D result;
-    for (int i = 0; i < origCandida.size(); ++i) {
+    for (int i = 0; i < origCandidate.size(); ++i) {
 
-        for (int j = 0; j < origCandida[0].size(); ++j) {
-            result.push_back(origCandida[i][j]);
+        for (int j = 0; j < origCandidate[0].size(); ++j) {
+            result.push_back(origCandidate[i][j]);
         }
         //-1 as flag to indicate new line
         result.push_back(-1);
@@ -372,10 +484,15 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
                      size_t D, size_t W){
     vector2D hashMatrix;
 
+    for (int i = 0; i < pNum; ++i) {
+        vector1D vL(L,0);
+        hashMatrix.push_back(vL);
+    }
+
     //loop through # of data point
+#pragma omp parallel for collapse(2)
     for (int n = 0; n < pNum; ++n) {
         //loop through # of hash function group
-        vector1D vL;
         for (int l = 0; l < L; ++l) {
             double hashFinalValue = 0;
             //loop through the inner of a hash function group
@@ -391,9 +508,9 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
                 //merge hash group results **see documentation
                 hashFinalValue = hashvalue*randomVector[k] + hashFinalValue;
             }
-            vL.push_back(hashFinalValue);
+            hashMatrix[n][l]=hashFinalValue;
         }
-        hashMatrix.push_back(vL);
+
     }
     return hashMatrix;
 }
@@ -401,15 +518,20 @@ vector2D computeHash(vector2D dataset, vector3D randomLine, vector1D randomVecto
 
 vector2D computeCollision(vector2D hMatrixN, vector2D hMatrixQ, size_t Q, size_t N, size_t L){
     vector2D collisionMatrix;
-    for (int q = 0; q <Q ; ++q) {
+
+    for (int i = 0; i < Q ; ++i) {
         vector1D singleLine(N, 0);
+        collisionMatrix.push_back(singleLine);
+    }
+
+#pragma omp parallel for collapse(2)
+    for (int q = 0; q <Q ; ++q) {
         for (int n = 0; n <N ; ++n){
             for (int hash_id = 0; hash_id < L; ++hash_id) {
                 if (hMatrixN[n][hash_id] == hMatrixQ[q][hash_id])
-                    singleLine[n]++;
+                    collisionMatrix[q][n]++;
             }
         }
-        collisionMatrix.push_back(singleLine);
     }
     return collisionMatrix;
 }
@@ -452,6 +574,7 @@ vector2D computeCandidateNormal(size_t Q, size_t N, size_t T, vector2D collision
         candidateSet.push_back(temp);
     }
 
+#pragma omp parallel for
     for (int i = 0; i < Q; ++i) {
         vector1D candidates;
         for (int j = 0; j < N; ++j) {

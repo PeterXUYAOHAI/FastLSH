@@ -133,6 +133,11 @@ std::string LSH::generateRunId(){
 
 
 vector2D LSH::getCollisionMatrix() {
+    //check if user have upload dataset
+    if(setN.size()==0||setQ.size()==0){
+        std::cout<<"you haven't upload setN or setQ\n";
+        return collisionMatrix;
+    }
 
     //if it is quick mode then refuse to generate, quick mode cannot generate collisionMatrix
     if(computeMode==1){
@@ -156,6 +161,11 @@ vector2D LSH::getCollisionMatrix() {
 }
 
 vector2D LSH::getCandidateSet(){
+    //check if user have upload dataset
+    if(setN.size()==0||setQ.size()==0){
+        std::cout<<"you haven't upload setN or setQ\n";
+        return collisionMatrix;
+    }
     //use size to check if candidateSet exists, if not generate it
     if(candidateSet.size()==0){
         //if hash matrix not calculated
