@@ -1,25 +1,51 @@
+/***
+  Copyright 2017 Yaohai XU
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  ***/
+
+/**
+    FastLSH
+    FastLSH.scala
+    Purpose: Scala file(Spark) for FastLSH
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+  */
+
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 import java.io._
 
 /**
-  * Created by peter on 17-3-1.
+  * FastLSH object
   */
 object FastLSH {
 
   def main(args: Array[String]) {
+    // load log and initiate spark instance
     val logFile = "/usr/lib/spark/README.md" // Should be some file on your system
     val conf = new SparkConf().setAppName("FastLSH").setMaster("local[*]")
     val sc = new SparkContext(conf)
 
     // parameter sets
-    val D = 57
-    val L = 200
-    val K = 1
-    val N = 1000
-    val Q = 1000
-    val W = 1.2
-    val T = 100
+    val D = 57 //# of dimensions
+    val L = 200 //# of group hash
+    val K = 1 //# the number of hash functions in each group hash
+    val N = 1000 //# of vectors in the dataset
+    val Q = 1000 //# of vertors in the queryset
+    val W = 1.2 //bucket width
+    val T = 100 // threshold
     val setQPath = "/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv"
     val setNPath = "/home/peter/FYP/FastLSH/tests/dataset/dataset1000NoIndex.csv"
     val outputPath = "./result"
@@ -53,7 +79,7 @@ object FastLSH {
     datasetN.cache()
     datasetQ.cache()
 
-    //prepare for normalization
+    //normalization the dataset
     var maxn = (0 until D).map(d=>datasetN.map(_(d)).max())
     var maxq = (0 until D).map(d=>datasetQ.map(_(d)).max())
     var minn = (0 until D).map(d=>datasetN.map(_(d)).min())
@@ -110,7 +136,7 @@ object FastLSH {
 
     val text = result.map(_.mkString(",")).mkString("\n")
 
-
+    // write to outputpath
     val file = new File(outputPath)
     val bw = new BufferedWriter(new FileWriter(file))
     bw.write(text)
