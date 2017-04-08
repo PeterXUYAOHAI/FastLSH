@@ -1,3 +1,29 @@
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    SingeThreadComputer.cpp
+    Purpose: This is the source file for singeThread computing functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
+
 #include <cmath>
 #include <thread>
 #include <algorithm>
@@ -6,7 +32,6 @@
 
 vector2D ComputerSingleThread::computeHash(vector2D dataset, size_t pNum){
     vector2D hashMatrix;
-
 
     //loop through # of data point
     for (int n = 0; n < pNum; ++n) {
@@ -20,7 +45,6 @@ vector2D ComputerSingleThread::computeHash(vector2D dataset, size_t pNum){
                 double dTemp = 0;
                 //loop through all the dimensions
                 for (int d = 0; d < ph.D; ++d) {
-//                    std::cout<<ph->K<<"\n";
                     //vector(math) multiply to make projection
                     dTemp += (ph.randomLine)[l][k][d]*dataset[n][d];
 
@@ -37,19 +61,6 @@ vector2D ComputerSingleThread::computeHash(vector2D dataset, size_t pNum){
     }
     return hashMatrix;
 }
-
-
-void ComputerSingleThread::printThreadMode(){
-    std::cout<< "SingleThread";
-}
-void ComputerSingleThreadNormal::printComputeMode(){
-    std::cout<< "Normal";
-}
-void ComputerSingleThreadQuick::printComputeMode(){
-    std::cout<< "Quick";
-}
-
-
 
 vector2D ComputerSingleThreadNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
     vector2D collisionMatrix;
@@ -70,6 +81,7 @@ vector2D ComputerSingleThreadNormal::computeCollision(vector2D hMatrixN, vector2
 
 
 vector2D ComputerSingleThreadNormal::computeCandidate(vector2D collisionMatrix){
+    //pre allocate memory
     vector2D candidateSet;
     for (int i = 0; i < ph.Q; ++i) {
         vector1D temp(0,0);
@@ -113,6 +125,16 @@ vector2D ComputerSingleThreadQuick::computeCandidate(vector2D hMatrixN, vector2D
         }
         candidateSet[q] = singleRow;
     }
-
     return candidateSet;
+}
+
+
+void ComputerSingleThread::printThreadMode(){
+    std::cout<< "SingleThread";
+}
+void ComputerSingleThreadNormal::printComputeMode(){
+    std::cout<< "Normal";
+}
+void ComputerSingleThreadQuick::printComputeMode(){
+    std::cout<< "Quick";
 }

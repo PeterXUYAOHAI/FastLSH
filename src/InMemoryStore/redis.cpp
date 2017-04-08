@@ -55,7 +55,7 @@ int LSH::saveHashNToRedis(const char* server, in_port_t port){
 
     fprintf(stderr, "Start to pip file into redis\n");
 
-    // construct the string for storage //
+    // construct the string for storage
     for (int i = 0; i < ph.N; ++i) {
         std::string keyString = (runID+"HaN"+std::to_string(i));
         std::string valueString = "";
@@ -90,15 +90,15 @@ int LSH::saveHashNToRedis(const char* server, in_port_t port){
 //srunId--the specific runId of the hashmatrix
 int LSH::readHashNFromRedis(const char* server, in_port_t port, std::string srunId){
 
-    // disabled for the gtest
-//    if (hashMatrixN.size()>0){
-//        fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
-//        char answ;
-//        std::cin>>answ;
-//        if(answ =='N')
-//            return ;
-//    }
-
+/* disabled for the gtest
+    if (hashMatrixN.size()>0){
+        fprintf(stderr, "Are you sure to overwrite exist HashMatrixN?(Y/N)\n");
+        char answ;
+        std::cin>>answ;
+        if(answ =='N')
+            return ;
+    }
+*/
     //connect the redis server
     redisReply *reply;
     redisContext *c = redisConnect(server, port);

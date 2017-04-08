@@ -68,7 +68,7 @@ private:
     virtual void loadToSS(const char* filePath)=0;
 
     /**
-     * convert file to 2D vector
+     * convert stringstream to 2D vector
      * @param row number of rows
      * @param col number of columns
      * @return 2D vector<double> of the dataset
@@ -100,7 +100,7 @@ private:
  */
 class HdfsLoader: public FileLoader {
     /**
-     * print the loadModer - HDFS
+     * print the loadMode - HDFS
      */
     virtual void printLoadMode();
 private:

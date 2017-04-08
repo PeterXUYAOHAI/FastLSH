@@ -1,6 +1,28 @@
-//
-// Created by peter on 17-3-10.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    StdThreadComputer.cpp
+    Purpose: This is the source file for StdThread computing functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
 
 #include <cmath>
 #include <thread>
@@ -10,19 +32,19 @@
 
 vector2D ComputerStdThread::computeHash(vector2D dataset, size_t pointNum){
     vector2D hashMatrix;
-
+    //pre-allocate memory space
     for (int i = 0; i < pointNum; ++i) {
         vector1D vL(ph.L,0);
         hashMatrix.push_back(vL);
     }
 
-    // it is a implementation of nested loop to stdthread
+    // a implementation of nested loop to stdthread
     const size_t nthreads = std::thread::hardware_concurrency();
     const size_t outloop = pointNum;
     const size_t inloop = ph.L;
     const size_t nloop = outloop*inloop;
 
-
+    // vector of threads
     std::vector<std::thread> threads(nthreads);
     for(int t = 0;t<nthreads;t++)
     {
@@ -55,6 +77,7 @@ vector2D ComputerStdThread::computeHash(vector2D dataset, size_t pointNum){
 
                         }
                     }
+                    //allocate different index to threads
                 },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
     }
 
@@ -65,24 +88,16 @@ vector2D ComputerStdThread::computeHash(vector2D dataset, size_t pointNum){
 }
 
 
-void ComputerStdThread::printThreadMode(){
-    std::cout<< "Pthread";
-}
-void ComputerStdThreadNormal::printComputeMode(){
-    std::cout<< "Normal";
-}
-void ComputerStdThreadQuick::printComputeMode(){
-    std::cout<< "Quick";
-}
-
 
 vector2D ComputerStdThreadNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
+    //pre-allocate memory space
     vector2D collisionMatrix;
     for (int i = 0; i < ph.Q ; ++i) {
         vector1D singleLine(ph.N, 0);
         collisionMatrix.push_back(singleLine);
     }
 
+    // a implementation of nested loop to stdthread
     const size_t nthreads = std::thread::hardware_concurrency();
     const size_t outloop = ph.Q;
     const size_t inloop = ph.N;
@@ -98,7 +113,6 @@ vector2D ComputerStdThreadNormal::computeCollision(vector2D hMatrixN, vector2D h
                     {
                         // inner loop
                         {
-                            // (optional) make output critical
                             int q = i/inloop;
                             int n = i%inloop;
                             for (int hash_id = 0; hash_id < ph.L; ++hash_id) {
@@ -110,8 +124,10 @@ vector2D ComputerStdThreadNormal::computeCollision(vector2D hMatrixN, vector2D h
 
                         }
                     }
+                    //allocate different index to threads
                 },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
     }
+    //lambda to start threads
     std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
     return collisionMatrix;
 }
@@ -119,13 +135,14 @@ vector2D ComputerStdThreadNormal::computeCollision(vector2D hMatrixN, vector2D h
 
 
 vector2D ComputerStdThreadNormal::computeCandidate(vector2D collisionMatrix){
-
+    //pre-allocate memory space
     vector2D candidateSet;
     for (int i = 0; i < ph.Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
     }
 
+    // a implementation of nested loop to stdthread
     const size_t nthreads = std::thread::hardware_concurrency();
     const size_t nloop = ph.Q;
     std::vector<std::thread> threads(nthreads);
@@ -145,9 +162,10 @@ vector2D ComputerStdThreadNormal::computeCandidate(vector2D collisionMatrix){
                         }
                         candidateSet[i] = candidates;
                     }
+                    //allocate different index to threads
                 },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
     }
-
+    //lambda to start threads
     std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
     return candidateSet;
 }
@@ -164,6 +182,7 @@ vector2D ComputerStdThreadQuick::computeCandidate(vector2D hMatrixN, vector2D hM
         candidateSet.push_back(temp);
     }
 
+    // a implementation of nested loop to stdthread
     const size_t nthreads = std::thread::hardware_concurrency();
     const size_t nloop = ph.Q;
     std::vector<std::thread> threads(nthreads);
@@ -191,12 +210,23 @@ vector2D ComputerStdThreadQuick::computeCandidate(vector2D hMatrixN, vector2D hM
                         }
                         candidateSet[i] = singleRow;
                     }
+                    //allocate different index to threads
                 },t*nloop/nthreads,(t+1)==nthreads?nloop:(t+1)*nloop/nthreads,t));
     }
-
+    //lambda to start threads
     std::for_each(threads.begin(),threads.end(),[](std::thread& x){x.join();});
     return candidateSet;
 }
 
+
+void ComputerStdThread::printThreadMode(){
+    std::cout<< "Pthread";
+}
+void ComputerStdThreadNormal::printComputeMode(){
+    std::cout<< "Normal";
+}
+void ComputerStdThreadQuick::printComputeMode(){
+    std::cout<< "Quick";
+}
 
 

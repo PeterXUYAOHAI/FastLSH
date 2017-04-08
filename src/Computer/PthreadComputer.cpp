@@ -1,11 +1,34 @@
-//
-// Created by peter on 17-3-10.
-//
+/***
+Copyright 2017 Yaohai XU
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+***/
+
+/**
+    FastLSH
+    PthreadComputer.cpp
+    Purpose: This is the source file for pthread computing functions
+
+    @author Peter Yaohai XU
+    @version 1.0 4/07/17
+*/
+
 #include <pthread.h>
 #include <random>
 #include <iostream>
 #include <algorithm>
 
+//assign different libraries when in different system
 #ifdef _WIN32
 #include <windows.h>
 #elif MACOS
@@ -22,7 +45,10 @@ typedef std::vector<std::vector<std::vector<double>>> vector3D;
 typedef std::vector<std::vector<double>> vector2D;
 typedef std::vector<double> vector1D;
 
-
+/**
+ * get the number of cores in the system
+ * @return
+ */
 int getNumOfCoresN() {
 #ifdef WIN32
     SYSTEM_INFO sysinfo;
@@ -47,30 +73,38 @@ int getNumOfCoresN() {
 #endif
 }
 
-
+/**
+ * struct to hold parameters allows them to pass around threads
+ */
 struct nLoopHashParaFN{
-    int bi;
-    int ei;
-    int inloop;
-    ParameterHolder *ph;
+    int bi; //loop begin index
+    int ei; // loop end index
+    int inloop; // the inner loop count, for reconstruct 2d loop
+    ParameterHolder *ph; // parameterHolder
     vector2D* hashMatrix;
     vector2D* dataset;
 };
 
+/**
+ * struct to hold parameters allows them to pass around threads
+ */
 struct nLoopColliParaN{
-    int bi;
-    int ei;
-    int inloop;
-    ParameterHolder *ph;
+    int bi; //loop begin index
+    int ei; // loop end index
+    int inloop;// the inner loop count, for reconstruct 2d loop
+    ParameterHolder *ph; // parameterHolder
     vector2D* collisionMatrix;
     vector2D* hMatrixQ;
     vector2D* hMatrixN;
 };
 
+/**
+ * struct to hold parameters allows them to pass around threads
+ */
 struct nLoopCandidateParaN{
-    int bi;
-    int ei;
-    ParameterHolder *ph;
+    int bi; //loop begin index
+    int ei; // loop end index
+    ParameterHolder *ph; // parameterHolder
     vector2D* hMatrixQ;
     vector2D* hMatrixN;
     vector2D *collisionMatrix;
@@ -78,14 +112,18 @@ struct nLoopCandidateParaN{
 
 };
 
-
+/**
+ * the thread function for computing hash value
+ * @param loopPara struct nLoopHashParaFN
+ * @return
+ */
 void* computeHashPthreadFucN(void *loopPara)
 {
+    // retrieve the parameters
     struct nLoopHashParaFN *my_data;
     int bi,ei,inloop;
     ParameterHolder *ph;
     my_data = (nLoopHashParaFN *) loopPara;
-
     bi = my_data->bi;
     ei = my_data->ei;
     inloop = my_data->inloop;
@@ -97,7 +135,7 @@ void* computeHashPthreadFucN(void *loopPara)
         {
             int n = i/inloop; //retrive outer loop index
             int l = i%inloop; //retrive inner loop index
-            // (optional) make output critical
+
             double hashFinalValue = 0;
             //loop through the inner of a hash function group
             for (int k = 0; k < ph->K; ++k) {
@@ -112,22 +150,25 @@ void* computeHashPthreadFucN(void *loopPara)
                 //merge hash group results **see documentation
                 hashFinalValue = hashvalue*ph->randomVector[k] + hashFinalValue;
             }
+            //put value to the matrix
             (*(my_data->hashMatrix))[n][l] = hashFinalValue;
-
         }
     }
     return NULL;
 }
 
-
-
+/**
+ * the thread function to compute collision matrix
+ * @param loopPara struct nLoopColliParaN
+ * @return
+ */
 void* computeCollisionPthreadFucN(void *loopPara)
 {
+    //retrieve parameters
     struct nLoopColliParaN *my_data;
     int bi,ei,inloop;
     ParameterHolder *ph;
     my_data = (nLoopColliParaN *) loopPara;
-
 
     bi = my_data->bi;
     ei = my_data->ei;
@@ -138,8 +179,8 @@ void* computeCollisionPthreadFucN(void *loopPara)
     {
         // inner loop
         {
-            int q = i/inloop;
-            int n = i%inloop;
+            int q = i/inloop; // retrive q index
+            int n = i%inloop; // retrive n index
             for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
                 if ((*my_data->hMatrixN)[n][hash_id] == (*my_data->hMatrixQ)[q][hash_id])
                     (*my_data->collisionMatrix)[q][n]++;
@@ -149,9 +190,14 @@ void* computeCollisionPthreadFucN(void *loopPara)
     return NULL;
 }
 
-
+/**
+ * the thread function to compute candidate set in normal mode
+ * @param loopPara struct nLoopCandidateParaN
+ * @return
+ */
 void* computeCandidateNormalPthreadFucN(void *loopPara)
 {
+    //retrieve the parameters
     struct nLoopCandidateParaN *my_data;
     int bi,ei;
     ParameterHolder *ph;
@@ -178,7 +224,11 @@ void* computeCandidateNormalPthreadFucN(void *loopPara)
     return NULL;
 }
 
-
+/**
+ * the thread function to compute candidate set in quick mode
+ * @param loopPara struct nLoopCandidateParaN
+ * @return
+ */
 void* computeCandidatesQuickPthreadFucN(void *loopPara)
 {
     struct nLoopCandidateParaN *my_data;
@@ -196,8 +246,10 @@ void* computeCandidatesQuickPthreadFucN(void *loopPara)
         // inner loop
         {
             vector1D singleRow(0, 0);
+            //loop through N
             for (int n = 0; n <ph->N ; ++n){
                 int colliNum = 0;
+                // loop through L
                 for (int hash_id = 0; hash_id < ph->L; ++hash_id) {
                     if ((*my_data->hMatrixN)[n][hash_id] == (*my_data->hMatrixQ)[i][hash_id]) {
                         colliNum++;
@@ -217,25 +269,27 @@ void* computeCandidatesQuickPthreadFucN(void *loopPara)
 
 
 vector2D ComputerPthread::computeHash(vector2D dataset, size_t pointNum){
+    // pre-allocate memory
     vector2D hashMatrix;
-
     for (int i = 0; i < pointNum; ++i) {
         vector1D vL(ph.L,0);
         hashMatrix.push_back(vL);
     }
 
-    // it is a implementation of nested loop to stdthread
+    // it is a implementation of nested loop
     const size_t nthreads = getNumOfCoresN();
     const size_t outloop = pointNum;
     const size_t inloop = ph.L;
     const size_t nloop = outloop*inloop;
 
-
+    //prepare vector of threads and arguments for each thread
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopHashParaFN> thread_args(nthreads);
+
     /* spawn the threads */
     for (int t=0; t<nthreads; ++t)
     {
+        // prepare parameters for each threads
         nLoopHashParaFN tempPara;
         tempPara.bi = t*nloop/nthreads;
         tempPara.ei = (t+1)==nthreads?nloop:(t+1)*nloop/nthreads;
@@ -245,6 +299,7 @@ vector2D ComputerPthread::computeHash(vector2D dataset, size_t pointNum){
         tempPara.ph = &ph;
         thread_args[t] = tempPara;
 
+        // create thread and start work
         pthread_create(&threads[t], NULL, computeHashPthreadFucN, (void*)(&(thread_args[t])));
     }
 
@@ -256,34 +311,28 @@ vector2D ComputerPthread::computeHash(vector2D dataset, size_t pointNum){
     return hashMatrix;
 }
 
-void ComputerPthread::printThreadMode(){
-    std::cout<< "Pthread";
-}
-void ComputerPthreadNormal::printComputeMode(){
-    std::cout<< "Normal";
-}
-void ComputerPthreadQuick::printComputeMode(){
-    std::cout<< "Quick";
-}
-
 vector2D ComputerPthreadNormal::computeCollision(vector2D hMatrixN, vector2D hMatrixQ){
+    // prepare memory
     vector2D collisionMatrix;
     for (int i = 0; i < ph.Q ; ++i) {
         vector1D singleLine(ph.N, 0);
         collisionMatrix.push_back(singleLine);
     }
 
+    // it is a implementation of nested loop
     const size_t nthreads = getNumOfCoresN();
     const size_t outloop = ph.Q;
     const size_t inloop = ph.N;
     const size_t nloop = outloop*inloop;
 
+    //prepare vector of threads and arguments for each thread
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopColliParaN> thread_args(nthreads);
 
     /* spawn the threads */
     for (int t=0; t<nthreads; ++t)
     {
+        // prepare parameters for each threads
         nLoopColliParaN tempPara;
         tempPara.bi = t*nloop/nthreads;
         tempPara.ei = (t+1)==nthreads?nloop:(t+1)*nloop/nthreads;
@@ -294,6 +343,7 @@ vector2D ComputerPthreadNormal::computeCollision(vector2D hMatrixN, vector2D hMa
         tempPara.ph = &ph;
         thread_args[t] = tempPara;
 
+        // create thread and start work
         pthread_create(&threads[t], NULL, computeCollisionPthreadFucN, (void*)&(thread_args[t]));
     }
 
@@ -307,21 +357,25 @@ vector2D ComputerPthreadNormal::computeCollision(vector2D hMatrixN, vector2D hMa
 
 
 vector2D ComputerPthreadNormal::computeCandidate(vector2D collisionMatrix){
+    // prepare memory
     vector2D candidateSet;
     for (int i = 0; i < ph.Q; ++i) {
         vector1D temp(0,0);
         candidateSet.push_back(temp);
     }
 
+    // it is a implementation of nested loop
     const size_t nthreads = getNumOfCoresN();
     const size_t nloop = ph.Q;
 
+    //prepare vector of threads and arguments for each thread
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopCandidateParaN> thread_args(nthreads);
 
     /* spawn the threads */
     for (int t=0; t<nthreads; ++t)
     {
+        // prepare parameters for each threads
         nLoopCandidateParaN tempPara;
         tempPara.bi = t*nloop/nthreads;
         tempPara.ei = (t+1)==nthreads?nloop:(t+1)*nloop/nthreads;
@@ -330,6 +384,7 @@ vector2D ComputerPthreadNormal::computeCandidate(vector2D collisionMatrix){
         tempPara.ph = &ph;
         thread_args[t] = tempPara;
 
+        // create thread and start work
         pthread_create(&threads[t], NULL, computeCandidateNormalPthreadFucN, (void*)&(thread_args[t]));
     }
 
@@ -353,12 +408,14 @@ vector2D ComputerPthreadQuick::computeCandidate(vector2D hMatrixN, vector2D hMat
     const size_t nthreads = getNumOfCoresN();
     const size_t nloop = ph.Q;
 
+    //prepare vector of threads and arguments for each thread
     std::vector<pthread_t> threads(nthreads);
     std::vector<nLoopCandidateParaN> thread_args(nthreads);
 
     /* spawn the threads */
     for (int t=0; t<nthreads; ++t)
     {
+        // prepare parameters for each threads
         nLoopCandidateParaN tempPara;
         tempPara.bi = t*nloop/nthreads;
         tempPara.ei = (t+1)==nthreads?nloop:(t+1)*nloop/nthreads;
@@ -379,4 +436,14 @@ vector2D ComputerPthreadQuick::computeCandidate(vector2D hMatrixN, vector2D hMat
     return candidateSet;
 }
 
+
+void ComputerPthread::printThreadMode(){
+    std::cout<< "Pthread";
+}
+void ComputerPthreadNormal::printComputeMode(){
+    std::cout<< "Normal";
+}
+void ComputerPthreadQuick::printComputeMode(){
+    std::cout<< "Quick";
+}
 
