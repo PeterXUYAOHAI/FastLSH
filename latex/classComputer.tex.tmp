@@ -1,0 +1,170 @@
+\hypertarget{classComputer}{}\section{Computer Class Reference}
+\label{classComputer}\index{Computer@{Computer}}
+
+
+{\ttfamily \#include $<$Computer.\+h$>$}
+
+
+
+Inheritance diagram for Computer\+:
+% FIG 0
+
+
+Collaboration diagram for Computer\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComputer_abc89d050b911e691ca17162b6763d873}{Computer} (\hyperlink{structParameterHolder}{Parameter\+Holder} ph)
+\item 
+virtual vector2D \hyperlink{classComputer_a88056decffc944528b1de0a164aaae8c}{compute\+Hash} (vector2D dataset, size\+\_\+t p\+Num)=0
+\item 
+virtual vector2D \hyperlink{classComputer_ada5e7f0f11aa019cafc4f603c36dc9b4}{compute\+Collision} (vector2D h\+MatrixN, vector2D h\+MatrixQ)
+\item 
+virtual vector2D \hyperlink{classComputer_ac512e107cee92d8e626e5f478980a502}{compute\+Candidate} (vector2D collision\+Matrix)
+\item 
+virtual vector2D \hyperlink{classComputer_a54172e7c143b01bd298dce5ddee430e1}{compute\+Candidate} (vector2D h\+MatrixN, vector2D h\+MatrixQ)
+\item 
+virtual void \hyperlink{classComputer_ad2b5a813419e9152c4a1e22d9531b636}{print\+Compute\+Mode} ()=0
+\item 
+virtual void \hyperlink{classComputer_abb184c3612cdf76eb8eb248d94f74da2}{print\+Thread\+Mode} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structParameterHolder}{Parameter\+Holder} {\bfseries ph}\hypertarget{classComputer_ad2184864c1bb1d79ac8bf244d885cf4c}{}\label{classComputer_ad2184864c1bb1d79ac8bf244d885cf4c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+abstract class of \hyperlink{classComputer}{Computer} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Computer@{Computer}!Computer@{Computer}}
+\index{Computer@{Computer}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{Computer(\+Parameter\+Holder ph)}{Computer(ParameterHolder ph)}}]{\setlength{\rightskip}{0pt plus 5cm}Computer\+::\+Computer (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Holder}}]{ph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classComputer_abc89d050b911e691ca17162b6763d873}{}\label{classComputer_abc89d050b911e691ca17162b6763d873}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em ph} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Computer@{Computer}!compute\+Candidate@{compute\+Candidate}}
+\index{compute\+Candidate@{compute\+Candidate}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{compute\+Candidate(vector2\+D collision\+Matrix)}{computeCandidate(vector2D collisionMatrix)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector2D Computer\+::compute\+Candidate (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{collision\+Matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classComputer_ac512e107cee92d8e626e5f478980a502}{}\label{classComputer_ac512e107cee92d8e626e5f478980a502}
+compute the candidate set 
+\begin{DoxyParams}{Parameters}
+{\em collision\+Matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector of candidate set 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classComputerPthreadNormal_aae5e993712a0dbde8fe8f19e655081ba}{Computer\+Pthread\+Normal}, \hyperlink{classComputerStdThreadNormal_a65ab335a7f8ff1f4824ae81d3e5faf81}{Computer\+Std\+Thread\+Normal}, \hyperlink{classComputerOpenMPNormal_adbecd2ca2883633c4b977c1dc958d5b5}{Computer\+Open\+M\+P\+Normal}, and \hyperlink{classComputerSingleThreadNormal_adcfae25fb2af091de5f946aca3130c0e}{Computer\+Single\+Thread\+Normal}.
+
+\index{Computer@{Computer}!compute\+Candidate@{compute\+Candidate}}
+\index{compute\+Candidate@{compute\+Candidate}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{compute\+Candidate(vector2\+D h\+Matrix\+N, vector2\+D h\+Matrix\+Q)}{computeCandidate(vector2D hMatrixN, vector2D hMatrixQ)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector2D Computer\+::compute\+Candidate (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{h\+MatrixN, }
+\item[{vector2D}]{h\+MatrixQ}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classComputer_a54172e7c143b01bd298dce5ddee430e1}{}\label{classComputer_a54172e7c143b01bd298dce5ddee430e1}
+
+\begin{DoxyParams}{Parameters}
+{\em h\+MatrixN} & \\
+\hline
+{\em h\+MatrixQ} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector of candidate set 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classComputerPthreadQuick_a30dcb1ef65a0685d2cc4e112e40a8299}{Computer\+Pthread\+Quick}, \hyperlink{classComputerStdThreadQuick_a1ed5ffc1bdf290bf45821f923e18cdea}{Computer\+Std\+Thread\+Quick}, \hyperlink{classComputerOpenMPQuick_ae73b5e3ef4557e403358e934a97bbb19}{Computer\+Open\+M\+P\+Quick}, and \hyperlink{classComputerSingleThreadQuick_a86a718c5ec453abd3465d21d6ed2f359}{Computer\+Single\+Thread\+Quick}.
+
+\index{Computer@{Computer}!compute\+Collision@{compute\+Collision}}
+\index{compute\+Collision@{compute\+Collision}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{compute\+Collision(vector2\+D h\+Matrix\+N, vector2\+D h\+Matrix\+Q)}{computeCollision(vector2D hMatrixN, vector2D hMatrixQ)}}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector2D Computer\+::compute\+Collision (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{h\+MatrixN, }
+\item[{vector2D}]{h\+MatrixQ}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{classComputer_ada5e7f0f11aa019cafc4f603c36dc9b4}{}\label{classComputer_ada5e7f0f11aa019cafc4f603c36dc9b4}
+compute the collision matrix 
+\begin{DoxyParams}{Parameters}
+{\em h\+MatrixN} & N dataset \\
+\hline
+{\em h\+MatrixQ} & query dataset \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of collision value 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classComputerPthreadNormal_a4d9dbf2290c78869df3a9e8f7ec86752}{Computer\+Pthread\+Normal}, \hyperlink{classComputerStdThreadNormal_a3a8e3f664b816e67d5dc914dfd1173a1}{Computer\+Std\+Thread\+Normal}, \hyperlink{classComputerOpenMPNormal_a27146489d3be8cce6767fc5942180859}{Computer\+Open\+M\+P\+Normal}, and \hyperlink{classComputerSingleThreadNormal_aa7b6f9660bc855217f2179ee122f45e2}{Computer\+Single\+Thread\+Normal}.
+
+\index{Computer@{Computer}!compute\+Hash@{compute\+Hash}}
+\index{compute\+Hash@{compute\+Hash}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{compute\+Hash(vector2\+D dataset, size\+\_\+t p\+Num)=0}{computeHash(vector2D dataset, size_t pNum)=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual vector2D Computer\+::compute\+Hash (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{dataset, }
+\item[{size\+\_\+t}]{p\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classComputer_a88056decffc944528b1de0a164aaae8c}{}\label{classComputer_a88056decffc944528b1de0a164aaae8c}
+abstract function of compute\+Hash, generate hash matrix from dataset 
+\begin{DoxyParams}{Parameters}
+{\em dataset} & 2D original data\+Set \\
+\hline
+{\em p\+Num} & number of points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of the hash\+Matrix 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classComputerPthread_a0e96106f2890f96f6c4724148e3f8453}{Computer\+Pthread}, \hyperlink{classComputerStdThread_a1c47a2c0ea24162a4d9369eced404a19}{Computer\+Std\+Thread}, \hyperlink{classComputerOpenMP_a394526cd5c4075de81a60c92ee3e0e0f}{Computer\+Open\+MP}, and \hyperlink{classComputerSingleThread_a38011044755e69be79aac0972bce50a3}{Computer\+Single\+Thread}.
+
+\index{Computer@{Computer}!print\+Compute\+Mode@{print\+Compute\+Mode}}
+\index{print\+Compute\+Mode@{print\+Compute\+Mode}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{print\+Compute\+Mode()=0}{printComputeMode()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Computer\+::print\+Compute\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classComputer_ad2b5a813419e9152c4a1e22d9531b636}{}\label{classComputer_ad2b5a813419e9152c4a1e22d9531b636}
+abstract function to print compute mode 
+
+Implemented in \hyperlink{classComputerPthreadQuick_afe5a032d63598e7e2080bf2e513f93db}{Computer\+Pthread\+Quick}, \hyperlink{classComputerPthreadNormal_a31f8543d40d67c82fe2426d059e42b1a}{Computer\+Pthread\+Normal}, \hyperlink{classComputerStdThreadQuick_a53bd310ef532a12796acdc00d07641f6}{Computer\+Std\+Thread\+Quick}, \hyperlink{classComputerStdThreadNormal_a969e9d0a9db4a7c50d85082e112eb43f}{Computer\+Std\+Thread\+Normal}, \hyperlink{classComputerOpenMPQuick_a683f867b07a3b0e5811f28db83225cea}{Computer\+Open\+M\+P\+Quick}, \hyperlink{classComputerOpenMPNormal_a7ff74cba73a6099618314b30a923dc9b}{Computer\+Open\+M\+P\+Normal}, \hyperlink{classComputerSingleThreadQuick_a9aa75156bebb86ba240f9194c15fa13e}{Computer\+Single\+Thread\+Quick}, and \hyperlink{classComputerSingleThreadNormal_a0ea9d97627b450d4d9d28f159061ff0b}{Computer\+Single\+Thread\+Normal}.
+
+\index{Computer@{Computer}!print\+Thread\+Mode@{print\+Thread\+Mode}}
+\index{print\+Thread\+Mode@{print\+Thread\+Mode}!Computer@{Computer}}
+\subsubsection[{\texorpdfstring{print\+Thread\+Mode()=0}{printThreadMode()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Computer\+::print\+Thread\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classComputer_abb184c3612cdf76eb8eb248d94f74da2}{}\label{classComputer_abb184c3612cdf76eb8eb248d94f74da2}
+abstract function to print thread mode 
+
+Implemented in \hyperlink{classComputerPthread_a1e5ea87a23518ffaa7bff3ee9df33009}{Computer\+Pthread}, \hyperlink{classComputerStdThread_a129300437bc5a184b2441b8eede7e837}{Computer\+Std\+Thread}, \hyperlink{classComputerOpenMP_a07f65269e96f3d587e7a4592967b548f}{Computer\+Open\+MP}, and \hyperlink{classComputerSingleThread_ac5ea29a004e96fa74c7c4994c67136ef}{Computer\+Single\+Thread}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/Computer.\+h\end{DoxyCompactItemize}

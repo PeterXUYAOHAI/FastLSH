@@ -1,0 +1,105 @@
+\hypertarget{classComputerSingleThreadNormal}{}\section{Computer\+Single\+Thread\+Normal Class Reference}
+\label{classComputerSingleThreadNormal}\index{Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}}
+
+
+{\ttfamily \#include $<$Computer.\+h$>$}
+
+
+
+Inheritance diagram for Computer\+Single\+Thread\+Normal\+:
+% FIG 0
+
+
+Collaboration diagram for Computer\+Single\+Thread\+Normal\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComputerSingleThreadNormal_aea1ae678e2e868c57d2da846cd900a7a}{Computer\+Single\+Thread\+Normal} (\hyperlink{structParameterHolder}{Parameter\+Holder} ph)
+\item 
+virtual vector2D \hyperlink{classComputerSingleThreadNormal_aa7b6f9660bc855217f2179ee122f45e2}{compute\+Collision} (vector2D h\+MatrixN, vector2D h\+MatrixQ)
+\item 
+virtual vector2D \hyperlink{classComputerSingleThreadNormal_adcfae25fb2af091de5f946aca3130c0e}{compute\+Candidate} (vector2D collision\+Matrix)
+\item 
+virtual void \hyperlink{classComputerSingleThreadNormal_a0ea9d97627b450d4d9d28f159061ff0b}{print\+Compute\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+normal mode single\+Thread computer derive from Computer\+Singe\+Thread 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}!Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}}
+\index{Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}!Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}}
+\subsubsection[{\texorpdfstring{Computer\+Single\+Thread\+Normal(\+Parameter\+Holder ph)}{ComputerSingleThreadNormal(ParameterHolder ph)}}]{\setlength{\rightskip}{0pt plus 5cm}Computer\+Single\+Thread\+Normal\+::\+Computer\+Single\+Thread\+Normal (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Holder}}]{ph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classComputerSingleThreadNormal_aea1ae678e2e868c57d2da846cd900a7a}{}\label{classComputerSingleThreadNormal_aea1ae678e2e868c57d2da846cd900a7a}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em ph} & parameter\+Holder \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}!compute\+Candidate@{compute\+Candidate}}
+\index{compute\+Candidate@{compute\+Candidate}!Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}}
+\subsubsection[{\texorpdfstring{compute\+Candidate(vector2\+D collision\+Matrix)}{computeCandidate(vector2D collisionMatrix)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Single\+Thread\+Normal\+::compute\+Candidate (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{collision\+Matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerSingleThreadNormal_adcfae25fb2af091de5f946aca3130c0e}{}\label{classComputerSingleThreadNormal_adcfae25fb2af091de5f946aca3130c0e}
+compute the candidate sets in single\+Thread Normal Mode 
+\begin{DoxyParams}{Parameters}
+{\em collision\+Matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of candidate set 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classComputer_ac512e107cee92d8e626e5f478980a502}{Computer}.
+
+\index{Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}!compute\+Collision@{compute\+Collision}}
+\index{compute\+Collision@{compute\+Collision}!Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}}
+\subsubsection[{\texorpdfstring{compute\+Collision(vector2\+D h\+Matrix\+N, vector2\+D h\+Matrix\+Q)}{computeCollision(vector2D hMatrixN, vector2D hMatrixQ)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Single\+Thread\+Normal\+::compute\+Collision (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{h\+MatrixN, }
+\item[{vector2D}]{h\+MatrixQ}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerSingleThreadNormal_aa7b6f9660bc855217f2179ee122f45e2}{}\label{classComputerSingleThreadNormal_aa7b6f9660bc855217f2179ee122f45e2}
+compute the collision matrix 
+\begin{DoxyParams}{Parameters}
+{\em h\+MatrixN} & \\
+\hline
+{\em h\+MatrixQ} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of collision matrix 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classComputer_ada5e7f0f11aa019cafc4f603c36dc9b4}{Computer}.
+
+\index{Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}!print\+Compute\+Mode@{print\+Compute\+Mode}}
+\index{print\+Compute\+Mode@{print\+Compute\+Mode}!Computer\+Single\+Thread\+Normal@{Computer\+Single\+Thread\+Normal}}
+\subsubsection[{\texorpdfstring{print\+Compute\+Mode()}{printComputeMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Computer\+Single\+Thread\+Normal\+::print\+Compute\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerSingleThreadNormal_a0ea9d97627b450d4d9d28f159061ff0b}{}\label{classComputerSingleThreadNormal_a0ea9d97627b450d4d9d28f159061ff0b}
+print the compute Mode 
+
+Implements \hyperlink{classComputer_ad2b5a813419e9152c4a1e22d9531b636}{Computer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/Computer.\+h\item 
+src/\+Computer/Single\+Thread\+Computer.\+cpp\end{DoxyCompactItemize}

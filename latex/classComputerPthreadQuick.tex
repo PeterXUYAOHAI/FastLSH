@@ -1,0 +1,82 @@
+\hypertarget{classComputerPthreadQuick}{}\section{Computer\+Pthread\+Quick Class Reference}
+\label{classComputerPthreadQuick}\index{Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}}
+
+
+{\ttfamily \#include $<$Computer.\+h$>$}
+
+
+
+Inheritance diagram for Computer\+Pthread\+Quick\+:
+% FIG 0
+
+
+Collaboration diagram for Computer\+Pthread\+Quick\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComputerPthreadQuick_adfe72929f368333d6ab5ef4158f06dbf}{Computer\+Pthread\+Quick} (\hyperlink{structParameterHolder}{Parameter\+Holder} ph)
+\item 
+virtual vector2D \hyperlink{classComputerPthreadQuick_a30dcb1ef65a0685d2cc4e112e40a8299}{compute\+Candidate} (vector2D h\+MatrixN, vector2D h\+MatrixQ)
+\item 
+virtual void \hyperlink{classComputerPthreadQuick_afe5a032d63598e7e2080bf2e513f93db}{print\+Compute\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+quick mode single\+Thread computer derive from \hyperlink{classComputerPthread}{Computer\+Pthread} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}!Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}}
+\index{Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}!Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}}
+\subsubsection[{\texorpdfstring{Computer\+Pthread\+Quick(\+Parameter\+Holder ph)}{ComputerPthreadQuick(ParameterHolder ph)}}]{\setlength{\rightskip}{0pt plus 5cm}Computer\+Pthread\+Quick\+::\+Computer\+Pthread\+Quick (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Holder}}]{ph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classComputerPthreadQuick_adfe72929f368333d6ab5ef4158f06dbf}{}\label{classComputerPthreadQuick_adfe72929f368333d6ab5ef4158f06dbf}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em ph} & parameter\+Holder \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}!compute\+Candidate@{compute\+Candidate}}
+\index{compute\+Candidate@{compute\+Candidate}!Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}}
+\subsubsection[{\texorpdfstring{compute\+Candidate(vector2\+D h\+Matrix\+N, vector2\+D h\+Matrix\+Q)}{computeCandidate(vector2D hMatrixN, vector2D hMatrixQ)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Pthread\+Quick\+::compute\+Candidate (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{h\+MatrixN, }
+\item[{vector2D}]{h\+MatrixQ}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerPthreadQuick_a30dcb1ef65a0685d2cc4e112e40a8299}{}\label{classComputerPthreadQuick_a30dcb1ef65a0685d2cc4e112e40a8299}
+compute the candidate sets in Pthread Quick Mode 
+\begin{DoxyParams}{Parameters}
+{\em collision\+Matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of candidate set 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classComputer_a54172e7c143b01bd298dce5ddee430e1}{Computer}.
+
+\index{Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}!print\+Compute\+Mode@{print\+Compute\+Mode}}
+\index{print\+Compute\+Mode@{print\+Compute\+Mode}!Computer\+Pthread\+Quick@{Computer\+Pthread\+Quick}}
+\subsubsection[{\texorpdfstring{print\+Compute\+Mode()}{printComputeMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Computer\+Pthread\+Quick\+::print\+Compute\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerPthreadQuick_afe5a032d63598e7e2080bf2e513f93db}{}\label{classComputerPthreadQuick_afe5a032d63598e7e2080bf2e513f93db}
+print the compute Mode -\/ quick mode 
+
+Implements \hyperlink{classComputer_ad2b5a813419e9152c4a1e22d9531b636}{Computer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/Computer.\+h\item 
+src/\+Computer/Pthread\+Computer.\+cpp\end{DoxyCompactItemize}

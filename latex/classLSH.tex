@@ -1,0 +1,426 @@
+\hypertarget{classLSH}{}\section{L\+SH Class Reference}
+\label{classLSH}\index{L\+SH@{L\+SH}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLSH_a4108575cd2d786f617836750666dea26}{L\+SH} ()
+\item 
+\hyperlink{classLSH_a0564378fc619150ae6375c67dc4dc371}{L\+SH} (size\+\_\+t N, size\+\_\+t Q, size\+\_\+t D, size\+\_\+t L, size\+\_\+t K, double W, size\+\_\+t T)
+\item 
+void \hyperlink{classLSH_a0ad78d3a485f25389d5fb05ea9258ddd}{load\+SetQ} (const char $\ast$file\+Path, int file\+Size)
+\item 
+void \hyperlink{classLSH_abf8eda6f544bf126455b8ea8c7365d8c}{load\+SetN} (const char $\ast$file\+Path, int file\+Size)
+\item 
+void \hyperlink{classLSH_a9a68861557d2eaef8e73967c662172fd}{save\+Candidate\+Set} (const char $\ast$file\+Path)
+\item 
+void \hyperlink{classLSH_a0d33c96dac41082c80b23111838e382b}{read\+Hash\+N\+From\+Memcached} (const char $\ast$server, unsigned short port, std\+::string run\+Id)
+\item 
+int \hyperlink{classLSH_a00401a5252f4f7367821620f97409d43}{read\+Hash\+N\+From\+Redis} (const char $\ast$server, unsigned short port, std\+::string srun\+Id)
+\item 
+int \hyperlink{classLSH_afd93906929056fd0ccd0c09b166ea382}{save\+Hash\+N\+To\+Memcached} (const char $\ast$server, unsigned short port, time\+\_\+t exp)
+\item 
+int \hyperlink{classLSH_a0f442ddda8f63ad7ce0b316a0edf6a91}{save\+Hash\+N\+To\+Redis} (const char $\ast$server, unsigned short port)
+\item 
+void \hyperlink{classLSH_ab644fc625c34ec494facec1442d55ae0}{clear\+Hash\+Matrix} ()
+\item 
+void \hyperlink{classLSH_abe42075648c4ab27ba46b4a189670049}{clear} ()
+\item 
+void \hyperlink{classLSH_a0b797ae513e358e4d27b66128f7b57e8}{clear\+Collision\+Matrix} ()
+\item 
+void \hyperlink{classLSH_a2ac8c9b0325d18f60b76931f51cea0d9}{clear\+Candidate\+Set} ()
+\item 
+void \hyperlink{classLSH_a39d5c9f5b91c211a9339b2eaf28e771c}{report\+Status} ()
+\item 
+vector2D \hyperlink{classLSH_a9067efa837c8cb156ae3bccc3c5bde83}{get\+Collision\+Matrix} ()
+\item 
+vector2D \hyperlink{classLSH_a47307983d94516a4011e3cdbfde1bbd5}{get\+Candidate\+Set} ()
+\item 
+bool \hyperlink{classLSH_ab29ea3de63a173b89a5604d8a4c308e4}{set\+Use\+Hdfs} (bool use\+Hdfs)
+\item 
+const vector2D \& \hyperlink{classLSH_abe37e1432b5f79d7de5e9ef52d2230f9}{get\+SetN} () const 
+\item 
+const vector2D \& \hyperlink{classLSH_ab2e667e70a8a53c4b0796f5476c712b6}{get\+SetQ} () const 
+\item 
+const vector2D \& \hyperlink{classLSH_a421364d159e9e2a189602370f10d2e28}{get\+Hash\+MatrixN} () const 
+\item 
+const vector2D \& \hyperlink{classLSH_a381ff01bbf494b2c46a6045795085d28}{get\+Hash\+MatrixQ} () const 
+\item 
+bool \hyperlink{classLSH_a67a0f8a257de20382b47c42aae76a39c}{set\+Thread\+Mode} (int thread\+Mode)
+\item 
+bool \hyperlink{classLSH_a0787513b17795d5fac969bf6809fc118}{set\+Compute\+Mode} (int compute\+Mode)
+\item 
+void \hyperlink{classLSH_ad832bd34de76d13a6a87169f64ee52a8}{set\+SetN} (const vector2D \&setN)
+\item 
+void \hyperlink{classLSH_af747842595907f85ba044226adc4f1f8}{set\+SetQ} (const vector2D \&setQ)
+\item 
+bool \hyperlink{classLSH_a5b94540d9914f63a64ba4f2b957910c7}{set\+Default} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{L\+SH@{L\+SH}!L\+SH@{L\+SH}}
+\index{L\+SH@{L\+SH}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{L\+S\+H()}{LSH()}}]{\setlength{\rightskip}{0pt plus 5cm}L\+S\+H\+::\+L\+SH (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a4108575cd2d786f617836750666dea26}{}\label{classLSH_a4108575cd2d786f617836750666dea26}
+default constructor
+
+Fast\+L\+SH L\+S\+H.\+cpp Purpose\+: This is the source file of \hyperlink{classLSH}{L\+SH} class
+
+\begin{DoxyAuthor}{Author}
+Peter Yaohai XU 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 4/07/17 
+\end{DoxyVersion}
+\index{L\+SH@{L\+SH}!L\+SH@{L\+SH}}
+\index{L\+SH@{L\+SH}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{L\+S\+H(size\+\_\+t N, size\+\_\+t Q, size\+\_\+t D, size\+\_\+t L, size\+\_\+t K, double W, size\+\_\+t T)}{LSH(size_t N, size_t Q, size_t D, size_t L, size_t K, double W, size_t T)}}]{\setlength{\rightskip}{0pt plus 5cm}L\+S\+H\+::\+L\+SH (
+\begin{DoxyParamCaption}
+\item[{size\+\_\+t}]{N, }
+\item[{size\+\_\+t}]{Q, }
+\item[{size\+\_\+t}]{D, }
+\item[{size\+\_\+t}]{L, }
+\item[{size\+\_\+t}]{K, }
+\item[{double}]{W, }
+\item[{size\+\_\+t}]{T}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a0564378fc619150ae6375c67dc4dc371}{}\label{classLSH_a0564378fc619150ae6375c67dc4dc371}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em N} & \# of vectors in the dataset \\
+\hline
+{\em Q} & \# of vertors in the queryset \\
+\hline
+{\em D} & \# of dimensions \\
+\hline
+{\em L} & \# of group hash \\
+\hline
+{\em K} & \# the number of hash functions in each group hash \\
+\hline
+{\em W} & bucket width \\
+\hline
+{\em T} & threshold \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{L\+SH@{L\+SH}!clear@{clear}}
+\index{clear@{clear}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{clear()}{clear()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_abe42075648c4ab27ba46b4a189670049}{}\label{classLSH_abe42075648c4ab27ba46b4a189670049}
+delete the hash\+Matrix, collision\+Matrix and candidate\+Set, release the memory \index{L\+SH@{L\+SH}!clear\+Candidate\+Set@{clear\+Candidate\+Set}}
+\index{clear\+Candidate\+Set@{clear\+Candidate\+Set}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{clear\+Candidate\+Set()}{clearCandidateSet()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::clear\+Candidate\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a2ac8c9b0325d18f60b76931f51cea0d9}{}\label{classLSH_a2ac8c9b0325d18f60b76931f51cea0d9}
+delete the candidate\+Set, release the memory \index{L\+SH@{L\+SH}!clear\+Collision\+Matrix@{clear\+Collision\+Matrix}}
+\index{clear\+Collision\+Matrix@{clear\+Collision\+Matrix}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{clear\+Collision\+Matrix()}{clearCollisionMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::clear\+Collision\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a0b797ae513e358e4d27b66128f7b57e8}{}\label{classLSH_a0b797ae513e358e4d27b66128f7b57e8}
+delete the collision\+Matrix, release the memory \index{L\+SH@{L\+SH}!clear\+Hash\+Matrix@{clear\+Hash\+Matrix}}
+\index{clear\+Hash\+Matrix@{clear\+Hash\+Matrix}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{clear\+Hash\+Matrix()}{clearHashMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::clear\+Hash\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_ab644fc625c34ec494facec1442d55ae0}{}\label{classLSH_ab644fc625c34ec494facec1442d55ae0}
+delete the hash\+Matrixes, release the memory \index{L\+SH@{L\+SH}!get\+Candidate\+Set@{get\+Candidate\+Set}}
+\index{get\+Candidate\+Set@{get\+Candidate\+Set}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{get\+Candidate\+Set()}{getCandidateSet()}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D L\+S\+H\+::get\+Candidate\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a47307983d94516a4011e3cdbfde1bbd5}{}\label{classLSH_a47307983d94516a4011e3cdbfde1bbd5}
+calculate and return the candidate\+Set; won\textquotesingle{}t recalculate if candidate\+Set already exist \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!get\+Collision\+Matrix@{get\+Collision\+Matrix}}
+\index{get\+Collision\+Matrix@{get\+Collision\+Matrix}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{get\+Collision\+Matrix()}{getCollisionMatrix()}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D L\+S\+H\+::get\+Collision\+Matrix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a9067efa837c8cb156ae3bccc3c5bde83}{}\label{classLSH_a9067efa837c8cb156ae3bccc3c5bde83}
+calculate and return the collision\+Matrix; in quick mode won\textquotesingle{}t work; won\textquotesingle{}t recalculate if collision\+Matrix already exist. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!get\+Hash\+MatrixN@{get\+Hash\+MatrixN}}
+\index{get\+Hash\+MatrixN@{get\+Hash\+MatrixN}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{get\+Hash\+Matrix\+N() const }{getHashMatrixN() const }}]{\setlength{\rightskip}{0pt plus 5cm}const vector2D \& L\+S\+H\+::get\+Hash\+MatrixN (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLSH_a421364d159e9e2a189602370f10d2e28}{}\label{classLSH_a421364d159e9e2a189602370f10d2e28}
+return the hash\+MatrixN \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!get\+Hash\+MatrixQ@{get\+Hash\+MatrixQ}}
+\index{get\+Hash\+MatrixQ@{get\+Hash\+MatrixQ}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{get\+Hash\+Matrix\+Q() const }{getHashMatrixQ() const }}]{\setlength{\rightskip}{0pt plus 5cm}const vector2D \& L\+S\+H\+::get\+Hash\+MatrixQ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLSH_a381ff01bbf494b2c46a6045795085d28}{}\label{classLSH_a381ff01bbf494b2c46a6045795085d28}
+return the hash\+MatrixQ \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!get\+SetN@{get\+SetN}}
+\index{get\+SetN@{get\+SetN}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{get\+Set\+N() const }{getSetN() const }}]{\setlength{\rightskip}{0pt plus 5cm}const vector2D \& L\+S\+H\+::get\+SetN (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLSH_abe37e1432b5f79d7de5e9ef52d2230f9}{}\label{classLSH_abe37e1432b5f79d7de5e9ef52d2230f9}
+return the setN \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!get\+SetQ@{get\+SetQ}}
+\index{get\+SetQ@{get\+SetQ}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{get\+Set\+Q() const }{getSetQ() const }}]{\setlength{\rightskip}{0pt plus 5cm}const vector2D \& L\+S\+H\+::get\+SetQ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classLSH_ab2e667e70a8a53c4b0796f5476c712b6}{}\label{classLSH_ab2e667e70a8a53c4b0796f5476c712b6}
+return the setQ \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!load\+SetN@{load\+SetN}}
+\index{load\+SetN@{load\+SetN}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{load\+Set\+N(const char $\ast$file\+Path, int file\+Size)}{loadSetN(const char *filePath, int fileSize)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::load\+SetN (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\+Path, }
+\item[{int}]{file\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_abf8eda6f544bf126455b8ea8c7365d8c}{}\label{classLSH_abf8eda6f544bf126455b8ea8c7365d8c}
+load the N(training) set into the object 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & string or char$\ast$ \\
+\hline
+{\em file\+Size} & the file\+Size, this parameter was for H\+D\+FS read when the file is too large. Put 0 for default setting \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!load\+SetQ@{load\+SetQ}}
+\index{load\+SetQ@{load\+SetQ}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{load\+Set\+Q(const char $\ast$file\+Path, int file\+Size)}{loadSetQ(const char *filePath, int fileSize)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::load\+SetQ (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\+Path, }
+\item[{int}]{file\+Size}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a0ad78d3a485f25389d5fb05ea9258ddd}{}\label{classLSH_a0ad78d3a485f25389d5fb05ea9258ddd}
+load the query set into the object 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & string or char$\ast$ \\
+\hline
+{\em file\+Size} & the file\+Size, this parameter was for H\+D\+FS read when the file is too large. Put 0 for default setting \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!read\+Hash\+N\+From\+Memcached@{read\+Hash\+N\+From\+Memcached}}
+\index{read\+Hash\+N\+From\+Memcached@{read\+Hash\+N\+From\+Memcached}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{read\+Hash\+N\+From\+Memcached(const char $\ast$server, unsigned short port, std\+::string run\+Id)}{readHashNFromMemcached(const char *server, unsigned short port, std::string runId)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::read\+Hash\+N\+From\+Memcached (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{server, }
+\item[{unsigned short}]{port, }
+\item[{std\+::string}]{run\+Id}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a0d33c96dac41082c80b23111838e382b}{}\label{classLSH_a0d33c96dac41082c80b23111838e382b}
+read and parse stored hash N from Memcached 
+\begin{DoxyParams}{Parameters}
+{\em server} & the server ip address \\
+\hline
+{\em port} & the port number of the memcached service \\
+\hline
+{\em run\+Id} & the run\+Id of the stored hash N \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!read\+Hash\+N\+From\+Redis@{read\+Hash\+N\+From\+Redis}}
+\index{read\+Hash\+N\+From\+Redis@{read\+Hash\+N\+From\+Redis}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{read\+Hash\+N\+From\+Redis(const char $\ast$server, unsigned short port, std\+::string srun\+Id)}{readHashNFromRedis(const char *server, unsigned short port, std::string srunId)}}]{\setlength{\rightskip}{0pt plus 5cm}int L\+S\+H\+::read\+Hash\+N\+From\+Redis (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{server, }
+\item[{unsigned short}]{port, }
+\item[{std\+::string}]{srun\+Id}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a00401a5252f4f7367821620f97409d43}{}\label{classLSH_a00401a5252f4f7367821620f97409d43}
+read and parse stored hash N from Redis 
+\begin{DoxyParams}{Parameters}
+{\em server} & the server ip address \\
+\hline
+{\em port} & the port number of the Redis service \\
+\hline
+{\em run\+Id} & the run\+Id of the stored hash N \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!report\+Status@{report\+Status}}
+\index{report\+Status@{report\+Status}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{report\+Status()}{reportStatus()}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::report\+Status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a39d5c9f5b91c211a9339b2eaf28e771c}{}\label{classLSH_a39d5c9f5b91c211a9339b2eaf28e771c}
+print the status(settings, calculation step) \index{L\+SH@{L\+SH}!save\+Candidate\+Set@{save\+Candidate\+Set}}
+\index{save\+Candidate\+Set@{save\+Candidate\+Set}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{save\+Candidate\+Set(const char $\ast$file\+Path)}{saveCandidateSet(const char *filePath)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::save\+Candidate\+Set (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\+Path}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a9a68861557d2eaef8e73967c662172fd}{}\label{classLSH_a9a68861557d2eaef8e73967c662172fd}
+save the candidate to the disk 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & string or char$\ast$ \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!save\+Hash\+N\+To\+Memcached@{save\+Hash\+N\+To\+Memcached}}
+\index{save\+Hash\+N\+To\+Memcached@{save\+Hash\+N\+To\+Memcached}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{save\+Hash\+N\+To\+Memcached(const char $\ast$server, unsigned short port, time\+\_\+t exp)}{saveHashNToMemcached(const char *server, unsigned short port, time_t exp)}}]{\setlength{\rightskip}{0pt plus 5cm}int L\+S\+H\+::save\+Hash\+N\+To\+Memcached (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{server, }
+\item[{unsigned short}]{port, }
+\item[{time\+\_\+t}]{exp}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_afd93906929056fd0ccd0c09b166ea382}{}\label{classLSH_afd93906929056fd0ccd0c09b166ea382}
+save hash N to memcached 
+\begin{DoxyParams}{Parameters}
+{\em server} & the memcached server IP \\
+\hline
+{\em port} & the memcached port number \\
+\hline
+{\em exp} & how long it gonna stay in memory (0 for forever) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0-\/not success 1-\/success
+\end{DoxyReturn}
+Fast\+L\+SH memcached.\+cpp Purpose\+: This is the source file for memcached functions
+
+\begin{DoxyAuthor}{Author}
+Peter Yaohai XU 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 4/07/17 remember to start the server\+: $>$$>$memcached -\/p 11211 -\/m 64m -\/d
+\end{DoxyVersion}
+check if server is on telnet 127.\+0.\+0.\+1 11211 \index{L\+SH@{L\+SH}!save\+Hash\+N\+To\+Redis@{save\+Hash\+N\+To\+Redis}}
+\index{save\+Hash\+N\+To\+Redis@{save\+Hash\+N\+To\+Redis}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{save\+Hash\+N\+To\+Redis(const char $\ast$server, unsigned short port)}{saveHashNToRedis(const char *server, unsigned short port)}}]{\setlength{\rightskip}{0pt plus 5cm}int L\+S\+H\+::save\+Hash\+N\+To\+Redis (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{server, }
+\item[{unsigned short}]{port}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a0f442ddda8f63ad7ce0b316a0edf6a91}{}\label{classLSH_a0f442ddda8f63ad7ce0b316a0edf6a91}
+save hash N to Redis 
+\begin{DoxyParams}{Parameters}
+{\em server} & the Redis server IP \\
+\hline
+{\em port} & the Redis port number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0-\/not success 1-\/success
+\end{DoxyReturn}
+Fast\+L\+SH redis.\+cpp Purpose\+: This is the source file for redis functions
+
+\begin{DoxyAuthor}{Author}
+Peter Yaohai XU 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 4/07/17 
+\end{DoxyVersion}
+\index{L\+SH@{L\+SH}!set\+Compute\+Mode@{set\+Compute\+Mode}}
+\index{set\+Compute\+Mode@{set\+Compute\+Mode}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{set\+Compute\+Mode(int compute\+Mode)}{setComputeMode(int computeMode)}}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+S\+H\+::set\+Compute\+Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{compute\+Mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a0787513b17795d5fac969bf6809fc118}{}\label{classLSH_a0787513b17795d5fac969bf6809fc118}
+set compute Mode 
+\begin{DoxyParams}{Parameters}
+{\em compute\+Mode} & default 0-\/normal(need more memory) 1-\/quick\+Mode(less memory, skip collision\+Matrix) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0-\/ not success 1-\/ success 
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!set\+Default@{set\+Default}}
+\index{set\+Default@{set\+Default}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{set\+Default()}{setDefault()}}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+S\+H\+::set\+Default (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a5b94540d9914f63a64ba4f2b957910c7}{}\label{classLSH_a5b94540d9914f63a64ba4f2b957910c7}
+change all the setting to default, single\+Thread, L\+FS, Normal Mode \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!set\+SetN@{set\+SetN}}
+\index{set\+SetN@{set\+SetN}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{set\+Set\+N(const vector2\+D \&set\+N)}{setSetN(const vector2D &setN)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::set\+SetN (
+\begin{DoxyParamCaption}
+\item[{const vector2D \&}]{setN}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_ad832bd34de76d13a6a87169f64ee52a8}{}\label{classLSH_ad832bd34de76d13a6a87169f64ee52a8}
+import the setN, it should be a 2D vector$<$double$>$ 
+\begin{DoxyParams}{Parameters}
+{\em setN} & \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!set\+SetQ@{set\+SetQ}}
+\index{set\+SetQ@{set\+SetQ}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{set\+Set\+Q(const vector2\+D \&set\+Q)}{setSetQ(const vector2D &setQ)}}]{\setlength{\rightskip}{0pt plus 5cm}void L\+S\+H\+::set\+SetQ (
+\begin{DoxyParamCaption}
+\item[{const vector2D \&}]{setQ}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_af747842595907f85ba044226adc4f1f8}{}\label{classLSH_af747842595907f85ba044226adc4f1f8}
+import the setQ, it should be a 2D vector$<$double$>$ 
+\begin{DoxyParams}{Parameters}
+{\em setQ} & \\
+\hline
+\end{DoxyParams}
+\index{L\+SH@{L\+SH}!set\+Thread\+Mode@{set\+Thread\+Mode}}
+\index{set\+Thread\+Mode@{set\+Thread\+Mode}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{set\+Thread\+Mode(int thread\+Mode)}{setThreadMode(int threadMode)}}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+S\+H\+::set\+Thread\+Mode (
+\begin{DoxyParamCaption}
+\item[{int}]{thread\+Mode}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_a67a0f8a257de20382b47c42aae76a39c}{}\label{classLSH_a67a0f8a257de20382b47c42aae76a39c}
+set thread mode 
+\begin{DoxyParams}{Parameters}
+{\em thread\+Mode} & default 0-\/single\+Thread, 1-\/open\+MP, 2-\/stdthread, 3-\/pthread \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0-\/not success 1-\/ success 
+\end{DoxyReturn}
+\index{L\+SH@{L\+SH}!set\+Use\+Hdfs@{set\+Use\+Hdfs}}
+\index{set\+Use\+Hdfs@{set\+Use\+Hdfs}!L\+SH@{L\+SH}}
+\subsubsection[{\texorpdfstring{set\+Use\+Hdfs(bool use\+Hdfs)}{setUseHdfs(bool useHdfs)}}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+S\+H\+::set\+Use\+Hdfs (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\+Hdfs}
+\end{DoxyParamCaption}
+)}\hypertarget{classLSH_ab29ea3de63a173b89a5604d8a4c308e4}{}\label{classLSH_ab29ea3de63a173b89a5604d8a4c308e4}
+set Hdfs read setting 
+\begin{DoxyParams}{Parameters}
+{\em use\+Hdfs} & 0-\/use L\+FS 1-\/ use H\+D\+FS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0-\/not success 1-\/ success 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/L\+S\+H.\+h\item 
+src/\+In\+Memory\+Store/memcached.\+cpp\item 
+src/\+In\+Memory\+Store/redis.\+cpp\item 
+src/L\+S\+H.\+cpp\item 
+src/Normalizer.\+cpp\end{DoxyCompactItemize}

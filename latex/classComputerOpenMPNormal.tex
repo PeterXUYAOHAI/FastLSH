@@ -1,0 +1,103 @@
+\hypertarget{classComputerOpenMPNormal}{}\section{Computer\+Open\+M\+P\+Normal Class Reference}
+\label{classComputerOpenMPNormal}\index{Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}}
+
+
+{\ttfamily \#include $<$Computer.\+h$>$}
+
+
+
+Inheritance diagram for Computer\+Open\+M\+P\+Normal\+:
+% FIG 0
+
+
+Collaboration diagram for Computer\+Open\+M\+P\+Normal\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComputerOpenMPNormal_a88f384b38a3d4bbe9a6f2e3c4492a9f2}{Computer\+Open\+M\+P\+Normal} (\hyperlink{structParameterHolder}{Parameter\+Holder} ph)
+\item 
+virtual vector2D \hyperlink{classComputerOpenMPNormal_a27146489d3be8cce6767fc5942180859}{compute\+Collision} (vector2D h\+MatrixN, vector2D h\+MatrixQ)
+\item 
+virtual vector2D \hyperlink{classComputerOpenMPNormal_adbecd2ca2883633c4b977c1dc958d5b5}{compute\+Candidate} (vector2D collision\+Matrix)
+\item 
+virtual void \hyperlink{classComputerOpenMPNormal_a7ff74cba73a6099618314b30a923dc9b}{print\+Compute\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+normal mode open\+MP computer derived from \hyperlink{classComputerOpenMP}{Computer\+Open\+MP} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}!Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}}
+\index{Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}!Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}}
+\subsubsection[{\texorpdfstring{Computer\+Open\+M\+P\+Normal(\+Parameter\+Holder ph)}{ComputerOpenMPNormal(ParameterHolder ph)}}]{\setlength{\rightskip}{0pt plus 5cm}Computer\+Open\+M\+P\+Normal\+::\+Computer\+Open\+M\+P\+Normal (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Holder}}]{ph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classComputerOpenMPNormal_a88f384b38a3d4bbe9a6f2e3c4492a9f2}{}\label{classComputerOpenMPNormal_a88f384b38a3d4bbe9a6f2e3c4492a9f2}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em ph} & parameter\+Holder \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}!compute\+Candidate@{compute\+Candidate}}
+\index{compute\+Candidate@{compute\+Candidate}!Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}}
+\subsubsection[{\texorpdfstring{compute\+Candidate(vector2\+D collision\+Matrix)}{computeCandidate(vector2D collisionMatrix)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Open\+M\+P\+Normal\+::compute\+Candidate (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{collision\+Matrix}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerOpenMPNormal_adbecd2ca2883633c4b977c1dc958d5b5}{}\label{classComputerOpenMPNormal_adbecd2ca2883633c4b977c1dc958d5b5}
+compute the candidate sets in single\+Thread Normal Mode 
+\begin{DoxyParams}{Parameters}
+{\em collision\+Matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of candidate set 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classComputer_ac512e107cee92d8e626e5f478980a502}{Computer}.
+
+\index{Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}!compute\+Collision@{compute\+Collision}}
+\index{compute\+Collision@{compute\+Collision}!Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}}
+\subsubsection[{\texorpdfstring{compute\+Collision(vector2\+D h\+Matrix\+N, vector2\+D h\+Matrix\+Q)}{computeCollision(vector2D hMatrixN, vector2D hMatrixQ)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Open\+M\+P\+Normal\+::compute\+Collision (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{h\+MatrixN, }
+\item[{vector2D}]{h\+MatrixQ}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerOpenMPNormal_a27146489d3be8cce6767fc5942180859}{}\label{classComputerOpenMPNormal_a27146489d3be8cce6767fc5942180859}
+compute the candidate sets in single\+Thread Normal Mode 
+\begin{DoxyParams}{Parameters}
+{\em collision\+Matrix} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of candidate set 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{classComputer_ada5e7f0f11aa019cafc4f603c36dc9b4}{Computer}.
+
+\index{Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}!print\+Compute\+Mode@{print\+Compute\+Mode}}
+\index{print\+Compute\+Mode@{print\+Compute\+Mode}!Computer\+Open\+M\+P\+Normal@{Computer\+Open\+M\+P\+Normal}}
+\subsubsection[{\texorpdfstring{print\+Compute\+Mode()}{printComputeMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Computer\+Open\+M\+P\+Normal\+::print\+Compute\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerOpenMPNormal_a7ff74cba73a6099618314b30a923dc9b}{}\label{classComputerOpenMPNormal_a7ff74cba73a6099618314b30a923dc9b}
+print the compute Mode -\/ normal mode 
+
+Implements \hyperlink{classComputer_ad2b5a813419e9152c4a1e22d9531b636}{Computer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/Computer.\+h\item 
+src/\+Computer/Open\+M\+P\+Computer.\+cpp\end{DoxyCompactItemize}

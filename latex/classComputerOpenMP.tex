@@ -1,0 +1,92 @@
+\hypertarget{classComputerOpenMP}{}\section{Computer\+Open\+MP Class Reference}
+\label{classComputerOpenMP}\index{Computer\+Open\+MP@{Computer\+Open\+MP}}
+
+
+{\ttfamily \#include $<$Computer.\+h$>$}
+
+
+
+Inheritance diagram for Computer\+Open\+MP\+:
+% FIG 0
+
+
+Collaboration diagram for Computer\+Open\+MP\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComputerOpenMP_a4e8a4180d0afbd679176af3c6abe41d2}{Computer\+Open\+MP} (\hyperlink{structParameterHolder}{Parameter\+Holder} ph)
+\item 
+virtual vector2D \hyperlink{classComputerOpenMP_a394526cd5c4075de81a60c92ee3e0e0f}{compute\+Hash} (vector2D dataset, size\+\_\+t p\+Num)
+\item 
+virtual void \hyperlink{classComputerOpenMP_a07f65269e96f3d587e7a4592967b548f}{print\+Thread\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+open\+MP computer derived from \hyperlink{classComputer}{Computer} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Computer\+Open\+MP@{Computer\+Open\+MP}!Computer\+Open\+MP@{Computer\+Open\+MP}}
+\index{Computer\+Open\+MP@{Computer\+Open\+MP}!Computer\+Open\+MP@{Computer\+Open\+MP}}
+\subsubsection[{\texorpdfstring{Computer\+Open\+M\+P(\+Parameter\+Holder ph)}{ComputerOpenMP(ParameterHolder ph)}}]{\setlength{\rightskip}{0pt plus 5cm}Computer\+Open\+M\+P\+::\+Computer\+Open\+MP (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Holder}}]{ph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classComputerOpenMP_a4e8a4180d0afbd679176af3c6abe41d2}{}\label{classComputerOpenMP_a4e8a4180d0afbd679176af3c6abe41d2}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em ph} & parameter\+Holder \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Computer\+Open\+MP@{Computer\+Open\+MP}!compute\+Hash@{compute\+Hash}}
+\index{compute\+Hash@{compute\+Hash}!Computer\+Open\+MP@{Computer\+Open\+MP}}
+\subsubsection[{\texorpdfstring{compute\+Hash(vector2\+D dataset, size\+\_\+t p\+Num)}{computeHash(vector2D dataset, size_t pNum)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Open\+M\+P\+::compute\+Hash (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{dataset, }
+\item[{size\+\_\+t}]{point\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerOpenMP_a394526cd5c4075de81a60c92ee3e0e0f}{}\label{classComputerOpenMP_a394526cd5c4075de81a60c92ee3e0e0f}
+compute the hash in open\+MP mode 
+\begin{DoxyParams}{Parameters}
+{\em dataset} & 2D original data\+Set \\
+\hline
+{\em p\+Num} & number of points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of the hash\+Matrix
+\end{DoxyReturn}
+Fast\+L\+SH Open\+M\+P\+Computer.\+cpp Purpose\+: This is the source file for Open\+MP computing functions
+
+\begin{DoxyAuthor}{Author}
+Peter Yaohai XU 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 4/07/17 
+\end{DoxyVersion}
+
+
+Implements \hyperlink{classComputer_a88056decffc944528b1de0a164aaae8c}{Computer}.
+
+\index{Computer\+Open\+MP@{Computer\+Open\+MP}!print\+Thread\+Mode@{print\+Thread\+Mode}}
+\index{print\+Thread\+Mode@{print\+Thread\+Mode}!Computer\+Open\+MP@{Computer\+Open\+MP}}
+\subsubsection[{\texorpdfstring{print\+Thread\+Mode()}{printThreadMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Computer\+Open\+M\+P\+::print\+Thread\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerOpenMP_a07f65269e96f3d587e7a4592967b548f}{}\label{classComputerOpenMP_a07f65269e96f3d587e7a4592967b548f}
+print the thread mode -\/ open\+MP 
+
+Implements \hyperlink{classComputer_abb184c3612cdf76eb8eb248d94f74da2}{Computer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/Computer.\+h\item 
+src/\+Computer/Open\+M\+P\+Computer.\+cpp\end{DoxyCompactItemize}

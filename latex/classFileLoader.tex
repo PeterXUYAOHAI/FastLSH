@@ -1,0 +1,63 @@
+\hypertarget{classFileLoader}{}\section{File\+Loader Class Reference}
+\label{classFileLoader}\index{File\+Loader@{File\+Loader}}
+
+
+{\ttfamily \#include $<$File\+Loader.\+h$>$}
+
+
+
+Inheritance diagram for File\+Loader\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector2D \hyperlink{classFileLoader_afb9c0aa014d80d6891ed3ecdf73b63f3}{load\+File} (const char $\ast$file\+Path, size\+\_\+t row, size\+\_\+t col)
+\item 
+virtual void \hyperlink{classFileLoader_ab8b81ea7fec2f851fa94473e79134b96}{print\+Load\+Mode} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::stringstream {\bfseries ss}\hypertarget{classFileLoader_af64f8d222de4bec38f88ac56d5d70350}{}\label{classFileLoader_af64f8d222de4bec38f88ac56d5d70350}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+abstract class of \hyperlink{classFileLoader}{File\+Loader} 
+
+\subsection{Member Function Documentation}
+\index{File\+Loader@{File\+Loader}!load\+File@{load\+File}}
+\index{load\+File@{load\+File}!File\+Loader@{File\+Loader}}
+\subsubsection[{\texorpdfstring{load\+File(const char $\ast$file\+Path, size\+\_\+t row, size\+\_\+t col)}{loadFile(const char *filePath, size_t row, size_t col)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D File\+Loader\+::load\+File (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{file\+Path, }
+\item[{size\+\_\+t}]{row, }
+\item[{size\+\_\+t}]{col}
+\end{DoxyParamCaption}
+)}\hypertarget{classFileLoader_afb9c0aa014d80d6891ed3ecdf73b63f3}{}\label{classFileLoader_afb9c0aa014d80d6891ed3ecdf73b63f3}
+load File 
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+{\em row} & number of rows of the matrix \\
+\hline
+{\em col} & number of columns of the matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of the dataset 
+\end{DoxyReturn}
+\index{File\+Loader@{File\+Loader}!print\+Load\+Mode@{print\+Load\+Mode}}
+\index{print\+Load\+Mode@{print\+Load\+Mode}!File\+Loader@{File\+Loader}}
+\subsubsection[{\texorpdfstring{print\+Load\+Mode()=0}{printLoadMode()=0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual void File\+Loader\+::print\+Load\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classFileLoader_ab8b81ea7fec2f851fa94473e79134b96}{}\label{classFileLoader_ab8b81ea7fec2f851fa94473e79134b96}
+print the loading mode 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/File\+Loader.\+h\item 
+src/\+File\+Loader/File\+Loader.\+cpp\end{DoxyCompactItemize}

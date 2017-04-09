@@ -1,0 +1,92 @@
+\hypertarget{classComputerStdThread}{}\section{Computer\+Std\+Thread Class Reference}
+\label{classComputerStdThread}\index{Computer\+Std\+Thread@{Computer\+Std\+Thread}}
+
+
+{\ttfamily \#include $<$Computer.\+h$>$}
+
+
+
+Inheritance diagram for Computer\+Std\+Thread\+:
+% FIG 0
+
+
+Collaboration diagram for Computer\+Std\+Thread\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classComputerStdThread_aaefd1bfd51b1f014bba22076e985d25a}{Computer\+Std\+Thread} (\hyperlink{structParameterHolder}{Parameter\+Holder} ph)
+\item 
+virtual vector2D \hyperlink{classComputerStdThread_a1c47a2c0ea24162a4d9369eced404a19}{compute\+Hash} (vector2D dataset, size\+\_\+t p\+Num)
+\item 
+virtual void \hyperlink{classComputerStdThread_a129300437bc5a184b2441b8eede7e837}{print\+Thread\+Mode} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+std\+Thread computer derived from \hyperlink{classComputer}{Computer} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Computer\+Std\+Thread@{Computer\+Std\+Thread}!Computer\+Std\+Thread@{Computer\+Std\+Thread}}
+\index{Computer\+Std\+Thread@{Computer\+Std\+Thread}!Computer\+Std\+Thread@{Computer\+Std\+Thread}}
+\subsubsection[{\texorpdfstring{Computer\+Std\+Thread(\+Parameter\+Holder ph)}{ComputerStdThread(ParameterHolder ph)}}]{\setlength{\rightskip}{0pt plus 5cm}Computer\+Std\+Thread\+::\+Computer\+Std\+Thread (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter\+Holder}}]{ph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classComputerStdThread_aaefd1bfd51b1f014bba22076e985d25a}{}\label{classComputerStdThread_aaefd1bfd51b1f014bba22076e985d25a}
+constructor 
+\begin{DoxyParams}{Parameters}
+{\em ph} & parameter\+Holder \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Computer\+Std\+Thread@{Computer\+Std\+Thread}!compute\+Hash@{compute\+Hash}}
+\index{compute\+Hash@{compute\+Hash}!Computer\+Std\+Thread@{Computer\+Std\+Thread}}
+\subsubsection[{\texorpdfstring{compute\+Hash(vector2\+D dataset, size\+\_\+t p\+Num)}{computeHash(vector2D dataset, size_t pNum)}}]{\setlength{\rightskip}{0pt plus 5cm}vector2D Computer\+Std\+Thread\+::compute\+Hash (
+\begin{DoxyParamCaption}
+\item[{vector2D}]{dataset, }
+\item[{size\+\_\+t}]{point\+Num}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerStdThread_a1c47a2c0ea24162a4d9369eced404a19}{}\label{classComputerStdThread_a1c47a2c0ea24162a4d9369eced404a19}
+compute the hash in std\+Thread mode 
+\begin{DoxyParams}{Parameters}
+{\em dataset} & 2D original data\+Set \\
+\hline
+{\em p\+Num} & number of points \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+2D vector$<$double$>$ of the hash\+Matrix
+\end{DoxyReturn}
+Fast\+L\+SH Std\+Thread\+Computer.\+cpp Purpose\+: This is the source file for Std\+Thread computing functions
+
+\begin{DoxyAuthor}{Author}
+Peter Yaohai XU 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 4/07/17 
+\end{DoxyVersion}
+
+
+Implements \hyperlink{classComputer_a88056decffc944528b1de0a164aaae8c}{Computer}.
+
+\index{Computer\+Std\+Thread@{Computer\+Std\+Thread}!print\+Thread\+Mode@{print\+Thread\+Mode}}
+\index{print\+Thread\+Mode@{print\+Thread\+Mode}!Computer\+Std\+Thread@{Computer\+Std\+Thread}}
+\subsubsection[{\texorpdfstring{print\+Thread\+Mode()}{printThreadMode()}}]{\setlength{\rightskip}{0pt plus 5cm}void Computer\+Std\+Thread\+::print\+Thread\+Mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classComputerStdThread_a129300437bc5a184b2441b8eede7e837}{}\label{classComputerStdThread_a129300437bc5a184b2441b8eede7e837}
+print the thread mode -\/ std\+Thread 
+
+Implements \hyperlink{classComputer_abb184c3612cdf76eb8eb248d94f74da2}{Computer}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/other\+Classes/Computer.\+h\item 
+src/\+Computer/Std\+Thread\+Computer.\+cpp\end{DoxyCompactItemize}
