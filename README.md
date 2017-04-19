@@ -8,6 +8,7 @@ The build won't pass now because  travis don't support hadoop environment.
 ##Attention:
 The current version requires certain programs installedfor the full functionality.
 It has been tested on Ubuntu 16.04 with the following programs
+
 * Hadoop 2.7.3
 * OpenMP 4.5
 * Memcached 1.4.34
