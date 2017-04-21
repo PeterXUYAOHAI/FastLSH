@@ -24,14 +24,17 @@ limitations under the License.
     @version 1.0 4/07/17
 */
 
+#include <iostream>
 #include "../include/LSH.h"
 
+
+
 /**
- *this normalization is do normalize along the column on 2d dataset. the algorithm may have chance to be optimized
- * @param dataset 2d list of double
- * @return normalized 2d list of double
+ * prepare for normalization, find the maxium and minium values of each dimensions
+ * @param dataset 2d trainning data
+ * @return void it will change the normMaxs and normMins
  */
-vector2D LSH::normalize(vector2D dataset){
+void LSH::preNormalize(vector2D dataset){
     size_t row = dataset.size();
     size_t col = dataset[0].size();
 
@@ -48,14 +51,36 @@ vector2D LSH::normalize(vector2D dataset){
         }
     }
 
+    normMaxs = maximums;
+    normMins = minimums;
+
+}
+
+
+
+/**
+ *this normalization is do normalize along the column on 2d dataset. the algorithm may have chance to be optimized
+ * @param dataset 2d list of double
+ * @return normalized 2d list of double
+ */
+vector2D LSH::normalize(vector2D dataset,vector1D normMaxs, vector1D normMins){
+    if (normMaxs.size()==0 || normMins.size()==0){
+        std::cout<<"Please run preNormalize first\n";
+        return dataset;
+    }
+
+
+    size_t row = dataset.size();
+    size_t col = dataset[0].size();
+
     for (int i = 0; i < row; ++i) {
         for (int j = 0; j < col; ++j) {
             //if max equals min, the value is set to 0.5
-            if(maximums[j]==minimums[j])
+            if(normMaxs[j]==normMins[j])
                 dataset[i][j] = 0.5;
             else
                 //normalization formula -- (x-min(x))/(max(x)-min(x))
-                dataset[i][j] = (dataset[i][j] - minimums[j])/(maximums[j]-minimums[j]);
+                dataset[i][j] = (dataset[i][j] - normMins[j])/(normMaxs[j]-normMins[j]);
         }
     }
         return dataset;

@@ -235,12 +235,23 @@ private:
     vector2D collisionMatrix; //the place to store collision
     vector2D candidateSet; //candidate set
 
+    vector1D normMaxs; //maxium values of each dimensions in training data -- for normalization
+    vector1D normMins; //maxium values of each dimensions in training data -- for normalization
+
+
+    /**
+     * prepare for normalization, find the maxium and minium values of each dimensions
+     * @param dataset 2d trainning data
+     * @return void it will change the normMaxs and normMins
+     */
+    void preNormalize(vector2D dataset);
+
     /**
      *this normalization is do normalize along the column on 2d dataset. the algorithm may have chance to be optimized
      * @param dataset 2d list of double
      * @return normalized 2d list of double
      */
-    vector2D normalize(vector2D dataset);
+    vector2D normalize(vector2D dataset, vector1D normMaxs, vector1D normMins);
 
     /**
      * This function generates the random projected lines, it uses normal distribution

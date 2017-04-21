@@ -150,8 +150,9 @@ vector2D LSH::getCollisionMatrix() {
         // if hashMatrixes haven't been generated then compute the hashMatrix
         if(hashMatrixN.size()==0||hashMatrixQ.size()==0) {
             // normalize before do the computation
-            setQ =normalize(setQ);
-            setN =normalize(setN);
+            preNormalize(setN);
+            setQ =normalize(setQ,normMaxs,normMins);
+            setN =normalize(setN,normMaxs, normMins);
             hashMatrixN = theGenerator->generateHash(setN,ph.N);
             hashMatrixQ = theGenerator->generateHash(setQ,ph.Q);
         }
@@ -171,8 +172,9 @@ vector2D LSH::getCandidateSet(){
         //if hash matrix not calculated
         if(hashMatrixN.size()==0||hashMatrixQ.size()==0) {
             // normalize before do the computation
-            setQ =normalize(setQ);
-            setN =normalize(setN);
+            preNormalize(setN);
+            setQ =normalize(setQ,normMaxs,normMins);
+            setN =normalize(setN,normMaxs,normMins);
             hashMatrixN = theGenerator->generateHash(setN,ph.N);
             hashMatrixQ = theGenerator->generateHash(setQ,ph.Q);
         }
